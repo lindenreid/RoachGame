@@ -11,6 +11,14 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     // ------------------------------------------------------------------------
+    // Types
+    // ------------------------------------------------------------------------
+    private enum PlayerState
+    {
+        Explore, Dialogue
+    }
+
+    // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
     [SerializeField] private float _moveSpeed;
@@ -21,6 +29,8 @@ public class Player : MonoBehaviour
     private float _rotationX;
     private float _rotationY;
 
+    private PlayerState _state;
+
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
@@ -29,10 +39,25 @@ public class Player : MonoBehaviour
         _characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         _cameraTrans = Camera.main.transform;
+
+        _state = PlayerState.Explore;
+
+        EventBus.Instance.VisitDialogueNode += HandleVisitDialogueNode;
     }
 
     // ------------------------------------------------------------------------
     private void Update ()
+    {
+        switch(_state)
+        {
+            case PlayerState.Explore: 
+                LookAndMove();
+                break;
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    private void LookAndMove ()
     {
         float mouseY = Input.GetAxis("Mouse Y");
         _rotationY += mouseY * _mouseSensitivity;
@@ -50,5 +75,12 @@ public class Player : MonoBehaviour
             ((vertical * Vector3.forward) + (horizontal * Vector3.right))
             * _moveSpeed * Time.deltaTime
         );
+    }
+
+    // ------------------------------------------------------------------------
+    private void HandleVisitDialogueNode(DialogueNode node)
+    {
+        _state = PlayerState.Dialogue;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

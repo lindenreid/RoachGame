@@ -30,7 +30,6 @@ public class DialogueUI : MonoBehaviour
     private void HandleVisitDialogueNode(DialogueNode node)
     {
         _dialogueWindow.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
 
         _speakerText.text = node._Speaker._Name;
 
