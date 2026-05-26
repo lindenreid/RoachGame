@@ -1032,7 +1032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd9cf14b22519456487e250fff4c08a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dialogueStart: {fileID: 11400000, guid: 22e18787442cc4324b232d508ab24a30, type: 2}
+  _dialogueStart: {fileID: 11400000, guid: f19ca6d807d1d4e57a814e27408d4d14, type: 2}
 --- !u!1 &1418725098
 GameObject:
   m_ObjectHideFlags: 0
