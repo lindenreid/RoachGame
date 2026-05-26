@@ -17,6 +17,8 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private GameObject _dialogueWindow;
     [SerializeField] private TMP_Text _speakerText;
     [SerializeField] private TMP_Text _dialogueText;
+    [SerializeField] private OptionButton _optionButtonPrefab;
+    [SerializeField] private Transform _optionsParent;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -30,6 +32,10 @@ public class DialogueUI : MonoBehaviour
     private void HandleVisitDialogueNode(DialogueNode node)
     {
         _dialogueWindow.SetActive(true);
+        foreach(Transform t in _optionsParent)
+        {
+            Destroy(t.gameObject);
+        }
 
         _speakerText.text = node._Speaker._Name;
 
@@ -43,5 +49,11 @@ public class DialogueUI : MonoBehaviour
             }
         }
         _dialogueText.text = sb.ToString();
+
+        foreach(DialogueOption option in node._Options)
+        {
+            OptionButton button = Instantiate(_optionButtonPrefab, _optionsParent);
+            button.SetupButton(option);
+        }
     }
 }

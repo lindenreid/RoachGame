@@ -20,7 +20,7 @@ MonoBehaviour:
   - convo 2 with player and nemo
   _options:
   - _optionText: player option 1
-    _nextNode: {fileID: 0}
+    _nextNode: {fileID: 11400000, guid: 56369013a32a44c5fbb538e54df86e53, type: 2}
   - _optionText: player option 2
-    _nextNode: {fileID: 0}
+    _nextNode: {fileID: 11400000, guid: 3bc52055d842f472c97e89cc951f06d1, type: 2}
   _Chat: {fileID: 11400000, guid: ded89c38a23e24e159ccbef80bba21a5, type: 2}

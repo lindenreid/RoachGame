@@ -22,6 +22,9 @@ public class DialogueOption
     [SerializeField] private string _optionText; // what the speaker says in this option
     [SerializeField] private DialogueNode _nextNode; // the next node this option leads to
 
+    public string _OptionText => _optionText;
+    public DialogueNode _NextNode => _nextNode;
+
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------

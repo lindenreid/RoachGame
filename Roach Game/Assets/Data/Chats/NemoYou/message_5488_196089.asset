@@ -21,7 +21,7 @@ MonoBehaviour:
   - here's a third line
   _options:
   - _optionText: player option 1
-    _nextNode: {fileID: 0}
+    _nextNode: {fileID: 11400000, guid: 1107e3612974f42e4be83ed69da38c71, type: 2}
   - _optionText: player option 2
-    _nextNode: {fileID: 0}
+    _nextNode: {fileID: 11400000, guid: 002fc1c21d7684bebb637a45c2218900, type: 2}
   _Chat: {fileID: 11400000, guid: ded89c38a23e24e159ccbef80bba21a5, type: 2}
