@@ -15,13 +15,27 @@ using UnityEngine;
 [Serializable]
 public class DialogueOption
 {
+    // ------------------------------------------------------------------------
+    // Variables
+    // ------------------------------------------------------------------------
+
     [SerializeField] private string _optionText; // what the speaker says in this option
     [SerializeField] private DialogueNode _nextNode; // the next node this option leads to
+
+    // ------------------------------------------------------------------------
+    // Methods
+    // ------------------------------------------------------------------------
 
     public DialogueOption(string text, DialogueNode node)
     {
         _optionText = text;
         _nextNode = node;
+    }
+
+    // ------------------------------------------------------------------------
+    public override string ToString()
+    {
+        return _optionText;
     }
 }
 
@@ -44,6 +58,8 @@ public class DialogueNode : DiscoverableData
     // Properties
     // ------------------------------------------------------------------------
     public FriendData _Speaker => _speaker;
+    public DialogueOption[] _Options => _options;
+    public string[] _Lines => _lines;
 
     // ------------------------------------------------------------------------
     // Methods

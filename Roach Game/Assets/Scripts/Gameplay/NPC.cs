@@ -17,6 +17,6 @@ public class NPC : MonoBehaviour
     // ------------------------------------------------------------------------
     private void OnMouseDown()
     {
-        Debug.Log("clicked me");
+        DialogueRunner.Instance.StartDialogue(_dialogueStart);
     }
 }
