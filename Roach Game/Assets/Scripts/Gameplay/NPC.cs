@@ -14,5 +14,9 @@ public class NPC : MonoBehaviour
     // ------------------------------------------------------------------------
     [SerializeField] private DialogueNode _dialogueStart;
 
-
+    // ------------------------------------------------------------------------
+    private void OnMouseDown()
+    {
+        Debug.Log("clicked me");
+    }
 }
