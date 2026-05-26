@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
+  m_Name: message_5488_196594
+  m_EditorClassIdentifier: 
+  _id: 196594
+  _requiredClues:
+  - {fileID: 11400000, guid: 6975247348eb34749aff9f382eab9ae3, type: 2}
+  _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
+  _lines:
+  - convo 2 with player and nemo
+  _options:
+  - _optionText: player option 1
+    _nextNode: {fileID: 0}
+  - _optionText: player option 2
+    _nextNode: {fileID: 0}
+  _Chat: {fileID: 11400000, guid: ded89c38a23e24e159ccbef80bba21a5, type: 2}

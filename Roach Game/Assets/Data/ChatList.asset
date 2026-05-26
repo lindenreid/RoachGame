@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42e11d128b481421794c653e67183381, type: 3}
+  m_Name: ChatList
+  m_EditorClassIdentifier: 
+  Chats:
+  - {fileID: 11400000, guid: ded89c38a23e24e159ccbef80bba21a5, type: 2}
+  - {fileID: 11400000, guid: 217f27508891141e5929b912f02d745f, type: 2}

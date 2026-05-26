@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b134f48b71acf45d19d4356eb767df36, type: 3}
+  m_Name: chat_YouWillow
+  m_EditorClassIdentifier: 
+  _id: 5727
+  _nodes:
+  - {fileID: 11400000, guid: c74db39a3d90446f59da74322c5b3511, type: 2}
+  - {fileID: 11400000, guid: 237886150d5b54fafbcea8e873969efb, type: 2}
+  - {fileID: 11400000, guid: 815f0017c8ee3410a9f303a8b84fb155, type: 2}
+  _friends:
+  - {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
+  - {fileID: 11400000, guid: cfcf04562f1c844eeb1d1b4e385aadb3, type: 2}

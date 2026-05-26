@@ -1,0 +1,60 @@
+
+
+{
+  "passages": [
+    {
+      "text": "<line> this is what the NPC would say\n<line> they can say multiple lines\n<line> here's a third line\n\n[[player option 1]]\n[[player option 2]]",
+      "links": [
+        {
+          "name": "player option 1",
+          "link": "player option 1",
+          "pid": "2"
+        },
+        {
+          "name": "player option 2",
+          "link": "player option 2",
+          "pid": "3"
+        }
+      ],
+      "name": "passage 1",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> this is what the NPC would respond to player option 1\n<line> here's a second line",
+      "name": "player option 1",
+      "pid": "2",
+      "position": {
+        "x": "600",
+        "y": "375"
+      },
+      "tags": [
+        "Nemo"
+      ]
+    },
+    {
+      "text": "<line> player option 2 NPC response\n<line> test line update",
+      "name": "player option 2",
+      "pid": "3",
+      "position": {
+        "x": "725",
+        "y": "375"
+      },
+      "tags": [
+        "Nemo"
+      ]
+    }
+  ],
+  "name": "Unity test story",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "D9E60890-6793-4A29-98BC-928B9928DFBC"
+}
+
