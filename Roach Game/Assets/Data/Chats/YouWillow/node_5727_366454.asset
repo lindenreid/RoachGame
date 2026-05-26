@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
-  m_Name: message_5488_396089
+  m_Name: node_5727_366454
   m_EditorClassIdentifier: 
-  _id: 396089
+  _id: 366454
   _requiredClues: []
-  _speaker: {fileID: 11400000, guid: ef93fc212075c4e9e905a931132c8089, type: 2}
+  _speaker: {fileID: 11400000, guid: cfcf04562f1c844eeb1d1b4e385aadb3, type: 2}
   _lines:
   - player option 2 NPC response
   - test line update
   _options: []
-  _Chat: {fileID: 11400000, guid: ded89c38a23e24e159ccbef80bba21a5, type: 2}
+  _Chat: {fileID: 11400000, guid: 217f27508891141e5929b912f02d745f, type: 2}

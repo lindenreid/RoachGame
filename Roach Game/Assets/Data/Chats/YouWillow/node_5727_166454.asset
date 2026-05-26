@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
-  m_Name: message_5727_166454
+  m_Name: node_5727_166454
   m_EditorClassIdentifier: 
   _id: 166454
   _requiredClues:
@@ -21,7 +21,7 @@ MonoBehaviour:
   - this convo has player and willow
   _options:
   - _optionText: player option 1
-    _nextNode: {fileID: 11400000, guid: 237886150d5b54fafbcea8e873969efb, type: 2}
+    _nextNode: {fileID: 11400000, guid: 9da694aa29fd34185914dedf3fa0f635, type: 2}
   - _optionText: player option 2
-    _nextNode: {fileID: 11400000, guid: 815f0017c8ee3410a9f303a8b84fb155, type: 2}
+    _nextNode: {fileID: 11400000, guid: 4560833a9ef3e4e9cae4822774cfb953, type: 2}
   _Chat: {fileID: 11400000, guid: 217f27508891141e5929b912f02d745f, type: 2}

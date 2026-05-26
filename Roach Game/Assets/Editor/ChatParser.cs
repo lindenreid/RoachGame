@@ -301,7 +301,7 @@ public static class ChatParser {
         DialogueNode[] generatedNodeFiles =
             new DialogueNode[chat._Nodes.Length];
 
-        string chatDir = c_chatOutputPath + "/" + chat.FileName;
+        string chatDir = GetChatFilePath(chat);
         if(!System.IO.Directory.Exists(chatDir))
         {
             System.IO.Directory.CreateDirectory(chatDir);
@@ -316,7 +316,7 @@ public static class ChatParser {
         foreach(DialogueNode node in chat._Nodes)
         {
             // find OR create new permanent assets for all DialogueNodes
-            string path = chatDir + "/message_" + chat._ID + "_" + node._ID + ".asset";
+            string path = GetDialogueNodeFilePath(chat, node);
             DialogueNode loadedNodeFile = (DialogueNode)AssetDatabase.LoadAssetAtPath<DialogueNode>(path); 
             if(loadedNodeFile == null)
             {
@@ -364,6 +364,18 @@ public static class ChatParser {
     }
 
     // ------------------------------------------------------------------------
+    private static string GetChatFilePath (ChatData chat)
+    {
+        return c_chatOutputPath + "/" + chat.FileName;
+    }
+
+    // ------------------------------------------------------------------------
+    private static string GetDialogueNodeFilePath(ChatData chat, DialogueNode node)
+    {
+        return GetChatFilePath(chat) + "/node_" + chat._ID + "_" + node._ID + ".asset";
+    }
+
+    // ------------------------------------------------------------------------
     private static string GetClueFilePath(ClueData clue)
     {
         return c_clueOutputPath + "/" + clue._FileName + ".asset";
@@ -396,6 +408,15 @@ public static class ChatParser {
                         AssetDatabase.GetAssetPath(messageObj)
                     );
                 loadedMessageObj._Chat = chatObj;
+
+                foreach(DialogueOption option in loadedMessageObj._Options)
+                {
+                    DialogueNode loadedOptionObj = (DialogueNode)AssetDatabase.LoadAssetAtPath<DialogueNode>(
+                        GetDialogueNodeFilePath(chatObj, option._NextNode)
+                    );
+                    option.LoadNodeFromAsset(loadedOptionObj);
+                }
+
                 EditorUtility.SetDirty(loadedMessageObj);
             }
         }

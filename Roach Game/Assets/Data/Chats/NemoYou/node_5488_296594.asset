@@ -10,18 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
-  m_Name: message_5488_196089
+  m_Name: node_5488_296594
   m_EditorClassIdentifier: 
-  _id: 196089
+  _id: 296594
   _requiredClues: []
-  _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
+  _speaker: {fileID: 11400000, guid: ef93fc212075c4e9e905a931132c8089, type: 2}
   _lines:
-  - this is what the NPC would say
-  - they can say multiple lines
-  - here's a third line
-  _options:
-  - _optionText: player option 1
-    _nextNode: {fileID: 11400000, guid: 1107e3612974f42e4be83ed69da38c71, type: 2}
-  - _optionText: player option 2
-    _nextNode: {fileID: 11400000, guid: 002fc1c21d7684bebb637a45c2218900, type: 2}
+  - story 2 - test option 1
+  _options: []
   _Chat: {fileID: 11400000, guid: ded89c38a23e24e159ccbef80bba21a5, type: 2}

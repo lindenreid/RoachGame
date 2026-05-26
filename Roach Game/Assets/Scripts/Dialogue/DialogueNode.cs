@@ -40,6 +40,12 @@ public class DialogueOption
     {
         return _optionText;
     }
+
+    // ------------------------------------------------------------------------
+    public void LoadNodeFromAsset (DialogueNode node)
+    {
+        _nextNode = node;
+    }
 }
 
 [CreateAssetMenu(fileName = "MessageData", menuName = "Dialogue/Message", order = 1)]

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
-  m_Name: message_5488_196594
+  m_Name: node_5488_196594
   m_EditorClassIdentifier: 
   _id: 196594
   _requiredClues:
@@ -20,7 +20,7 @@ MonoBehaviour:
   - convo 2 with player and nemo
   _options:
   - _optionText: player option 1
-    _nextNode: {fileID: 11400000, guid: 56369013a32a44c5fbb538e54df86e53, type: 2}
+    _nextNode: {fileID: 11400000, guid: eb805cbeeb47a4289ba954606249f870, type: 2}
   - _optionText: player option 2
-    _nextNode: {fileID: 11400000, guid: 3bc52055d842f472c97e89cc951f06d1, type: 2}
+    _nextNode: {fileID: 11400000, guid: 5c22319292e8940c3864419780a655c5, type: 2}
   _Chat: {fileID: 11400000, guid: ded89c38a23e24e159ccbef80bba21a5, type: 2}
