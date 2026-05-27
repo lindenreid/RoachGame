@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _aimReticle;
     [SerializeField] private float _maxAimDistance;
     [SerializeField] private LayerMask _roachLayer;
+    [SerializeField] private Transform _roachHoldLoc;
 
     private Transform _cameraTrans;
     private float _rotationX;
@@ -60,6 +61,7 @@ public class Player : MonoBehaviour
         _state = PlayerState.Explore;
 
         EventBus.Instance.VisitDialogueNode += HandleVisitDialogueNode;
+        EventBus.Instance.RoachCollected += HandleRoachCollected;
 
         _reticleMat = _reticleRenderer.material;
         _reticleAlpha = _reticleMat.color.a;
@@ -159,5 +161,12 @@ public class Player : MonoBehaviour
     {
         _state = PlayerState.Dialogue;
         Cursor.lockState = CursorLockMode.None;
+    }
+
+    // ------------------------------------------------------------------------
+    private void HandleRoachCollected(Roach roach)
+    {
+        roach.transform.position = _roachHoldLoc.position;
+        roach.transform.SetParent(_roachHoldLoc);
     }
 }

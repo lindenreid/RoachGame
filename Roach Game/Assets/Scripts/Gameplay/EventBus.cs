@@ -18,6 +18,9 @@ public class EventBus : MonoBehaviour
     public delegate void EmptyDelegate();
     public event EmptyDelegate RoachHit;
 
+    public delegate void RoachDelegate(Roach roach);
+    public event RoachDelegate RoachCollected;
+
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
@@ -47,5 +50,11 @@ public class EventBus : MonoBehaviour
     public void InvokeRoachHit ()
     {
         RoachHit?.Invoke();
+    }
+
+    // ------------------------------------------------------------------------
+    public void InvokeRoachCollected (Roach roach)
+    {
+        RoachCollected?.Invoke(roach);
     }
 }

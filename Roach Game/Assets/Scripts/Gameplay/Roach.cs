@@ -16,7 +16,7 @@ public class Roach : NPC
     // ------------------------------------------------------------------------
     private enum RoachState
     {
-        Idle, Running, Dead
+        Idle, Running, Dead, Collected
     }
 
     // ------------------------------------------------------------------------
@@ -33,6 +33,7 @@ public class Roach : NPC
     [SerializeField] private Vector3 _antennaeAnimMax;
     [SerializeField] private float _antennaeFlipTime;
     [SerializeField] private int _maxHealth = 1;
+    [SerializeField] private Collider _collider;
 
     private int _health;
 
@@ -58,6 +59,10 @@ public class Roach : NPC
     // ------------------------------------------------------------------------
     protected override void OnMouseDown()
     {
+        if(_currentState == RoachState.Dead)
+        {
+            EnterCollectedState();
+        }
     }
 
     // ------------------------------------------------------------------------
@@ -94,6 +99,18 @@ public class Roach : NPC
 
         _roachSplines.position = transform.position;
         _deathSplineAnimator.Play();
+    }
+
+    // ------------------------------------------------------------------------
+    private void EnterCollectedState ()
+    {
+        _currentState = RoachState.Collected;
+
+        _movementSplineAnimator.enabled = false;
+        _deathSplineAnimator.enabled = false;
+
+        _collider.enabled = false;
+        EventBus.Instance.InvokeRoachCollected(this);
     }
 
     // ------------------------------------------------------------------------
