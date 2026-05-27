@@ -982,6 +982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 5
   _mouseSensitivity: 5
+  _shoeSpline: {fileID: 258535825}
   _splineAnimator: {fileID: 1309946730}
   _aimReticle: {fileID: 688846963}
   _maxAimDistance: 100

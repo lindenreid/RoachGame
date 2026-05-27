@@ -5,6 +5,7 @@
  * Copyright 2019 - 2026 Studio Tilia
  */
 
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Splines;
 
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
     // ------------------------------------------------------------------------
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _mouseSensitivity;
+    [SerializeField] private SplineContainer _shoeSpline;
     [SerializeField] private SplineAnimate _splineAnimator;
     [SerializeField] private Transform _aimReticle;
     [SerializeField] private float _maxAimDistance;
@@ -70,6 +72,10 @@ public class Player : MonoBehaviour
         ))
         {
             _aimReticle.position = raycastHit.point + _reticleOffset;
+
+            var targetKnot = _shoeSpline.Spline.Knots.ToArray()[1];
+            targetKnot.Position = _shoeSpline.transform.InverseTransformPoint(raycastHit.point);
+            _shoeSpline.Spline.SetKnot(1, targetKnot);
         }
 
         if(Input.GetMouseButtonDown(0))
