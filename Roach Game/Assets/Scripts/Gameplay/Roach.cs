@@ -38,6 +38,7 @@ public class Roach : NPC
     // ------------------------------------------------------------------------
     private void Start ()
     {
+        _roachSplines.SetParent(null);
         EnterRunningState();
     }
 
