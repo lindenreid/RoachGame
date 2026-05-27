@@ -481,7 +481,7 @@ GameObject:
   - component: {fileID: 688846962}
   - component: {fileID: 688846961}
   - component: {fileID: 688846960}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TargetReticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

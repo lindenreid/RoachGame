@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
 
     private PlayerState _state;
     private bool _needsAnimRestart;
+    private Vector3 _reticleOffset = new Vector3(0, 0.1f, 0);
 
     // ------------------------------------------------------------------------
     // Methods
@@ -68,7 +69,7 @@ public class Player : MonoBehaviour
                 _maxAimDistance
         ))
         {
-            _aimReticle.position = raycastHit.point;
+            _aimReticle.position = raycastHit.point + _reticleOffset;
         }
 
         if(Input.GetMouseButtonDown(0))
