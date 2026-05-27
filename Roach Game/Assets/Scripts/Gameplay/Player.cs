@@ -40,6 +40,10 @@ public class Player : MonoBehaviour
     private bool _needsAnimRestart;
     private Vector3 _reticleOffset = new Vector3(0, 0.1f, 0);
     private Material _reticleMat;
+    private float _reticleAlpha;
+    private Color _reticleHit;
+    private Color _reticleMiss;
+    private Color _reticleInvalid;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -54,6 +58,11 @@ public class Player : MonoBehaviour
         EventBus.Instance.VisitDialogueNode += HandleVisitDialogueNode;
 
         _reticleMat = _reticleRenderer.material;
+        _reticleAlpha = _reticleMat.color.a;
+
+        _reticleHit = new Color(0, 1, 0, _reticleAlpha);
+        _reticleMiss = new Color(1, 1, 0, _reticleAlpha);
+        _reticleInvalid = new Color(1, 0, 0, _reticleAlpha);
     }
 
     // ------------------------------------------------------------------------
@@ -103,11 +112,11 @@ public class Player : MonoBehaviour
         {
             if(((1<<raycastHit.collider.gameObject.layer) & _roachLayer) != 0)
             {
-                _reticleMat.color = Color.green;
+                _reticleMat.color = _reticleHit;
             }
             else
             {
-                _reticleMat.color = Color.yellow;
+                _reticleMat.color = _reticleMiss;
             }
 
             _aimReticle.position = raycastHit.point + _reticleOffset;
@@ -115,7 +124,7 @@ public class Player : MonoBehaviour
         }
         else
         {
-            _reticleMat.color = Color.red;
+            _reticleMat.color = _reticleInvalid;
             _aimReticle.position = _reticleDefaultPosition.position;
             SetShoeSplineDestination(_reticleDefaultPosition.position);
         }
