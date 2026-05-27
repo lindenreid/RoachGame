@@ -473,7 +473,8 @@ MonoBehaviour:
   _roachSplines: {fileID: 106991363144284796}
   _leftAntennae: {fileID: 3926103380163049194}
   _rightAntennae: {fileID: 5869715478814395323}
-  _antennaeRotation: {x: 300, y: 0, z: 0}
+  _antennaeAnimMin: {x: -300, y: 0, z: 0}
+  _antennaeAnimMax: {x: 300, y: 0, z: 0}
   _antennaeFlipTime: 0.2
 --- !u!114 &7345907774376965766
 MonoBehaviour:
