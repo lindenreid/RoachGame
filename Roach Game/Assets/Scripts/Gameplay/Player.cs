@@ -9,7 +9,6 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Splines;
 
-[RequireComponent(typeof(CharacterController))]
 public class Player : MonoBehaviour
 {
     // ------------------------------------------------------------------------
@@ -33,7 +32,6 @@ public class Player : MonoBehaviour
     [SerializeField] private float _maxAimDistance;
     [SerializeField] private LayerMask _roachLayer;
 
-    private CharacterController _characterController;
     private Transform _cameraTrans;
     private float _rotationX;
     private float _rotationY;
@@ -48,7 +46,6 @@ public class Player : MonoBehaviour
     // ------------------------------------------------------------------------
     private void Start ()
     {
-        _characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         _cameraTrans = Camera.main.transform;
 
@@ -86,7 +83,7 @@ public class Player : MonoBehaviour
 
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
-        _characterController.Move(
+        transform.Translate(
             ((vertical * Vector3.forward) + (horizontal * Vector3.right))
             * _moveSpeed * Time.deltaTime
         );
