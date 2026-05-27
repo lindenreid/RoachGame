@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     [SerializeField] private MeshRenderer _reticleRenderer;
     [SerializeField] private Transform _aimReticle;
     [SerializeField] private float _maxAimDistance;
+    [SerializeField] private LayerMask _roachLayer;
 
     private CharacterController _characterController;
     private Transform _cameraTrans;
@@ -40,6 +41,7 @@ public class Player : MonoBehaviour
     private PlayerState _state;
     private bool _needsAnimRestart;
     private Vector3 _reticleOffset = new Vector3(0, 0.1f, 0);
+    private Material _reticleMat;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -53,6 +55,8 @@ public class Player : MonoBehaviour
         _state = PlayerState.Explore;
 
         EventBus.Instance.VisitDialogueNode += HandleVisitDialogueNode;
+
+        _reticleMat = _reticleRenderer.material;
     }
 
     // ------------------------------------------------------------------------
@@ -100,13 +104,22 @@ public class Player : MonoBehaviour
         );
         if(aimRaycastHit)
         {
-            _reticleRenderer.material.color = Color.green;
+            Debug.Log(LayerMask.LayerToName(raycastHit.collider.gameObject.layer));
+            if(((1<<raycastHit.collider.gameObject.layer) & _roachLayer) != 0)
+            {
+                _reticleMat.color = Color.green;
+            }
+            else
+            {
+                _reticleMat.color = Color.yellow;
+            }
+
             _aimReticle.position = raycastHit.point + _reticleOffset;
             SetShoeSplineDestination(raycastHit.point);
         }
         else
         {
-            _reticleRenderer.material.color = Color.red;
+            _reticleMat.color = Color.red;
             _aimReticle.position = _reticleDefaultPosition.position;
             SetShoeSplineDestination(_reticleDefaultPosition.position);
         }

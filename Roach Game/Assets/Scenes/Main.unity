@@ -966,6 +966,9 @@ MonoBehaviour:
   _reticleRenderer: {fileID: 688846961}
   _aimReticle: {fileID: 688846963}
   _maxAimDistance: 20
+  _roachLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!143 &989307901
 CharacterController:
   m_ObjectHideFlags: 0

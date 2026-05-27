@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1943856672051017480}
   - component: {fileID: 2862785274621515919}
   - component: {fileID: 8619512146631009965}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LeftAntennae
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 106991363144284796}
   - component: {fileID: 2266932019672325890}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RoachSplines
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -290,7 +290,7 @@ GameObject:
   - component: {fileID: 1637144861695845397}
   - component: {fileID: 2893722450530919504}
   - component: {fileID: 7093143967045383311}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RoachMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5869715478814395323}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RightAntennaePivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 5666340172471909981}
   - component: {fileID: 7337665383833818599}
   - component: {fileID: 7345907774376965766}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Roach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 3700311837804946438}
   - component: {fileID: 8831967978694253122}
   - component: {fileID: 6285407425309878133}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RightAntennae
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3926103380163049194}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: LeftAntennaePivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
