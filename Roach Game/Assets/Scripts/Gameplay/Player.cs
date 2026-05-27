@@ -53,6 +53,10 @@ public class Player : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         _cameraTrans = Camera.main.transform;
 
+#if UNITY_WEBGL
+        _mouseSensitivity = _mouseSensitivity / 2.0f;
+#endif
+
         _state = PlayerState.Explore;
 
         EventBus.Instance.VisitDialogueNode += HandleVisitDialogueNode;
