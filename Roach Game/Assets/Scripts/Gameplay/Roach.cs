@@ -92,6 +92,7 @@ public class Roach : NPC
 
         _currentState = RoachState.Dead;
 
+        _roachSplines.position = transform.position;
         _deathSplineAnimator.Play();
     }
 
