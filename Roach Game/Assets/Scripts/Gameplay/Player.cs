@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _mouseSensitivity;
     [SerializeField] private SplineAnimate _splineAnimator;
+    [SerializeField] private Transform _aimReticle;
+    [SerializeField] private float _maxAimDistance;
 
     private CharacterController _characterController;
     private Transform _cameraTrans;
@@ -56,6 +58,17 @@ public class Player : MonoBehaviour
             case PlayerState.Explore: 
                 LookAndMove();
                 break;
+        }
+
+        RaycastHit raycastHit;
+        if(Physics.Raycast(
+                Camera.main.transform.position,
+                Camera.main.transform.forward,
+                out raycastHit,
+                _maxAimDistance
+        ))
+        {
+            _aimReticle.position = raycastHit.point;
         }
 
         if(Input.GetMouseButtonDown(0))
