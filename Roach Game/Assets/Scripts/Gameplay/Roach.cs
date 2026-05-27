@@ -31,6 +31,9 @@ public class Roach : NPC
     [SerializeField] private Vector3 _antennaeAnimMin;
     [SerializeField] private Vector3 _antennaeAnimMax;
     [SerializeField] private float _antennaeFlipTime;
+    [SerializeField] private int _maxHealth = 1;
+
+    private int _health;
 
     private RoachState _currentState;
     private float _stateTime;
@@ -46,6 +49,7 @@ public class Roach : NPC
     // ------------------------------------------------------------------------
     private void Start ()
     {
+        _health = _maxHealth;
         _roachSplines.SetParent(null);
         EnterIdleState();
     }
@@ -53,7 +57,6 @@ public class Roach : NPC
     // ------------------------------------------------------------------------
     protected override void OnMouseDown()
     {
-        Debug.Log("clicked roach");
     }
 
     // ------------------------------------------------------------------------
@@ -63,6 +66,17 @@ public class Roach : NPC
         {
             case RoachState.Idle: DoIdleState(); break;
             case RoachState.Running: DoRunningState(); break;
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    public void Hit ()
+    {
+        _health--;
+        Debug.LogFormat("{0} health: {1}", gameObject.name, _health);
+        if(_health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 

@@ -453,6 +453,7 @@ MonoBehaviour:
   _antennaeAnimMin: {x: -300, y: 0, z: 0}
   _antennaeAnimMax: {x: 300, y: 0, z: 0}
   _antennaeFlipTime: 0.2
+  _maxHealth: 2
 --- !u!114 &7345907774376965766
 MonoBehaviour:
   m_ObjectHideFlags: 0
