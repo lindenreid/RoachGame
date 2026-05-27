@@ -6,6 +6,7 @@
  */
 
 using UnityEngine;
+using UnityEngine.Splines;
 
 [RequireComponent(typeof(CharacterController))]
 public class Player : MonoBehaviour
@@ -23,6 +24,7 @@ public class Player : MonoBehaviour
     // ------------------------------------------------------------------------
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _mouseSensitivity;
+    [SerializeField] private SplineAnimate _splineAnimator;
 
     private CharacterController _characterController;
     private Transform _cameraTrans;
@@ -30,6 +32,7 @@ public class Player : MonoBehaviour
     private float _rotationY;
 
     private PlayerState _state;
+    private bool _needsAnimRestart;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -53,6 +56,18 @@ public class Player : MonoBehaviour
             case PlayerState.Explore: 
                 LookAndMove();
                 break;
+        }
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            _splineAnimator.Play();
+            _needsAnimRestart = true;
+        }
+
+        if(_needsAnimRestart && !_splineAnimator.IsPlaying)
+        {
+            _needsAnimRestart = false;
+            _splineAnimator.Restart(false);
         }
     }
 
