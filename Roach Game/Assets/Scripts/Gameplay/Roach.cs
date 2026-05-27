@@ -16,7 +16,7 @@ public class Roach : NPC
     // ------------------------------------------------------------------------
     private enum RoachState
     {
-        Idle, Running
+        Idle, Running, Dead
     }
 
     // ------------------------------------------------------------------------
@@ -24,7 +24,8 @@ public class Roach : NPC
     // ------------------------------------------------------------------------
     [SerializeField] private float _runSpeed = 0.01f;
     [SerializeField] private Vector2 _idleTimeMinMax;
-    [SerializeField] private SplineAnimate _splineAnimator;
+    [SerializeField] private SplineAnimate _movementSplineAnimator;
+    [SerializeField] private SplineAnimate _deathSplineAnimator;
     [SerializeField] private Transform _roachSplines;
     [SerializeField] private Transform _leftAntennae;
     [SerializeField] private Transform _rightAntennae;
@@ -77,8 +78,21 @@ public class Roach : NPC
         _health--;
         if(_health <= 0)
         {
-            Destroy(gameObject);
+            EnterDeadState();
         }
+    }
+
+    // ------------------------------------------------------------------------
+    private void EnterDeadState ()
+    {
+        if(_currentState == RoachState.Dead)
+        {
+            return;
+        }
+
+        _currentState = RoachState.Dead;
+
+        _deathSplineAnimator.Play();
     }
 
     // ------------------------------------------------------------------------
@@ -101,7 +115,7 @@ public class Roach : NPC
         _roachSplines.Rotate(0, Random.Range(0, 350), 0);
         _roachSplines.position = transform.position;
 
-        _splineAnimator.Restart(true);
+        _movementSplineAnimator.Restart(true);
     }
 
     // ------------------------------------------------------------------------
@@ -127,7 +141,7 @@ public class Roach : NPC
     // ------------------------------------------------------------------------
     private void DoRunningState ()
     {
-        if(!_splineAnimator.IsPlaying)
+        if(!_movementSplineAnimator.IsPlaying)
         {
             EnterIdleState();
         }
