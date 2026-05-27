@@ -26,12 +26,18 @@ public class Roach : NPC
     [SerializeField] private Vector2 _idleTimeMinMax;
     [SerializeField] private SplineAnimate _splineAnimator;
     [SerializeField] private Transform _roachSplines;
+    [SerializeField] private Transform _leftAntennae;
+    [SerializeField] private Transform _rightAntennae;
+    [SerializeField] private Vector3 _antennaeRotation;
+    [SerializeField] private float _antennaeFlipTime;
 
     private RoachState _currentState;
     private float _stateTime;
 
     // idle state
     private float _maxStateTime;
+    private float _antennaeAnimTime;
+    private Vector3 _currentRot;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -39,7 +45,7 @@ public class Roach : NPC
     private void Start ()
     {
         _roachSplines.SetParent(null);
-        EnterRunningState();
+        EnterIdleState();
     }
 
     // ------------------------------------------------------------------------
@@ -59,6 +65,7 @@ public class Roach : NPC
 
         _stateTime = 0;
         _maxStateTime = Random.Range(_idleTimeMinMax.x, _idleTimeMinMax.y);
+        _currentRot = _antennaeRotation;
     }
 
     // ------------------------------------------------------------------------
@@ -76,6 +83,14 @@ public class Roach : NPC
     // ------------------------------------------------------------------------
     private void DoIdleState ()
     {
+        _antennaeAnimTime += Time.deltaTime;
+        if(_antennaeAnimTime >= _antennaeFlipTime)
+        {
+            _antennaeAnimTime = 0;
+            _currentRot = new Vector3(-_currentRot.x, _currentRot.y, _currentRot.z);
+        }
+        _leftAntennae.Rotate(_currentRot * Time.deltaTime);
+
         _stateTime += Time.deltaTime;
         if(_stateTime >= _maxStateTime)
         {
