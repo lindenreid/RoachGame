@@ -27,6 +27,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float _mouseSensitivity;
     [SerializeField] private SplineContainer _shoeSpline;
     [SerializeField] private SplineAnimate _splineAnimator;
+    [SerializeField] private Transform _reticleDefaultPosition;
+    [SerializeField] private MeshRenderer _reticleRenderer;
     [SerializeField] private Transform _aimReticle;
     [SerializeField] private float _maxAimDistance;
 
@@ -60,34 +62,8 @@ public class Player : MonoBehaviour
         {
             case PlayerState.Explore: 
                 LookAndMove();
+                UpdateShoe();
                 break;
-        }
-
-        RaycastHit raycastHit;
-        if(Physics.Raycast(
-                Camera.main.transform.position,
-                Camera.main.transform.forward,
-                out raycastHit,
-                _maxAimDistance
-        ))
-        {
-            _aimReticle.position = raycastHit.point + _reticleOffset;
-
-            var targetKnot = _shoeSpline.Spline.Knots.ToArray()[1];
-            targetKnot.Position = _shoeSpline.transform.InverseTransformPoint(raycastHit.point);
-            _shoeSpline.Spline.SetKnot(1, targetKnot);
-        }
-
-        if(Input.GetMouseButtonDown(0))
-        {
-            _splineAnimator.Play();
-            _needsAnimRestart = true;
-        }
-
-        if(_needsAnimRestart && _splineAnimator.ElapsedTime >= _splineAnimator.Duration*2)
-        {
-            _needsAnimRestart = false;
-            _splineAnimator.Restart(false);
         }
     }
 
@@ -110,6 +86,50 @@ public class Player : MonoBehaviour
             ((vertical * Vector3.forward) + (horizontal * Vector3.right))
             * _moveSpeed * Time.deltaTime
         );
+    }
+
+    // ------------------------------------------------------------------------
+    private void UpdateShoe ()
+    {
+        RaycastHit raycastHit;
+        bool aimRaycastHit = Physics.Raycast(
+                Camera.main.transform.position,
+                Camera.main.transform.forward,
+                out raycastHit,
+                _maxAimDistance
+        );
+        if(aimRaycastHit)
+        {
+            _reticleRenderer.material.color = Color.green;
+            _aimReticle.position = raycastHit.point + _reticleOffset;
+            SetShoeSplineDestination(raycastHit.point);
+        }
+        else
+        {
+            _reticleRenderer.material.color = Color.red;
+            _aimReticle.position = _reticleDefaultPosition.position;
+            SetShoeSplineDestination(_reticleDefaultPosition.position);
+        }
+
+        if(aimRaycastHit && Input.GetMouseButtonDown(0))
+        {
+            _splineAnimator.Play();
+            _needsAnimRestart = true;
+        }
+
+        if(_needsAnimRestart && _splineAnimator.ElapsedTime >= _splineAnimator.Duration*2)
+        {
+            _needsAnimRestart = false;
+            _splineAnimator.Restart(false);
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    private void SetShoeSplineDestination(Vector3 targetWorldPos)
+    {
+        var targetKnot = _shoeSpline.Spline.Knots.ToArray()[1];
+        targetKnot.Position = _shoeSpline.transform.InverseTransformPoint(targetWorldPos);
+        _shoeSpline.Spline.SetKnot(1, targetKnot);
     }
 
     // ------------------------------------------------------------------------
