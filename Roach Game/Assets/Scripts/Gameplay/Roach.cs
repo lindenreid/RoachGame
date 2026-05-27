@@ -119,8 +119,6 @@ public class Roach : NPC
     {
         _currentState = RoachState.Collected;
 
-        ResetAntennae();
-
         _movementSplineAnimator.enabled = false;
         _deathSplineAnimator.enabled = false;
 
