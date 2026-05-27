@@ -72,8 +72,9 @@ public class Roach : NPC
     // ------------------------------------------------------------------------
     public void Hit ()
     {
+        EventBus.Instance.InvokeRoachHit();
+
         _health--;
-        Debug.LogFormat("{0} health: {1}", gameObject.name, _health);
         if(_health <= 0)
         {
             Destroy(gameObject);

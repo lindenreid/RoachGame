@@ -15,6 +15,9 @@ public class EventBus : MonoBehaviour
     public delegate void DialogueNodeDelegate(DialogueNode node);
     public event DialogueNodeDelegate VisitDialogueNode;
 
+    public delegate void EmptyDelegate();
+    public event EmptyDelegate RoachHit;
+
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
@@ -38,5 +41,11 @@ public class EventBus : MonoBehaviour
     public void InvokeVisitDialogue(DialogueNode node)
     {
         VisitDialogueNode?.Invoke(node);
+    }
+
+    // ------------------------------------------------------------------------
+    public void InvokeRoachHit ()
+    {
+        RoachHit?.Invoke();
     }
 }
