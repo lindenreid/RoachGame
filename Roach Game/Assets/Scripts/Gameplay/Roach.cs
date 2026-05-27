@@ -51,6 +51,12 @@ public class Roach : NPC
     }
 
     // ------------------------------------------------------------------------
+    protected override void OnMouseDown()
+    {
+        Debug.Log("clicked roach");
+    }
+
+    // ------------------------------------------------------------------------
     private void Update ()
     {
         switch(_currentState)

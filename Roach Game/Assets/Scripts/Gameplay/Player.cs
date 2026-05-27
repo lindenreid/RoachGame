@@ -101,7 +101,6 @@ public class Player : MonoBehaviour
         );
         if(aimRaycastHit)
         {
-            Debug.Log(LayerMask.LayerToName(raycastHit.collider.gameObject.layer));
             if(((1<<raycastHit.collider.gameObject.layer) & _roachLayer) != 0)
             {
                 _reticleMat.color = Color.green;
