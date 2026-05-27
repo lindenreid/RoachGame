@@ -39,6 +39,10 @@ public class Roach : NPC
 
     private RoachState _currentState;
     private float _stateTime;
+    private Vector3 _leftAntennaeNeutralPos;
+    private Quaternion _leftAntennaeNeutralRot;
+    private Vector3 _rightAntennaeNeutralPos;
+    private Quaternion _rightAntennaeNeutralRot;
 
     // idle state
     private float _maxStateTime;
@@ -52,7 +56,15 @@ public class Roach : NPC
     private void Start ()
     {
         _health = _maxHealth;
+
         _roachSplines.SetParent(null);
+
+        _leftAntennaeNeutralPos = _leftAntennae.localPosition;
+        _leftAntennaeNeutralRot = _leftAntennae.localRotation;
+
+        _rightAntennaeNeutralPos = _rightAntennae.localPosition;
+        _rightAntennaeNeutralRot = _rightAntennae.localRotation;
+
         EnterIdleState();
     }
 
@@ -94,8 +106,9 @@ public class Roach : NPC
         {
             return;
         }
-
         _currentState = RoachState.Dead;
+
+        ResetAntennae();
 
         _roachSplines.position = transform.position;
         _deathSplineAnimator.Play();
@@ -105,6 +118,8 @@ public class Roach : NPC
     private void EnterCollectedState ()
     {
         _currentState = RoachState.Collected;
+
+        ResetAntennae();
 
         _movementSplineAnimator.enabled = false;
         _deathSplineAnimator.enabled = false;
@@ -128,6 +143,8 @@ public class Roach : NPC
     private void EnterRunningState ()
     {
         _currentState = RoachState.Running;
+
+        ResetAntennae();
 
         transform.Rotate(0, Random.Range(0, 350), 0);
         _roachSplines.Rotate(0, Random.Range(0, 350), 0);
@@ -163,5 +180,15 @@ public class Roach : NPC
         {
             EnterIdleState();
         }
+    }
+
+    // ------------------------------------------------------------------------
+    private void ResetAntennae ()
+    {
+        _leftAntennae.localRotation = _leftAntennaeNeutralRot;
+        _leftAntennae.localPosition = _leftAntennaeNeutralPos;
+
+        _rightAntennae.localRotation = _rightAntennaeNeutralRot;
+        _rightAntennae.localPosition = _rightAntennaeNeutralPos;
     }
 }
