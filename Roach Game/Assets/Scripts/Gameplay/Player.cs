@@ -22,7 +22,8 @@ public class Player : MonoBehaviour
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
-    [SerializeField] private float _moveSpeed;
+    [SerializeField] private float _walkSpeed = 5.0f;
+    [SerializeField] private float _runSpeed = 7.0f;
     [SerializeField] private float _mouseSensitivity;
     [SerializeField] private SplineContainer _shoeSpline;
     [SerializeField] private SplineAnimate _splineAnimator;
@@ -98,9 +99,16 @@ public class Player : MonoBehaviour
 
         float vertical = Input.GetAxis("Vertical");
         float horizontal = Input.GetAxis("Horizontal");
+
+        float speed = _walkSpeed;
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            speed = _runSpeed;
+        }
+
         transform.Translate(
             ((vertical * Vector3.forward) + (horizontal * Vector3.right))
-            * _moveSpeed * Time.deltaTime
+            * speed * Time.deltaTime
         );
     }
 
