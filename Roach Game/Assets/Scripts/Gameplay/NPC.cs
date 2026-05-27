@@ -15,7 +15,13 @@ public class NPC : MonoBehaviour
     [SerializeField] private DialogueNode _dialogueStart;
 
     // ------------------------------------------------------------------------
-    private void OnMouseDown()
+    protected void OnMouseDown()
+    {
+        StartDialogue();
+    }
+
+    // ------------------------------------------------------------------------
+    private void StartDialogue()
     {
         DialogueRunner.Instance.StartDialogue(_dialogueStart);
     }
