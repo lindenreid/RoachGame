@@ -1129,7 +1129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Target: {fileID: 258535825}
   m_PlayOnAwake: 0
-  m_LoopMode: 0
+  m_LoopMode: 3
   m_Method: 0
   m_Duration: 0.2
   m_MaxSpeed: 41.9423

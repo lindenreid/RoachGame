@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
             _needsAnimRestart = true;
         }
 
-        if(_needsAnimRestart && !_splineAnimator.IsPlaying)
+        if(_needsAnimRestart && _splineAnimator.ElapsedTime >= _splineAnimator.Duration*2)
         {
             _needsAnimRestart = false;
             _splineAnimator.Restart(false);
