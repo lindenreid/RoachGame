@@ -9,26 +9,44 @@ using UnityEngine;
 
 public partial class Roach
 {
-    protected abstract class RoachState
+    // ------------------------------------------------------------------------
+    // Types
+    // ------------------------------------------------------------------------
+    protected class RoachState
     {
+        // --------------------------------------------------------------------
+        // Variables
+        // --------------------------------------------------------------------
         protected Roach _roach;
 
+        // --------------------------------------------------------------------
+        // Methods
+        // --------------------------------------------------------------------
         public virtual void EnterState(Roach roach)
         {
             _roach = roach;
         }
 
-        public abstract void ExitState();
-        public abstract void RunState(float deltaTime);
+        // --------------------------------------------------------------------
+        public virtual void ExitState() {}
+        // --------------------------------------------------------------------
+        public virtual void RunState(float deltaTime) {}
     }
 
+    // ------------------------------------------------------------------------
     protected class RoachIdleState : RoachState
     {
+        // --------------------------------------------------------------------
+        // Variables
+        // --------------------------------------------------------------------
         private float _maxStateTime;
         private float _antennaeAnimTime;
         private Vector3 _leftRot;
         private Vector3 _rightRot;
 
+        // --------------------------------------------------------------------
+        // Methods
+        // --------------------------------------------------------------------
         public override void EnterState(Roach roach)
         {
             base.EnterState(roach);
@@ -39,11 +57,7 @@ public partial class Roach
             _rightRot = Vector3.Lerp(_roach._antennaeAnimMin, _roach._antennaeAnimMax, Random.Range(0.0f, 1.0f));
         }
 
-        public override void ExitState()
-        {
-            
-        }
-
+        // --------------------------------------------------------------------
         public override void RunState(float deltaTime)
         {
             _antennaeAnimTime += Time.deltaTime;
@@ -64,8 +78,12 @@ public partial class Roach
         }
     }
 
+    // ------------------------------------------------------------------------
     protected class RoachRunningState : RoachState
     {
+        // --------------------------------------------------------------------
+        // Methods
+        // --------------------------------------------------------------------
         public override void EnterState(Roach roach)
         {
             base.EnterState(roach);
@@ -79,11 +97,7 @@ public partial class Roach
             _roach._movementSplineAnimator.Restart(true);
         }
 
-        public override void ExitState()
-        {
-            
-        }
-
+        // --------------------------------------------------------------------
         public override void RunState(float deltaTime)
         {
             if(!_roach._movementSplineAnimator.IsPlaying)
@@ -92,8 +106,13 @@ public partial class Roach
             }
         }
     }
+
+    // ------------------------------------------------------------------------
     protected class RoachDeadState : RoachState
     {
+        // --------------------------------------------------------------------
+        // Methods
+        // --------------------------------------------------------------------
         public override void EnterState(Roach roach)
         {
             base.EnterState(roach);
@@ -103,20 +122,14 @@ public partial class Roach
             _roach._roachSplines.position = _roach.transform.position;
             _roach._deathSplineAnimator.Play();
         }
-
-        public override void ExitState()
-        {
-            
-        }
-
-        public override void RunState(float deltaTime)
-        {
-            
-        }
     }
 
+    // ------------------------------------------------------------------------
     protected class RoachCollectedState : RoachState
     {
+        // --------------------------------------------------------------------
+        // Methods
+        // --------------------------------------------------------------------
         public override void EnterState(Roach roach)
         {
             base.EnterState(roach);
@@ -127,33 +140,11 @@ public partial class Roach
             _roach._collider.enabled = false;
             EventBus.Instance.InvokeRoachCollected(_roach);
         }
-
-        public override void ExitState()
-        {
-            
-        }
-
-        public override void RunState(float deltaTime)
-        {
-            
-        }
     }
 
+    // ------------------------------------------------------------------------
     protected class RoachAttackingState : RoachState
     {
-        public override void EnterState(Roach roach)
-        {
-            base.EnterState(roach);
-        }
-
-        public override void ExitState()
-        {
-            
-        }
-
-        public override void RunState(float deltaTime)
-        {
-            
-        }
+        
     }
 }
