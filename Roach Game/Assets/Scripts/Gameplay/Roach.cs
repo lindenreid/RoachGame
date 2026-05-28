@@ -9,14 +9,14 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Splines;
 
-public class Roach : NPC
+public partial class Roach : NPC
 {
     // ------------------------------------------------------------------------
     // Types
     // ------------------------------------------------------------------------
-    private enum RoachState
+    private enum RoachStateType
     {
-        Idle, Running, Dead, Collected
+        Idle, Running, Dead, Collected, Attacking
     }
 
     // ------------------------------------------------------------------------
@@ -35,20 +35,16 @@ public class Roach : NPC
     [SerializeField] private int _maxHealth = 1;
     [SerializeField] private Collider _collider;
 
+    // shared state variables
     private int _health;
-
     private RoachState _currentState;
     private float _stateTime;
+
+    // antennae rotation
     private Vector3 _leftAntennaeNeutralPos;
     private Quaternion _leftAntennaeNeutralRot;
     private Vector3 _rightAntennaeNeutralPos;
     private Quaternion _rightAntennaeNeutralRot;
-
-    // idle state
-    private float _maxStateTime;
-    private float _antennaeAnimTime;
-    private Vector3 _leftRot;
-    private Vector3 _rightRot;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -65,26 +61,22 @@ public class Roach : NPC
         _rightAntennaeNeutralPos = _rightAntennae.localPosition;
         _rightAntennaeNeutralRot = _rightAntennae.localRotation;
 
-        EnterIdleState();
+        EnterState(RoachStateType.Idle);
     }
 
     // ------------------------------------------------------------------------
     protected override void OnMouseDown()
     {
-        if(_currentState == RoachState.Dead)
+        if(_currentState is RoachDeadState)
         {
-            EnterCollectedState();
+            EnterState(RoachStateType.Collected);
         }
     }
 
     // ------------------------------------------------------------------------
     private void Update ()
     {
-        switch(_currentState)
-        {
-            case RoachState.Idle: DoIdleState(); break;
-            case RoachState.Running: DoRunningState(); break;
-        }
+        _currentState.RunState(Time.deltaTime);
     }
 
     // ------------------------------------------------------------------------
@@ -95,89 +87,25 @@ public class Roach : NPC
         _health--;
         if(_health <= 0)
         {
-            EnterDeadState();
+            EnterState(RoachStateType.Dead);
         }
     }
 
     // ------------------------------------------------------------------------
-    private void EnterDeadState ()
+    private void EnterState(RoachStateType newState)
     {
-        if(_currentState == RoachState.Dead)
+        _currentState?.ExitState();
+
+        switch(newState)
         {
-            return;
+            case RoachStateType.Idle: _currentState = new RoachIdleState(); break;
+            case RoachStateType.Running: _currentState = new RoachRunningState(); break;
+            case RoachStateType.Attacking: _currentState = new RoachAttackingState(); break;
+            case RoachStateType.Dead: _currentState = new RoachDeadState(); break;
+            case RoachStateType.Collected: _currentState = new RoachCollectedState(); break;
+            default: Debug.LogError("unhandled roach state: " + newState); break;
         }
-        _currentState = RoachState.Dead;
-
-        ResetAntennae();
-
-        _roachSplines.position = transform.position;
-        _deathSplineAnimator.Play();
-    }
-
-    // ------------------------------------------------------------------------
-    private void EnterCollectedState ()
-    {
-        _currentState = RoachState.Collected;
-
-        _movementSplineAnimator.enabled = false;
-        _deathSplineAnimator.enabled = false;
-
-        _collider.enabled = false;
-        EventBus.Instance.InvokeRoachCollected(this);
-    }
-
-    // ------------------------------------------------------------------------
-    private void EnterIdleState ()
-    {
-        _currentState = RoachState.Idle;
-
-        _stateTime = 0;
-        _maxStateTime = Random.Range(_idleTimeMinMax.x, _idleTimeMinMax.y);
-        _leftRot = Vector3.Lerp(_antennaeAnimMin, _antennaeAnimMax, Random.Range(0.0f, 1.0f));
-        _rightRot = Vector3.Lerp(_antennaeAnimMin, _antennaeAnimMax, Random.Range(0.0f, 1.0f));
-    }
-
-    // ------------------------------------------------------------------------
-    private void EnterRunningState ()
-    {
-        _currentState = RoachState.Running;
-
-        ResetAntennae();
-
-        transform.Rotate(0, Random.Range(0, 350), 0);
-        _roachSplines.Rotate(0, Random.Range(0, 350), 0);
-        _roachSplines.position = transform.position;
-
-        _movementSplineAnimator.Restart(true);
-    }
-
-    // ------------------------------------------------------------------------
-    private void DoIdleState ()
-    {
-        _antennaeAnimTime += Time.deltaTime;
-        if(_antennaeAnimTime >= _antennaeFlipTime)
-        {
-            _antennaeAnimTime = 0;
-            _leftRot = new Vector3(-_leftRot.x, _leftRot.y, _leftRot.z);
-            _rightRot = new Vector3(-_rightRot.x, _rightRot.y, _rightRot.z);
-        }
-        _leftAntennae.Rotate(_leftRot * Time.deltaTime);
-        _rightAntennae.Rotate(_rightRot * Time.deltaTime);
-
-        _stateTime += Time.deltaTime;
-        if(_stateTime >= _maxStateTime)
-        {
-            EnterRunningState();
-        }
-    }
-
-    // ------------------------------------------------------------------------
-    private void DoRunningState ()
-    {
-        if(!_movementSplineAnimator.IsPlaying)
-        {
-            EnterIdleState();
-        }
+        _currentState.EnterState(this);
     }
 
     // ------------------------------------------------------------------------
