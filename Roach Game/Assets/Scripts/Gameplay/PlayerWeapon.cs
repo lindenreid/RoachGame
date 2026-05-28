@@ -7,7 +7,7 @@
 
 using UnityEngine;
 
-public class RoachWeapon : MonoBehaviour
+public class PlayerWeapon : MonoBehaviour
 {
     // ------------------------------------------------------------------------
     // Methods
