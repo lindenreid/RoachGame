@@ -35,7 +35,7 @@ public class DialogueRunner : MonoBehaviour
     {
         _currentNode = node;
         Debug.Log("runner visit node: " + node);
-        EventBus.Instance.InvokeVisitDialogue(node);
+        EventBus._Instance.InvokeVisitDialogue(node);
     }
 
     // ------------------------------------------------------------------------
@@ -43,6 +43,6 @@ public class DialogueRunner : MonoBehaviour
     public void SelectOption(DialogueNode nextNode)
     {
         Debug.Log("selected node: " + nextNode);
-        EventBus.Instance.InvokeVisitDialogue(nextNode);
+        EventBus._Instance.InvokeVisitDialogue(nextNode);
     }
 }

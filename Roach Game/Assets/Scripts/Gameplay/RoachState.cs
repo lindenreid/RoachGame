@@ -18,6 +18,7 @@ public partial class Roach
         // Variables
         // --------------------------------------------------------------------
         protected Roach _roach;
+        protected float _timeInState;
 
         // --------------------------------------------------------------------
         // Methods
@@ -51,7 +52,7 @@ public partial class Roach
         {
             base.EnterState(roach);
 
-            _roach._stateTime = 0;
+            _timeInState = 0;
             _maxStateTime = Random.Range(_roach._idleTimeMinMax.x, _roach._idleTimeMinMax.y);
             _leftRot = Vector3.Lerp(_roach._antennaeAnimMin, _roach._antennaeAnimMax, Random.Range(0.0f, 1.0f));
             _rightRot = Vector3.Lerp(_roach._antennaeAnimMin, _roach._antennaeAnimMax, Random.Range(0.0f, 1.0f));
@@ -70,8 +71,8 @@ public partial class Roach
             _roach._leftAntennae.Rotate(_leftRot * Time.deltaTime);
             _roach._rightAntennae.Rotate(_rightRot * Time.deltaTime);
 
-            _roach._stateTime += Time.deltaTime;
-            if(_roach._stateTime >= _maxStateTime)
+            _timeInState += Time.deltaTime;
+            if(_timeInState >= _maxStateTime)
             {
                 _roach.EnterState(RoachStateType.Running);
             }
@@ -138,13 +139,43 @@ public partial class Roach
             _roach._deathSplineAnimator.enabled = false;
 
             _roach._collider.enabled = false;
-            EventBus.Instance.InvokeRoachCollected(_roach);
+            EventBus._Instance.InvokeRoachCollected(_roach);
         }
     }
 
     // ------------------------------------------------------------------------
     protected class RoachAttackingState : RoachState
     {
-        
+        // --------------------------------------------------------------------
+        // Variable
+        // --------------------------------------------------------------------
+        private float _timeBetweenUse;
+
+        // --------------------------------------------------------------------
+        // Methods
+        // --------------------------------------------------------------------
+        public override void EnterState(Roach roach)
+        {
+            base.EnterState(roach);
+            _roach._gun.gameObject.SetActive(true);
+            _timeBetweenUse = 0.0f;
+        }
+
+        // --------------------------------------------------------------------
+        public override void ExitState()
+        {
+            _roach._gun.gameObject.SetActive(false);
+        }
+
+        // --------------------------------------------------------------------
+        public override void RunState(float deltaTime)
+        {
+            _timeBetweenUse += deltaTime;
+            if(_timeBetweenUse >= _roach._weaponUseInterval)
+            {
+                _roach._gun.Use();
+                _timeBetweenUse = 0.0f;
+            }
+        }
     }
 }

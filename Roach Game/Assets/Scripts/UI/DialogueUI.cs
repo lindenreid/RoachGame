@@ -25,7 +25,7 @@ public class DialogueUI : MonoBehaviour
     // ------------------------------------------------------------------------
     private void Start ()
     {
-        EventBus.Instance.VisitDialogueNode += HandleVisitDialogueNode;
+        EventBus._Instance.VisitDialogueNode += HandleVisitDialogueNode;
     }
 
     // ------------------------------------------------------------------------

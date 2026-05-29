@@ -17,6 +17,7 @@ public class EventBus : MonoBehaviour
 
     public delegate void EmptyDelegate();
     public event EmptyDelegate RoachHit;
+    public event EmptyDelegate PlayerDamaged;
 
     public delegate void RoachDelegate(Roach roach);
     public event RoachDelegate RoachCollected;
@@ -24,20 +25,20 @@ public class EventBus : MonoBehaviour
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
-    public static EventBus Instance { get; private set; }
+    public static EventBus _Instance { get; private set; }
 
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (_Instance != null && _Instance != this)
         {
             Destroy(this);
             return;
         }
 
-        Instance = this;
+        _Instance = this;
     }
 
     // ------------------------------------------------------------------------
@@ -56,5 +57,11 @@ public class EventBus : MonoBehaviour
     public void InvokeRoachCollected (Roach roach)
     {
         RoachCollected?.Invoke(roach);
+    }
+
+    // ------------------------------------------------------------------------
+    public void InvokePlayerDamaged ()
+    {
+        PlayerDamaged?.Invoke();
     }
 }

@@ -33,13 +33,19 @@ public class Player : MonoBehaviour
     [SerializeField] private float _maxAimDistance;
     [SerializeField] private LayerMask _roachLayer;
     [SerializeField] private Transform _roachHoldLoc;
+    [SerializeField] private int _maxHealth = 5;
 
+    // movement and aiming
     private Transform _cameraTrans;
     private float _rotationX;
     private float _rotationY;
-
-    private PlayerState _state;
     private bool _needsAnimRestart;
+
+    // state
+    private PlayerState _state;
+    private int _health;
+
+    // aiming reticle
     private Vector3 _reticleOffset = new Vector3(0, 0.1f, 0);
     private Material _reticleMat;
     private float _reticleAlpha;
@@ -48,7 +54,29 @@ public class Player : MonoBehaviour
     private Color _reticleInvalid;
 
     // ------------------------------------------------------------------------
+    // Properties
+    // ------------------------------------------------------------------------
+    public static Player _Instance { get; private set; }
+
+    public Vector3 _Position => transform.position;
+    public int _Health => _health;
+
+    // ------------------------------------------------------------------------
     // Methods
+    // ------------------------------------------------------------------------
+    private void Awake()
+    {
+        if (_Instance != null && _Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+
+        _Instance = this;
+
+        _health = _maxHealth;
+    }
+
     // ------------------------------------------------------------------------
     private void Start ()
     {
@@ -61,8 +89,8 @@ public class Player : MonoBehaviour
 
         _state = PlayerState.Explore;
 
-        EventBus.Instance.VisitDialogueNode += HandleVisitDialogueNode;
-        EventBus.Instance.RoachCollected += HandleRoachCollected;
+        EventBus._Instance.VisitDialogueNode += HandleVisitDialogueNode;
+        EventBus._Instance.RoachCollected += HandleRoachCollected;
 
         _reticleMat = _reticleRenderer.material;
         _reticleAlpha = _reticleMat.color.a;
@@ -82,6 +110,13 @@ public class Player : MonoBehaviour
                 UpdateShoe();
                 break;
         }
+    }
+
+    // ------------------------------------------------------------------------
+    public void Damage ()
+    {
+        _health--;
+        EventBus._Instance.InvokePlayerDamaged();
     }
 
     // ------------------------------------------------------------------------

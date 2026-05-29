@@ -34,11 +34,12 @@ public partial class Roach : NPC
     [SerializeField] private float _antennaeFlipTime;
     [SerializeField] private int _maxHealth = 1;
     [SerializeField] private Collider _collider;
+    [SerializeField] private RoachWeapon _gun;
+    [SerializeField] private float _weaponUseInterval;
 
     // shared state variables
     private int _health;
     private RoachState _currentState;
-    private float _stateTime;
 
     // antennae rotation
     private Vector3 _leftAntennaeNeutralPos;
@@ -82,12 +83,16 @@ public partial class Roach : NPC
     // ------------------------------------------------------------------------
     public void Hit ()
     {
-        EventBus.Instance.InvokeRoachHit();
+        EventBus._Instance.InvokeRoachHit();
 
         _health--;
         if(_health <= 0)
         {
             EnterState(RoachStateType.Dead);
+        }
+        else
+        {
+            EnterState(RoachStateType.Attacking);
         }
     }
 

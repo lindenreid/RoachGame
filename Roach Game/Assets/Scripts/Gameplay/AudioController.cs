@@ -20,7 +20,7 @@ public class AudioController : MonoBehaviour
     // ------------------------------------------------------------------------
     private void Start ()
     {
-         EventBus.Instance.RoachHit += HandleRoachHit;
+         EventBus._Instance.RoachHit += HandleRoachHit;
     }
 
     // ------------------------------------------------------------------------
