@@ -1292,7 +1292,7 @@ MonoBehaviour:
   _reticleDefaultPosition: {fileID: 1911274956}
   _reticleRenderer: {fileID: 688846961}
   _aimReticle: {fileID: 688846963}
-  _maxAimDistance: 15
+  _maxAimDistance: 6
   _roachLayer:
     serializedVersion: 2
     m_Bits: 8

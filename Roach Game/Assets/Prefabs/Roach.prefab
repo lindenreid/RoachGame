@@ -703,7 +703,7 @@ MonoBehaviour:
   _maxHealth: 2
   _collider: {fileID: 3457381573241350565}
   _gun: {fileID: 8403393850747380025}
-  _weaponUseInterval: 2
+  _weaponUseInterval: 1.5
 --- !u!114 &7345907774376965766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,7 +873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pivot: {fileID: 8040429107509513753}
   _bangText: {fileID: 618048971216834576}
-  _textAppearTime: 0.5
+  _textAppearTime: 0.1
 --- !u!1 &7463351871310874145
 GameObject:
   m_ObjectHideFlags: 0
