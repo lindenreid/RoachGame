@@ -256,6 +256,38 @@ MonoBehaviour:
       m_Data: []
   m_Knots:
     m_KnotsLink: []
+--- !u!1 &2172362669059474053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8040429107509513753}
+  m_Layer: 3
+  m_Name: WeaponPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8040429107509513753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2172362669059474053}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.328, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6809364587666608687}
+  m_Father: {fileID: 5666340172471909981}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2556373078051126732
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +572,7 @@ Transform:
   - {fileID: 2254634616206881240}
   - {fileID: 3926103380163049194}
   - {fileID: 5869715478814395323}
-  - {fileID: 6809364587666608687}
+  - {fileID: 8040429107509513753}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -59.874, z: 0}
 --- !u!114 &7337665383833818599
@@ -666,13 +698,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7352343410562063557}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.5897712, y: -0.35284895, z: -0.336614, w: 0.6437069}
-  m_LocalPosition: {x: 0.5868246, y: 0.29243132, z: 0.38494545}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.30000004, y: 0.29999998, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5666340172471909981}
-  m_LocalEulerAnglesHint: {x: -85.435, y: -45.955, z: -12.451}
+  m_Father: {fileID: 8040429107509513753}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: -90}
 --- !u!33 &2847093634197841073
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -736,6 +768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c154e1526114ac481d6aa12094f8a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pivot: {fileID: 8040429107509513753}
 --- !u!1 &7463351871310874145
 GameObject:
   m_ObjectHideFlags: 0

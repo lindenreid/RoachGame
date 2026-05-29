@@ -170,6 +170,8 @@ public partial class Roach
         // --------------------------------------------------------------------
         public override void RunState(float deltaTime)
         {
+            _roach._gun.PointAtPlayer();
+
             _timeBetweenUse += deltaTime;
             if(_timeBetweenUse >= _roach._weaponUseInterval)
             {
