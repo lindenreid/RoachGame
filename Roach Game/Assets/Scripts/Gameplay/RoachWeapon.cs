@@ -13,9 +13,26 @@ public class RoachWeapon : MonoBehaviour
     // Methods
     // ------------------------------------------------------------------------
     [SerializeField] private Transform _pivot;
+    [SerializeField] private GameObject _bangText;
+    [SerializeField] private float _textAppearTime;
+
+    private float _textTime;
 
     // ------------------------------------------------------------------------
     // Methods
+    // ------------------------------------------------------------------------
+    private void Update ()
+    {
+        if(_textTime <= _textAppearTime)
+        {
+            _textTime += Time.deltaTime;
+            if(_textTime >= _textAppearTime)
+            {
+                _bangText.SetActive(false);
+            }
+        }
+    }
+
     // ------------------------------------------------------------------------
     public void PointAtPlayer ()
     {
@@ -25,6 +42,9 @@ public class RoachWeapon : MonoBehaviour
     // ------------------------------------------------------------------------
     public void Use ()
     {
+        _textTime = 0.0f;
+        _bangText.SetActive(true);
+        
         Player._Instance.Damage();
     }
 }
