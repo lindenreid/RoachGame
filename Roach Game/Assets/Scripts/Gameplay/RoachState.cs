@@ -5,7 +5,10 @@
  * Copyright 2019 - 2026 Studio Tilia
  */
 
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
 
 public partial class Roach
 {
@@ -32,6 +35,8 @@ public partial class Roach
         public virtual void ExitState() {}
         // --------------------------------------------------------------------
         public virtual void RunState(float deltaTime) {}
+        // --------------------------------------------------------------------
+        public virtual void OnDrawGizmos () {}
     }
 
     // ------------------------------------------------------------------------
@@ -83,6 +88,12 @@ public partial class Roach
     protected class RoachRunningState : RoachState
     {
         // --------------------------------------------------------------------
+        // Variables
+        // --------------------------------------------------------------------
+        private List<Vector3> _randomPositionGizmos;
+        private List<Vector3> _foundPositionGizmos;
+
+        // --------------------------------------------------------------------
         // Methods
         // --------------------------------------------------------------------
         public override void EnterState(Roach roach)
@@ -95,7 +106,56 @@ public partial class Roach
             _roach._roachSplines.Rotate(0, Random.Range(0, 350), 0);
             _roach._roachSplines.position = _roach.transform.position;
 
+            _randomPositionGizmos = new List<Vector3>();
+            _foundPositionGizmos = new List<Vector3>();
+
+            var knots = _roach._movementSplineContainer.Spline.Knots.ToArray();
+            for(int i = 1; i < knots.Length; i++)
+            {
+                SetKnotPosition(knots, i);
+            }
+
             _roach._movementSplineAnimator.Restart(true);
+        }
+
+        // --------------------------------------------------------------------
+        private void SetKnotPosition(UnityEngine.Splines.BezierKnot[] knots, int splineIndex)
+        {
+            Vector3 randomPos =  (Vector3)knots[splineIndex - 1].Position + Random.onUnitSphere * _roach._pathKnotDistance;
+
+            _randomPositionGizmos.Add(randomPos);
+            
+            NavMeshHit navMeshHit;
+            NavMesh.SamplePosition(randomPos, out navMeshHit, 10.0f, NavMesh.AllAreas);
+            if(navMeshHit.hit)
+            {
+                var targetKnot = knots[splineIndex];
+                targetKnot.Position = _roach._movementSplineContainer.transform.InverseTransformPoint(navMeshHit.position);
+                _roach._movementSplineContainer.Spline.SetKnot(splineIndex, targetKnot);  
+
+                _foundPositionGizmos.Add(navMeshHit.position); 
+            }
+        }
+
+        // --------------------------------------------------------------------
+        public override void OnDrawGizmos ()
+        {
+            if(_randomPositionGizmos == null || _foundPositionGizmos == null)
+            {
+                return;
+            }
+
+            Gizmos.color = Color.yellow;
+            foreach(Vector3 pos in _randomPositionGizmos)
+            {
+                Gizmos.DrawSphere(pos, 0.2f);
+            }
+
+            Gizmos.color = Color.green;
+            foreach(Vector3 pos in _foundPositionGizmos)
+            {
+                Gizmos.DrawSphere(pos, 0.2f);
+            }
         }
 
         // --------------------------------------------------------------------
@@ -134,6 +194,8 @@ public partial class Roach
         public override void EnterState(Roach roach)
         {
             base.EnterState(roach);
+
+            _roach._agent.enabled = false;
 
             _roach._movementSplineAnimator.enabled = false;
             _roach._deathSplineAnimator.enabled = false;

@@ -5,8 +5,8 @@
  * Copyright 2019 - 2026 Studio Tilia
  */
 
-using System.Linq;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Splines;
 
 public partial class Roach : NPC
@@ -24,6 +24,7 @@ public partial class Roach : NPC
     // ------------------------------------------------------------------------
     [SerializeField] private float _runSpeed = 0.01f;
     [SerializeField] private Vector2 _idleTimeMinMax;
+    [SerializeField] private SplineContainer _movementSplineContainer;
     [SerializeField] private SplineAnimate _movementSplineAnimator;
     [SerializeField] private SplineAnimate _deathSplineAnimator;
     [SerializeField] private Transform _roachSplines;
@@ -36,6 +37,8 @@ public partial class Roach : NPC
     [SerializeField] private Collider _collider;
     [SerializeField] private RoachWeapon _gun;
     [SerializeField] private float _weaponUseInterval;
+    [SerializeField] private float _pathKnotDistance = 0.5f;
+    [SerializeField] private NavMeshAgent _agent;
 
     // shared state variables
     private int _health;
@@ -121,5 +124,13 @@ public partial class Roach : NPC
 
         _rightAntennae.localRotation = _rightAntennaeNeutralRot;
         _rightAntennae.localPosition = _rightAntennaeNeutralPos;
+    }
+
+    // ------------------------------------------------------------------------
+    private void OnDrawGizmos ()
+    {
+        if(_currentState == null) return;
+
+        _currentState.OnDrawGizmos();
     }
 }
