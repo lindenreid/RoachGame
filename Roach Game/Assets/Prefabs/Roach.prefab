@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3157500546342734654}
   - component: {fileID: 1092307004905838059}
   - component: {fileID: 2590281031435136036}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8040429107509513753}
-  m_Layer: 3
+  m_Layer: 2
   m_Name: WeaponPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -759,7 +759,6 @@ MonoBehaviour:
   _idleTimeMinMax: {x: 1, y: 3}
   _movementSplineContainer: {fileID: 2266932019672325890}
   _movementSplineAnimator: {fileID: 7345907774376965766}
-  _deathSplineContainer: {fileID: 871625994224767373}
   _deathSplineAnimator: {fileID: 3279602686272923590}
   _roachSplines: {fileID: 106991363144284796}
   _leftAntennae: {fileID: 3926103380163049194}
@@ -876,7 +875,7 @@ GameObject:
   - component: {fileID: 2847093634197841073}
   - component: {fileID: 5946129714279037038}
   - component: {fileID: 8403393850747380025}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1059,7 +1058,7 @@ GameObject:
   - component: {fileID: 2647378413215154304}
   - component: {fileID: 6500256978924337984}
   - component: {fileID: 2233277074647391477}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text_Bang
   m_TagString: Untagged
   m_Icon: {fileID: 0}
