@@ -113,6 +113,7 @@ public partial class Roach : NPC
             case RoachStateType.Collected: _currentState = new RoachCollectedState(); break;
             default: Debug.LogError("unhandled roach state: " + newState); break;
         }
+        //Debug.LogFormat("{0} new state: {1}", gameObject.name, _currentState);
         _currentState.EnterState(this);
     }
 

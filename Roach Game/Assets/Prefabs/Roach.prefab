@@ -646,10 +646,10 @@ MonoBehaviour:
         z: 0.97427326
       Rotation:
         value:
-          x: 0.94757783
-          y: -0.19987229
-          z: -0.20610945
-          w: 0.14023612
+          x: 0.000000008526492
+          y: -3.7270482e-16
+          z: 1
+          w: -0.00000004371139
     m_MetaData:
     - Mode: 2
       Tension: 0.5
@@ -729,8 +729,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5824890116372132804}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.00016338858, y: 0.3485955, z: 0.0000046065334, w: 0.93727326}
-  m_LocalPosition: {x: 26.163452, y: 0.17998832, z: 1.4999983}
+  m_LocalRotation: {x: -0.00022827253, y: 0.48701993, z: 0.000006438124, w: 0.87339085}
+  m_LocalPosition: {x: 26.163452, y: 0.17998332, z: 1.4999976}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -759,6 +759,7 @@ MonoBehaviour:
   _idleTimeMinMax: {x: 1, y: 3}
   _movementSplineContainer: {fileID: 2266932019672325890}
   _movementSplineAnimator: {fileID: 7345907774376965766}
+  _deathSplineContainer: {fileID: 871625994224767373}
   _deathSplineAnimator: {fileID: 3279602686272923590}
   _roachSplines: {fileID: 106991363144284796}
   _leftAntennae: {fileID: 3926103380163049194}
@@ -835,7 +836,7 @@ MonoBehaviour:
   m_LoopMode: 0
   m_Method: 0
   m_Duration: 0.5
-  m_MaxSpeed: 4.052121
+  m_MaxSpeed: 4.1391354
   m_EasingMode: 0
   m_AlignmentMode: 1
   m_ObjectForwardAxis: 2

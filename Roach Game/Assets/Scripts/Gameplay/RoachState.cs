@@ -180,6 +180,8 @@ public partial class Roach
 
             _roach.ResetAntennae();
 
+            _roach._agent.enabled = false;
+
             _roach._roachSplines.position = _roach.transform.position;
             _roach._deathSplineAnimator.Play();
         }
