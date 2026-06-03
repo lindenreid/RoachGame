@@ -1160,6 +1160,8 @@ MonoBehaviour:
   _dialogueStart: {fileID: 11400000, guid: f19ca6d807d1d4e57a814e27408d4d14, type: 2}
   _runSpeed: 0.1
   _idleTimeMinMax: {x: 1, y: 3}
+  _pathKnotDistance: 0.05
+  _agent: {fileID: 8888632713665553354}
   _movementSplineContainer: {fileID: 2266932019672325890}
   _movementSplineAnimator: {fileID: 7345907774376965766}
   _deathSplineAnimator: {fileID: 3279602686272923590}
@@ -1169,12 +1171,20 @@ MonoBehaviour:
   _antennaeAnimMin: {x: -300, y: 0, z: 0}
   _antennaeAnimMax: {x: 300, y: 0, z: 0}
   _antennaeFlipTime: 0.2
+  _legs:
+  - {fileID: 9218193935738004711}
+  - {fileID: 4325318879171813255}
+  - {fileID: 2580983002339577347}
+  - {fileID: 7564833705601922667}
+  - {fileID: 8723526703444251852}
+  - {fileID: 2439697673055747048}
+  _legAnimMin: {x: 0, y: -30, z: 0}
+  _legAnimMax: {x: 0, y: 30, z: 0}
+  _legFlipTime: 0.5
   _maxHealth: 2
   _collider: {fileID: 3457381573241350565}
   _gun: {fileID: 8403393850747380025}
   _weaponUseInterval: 1.5
-  _pathKnotDistance: 0.05
-  _agent: {fileID: 8888632713665553354}
   _collectUI: {fileID: 8110903387017073136}
 --- !u!114 &7345907774376965766
 MonoBehaviour:

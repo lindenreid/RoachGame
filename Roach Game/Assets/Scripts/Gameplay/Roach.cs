@@ -22,23 +22,34 @@ public partial class Roach : NPC
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
+    [Header("Movement")]
     [SerializeField] private float _runSpeed = 0.01f;
     [SerializeField] private Vector2 _idleTimeMinMax;
+    [SerializeField] private float _pathKnotDistance = 0.5f;
+    [SerializeField] private NavMeshAgent _agent;
+    [Header("Splines")]
     [SerializeField] private SplineContainer _movementSplineContainer;
     [SerializeField] private SplineAnimate _movementSplineAnimator;
     [SerializeField] private SplineAnimate _deathSplineAnimator;
     [SerializeField] private Transform _roachSplines;
+    [Header("Antennae")]
     [SerializeField] private Transform _leftAntennae;
     [SerializeField] private Transform _rightAntennae;
     [SerializeField] private Vector3 _antennaeAnimMin;
     [SerializeField] private Vector3 _antennaeAnimMax;
     [SerializeField] private float _antennaeFlipTime;
+    [Header("Legs")]
+    [SerializeField] private Transform[] _legs;
+    [SerializeField] private Vector3 _legAnimMin;
+    [SerializeField] private Vector3 _legAnimMax;
+    [SerializeField] private float _legFlipTime;
+    [Header("Health")]
     [SerializeField] private int _maxHealth = 1;
     [SerializeField] private Collider _collider;
+    [Header("Weapons")]
     [SerializeField] private RoachWeapon _gun;
     [SerializeField] private float _weaponUseInterval;
-    [SerializeField] private float _pathKnotDistance = 0.5f;
-    [SerializeField] private NavMeshAgent _agent;
+    [Header("Collection")]
     [SerializeField] private GameObject _collectUI;
 
     // shared state variables
