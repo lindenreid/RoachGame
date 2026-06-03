@@ -5,6 +5,8 @@
  * Copyright 2019 - 2026 Studio Tilia
  */
 
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Splines;
@@ -56,6 +58,8 @@ public partial class Roach : NPC
     private int _health;
     private RoachState _currentState;
 
+    private MeshRenderer[] _renderers;
+
     // antennae rotation
     private Vector3 _leftAntennaeNeutralPos;
     private Quaternion _leftAntennaeNeutralRot;
@@ -78,6 +82,8 @@ public partial class Roach : NPC
         _rightAntennaeNeutralRot = _rightAntennae.localRotation;
 
         _collectUI.SetActive(false);
+
+        _renderers = GetComponentsInChildren<MeshRenderer>().ToArray();
 
         EnterState(RoachStateType.Idle);
     }

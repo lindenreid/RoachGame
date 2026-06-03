@@ -255,6 +255,11 @@ public partial class Roach
             _roach._movementSplineAnimator.enabled = false;
             _roach._deathSplineAnimator.enabled = false;
 
+            foreach(MeshRenderer renderer in _roach._renderers)
+            {
+                renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+            }
+
             _roach._collider.enabled = false;
             EventBus._Instance.InvokeRoachCollected(_roach);
         }
