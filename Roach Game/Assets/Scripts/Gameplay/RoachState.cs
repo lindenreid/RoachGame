@@ -36,6 +36,10 @@ public partial class Roach
         // --------------------------------------------------------------------
         public virtual void RunState(float deltaTime) {}
         // --------------------------------------------------------------------
+        public virtual void OnMouseOver () {}
+        // --------------------------------------------------------------------
+        public virtual void OnMouseExit () {}
+        // --------------------------------------------------------------------
         public virtual void OnDrawGizmos () {}
     }
 
@@ -182,8 +186,33 @@ public partial class Roach
 
             _roach._agent.enabled = false;
 
+            _roach._collectUI.SetActive(true);
+
             _roach._roachSplines.position = _roach.transform.position;
             _roach._deathSplineAnimator.Play();
+        }
+
+        // --------------------------------------------------------------------
+        public override void OnMouseOver ()
+        {
+            _roach._collectUI.SetActive(true);
+
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                _roach.EnterState(RoachStateType.Collected);
+            }
+        }
+
+        // --------------------------------------------------------------------
+        public override void OnMouseExit ()
+        {
+            _roach._collectUI.SetActive(false);
+        }
+
+        // --------------------------------------------------------------------
+        public override void ExitState()
+        {
+            _roach._collectUI.SetActive(false);
         }
     }
 

@@ -39,6 +39,7 @@ public partial class Roach : NPC
     [SerializeField] private float _weaponUseInterval;
     [SerializeField] private float _pathKnotDistance = 0.5f;
     [SerializeField] private NavMeshAgent _agent;
+    [SerializeField] private GameObject _collectUI;
 
     // shared state variables
     private int _health;
@@ -65,22 +66,27 @@ public partial class Roach : NPC
         _rightAntennaeNeutralPos = _rightAntennae.localPosition;
         _rightAntennaeNeutralRot = _rightAntennae.localRotation;
 
-        EnterState(RoachStateType.Idle);
-    }
+        _collectUI.SetActive(false);
 
-    // ------------------------------------------------------------------------
-    protected override void OnMouseDown()
-    {
-        if(_currentState is RoachDeadState)
-        {
-            EnterState(RoachStateType.Collected);
-        }
+        EnterState(RoachStateType.Idle);
     }
 
     // ------------------------------------------------------------------------
     private void Update ()
     {
         _currentState.RunState(Time.deltaTime);
+    }
+
+    // ------------------------------------------------------------------------
+    private void OnMouseOver ()
+    {
+        _currentState.OnMouseOver();
+    }
+
+    // ------------------------------------------------------------------------
+    private void OnMouseExit ()
+    {
+         _currentState.OnMouseExit();
     }
 
     // ------------------------------------------------------------------------
