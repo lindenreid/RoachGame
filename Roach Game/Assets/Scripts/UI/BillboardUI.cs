@@ -13,6 +13,7 @@ public class BillboardUI : MonoBehaviour
     // Variables
     // ------------------------------------------------------------------------
     private Camera _mainCamera;
+    private Vector3 _offset;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -20,6 +21,7 @@ public class BillboardUI : MonoBehaviour
     private void Start()
     {
         _mainCamera = Camera.main;
+        _offset = transform.localPosition;
     }
 
     // ------------------------------------------------------------------------
@@ -27,5 +29,7 @@ public class BillboardUI : MonoBehaviour
     {
         transform.LookAt(_mainCamera.transform);
         transform.Rotate(0, 180, 0);
+
+        transform.position = transform.parent.position + _offset;
     }
 }
