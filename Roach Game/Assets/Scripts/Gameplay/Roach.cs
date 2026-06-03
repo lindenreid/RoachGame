@@ -92,6 +92,8 @@ public partial class Roach : NPC
     // ------------------------------------------------------------------------
     public void Hit ()
     {
+        if(_health <= 0) return;
+
         EventBus._Instance.InvokeRoachHit();
 
         _health--;
