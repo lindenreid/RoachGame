@@ -126,19 +126,24 @@ public partial class Roach
             _legRots = new Vector3[_roach._legs.Length];
             for(int i = 0; i < _legRots.Length; i++)
             {
-                _legRots[i] = Vector3.Lerp(_roach._legAnimMin, _roach._legAnimMax, Random.Range(0.0f, 1.0f));
+                _legRots[i] = _roach._legAnimMax;
             }
         }
 
         // --------------------------------------------------------------------
         private void SetKnotPosition(UnityEngine.Splines.BezierKnot[] knots, int splineIndex)
         {
-            Vector3 randomPos =  (Vector3)knots[splineIndex - 1].Position + Random.onUnitSphere * _roach._pathKnotDistance;
+            Vector3 randomDisplacement = Random.onUnitSphere;
+            randomDisplacement.y = 0;
+            randomDisplacement *= _roach._pathKnotDistance;
+
+            Vector3 prevKnotPos = _roach._movementSplineContainer.transform.TransformPoint((Vector3)knots[splineIndex - 1].Position);
+            Vector3 randomPos = prevKnotPos + randomDisplacement;
 
             _randomPositionGizmos.Add(randomPos);
             
             NavMeshHit navMeshHit;
-            NavMesh.SamplePosition(randomPos, out navMeshHit, 10.0f, NavMesh.AllAreas);
+            NavMesh.SamplePosition(randomPos, out navMeshHit, 2.0f, NavMesh.AllAreas);
             if(navMeshHit.hit)
             {
                 var targetKnot = knots[splineIndex];

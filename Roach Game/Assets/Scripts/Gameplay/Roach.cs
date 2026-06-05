@@ -25,7 +25,6 @@ public partial class Roach : NPC
     // Variables
     // ------------------------------------------------------------------------
     [Header("Movement")]
-    [SerializeField] private float _runSpeed = 0.01f;
     [SerializeField] private Vector2 _idleTimeMinMax;
     [SerializeField] private float _pathKnotDistance = 0.5f;
     [SerializeField] private NavMeshAgent _agent;
