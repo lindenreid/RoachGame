@@ -41,8 +41,7 @@ public partial class Roach : NPC
     [SerializeField] private float _antennaeFlipTime;
     [Header("Legs")]
     [SerializeField] private Transform[] _legs;
-    [SerializeField] private Vector3 _legAnimMin;
-    [SerializeField] private Vector3 _legAnimMax;
+    [SerializeField] private Vector3 _legAnim;
     [SerializeField] private float _legFlipTime;
     [Header("Health")]
     [SerializeField] private int _maxHealth = 1;

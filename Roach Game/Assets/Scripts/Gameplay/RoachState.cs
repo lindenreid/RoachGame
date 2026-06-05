@@ -126,7 +126,8 @@ public partial class Roach
             _legRots = new Vector3[_roach._legs.Length];
             for(int i = 0; i < _legRots.Length; i++)
             {
-                _legRots[i] = _roach._legAnimMax;
+                _legRots[i] = _roach._legAnim;
+                if(Random.Range(0,2) == 0) _legRots[i] = -_legRots[i];
             }
         }
 
