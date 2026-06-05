@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _walkSpeed = 5.0f;
     [SerializeField] private float _runSpeed = 7.0f;
     [SerializeField] private float _mouseSensitivity;
+    [SerializeField] private CharacterController _cc;
     [Header("Shoe animation")]
     [SerializeField] private Transform _shoeDefaultPos;
     [SerializeField] private SplineContainer _shoeSpline;
@@ -147,10 +148,10 @@ public class Player : MonoBehaviour
             speed = _runSpeed;
         }
 
-        transform.Translate(
-            ((vertical * Vector3.forward) + (horizontal * Vector3.right))
-            * speed * Time.deltaTime
-        );
+        Vector3 playerForward = transform.TransformDirection(Vector3.forward);
+        Vector3 playerRight = transform.TransformDirection(Vector3.right);
+        _cc.Move(((vertical * playerForward) + (horizontal * playerRight))
+            * speed * Time.deltaTime);
     }
 
     // ------------------------------------------------------------------------
