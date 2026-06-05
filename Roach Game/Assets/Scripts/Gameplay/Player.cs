@@ -22,17 +22,23 @@ public class Player : MonoBehaviour
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
+    [Header("Movement")]
     [SerializeField] private float _walkSpeed = 5.0f;
     [SerializeField] private float _runSpeed = 7.0f;
     [SerializeField] private float _mouseSensitivity;
+    [Header("Shoe animation")]
+    [SerializeField] private Transform _shoeDefaultPos;
     [SerializeField] private SplineContainer _shoeSpline;
     [SerializeField] private SplineAnimate _splineAnimator;
+    [Header("Aiming reticle")]
     [SerializeField] private Transform _reticleDefaultPosition;
     [SerializeField] private MeshRenderer _reticleRenderer;
     [SerializeField] private Transform _aimReticle;
     [SerializeField] private float _maxAimDistance;
+    [Header("Roach collection")]
     [SerializeField] private LayerMask _roachLayer;
     [SerializeField] private Transform _roachHoldLoc;
+    [Header("Combat")]
     [SerializeField] private int _maxHealth = 5;
 
     // movement and aiming
@@ -150,6 +156,8 @@ public class Player : MonoBehaviour
     // ------------------------------------------------------------------------
     private void UpdateShoe ()
     {
+        SetShoeSplineStartPos();
+
         RaycastHit raycastHit;
         bool aimRaycastHit = Physics.Raycast(
                 Camera.main.transform.position,
@@ -189,6 +197,14 @@ public class Player : MonoBehaviour
             _needsAnimRestart = false;
             _splineAnimator.Restart(false);
         }
+    }
+
+    // ------------------------------------------------------------------------
+    private void SetShoeSplineStartPos()
+    {
+        var targetKnot = _shoeSpline.Spline.Knots.ToArray()[0];
+        targetKnot.Position = _shoeSpline.transform.InverseTransformPoint(_shoeDefaultPos.position);
+        _shoeSpline.Spline.SetKnot(0, targetKnot);
     }
 
     // ------------------------------------------------------------------------
