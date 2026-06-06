@@ -1,5 +1,5 @@
 # RoachGame
-heh heh... roachie
+Play the latest WIP build in your browser [on Itch here](https://outofmanna.itch.io/roach-game).
 
 ## Open-Source Assets
 - [Splat/squish sound by mrickey13](https://freesound.org/people/mrickey13/sounds/515620/)
