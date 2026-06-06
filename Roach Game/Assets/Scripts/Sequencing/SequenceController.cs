@@ -1,0 +1,118 @@
+/*
+ * File: SequenceController.cs
+ * Created: 06/06/2026, 2:48:04 PM
+ * Author: Travis Reid
+ * Copyright 2019 - 2026 Studio Tilia
+ */
+
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+public enum GameStateType
+{
+    Invalid, Action, Cinematic, Dialogue
+}
+
+public partial class SequenceController : MonoBehaviour
+{
+    // ------------------------------------------------------------------------
+    // Variables
+    // ------------------------------------------------------------------------
+    [SerializeField] private ClueData _gameStartClue;
+    [SerializeField] private Player _player;
+
+    private GameState _activeState;
+
+    private Dictionary<ClueData, Sequence> _sequencesByClueUnlock;
+    private Sequence _activeSequence;
+
+    // ------------------------------------------------------------------------
+    // Properties
+    // ------------------------------------------------------------------------
+    public static SequenceController _Instance { get; private set; }
+
+    public GameStateType _ActiveStateType
+    {
+        get
+        {
+            if(_activeState == null) return GameStateType.Invalid;
+            else if(_activeState is GameActionState) return GameStateType.Action;
+            else if(_activeState is GameCinematicState) return GameStateType.Cinematic;
+            else if(_activeState is GameDialogueState) return GameStateType.Dialogue;
+            return GameStateType.Invalid;
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    // Methods
+    // ------------------------------------------------------------------------
+    private void Awake()
+    {
+        if (_Instance != null && _Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+
+        _Instance = this;
+    }
+
+    // ------------------------------------------------------------------------
+    private void Start ()
+    {
+        _sequencesByClueUnlock = new Dictionary<ClueData, Sequence>();
+        foreach(Sequence sequence in gameObject.GetComponentsInChildren<Sequence>())
+        {
+            if(_sequencesByClueUnlock.Keys.Contains(sequence._TriggerClue))
+            {
+                Debug.LogError("sequences have idential start keys: " + sequence + " and " + _sequencesByClueUnlock[sequence._TriggerClue]);
+                continue;
+            }
+
+            _sequencesByClueUnlock.Add(sequence._TriggerClue, sequence);
+        }
+
+        EventBus._Instance.ClueUnlocked += HandleClueUnlocked;
+        EventBus._Instance.VisitDialogueNode += HandleVisitDialogueNode;
+
+        EventBus._Instance.InvokeClueUnlocked(_gameStartClue);
+    }
+
+    // ------------------------------------------------------------------------
+    private void HandleClueUnlocked (ClueData clue)
+    {
+        if(_sequencesByClueUnlock.Keys.Contains(clue))
+        {
+            Sequence unlockedSeq = _sequencesByClueUnlock[clue];
+            if(unlockedSeq != null)
+            {
+                _activeSequence = unlockedSeq;
+                EnterState(_activeSequence._GameStateType);
+                Debug.LogFormat("unlocked sequence: {0}", _activeSequence);
+            }   
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    private void HandleVisitDialogueNode(DialogueNode node)
+    {
+        EnterState(GameStateType.Dialogue);
+    }
+
+    // ------------------------------------------------------------------------
+    private void EnterState(GameStateType newState)
+    {
+        _activeState?.ExitState();
+
+        switch(newState)
+        {
+            case GameStateType.Action: _activeState = new GameActionState(); break;
+            case GameStateType.Cinematic: _activeState = new GameCinematicState(); break;
+            case GameStateType.Dialogue: _activeState = new GameDialogueState(); break;
+            default: Debug.LogError("unhandled game state: " + newState); break;
+        }
+        Debug.LogFormat("{0} new state: {1}", gameObject.name, _activeState);
+        _activeState.EnterState(this);
+    }
+}

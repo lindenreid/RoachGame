@@ -1,31 +1,32 @@
 /*
- * File: ClueData.cs
- * Created: 25/05/2026, 6:08:45 PM
+ * File: Sequence.cs
+ * Created: 06/06/2026, 2:47:17 PM
  * Author: Travis Reid
  * Copyright 2019 - 2026 Studio Tilia
  */
 
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "clue_", menuName = "Dialogue/Clue Data", order = 1)]
-public class ClueData : GameData
+public class Sequence : MonoBehaviour
 {
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
-    [SerializeField] private string _name;
+    [SerializeField] private ClueData _triggerClue;
+    [SerializeField] private GameObject _objects;
+    [SerializeField] private GameStateType _gameStateType;
 
     // ------------------------------------------------------------------------
     // Properties
     // ------------------------------------------------------------------------
-    public string _Name => _name;
-    public string _FileName => "clue_" + _Name;
+    public ClueData _TriggerClue => _triggerClue;
+    public GameStateType _GameStateType => _gameStateType;
 
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
-    public void InitFromParseData (string name)
+    public void StartSequence ()
     {
-        _name = name;
+        _objects.SetActive(true);
     }
 }

@@ -15,6 +15,9 @@ public class EventBus : MonoBehaviour
     public delegate void DialogueNodeDelegate(DialogueNode node);
     public event DialogueNodeDelegate VisitDialogueNode;
 
+    public delegate void ClueDelegate(ClueData clue);
+    public event ClueDelegate ClueUnlocked;
+
     public delegate void EmptyDelegate();
     public event EmptyDelegate RoachHit;
     public event EmptyDelegate PlayerDamaged;
@@ -39,6 +42,12 @@ public class EventBus : MonoBehaviour
         }
 
         _Instance = this;
+    }
+
+    // ------------------------------------------------------------------------
+    public void InvokeClueUnlocked(ClueData clue)
+    {
+        ClueUnlocked?.Invoke(clue);
     }
 
     // ------------------------------------------------------------------------

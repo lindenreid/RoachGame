@@ -12,14 +12,6 @@ using UnityEngine.Splines;
 public class Player : MonoBehaviour
 {
     // ------------------------------------------------------------------------
-    // Types
-    // ------------------------------------------------------------------------
-    private enum PlayerState
-    {
-        Explore, Dialogue
-    }
-
-    // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
     [Header("Movement")]
@@ -47,9 +39,6 @@ public class Player : MonoBehaviour
     private float _rotationX;
     private float _rotationY;
     private bool _needsAnimRestart;
-
-    // state
-    private PlayerState _state;
     private int _health;
 
     // aiming reticle
@@ -87,16 +76,12 @@ public class Player : MonoBehaviour
     // ------------------------------------------------------------------------
     private void Start ()
     {
-        Cursor.lockState = CursorLockMode.Locked;
         _cameraTrans = Camera.main.transform;
 
 #if UNITY_WEBGL
         _mouseSensitivity = _mouseSensitivity / 2.0f;
 #endif
 
-        _state = PlayerState.Explore;
-
-        EventBus._Instance.VisitDialogueNode += HandleVisitDialogueNode;
         EventBus._Instance.RoachCollected += HandleRoachCollected;
 
         _reticleMat = _reticleRenderer.material;
@@ -110,13 +95,8 @@ public class Player : MonoBehaviour
     // ------------------------------------------------------------------------
     private void Update ()
     {
-        switch(_state)
-        {
-            case PlayerState.Explore: 
-                LookAndMove();
-                UpdateShoe();
-                break;
-        }
+        LookAndMove();
+        UpdateShoe();
     }
 
     // ------------------------------------------------------------------------
@@ -214,13 +194,6 @@ public class Player : MonoBehaviour
         var targetKnot = _shoeSpline.Spline.Knots.ToArray()[1];
         targetKnot.Position = _shoeSpline.transform.InverseTransformPoint(targetWorldPos);
         _shoeSpline.Spline.SetKnot(1, targetKnot);
-    }
-
-    // ------------------------------------------------------------------------
-    private void HandleVisitDialogueNode(DialogueNode node)
-    {
-        _state = PlayerState.Dialogue;
-        Cursor.lockState = CursorLockMode.None;
     }
 
     // ------------------------------------------------------------------------
