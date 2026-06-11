@@ -7,3 +7,4 @@ Play the latest WIP build in your browser [on Itch here](https://outofmanna.itch
 - [Low poly gun 3d model by Figusorasu](https://sketchfab.com/3d-models/low-poly-gun-1afecf3983ad4e1bba2ea92365ebfe2e)
 - [Another Danger font by The Branded Quotes](https://www.dafont.com/another-danger.font?text=BANG%21&back=theme)
 - Family stock photos by [Kampus Production](https://www.pexels.com/photo/a-woman-using-a-laptop-6248447/) and [Dmitry Rodionov](https://www.pexels.com/photo/family-playing-together-next-to-the-christmas-tree-15293999/)
+- [Drywall texture](https://www.pexels.com/photo/close-up-photo-of-a-beige-painted-concrete-wall-12998745/) by Sora NoAo
