@@ -1613,7 +1613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerClue: {fileID: 11400000, guid: 581071a1b7f1e4449868dc6887c94234, type: 2}
-  _objects: {fileID: 1324973834560979814}
+  _objects: {fileID: 865359250}
   _gameStateType: 1
 --- !u!1 &757523287
 GameObject:
@@ -1808,7 +1808,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &865359251
 Transform:
   m_ObjectHideFlags: 0
@@ -4791,7 +4791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &1550246620760539853
 MeshFilter:
   m_ObjectHideFlags: 0
