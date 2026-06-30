@@ -15,18 +15,22 @@ public class Sequence : MonoBehaviour
     [SerializeField] private ClueData _triggerClue;
     [SerializeField] private GameObject _objects;
     [SerializeField] private GameStateType _gameStateType;
+    [SerializeField] private AudioClip _music;
 
     // ------------------------------------------------------------------------
     // Properties
     // ------------------------------------------------------------------------
     public ClueData _TriggerClue => _triggerClue;
     public GameStateType _GameStateType => _gameStateType;
+    public AudioClip _Music => _music;
 
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
     public void StartSequence ()
     {
+        EventBus._Instance.InvokeSequenceStarted(this);
+
         _objects.SetActive(true);
     }
 }

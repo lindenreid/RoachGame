@@ -1,25 +1,27 @@
 /*
- * File: AudioController.cs
- * Created: 26/05/2026, 9:20:16 PM
+ * Filename: GameController.cs
+ * Created: 06/30/26, 1:20:23 pm
  * Author: Travis Reid
  * Copyright 2019 - 2026 Studio Tilia
  */
 
 using UnityEngine;
 
-public class AudioController : MonoBehaviour
+public class GameController : MonoBehaviour
 {
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
-    [SerializeField] private AudioSource _sfxAudioSource;
-    [SerializeField] private AudioSource _musicAudioSource;
-    [SerializeField] private AudioClip _roachHitClip;
+    [SerializeField] private ClueData _gameStartClue;
+    [SerializeField] private ClueData _firstRoachHitClue;
+
+    private bool _hitFirstRoach;
+    private bool _initialized;
 
     // ------------------------------------------------------------------------
     // Properties
     // ------------------------------------------------------------------------
-    public static AudioController _Instance { get; private set; }
+    public static GameController _Instance { get; private set; }
 
     // ------------------------------------------------------------------------
     // Methods
@@ -39,19 +41,31 @@ public class AudioController : MonoBehaviour
     private void Start ()
     {
         EventBus._Instance.RoachHit += HandleRoachHit;
-        EventBus._Instance.SequenceStarted += HandleSequenceStarted;
+    }
+
+    // ------------------------------------------------------------------------
+    private void Update ()
+    {
+        if(!_initialized)
+        {
+            Initialize();
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    private void Initialize()
+    {
+        _initialized = true;
+        EventBus._Instance.InvokeClueUnlocked(_gameStartClue);
     }
 
     // ------------------------------------------------------------------------
     private void HandleRoachHit ()
     {
-        _sfxAudioSource.PlayOneShot(_roachHitClip);
-    }
-
-    // ------------------------------------------------------------------------
-    private void HandleSequenceStarted(Sequence sequence)
-    {
-        _musicAudioSource.clip = sequence._Music;
-        _musicAudioSource.Play();
+        if(!_hitFirstRoach)
+        {
+            EventBus._Instance.InvokeClueUnlocked(_firstRoachHitClue);
+            EventBus._Instance.RoachHit -= HandleRoachHit;
+        }
     }
 }

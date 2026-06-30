@@ -25,6 +25,9 @@ public class EventBus : MonoBehaviour
     public delegate void RoachDelegate(Roach roach);
     public event RoachDelegate RoachCollected;
 
+    public delegate void SequenceDelegate(Sequence sequence);
+    public event SequenceDelegate SequenceStarted;
+
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
@@ -42,6 +45,12 @@ public class EventBus : MonoBehaviour
         }
 
         _Instance = this;
+    }
+
+    // ------------------------------------------------------------------------
+    public void InvokeSequenceStarted(Sequence sequence)
+    {
+        SequenceStarted?.Invoke(sequence);
     }
 
     // ------------------------------------------------------------------------

@@ -19,7 +19,6 @@ public partial class SequenceController : MonoBehaviour
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
-    [SerializeField] private ClueData _gameStartClue;
     [SerializeField] private Player _player;
 
     private GameState _activeState;
@@ -75,8 +74,6 @@ public partial class SequenceController : MonoBehaviour
 
         EventBus._Instance.ClueUnlocked += HandleClueUnlocked;
         EventBus._Instance.VisitDialogueNode += HandleVisitDialogueNode;
-
-        EventBus._Instance.InvokeClueUnlocked(_gameStartClue);
     }
 
     // ------------------------------------------------------------------------
@@ -88,6 +85,7 @@ public partial class SequenceController : MonoBehaviour
             if(unlockedSeq != null)
             {
                 _activeSequence = unlockedSeq;
+                _activeSequence.StartSequence();
                 EnterState(_activeSequence._GameStateType);
                 Debug.LogFormat("unlocked sequence: {0}", _activeSequence);
             }   
