@@ -1,10 +1,11 @@
-﻿Shader "Custom/Unlit"
+﻿Shader "Custom/Roach"
 {
     Properties
     {
         [MainColor] _BaseColor("BaseColor", Color) = (1,1,1,1)
         [MainTexture] _BaseMap("BaseMap", 2D) = "white" {}
         _Brightness("Brightness", Float) = 0
+        _AlphaClip("Alpha Clip", Float) = 0.5
     }
 
     SubShader
@@ -32,8 +33,18 @@
                 "LightMode"="UniversalForward"
                 "Queue"="Transparent"
             }
+
             ZWrite Off
             Blend SrcAlpha OneMinusSrcAlpha
+
+            Stencil
+            {
+                Ref 3
+                Comp Always
+                Pass Replace
+                Fail Replace
+                ZFail Keep
+            }
 
             HLSLPROGRAM
             #pragma vertex vert
@@ -54,6 +65,7 @@
             TEXTURE2D(_BaseMap);
             SAMPLER(sampler_BaseMap);
             half _Brightness;
+            half _AlphaClip;
 
             Varyings vert(Attributes IN)
             {
@@ -68,6 +80,10 @@
                 half4 tex = SAMPLE_TEXTURE2D(_BaseMap, sampler_BaseMap, IN.uv);
                 tex += tex * _Brightness;
                 tex = saturate(tex);
+
+                half alpha = tex.a * _BaseColor.a;
+                clip(alpha - _AlphaClip);
+
                 return tex * _BaseColor;
             }
             ENDHLSL

@@ -1,4 +1,4 @@
-﻿Shader "Custom/Unlit"
+﻿Shader "Custom/Target Reticle"
 {
     Properties
     {
@@ -32,8 +32,17 @@
                 "LightMode"="UniversalForward"
                 "Queue"="Transparent"
             }
+
             ZWrite Off
             Blend SrcAlpha OneMinusSrcAlpha
+
+            Stencil
+            {
+                Ref 2
+                Comp Greater
+                Pass Replace
+                Fail Keep
+            }
 
             HLSLPROGRAM
             #pragma vertex vert
