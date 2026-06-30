@@ -32,7 +32,7 @@ public partial class SequenceController : MonoBehaviour
         public override void EnterState(SequenceController controller)
         {
             Cursor.lockState = CursorLockMode.Locked;
-            controller._player.enabled = true;
+            controller._player.SetInputEnabled(true);
         }
     }
 
@@ -42,7 +42,7 @@ public partial class SequenceController : MonoBehaviour
         public override void EnterState(SequenceController controller)
         {
             Cursor.lockState = CursorLockMode.Locked;
-            controller._player.enabled = false;
+            controller._player.SetInputEnabled(false);
         }
     }
 
@@ -52,7 +52,7 @@ public partial class SequenceController : MonoBehaviour
         public override void EnterState(SequenceController controller)
         {
             Cursor.lockState = CursorLockMode.None;
-            controller._player.enabled = false;
+            controller._player.SetInputEnabled(false);
         }
     }
 }

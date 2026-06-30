@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     [SerializeField] private int _maxHealth = 5;
 
     // movement and aiming
+    private bool _inputEnabled;
     private Transform _cameraTrans;
     private float _rotationX;
     private float _rotationY;
@@ -71,6 +72,7 @@ public class Player : MonoBehaviour
         _Instance = this;
 
         _health = _maxHealth;
+        _inputEnabled = true;
     }
 
     // ------------------------------------------------------------------------
@@ -95,8 +97,17 @@ public class Player : MonoBehaviour
     // ------------------------------------------------------------------------
     private void Update ()
     {
-        LookAndMove();
+        if(_inputEnabled)
+        {
+            LookAndMove();   
+        }
         UpdateShoe();
+    }
+
+    // ------------------------------------------------------------------------
+    public void SetInputEnabled(bool enabled)
+    {
+        _inputEnabled = enabled;
     }
 
     // ------------------------------------------------------------------------
