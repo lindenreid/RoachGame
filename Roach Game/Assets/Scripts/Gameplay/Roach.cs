@@ -89,24 +89,38 @@ public partial class Roach : NPC
     // ------------------------------------------------------------------------
     private void Update ()
     {
+        if(SequenceController._Instance._ActiveStateType != GameStateType.Action)
+        {
+            return;
+        }
+
         _currentState.RunState(Time.deltaTime);
     }
 
     // ------------------------------------------------------------------------
     private void OnMouseOver ()
     {
+        if(SequenceController._Instance._ActiveStateType != GameStateType.Action)
+        {
+            return;
+        }
+
         _currentState.OnMouseOver();
     }
 
     // ------------------------------------------------------------------------
     private void OnMouseExit ()
     {
-         _currentState.OnMouseExit();
+        _currentState.OnMouseExit();
     }
 
     // ------------------------------------------------------------------------
     public void Hit ()
     {
+        if(SequenceController._Instance._ActiveStateType != GameStateType.Action)
+        {
+            return;
+        }
         if(_health <= 0) return;
 
         EventBus._Instance.InvokeRoachHit();

@@ -108,6 +108,11 @@ public class Player : MonoBehaviour
     public void SetInputEnabled(bool enabled)
     {
         _inputEnabled = enabled;
+
+        if(!enabled)
+        {
+            ResetShoeAnim();
+        }
     }
 
     // ------------------------------------------------------------------------
@@ -186,9 +191,15 @@ public class Player : MonoBehaviour
 
         if(_needsAnimRestart && _splineAnimator.ElapsedTime >= _splineAnimator.Duration*2)
         {
-            _needsAnimRestart = false;
-            _splineAnimator.Restart(false);
+            ResetShoeAnim();
         }
+    }
+
+    // ------------------------------------------------------------------------
+    private void ResetShoeAnim()
+    {
+        _needsAnimRestart = false;
+        _splineAnimator.Restart(false);
     }
 
     // ------------------------------------------------------------------------
