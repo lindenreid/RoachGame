@@ -177,20 +177,21 @@ public class Player : MonoBehaviour
             if(((1<<raycastHit.collider.gameObject.layer) & _roachLayer) != 0)
             {
                 _reticleMat.color = _reticleHit;
+                SetValidAim(raycastHit);
+            }
+            else if(raycastHit.normal == Vector3.up)
+            {
+                _reticleMat.color = _reticleMiss;
+                SetValidAim(raycastHit);
             }
             else
             {
-                _reticleMat.color = _reticleMiss;
+                SetInvalidAim();
             }
-
-            _aimReticle.position = raycastHit.point + _reticleOffset;
-            SetShoeSplineDestination(raycastHit.point);
         }
         else
         {
-            _reticleMat.color = _reticleInvalid;
-            _aimReticle.position = _reticleDefaultPosition.position;
-            SetShoeSplineDestination(_reticleDefaultPosition.position);
+            SetInvalidAim();
         }
 
         if(aimRaycastHit && Input.GetMouseButtonDown(0))
@@ -203,6 +204,21 @@ public class Player : MonoBehaviour
         {
             ResetShoeAnim();
         }
+    }
+
+    // ------------------------------------------------------------------------
+    private void SetValidAim (RaycastHit raycastHit)
+    {
+        _aimReticle.position = raycastHit.point + _reticleOffset;
+        SetShoeSplineDestination(raycastHit.point);
+    }
+
+    // ------------------------------------------------------------------------
+    private void SetInvalidAim ()
+    {
+        _reticleMat.color = _reticleInvalid;
+        _aimReticle.position = _reticleDefaultPosition.position;
+        SetShoeSplineDestination(_reticleDefaultPosition.position);
     }
 
     // ------------------------------------------------------------------------
