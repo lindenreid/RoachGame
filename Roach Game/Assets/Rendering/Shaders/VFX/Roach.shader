@@ -13,16 +13,11 @@
         Tags
         {
             "RenderType"="Transparent" 
-            "RenderPipeline"="UniversalRenderPipeline"
+            "RenderPipeline"="UniversalPipeline"
         }
 
         HLSLINCLUDE
         #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
-
-        CBUFFER_START(UnityPerMaterial)
-        float4 _BaseMap_ST;
-        half4 _BaseColor;
-        CBUFFER_END
 
         ENDHLSL
 
@@ -62,6 +57,8 @@
                 float4 positionHCS  : SV_POSITION;
             };
 
+            float4 _BaseMap_ST;
+            half4 _BaseColor;
             TEXTURE2D(_BaseMap);
             SAMPLER(sampler_BaseMap);
             half _Brightness;
