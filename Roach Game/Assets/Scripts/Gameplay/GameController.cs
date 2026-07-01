@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     // ------------------------------------------------------------------------
     [SerializeField] private ClueData _gameStartClue;
     [SerializeField] private ClueData _firstRoachHitClue;
+    [SerializeField] private ClueData _postHitFirstRoach;
 
     private bool _hitFirstRoach;
     private bool _initialized;
@@ -72,5 +73,12 @@ public class GameController : MonoBehaviour
             EventBus._Instance.InvokeClueUnlocked(_firstRoachHitClue);
             EventBus._Instance.RoachHit -= HandleRoachHit;
         }
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void EndFirstGunCinematic ()
+    {
+        EventBus._Instance.InvokeClueUnlocked(_postHitFirstRoach);
     }
 }

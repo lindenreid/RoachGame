@@ -148,11 +148,18 @@ public partial class Roach : NPC
     }
 
     // ------------------------------------------------------------------------
-    // also a Timeline callback- do not rename
+    // also a Timeline signal callback- do not rename
     public void ShowGun ()
     {
         _gun.gameObject.SetActive(true);
         _gun.PointAtPlayer();
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void FinishFirstGunCinematic ()
+    {
+        EnterState(RoachStateType.Attacking);
     }
 
     // ------------------------------------------------------------------------

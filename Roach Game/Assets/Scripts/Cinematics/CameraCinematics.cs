@@ -16,9 +16,12 @@ public class CameraCinematics : MonoBehaviour
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
+    [SerializeField] private Transform _cameraTransform;
     [SerializeField] private Vector3 _roachZoomOffset = Vector3.zero;
     [SerializeField] private SplineContainer _roachZoomSpline;
     [SerializeField] private SplineAnimate _roachZoomSplineAnimator;
+    [SerializeField] private SplineContainer _roachZoomOutSpline;
+    [SerializeField] private SplineAnimate _roachZoomOutSplineAnimator;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -27,10 +30,26 @@ public class CameraCinematics : MonoBehaviour
     {
         Roach targetRoach = GameController._Instance._HitRoach;
 
+        Vector3 targetRoachPosLocal = _roachZoomSpline.transform.InverseTransformPoint(targetRoach.gameObject.transform.position) + _roachZoomOffset;
+
         var targetKnot = _roachZoomSpline.Spline.Knots.ToArray()[1];
-        targetKnot.Position = _roachZoomSpline.transform.InverseTransformPoint(targetRoach.gameObject.transform.position) + _roachZoomOffset;
+        targetKnot.Position = targetRoachPosLocal;
         _roachZoomSpline.Spline.SetKnot(1, targetKnot);
 
+        targetKnot = _roachZoomOutSpline.Spline.Knots.ToArray()[0];
+        targetKnot.Position = targetRoachPosLocal;
+        _roachZoomOutSpline.Spline.SetKnot(0, targetKnot);
+
+        targetKnot = _roachZoomOutSpline.Spline.Knots.ToArray()[1];
+        targetKnot.Position = _roachZoomOutSpline.transform.InverseTransformPoint(_cameraTransform.position);
+        _roachZoomOutSpline.Spline.SetKnot(1, targetKnot);
+
         _roachZoomSplineAnimator.Play();
+    }
+
+    // ------------------------------------------------------------------------
+    public void AnimateRoachZoomOut ()
+    {
+        _roachZoomOutSplineAnimator.Play();
     }
 }

@@ -31,6 +31,9 @@ public class Sequence : MonoBehaviour
     {
         EventBus._Instance.InvokeSequenceStarted(this);
 
-        _objects.SetActive(true);
+        if(_objects != null)
+        {
+            _objects.SetActive(true);   
+        }
     }
 }
