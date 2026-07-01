@@ -1216,9 +1216,9 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 374279147}
-          m_TargetAssemblyTypeName: GameController, Assembly-CSharp
-          m_MethodName: EndFirstGunCinematic
+        - m_Target: {fileID: 374279146}
+          m_TargetAssemblyTypeName: SequenceController, Assembly-CSharp
+          m_MethodName: EndCurrentSequence
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1551,6 +1551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerClue: {fileID: 11400000, guid: e439e1228acdf479393f155e87cbc202, type: 2}
+  _finishClue: {fileID: 11400000, guid: b60f27301696a471680816415870c90d, type: 2}
   _objects: {fileID: 332266283}
   _gameStateType: 2
   _music: {fileID: 0}
@@ -2257,6 +2258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerClue: {fileID: 11400000, guid: 581071a1b7f1e4449868dc6887c94234, type: 2}
+  _finishClue: {fileID: 0}
   _objects: {fileID: 865359250}
   _gameStateType: 1
   _music: {fileID: 8300000, guid: 537230f8662956541a19148faad12f20, type: 3}
@@ -6372,6 +6374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerClue: {fileID: 11400000, guid: b60f27301696a471680816415870c90d, type: 2}
+  _finishClue: {fileID: 0}
   _objects: {fileID: 0}
   _gameStateType: 1
   _music: {fileID: 8300000, guid: 4941ca7af4877654f8c0676278618a21, type: 3}

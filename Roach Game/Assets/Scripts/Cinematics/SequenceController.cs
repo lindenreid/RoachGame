@@ -113,4 +113,11 @@ public partial class SequenceController : MonoBehaviour
         Debug.LogFormat("{0} new state: {1}", gameObject.name, _activeState);
         _activeState.EnterState(this);
     }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void EndCurrentSequence ()
+    {
+        _activeSequence.EndSequence();
+    }
 }

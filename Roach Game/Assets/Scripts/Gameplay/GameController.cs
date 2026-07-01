@@ -7,6 +7,7 @@
 
 using UnityEngine;
 
+// Handles hard-coded clues for very specific sequence triggers
 public class GameController : MonoBehaviour
 {
     // ------------------------------------------------------------------------
@@ -46,6 +47,7 @@ public class GameController : MonoBehaviour
     private void Start ()
     {
         EventBus._Instance.RoachHit += HandleRoachHit;
+        EventBus._Instance.ClueUnlocked += HandleClueUnlocked;
     }
 
     // ------------------------------------------------------------------------
@@ -76,10 +78,11 @@ public class GameController : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
-    // timeline signal callback
-    public void EndFirstGunCinematic ()
+    private void HandleClueUnlocked (ClueData clue)
     {
-        _hitRoach = null;
-        EventBus._Instance.InvokeClueUnlocked(_postHitFirstRoach);
+        if(clue == _postHitFirstRoach)
+        {
+            _hitRoach = null;
+        }
     }
 }

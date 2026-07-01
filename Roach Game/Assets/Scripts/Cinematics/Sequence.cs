@@ -13,6 +13,7 @@ public class Sequence : MonoBehaviour
     // Variables
     // ------------------------------------------------------------------------
     [SerializeField] private ClueData _triggerClue;
+    [SerializeField] private ClueData _finishClue;
     [SerializeField] private GameObject _objects;
     [SerializeField] private GameStateType _gameStateType;
     [SerializeField] private AudioClip _music;
@@ -34,6 +35,15 @@ public class Sequence : MonoBehaviour
         if(_objects != null)
         {
             _objects.SetActive(true);   
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    public void EndSequence ()
+    {
+        if(_finishClue != null)
+        {
+            EventBus._Instance.InvokeClueUnlocked(_finishClue);
         }
     }
 }
