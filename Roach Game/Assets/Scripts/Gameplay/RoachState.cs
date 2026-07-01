@@ -200,6 +200,12 @@ public partial class Roach
                 _roach.EnterState(RoachStateType.Idle);
             }
         }
+
+        // --------------------------------------------------------------------
+        public override void ExitState()
+        {
+            _roach._movementSplineAnimator.Pause();
+        }
     }
 
     // ------------------------------------------------------------------------
