@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _roachHoldLoc;
     [Header("Combat")]
     [SerializeField] private int _maxHealth = 5;
+    [Header("Cinematics")]
+    [SerializeField] private Transform _cameraTransform;
 
     // movement and aiming
     private bool _inputEnabled;
@@ -59,6 +61,7 @@ public class Player : MonoBehaviour
 
     public Vector3 _Position => transform.position;
     public int _Health => _health;
+    public Vector3 _CameraPosition => _cameraTransform.position;
 
     // ------------------------------------------------------------------------
     // Methods

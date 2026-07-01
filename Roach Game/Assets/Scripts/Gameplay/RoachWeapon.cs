@@ -36,7 +36,7 @@ public class RoachWeapon : MonoBehaviour
     // ------------------------------------------------------------------------
     public void PointAtPlayer ()
     {
-        _pivot.LookAt(Player._Instance._Position);
+        _pivot.LookAt(Player._Instance._CameraPosition);
     }
 
     // ------------------------------------------------------------------------

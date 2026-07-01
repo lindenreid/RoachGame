@@ -285,7 +285,7 @@ public partial class Roach
         public override void EnterState(Roach roach)
         {
             base.EnterState(roach);
-            _roach._gun.gameObject.SetActive(true);
+            _roach.ShowGun();
             _timeBetweenUse = 0.0f;
         }
 
@@ -312,5 +312,11 @@ public partial class Roach
     // ------------------------------------------------------------------------
     protected class RoachCinematicState : RoachState
     {
+        public override void EnterState(Roach roach)
+        {
+            base.EnterState(roach);
+
+            roach._firstGunTimeline.Play();
+        }
     }
 }

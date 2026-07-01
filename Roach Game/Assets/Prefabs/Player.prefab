@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7042cea2f30d4aef8dd4eb2dc88abcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _roachZoomOffset: {x: 0, y: 2, z: -2}
+  _roachZoomOffset: {x: 0, y: 3, z: -2}
   _roachZoomSpline: {fileID: 5890807781099259656}
   _roachZoomSplineAnimator: {fileID: 5490644007378001235}
 --- !u!1 &4180907493077115905
@@ -421,6 +421,7 @@ MonoBehaviour:
     m_Bits: 8
   _roachHoldLoc: {fileID: 3755512434844205073}
   _maxHealth: 5
+  _cameraTransform: {fileID: 8108288289591890457}
 --- !u!143 &7839691336058466243
 CharacterController:
   m_ObjectHideFlags: 0

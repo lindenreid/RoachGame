@@ -1110,6 +1110,8 @@ GameObject:
   - component: {fileID: 3457381573241350565}
   - component: {fileID: 3279602686272923590}
   - component: {fileID: 8888632713665553354}
+  - component: {fileID: 6579452698467618918}
+  - component: {fileID: 7260593905318961297}
   m_Layer: 3
   m_Name: Roach
   m_TagString: Untagged
@@ -1158,6 +1160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogueStart: {fileID: 11400000, guid: f19ca6d807d1d4e57a814e27408d4d14, type: 2}
+  _talkUI: {fileID: 0}
   _idleTimeMinMax: {x: 1, y: 3}
   _pathKnotDistance: 2
   _agent: {fileID: 8888632713665553354}
@@ -1184,6 +1187,7 @@ MonoBehaviour:
   _gun: {fileID: 8403393850747380025}
   _weaponUseInterval: 1.5
   _collectUI: {fileID: 8110903387017073136}
+  _firstGunTimeline: {fileID: 6579452698467618918}
 --- !u!114 &7345907774376965766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1275,6 +1279,55 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!320 &6579452698467618918
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5824890116372132804}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 652fb598b6f7e40f98f0cefbd6b19f47, type: 2}
+  m_InitialState: 0
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -1557863193583675923, guid: 652fb598b6f7e40f98f0cefbd6b19f47, type: 2}
+    value: {fileID: 7260593905318961297}
+  m_ExposedReferences:
+    m_References: []
+--- !u!114 &7260593905318961297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5824890116372132804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: e1e160451289b408c965bcb084ff5fbf, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7337665383833818599}
+          m_TargetAssemblyTypeName: Roach, Assembly-CSharp
+          m_MethodName: ShowGun
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &6065597570690041978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,14 +1751,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7352343410562063557}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.54281753, y: -0.45315456, z: -0.45315468, w: 0.5428175}
+  m_LocalRotation: {x: -0.49991274, y: -0.49991274, z: -0.50008726, w: 0.50008726}
   m_LocalPosition: {x: 0.21, y: 0.14, z: 0.01}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 869542200555797557}
   m_Father: {fileID: 8040429107509513753}
-  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: -79.712}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: -90}
 --- !u!33 &2847093634197841073
 MeshFilter:
   m_ObjectHideFlags: 0

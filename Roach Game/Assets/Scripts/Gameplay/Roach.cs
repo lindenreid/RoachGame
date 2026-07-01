@@ -5,10 +5,11 @@
  * Copyright 2019 - 2026 Studio Tilia
  */
 
-using System.Collections.Generic;
 using System.Linq;
+
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Playables;
 using UnityEngine.Splines;
 
 public partial class Roach : NPC
@@ -51,6 +52,8 @@ public partial class Roach : NPC
     [SerializeField] private float _weaponUseInterval;
     [Header("Collection")]
     [SerializeField] private GameObject _collectUI;
+    [Header("Cinematics")]
+    [SerializeField] private PlayableDirector _firstGunTimeline;
 
     // shared state variables
     private int _health;
@@ -142,6 +145,14 @@ public partial class Roach : NPC
                 EnterState(RoachStateType.Attacking);
             }
         }
+    }
+
+    // ------------------------------------------------------------------------
+    // also a Timeline callback- do not rename
+    public void ShowGun ()
+    {
+        _gun.gameObject.SetActive(true);
+        _gun.PointAtPlayer();
     }
 
     // ------------------------------------------------------------------------
