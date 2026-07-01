@@ -18,7 +18,7 @@ public partial class Roach : NPC
     // ------------------------------------------------------------------------
     private enum RoachStateType
     {
-        Idle, Running, Dead, Collected, Attacking
+        Idle, Running, Dead, Collected, Attacking, Cinematic
     }
 
     // ------------------------------------------------------------------------
@@ -126,13 +126,21 @@ public partial class Roach : NPC
         EventBus._Instance.InvokeRoachHit(this);
 
         _health--;
-        if(_health <= 0)
+
+        if(GameController._Instance._HitRoach == this)
         {
-            EnterState(RoachStateType.Dead);
+            EnterState(RoachStateType.Cinematic);
         }
         else
         {
-            EnterState(RoachStateType.Attacking);
+            if(_health <= 0)
+            {
+                EnterState(RoachStateType.Dead);
+            }
+            else
+            {
+                EnterState(RoachStateType.Attacking);
+            }
         }
     }
 
@@ -148,6 +156,7 @@ public partial class Roach : NPC
             case RoachStateType.Attacking: _currentState = new RoachAttackingState(); break;
             case RoachStateType.Dead: _currentState = new RoachDeadState(); break;
             case RoachStateType.Collected: _currentState = new RoachCollectedState(); break;
+            case RoachStateType.Cinematic: _currentState = new RoachCinematicState(); break;
             default: Debug.LogError("unhandled roach state: " + newState); break;
         }
         //Debug.LogFormat("{0} new state: {1}", gameObject.name, _currentState);

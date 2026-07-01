@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     [SerializeField] private float _mouseSensitivity;
     [SerializeField] private CharacterController _cc;
     [Header("Shoe animation")]
+    [SerializeField] private Collider _shoeCollider;
+    [SerializeField] private MeshRenderer _shoeRenderer;
     [SerializeField] private Transform _shoeDefaultPos;
     [SerializeField] private SplineContainer _shoeSpline;
     [SerializeField] private SplineAnimate _splineAnimator;
@@ -100,8 +102,8 @@ public class Player : MonoBehaviour
         if(_inputEnabled)
         {
             LookAndMove();   
+            UpdateShoe();
         }
-        UpdateShoe();
     }
 
     // ------------------------------------------------------------------------
@@ -109,6 +111,8 @@ public class Player : MonoBehaviour
     {
         _inputEnabled = enabled;
         _reticleRenderer.enabled = enabled;
+        _shoeRenderer.enabled = enabled;
+        _shoeCollider.enabled = enabled;
 
         if(!enabled)
         {

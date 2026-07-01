@@ -407,6 +407,8 @@ MonoBehaviour:
   _runSpeed: 12
   _mouseSensitivity: 7
   _cc: {fileID: 7839691336058466243}
+  _shoeCollider: {fileID: 1653384352851088951}
+  _shoeRenderer: {fileID: 7340798675897187825}
   _shoeDefaultPos: {fileID: 5758483728530106690}
   _shoeSpline: {fileID: 8472456908316520702}
   _splineAnimator: {fileID: 3391504039186547359}

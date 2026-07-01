@@ -308,4 +308,9 @@ public partial class Roach
             }
         }
     }
+
+    // ------------------------------------------------------------------------
+    protected class RoachCinematicState : RoachState
+    {
+    }
 }
