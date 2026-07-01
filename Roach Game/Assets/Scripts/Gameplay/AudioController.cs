@@ -44,7 +44,7 @@ public class AudioController : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
-    private void HandleRoachHit ()
+    private void HandleRoachHit (Roach roach)
     {
         _sfxAudioSource.PlayOneShot(_roachHitClip);
     }

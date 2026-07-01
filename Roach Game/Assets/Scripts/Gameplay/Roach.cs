@@ -123,7 +123,7 @@ public partial class Roach : NPC
         }
         if(_health <= 0) return;
 
-        EventBus._Instance.InvokeRoachHit();
+        EventBus._Instance.InvokeRoachHit(this);
 
         _health--;
         if(_health <= 0)

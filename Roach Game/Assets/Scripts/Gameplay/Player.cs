@@ -108,6 +108,7 @@ public class Player : MonoBehaviour
     public void SetInputEnabled(bool enabled)
     {
         _inputEnabled = enabled;
+        _reticleRenderer.enabled = enabled;
 
         if(!enabled)
         {

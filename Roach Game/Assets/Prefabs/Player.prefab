@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 2254719107837527198}
   - component: {fileID: 5490644007378001235}
   - component: {fileID: 8648538736896394305}
+  - component: {fileID: 4134185679594967333}
   m_Layer: 2
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -302,9 +303,9 @@ MonoBehaviour:
   m_LoopMode: 0
   m_Method: 0
   m_Duration: 1
-  m_MaxSpeed: 8.485281
+  m_MaxSpeed: 2.828427
   m_EasingMode: 1
-  m_AlignmentMode: 1
+  m_AlignmentMode: 0
   m_ObjectForwardAxis: 2
   m_ObjectUpAxis: 1
   m_StartOffset: 0
@@ -326,9 +327,9 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 5490644007378001235}
-          m_TargetAssemblyTypeName: UnityEngine.Splines.SplineAnimate, Unity.Splines
-          m_MethodName: Play
+        - m_Target: {fileID: 4134185679594967333}
+          m_TargetAssemblyTypeName: CameraCinematics, Assembly-CSharp
+          m_MethodName: AnimateRoachZoomIn
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -338,6 +339,21 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &4134185679594967333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412682330037958358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7042cea2f30d4aef8dd4eb2dc88abcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _roachZoomOffset: {x: 0, y: 2, z: -2}
+  _roachZoomSpline: {fileID: 5890807781099259656}
+  _roachZoomSplineAnimator: {fileID: 5490644007378001235}
 --- !u!1 &4180907493077115905
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,8 +644,8 @@ MonoBehaviour:
           w: 1
     - Position:
         x: 0
-        y: -3
-        z: 3
+        y: -1
+        z: 1
       TangentIn:
         x: 0
         y: 0

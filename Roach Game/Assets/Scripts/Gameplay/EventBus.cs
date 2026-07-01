@@ -19,10 +19,10 @@ public class EventBus : MonoBehaviour
     public event ClueDelegate ClueUnlocked;
 
     public delegate void EmptyDelegate();
-    public event EmptyDelegate RoachHit;
     public event EmptyDelegate PlayerDamaged;
 
     public delegate void RoachDelegate(Roach roach);
+    public event RoachDelegate RoachHit;
     public event RoachDelegate RoachCollected;
 
     public delegate void SequenceDelegate(Sequence sequence);
@@ -66,9 +66,9 @@ public class EventBus : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
-    public void InvokeRoachHit ()
+    public void InvokeRoachHit (Roach roach)
     {
-        RoachHit?.Invoke();
+        RoachHit?.Invoke(roach);
     }
 
     // ------------------------------------------------------------------------
