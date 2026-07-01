@@ -79,6 +79,7 @@ public class GameController : MonoBehaviour
     // timeline signal callback
     public void EndFirstGunCinematic ()
     {
+        _hitRoach = null;
         EventBus._Instance.InvokeClueUnlocked(_postHitFirstRoach);
     }
 }
