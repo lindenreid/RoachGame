@@ -27,7 +27,7 @@ public class HUD : MonoBehaviour
     // ------------------------------------------------------------------------
     private void HandlePlayerDamaged ()
     {
-        _healthText.text = "health " + Player._Instance._Health;
+        _healthText.text = Player._Instance._Health.ToString();
     }
 
     // ------------------------------------------------------------------------
