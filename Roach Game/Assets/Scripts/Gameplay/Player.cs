@@ -97,6 +97,8 @@ public class Player : MonoBehaviour
         _reticleHit = new Color(0, 1, 0, _reticleAlpha);
         _reticleMiss = new Color(1, 1, 0, _reticleAlpha);
         _reticleInvalid = new Color(1, 0, 0, _reticleAlpha);
+
+        _splineAnimator.transform.position = _shoeDefaultPos.position;
     }
 
     // ------------------------------------------------------------------------
