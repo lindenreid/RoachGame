@@ -15,6 +15,8 @@ public class RoachWeapon : MonoBehaviour
     [SerializeField] private Transform _pivot;
     [SerializeField] private GameObject _bangText;
     [SerializeField] private float _textAppearTime;
+    [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioClip _shootClip;
 
     private float _textTime;
 
@@ -44,6 +46,8 @@ public class RoachWeapon : MonoBehaviour
     {
         _textTime = 0.0f;
         _bangText.SetActive(true);
+
+        _audioSource.PlayOneShot(_shootClip);
         
         Player._Instance.Damage();
     }

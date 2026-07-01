@@ -2241,6 +2241,8 @@ MonoBehaviour:
   _pivot: {fileID: 8040429107509513753}
   _bangText: {fileID: 618048971216834576}
   _textAppearTime: 0.1
+  _audioSource: {fileID: 5370002498975943540}
+  _shootClip: {fileID: 8300000, guid: f251c254f64d54f799903d24def042c7, type: 3}
 --- !u!82 &5370002498975943540
 AudioSource:
   m_ObjectHideFlags: 0
