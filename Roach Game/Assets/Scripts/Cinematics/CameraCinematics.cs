@@ -23,12 +23,18 @@ public class CameraCinematics : MonoBehaviour
     [SerializeField] private SplineContainer _roachZoomOutSpline;
     [SerializeField] private SplineAnimate _roachZoomOutSplineAnimator;
 
+    private Transform _roachTransform;
+    private bool _zooming;
+
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
     public void AnimateRoachZoomIn ()
     {
         Roach targetRoach = GameController._Instance._HitRoach;
+
+        _roachTransform = targetRoach.transform;
+        _zooming = true;
 
         Vector3 targetRoachPosLocal = _roachZoomSpline.transform.InverseTransformPoint(targetRoach.gameObject.transform.position) + _roachZoomOffset;
 
@@ -48,8 +54,25 @@ public class CameraCinematics : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    private void Update()
+    {
+        if(_zooming)
+        {
+            _cameraTransform.LookAt(_roachTransform);
+        }
+    } 
+
+    // ------------------------------------------------------------------------
     public void AnimateRoachZoomOut ()
     {
         _roachZoomOutSplineAnimator.Play();
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void SequenceEnded ()
+    {
+        _zooming = false;
+        _roachTransform = null;
     }
 }

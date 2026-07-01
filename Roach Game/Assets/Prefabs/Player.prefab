@@ -174,8 +174,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3412682330037958358}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.38268346, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.38268352, y: -0.0000000060300493, z: 8.4357055e-10, w: 0.9238801}
+  m_LocalPosition: {x: -0.00000014311325, y: -1, z: 1.0000001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -326,6 +326,7 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: b25baebcfab03429282e13497366ce5a, type: 2}
     - {fileID: 11400000, guid: f72dc55ba3a804b00941b4e672c92682, type: 2}
+    - {fileID: 11400000, guid: 0644044fb72264fbfbff005d13ba7d16, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -346,6 +347,20 @@ MonoBehaviour:
         - m_Target: {fileID: 4134185679594967333}
           m_TargetAssemblyTypeName: CameraCinematics, Assembly-CSharp
           m_MethodName: AnimateRoachZoomOut
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4134185679594967333}
+          m_TargetAssemblyTypeName: CameraCinematics, Assembly-CSharp
+          m_MethodName: SequenceEnded
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -519,8 +534,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4582253528972259613}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.38268346, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 2.8900003, y: 2.0293968, z: 2.6375082}
+  m_LocalRotation: {x: -0.3826835, y: -0.00000006961861, z: 0.000000031191036, w: 0.9238797}
+  m_LocalPosition: {x: 2.8899999, y: 2.029397, z: 2.6375084}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
