@@ -15,7 +15,6 @@ public class AudioController : MonoBehaviour
     [SerializeField] private AudioSource _sfxAudioSource;
     [SerializeField] private AudioSource _musicAudioSource;
     [SerializeField] private AudioClip _roachHitClip;
-    [SerializeField] private AudioClip _direMusic;
 
     // ------------------------------------------------------------------------
     // Properties
@@ -57,12 +56,5 @@ public class AudioController : MonoBehaviour
             _musicAudioSource.clip = sequence._Music;
             _musicAudioSource.Play();   
         }
-    }
-
-    // ------------------------------------------------------------------------
-    public void HandleSignalPlayDireMusic ()
-    {
-        _musicAudioSource.clip = _direMusic;
-        _musicAudioSource.Play();   
     }
 }

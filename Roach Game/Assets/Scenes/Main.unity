@@ -132,7 +132,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5072022}
   - component: {fileID: 5072024}
-  - component: {fileID: 5072025}
   m_Layer: 0
   m_Name: AudioController
   m_TagString: Untagged
@@ -173,36 +172,6 @@ MonoBehaviour:
   _musicAudioSource: {fileID: 1752684644}
   _roachHitClip: {fileID: 8300000, guid: da71a22bf9dc84b6ca3833daef172ae5, type: 3}
   _direMusic: {fileID: 8300000, guid: 4941ca7af4877654f8c0676278618a21, type: 3}
---- !u!114 &5072025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5072021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 37fab8df891844eb8bc97780ff7e523e, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 5072024}
-          m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
-          m_MethodName: HandleSignalPlayDireMusic
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &7599986
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,8 +916,6 @@ PlayableDirector:
     value: {fileID: 6139548210068203798}
   - key: {fileID: 4886139844559705606, guid: 7c902d9d2af914a00b6f6ef6527bc8d3, type: 2}
     value: {fileID: 6139548210068203799}
-  - key: {fileID: 665257863621889894, guid: 7c902d9d2af914a00b6f6ef6527bc8d3, type: 2}
-    value: {fileID: 5072025}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &340131654
@@ -5892,7 +5859,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5490644007378001235, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_MaxSpeed
-      value: 8.485281
+      value: 2.828427
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalPosition.x
