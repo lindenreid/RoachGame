@@ -5700,8 +5700,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1307050852}
+  - component: {fileID: 1307050855}
   - component: {fileID: 1307050853}
   - component: {fileID: 1307050854}
+  - component: {fileID: 1307050856}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -5916,6 +5918,54 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1307050855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307050851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f22abf847366b47c982b41b600985441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioSources:
+  - {fileID: 1307050853}
+  - {fileID: 1307050854}
+  _startVolume: 0.1
+  _endVolume: 1
+  _durationSeconds: 10
+--- !u!114 &1307050856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307050851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 371137e97a58744ed8a3fd9114e46195, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1307050855}
+          m_TargetAssemblyTypeName: VolumeIncrease, Assembly-CSharp
+          m_MethodName: StartAudioIncrease
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1321469028
 GameObject:
   m_ObjectHideFlags: 0
@@ -8532,6 +8582,8 @@ PlayableDirector:
     value: {fileID: 1307050851}
   - key: {fileID: 2233925231567735127, guid: b04b03ecca3ad4191b0eba8b00b7c9f4, type: 2}
     value: {fileID: 1243920002}
+  - key: {fileID: 8476684231943834161, guid: b04b03ecca3ad4191b0eba8b00b7c9f4, type: 2}
+    value: {fileID: 1307050856}
   m_ExposedReferences:
     m_References: []
 --- !u!1001 &2028842112
