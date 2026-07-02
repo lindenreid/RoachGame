@@ -1334,6 +1334,7 @@ GameObject:
   - component: {fileID: 374279147}
   - component: {fileID: 374279148}
   - component: {fileID: 374279149}
+  - component: {fileID: 374279150}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -1428,6 +1429,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 0644044fb72264fbfbff005d13ba7d16, type: 2}
     - {fileID: 11400000, guid: 4448578849511439a971de4f1ea9fc53, type: 2}
     - {fileID: 11400000, guid: 674f2b9f505de4ff39fba75fdd163b4c, type: 2}
+    - {fileID: 11400000, guid: e1ffcf4085cf744e29af4eba8aac0b8f, type: 2}
+    - {fileID: 11400000, guid: 0a936a1b85ab7452797646d5ffae2536, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -1471,6 +1474,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 374279150}
+          m_TargetAssemblyTypeName: LightingController, Assembly-CSharp
+          m_MethodName: TurnLightsOn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 374279150}
+          m_TargetAssemblyTypeName: LightingController, Assembly-CSharp
+          m_MethodName: TurnLightsOff
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &374279149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1485,6 +1516,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ppVolume: {fileID: 1193821023}
   _fadeInDurationFrames: 360
+--- !u!114 &374279150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 374279142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ccde16874a204ee3af6749e43ecad0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainDirLight: {fileID: 705507994}
+  _ambientLightIntensityLightsOff: 0.28
+  _ambientLightIntensityLightsOn: 0.97
 --- !u!1 &383218414
 GameObject:
   m_ObjectHideFlags: 0
@@ -6138,8 +6184,11 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 1763638033928481605, guid: 497b579545f4e40c59da00e822ebccb6, type: 2}
     value: {fileID: 374279148}
+  - key: {fileID: -6382954086156301480, guid: 497b579545f4e40c59da00e822ebccb6, type: 2}
+    value: {fileID: 374279148}
   m_ExposedReferences:
-    m_References: []
+    m_References:
+    - 75c3053cb715a43d7b787ea44dc25eed: {fileID: 705507993}
 --- !u!1 &1821397673
 GameObject:
   m_ObjectHideFlags: 0
@@ -7621,14 +7670,6 @@ PrefabInstance:
     - target: {fileID: 8108288289591890457, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalPosition.z
       value: 1.0000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 8108288289591890457, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9238804
-      objectReference: {fileID: 0}
-    - target: {fileID: 8108288289591890457, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.000000004248065
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
