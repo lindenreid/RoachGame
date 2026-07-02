@@ -2262,7 +2262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _triggerClue: {fileID: 11400000, guid: 581071a1b7f1e4449868dc6887c94234, type: 2}
   _finishClue: {fileID: 0}
-  _objects: {fileID: 865359250}
+  _objects: {fileID: 1780914853}
   _gameStateType: 2
   _music: {fileID: 8300000, guid: 5fb7327c0f90e3a4b90c5804a1c7ec47, type: 3}
   _playerStartPos: {fileID: 55755714}
@@ -6090,7 +6090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1780914854
 Transform:
   m_ObjectHideFlags: 0
