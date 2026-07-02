@@ -1427,6 +1427,7 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: 0644044fb72264fbfbff005d13ba7d16, type: 2}
     - {fileID: 11400000, guid: 4448578849511439a971de4f1ea9fc53, type: 2}
+    - {fileID: 11400000, guid: 674f2b9f505de4ff39fba75fdd163b4c, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -1447,6 +1448,20 @@ MonoBehaviour:
         - m_Target: {fileID: 374279149}
           m_TargetAssemblyTypeName: PostEffectController, Assembly-CSharp
           m_MethodName: StartFadeIn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 374279146}
+          m_TargetAssemblyTypeName: SequenceController, Assembly-CSharp
+          m_MethodName: EndCurrentSequence
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2261,7 +2276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerClue: {fileID: 11400000, guid: 581071a1b7f1e4449868dc6887c94234, type: 2}
-  _finishClue: {fileID: 0}
+  _finishClue: {fileID: 11400000, guid: 9e0a2573de7a04409a022e8005bebad7, type: 2}
   _objects: {fileID: 1780914853}
   _gameStateType: 2
   _music: {fileID: 8300000, guid: 5fb7327c0f90e3a4b90c5804a1c7ec47, type: 3}
