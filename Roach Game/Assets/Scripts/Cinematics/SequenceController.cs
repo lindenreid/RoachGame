@@ -14,6 +14,11 @@ public enum GameStateType
     Invalid, Action, Cinematic, Dialogue, Menu
 }
 
+public enum SequenceAudioType
+{
+    ContinuePreviousClip, StopClipOnly, PlayNewClip
+}
+
 public partial class SequenceController : MonoBehaviour
 {
     // ------------------------------------------------------------------------

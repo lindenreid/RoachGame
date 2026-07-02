@@ -12,14 +12,19 @@ public class Sequence : MonoBehaviour
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
+    [Header("Clues")]
     [SerializeField] private ClueData _triggerClue;
     [SerializeField] private ClueData _finishClue;
-    [SerializeField] private GameObject _objects;
+    [Header("Gameplay")]
     [SerializeField] private GameStateType _gameStateType;
-    [SerializeField] private AudioClip _music;
+    [SerializeField] private GameObject _objects;
+    [Header("Player & Camera Setup")]
     [SerializeField] private Transform _playerStartPos;
     [SerializeField] private Transform _cameraStartRot;
     [SerializeField] private bool _onlySetPlayerLocOnRestart;
+    [Header("Audio")]
+    [SerializeField] private AudioClip _music;
+    [SerializeField] private SequenceAudioType _audioType;
 
     // stuff for action sequences to keep track of for restarting
     private Roach[] _roaches;
@@ -31,6 +36,7 @@ public class Sequence : MonoBehaviour
     public ClueData _TriggerClue => _triggerClue;
     public GameStateType _GameStateType => _gameStateType;
     public AudioClip _Music => _music;
+    public SequenceAudioType _AudioType => _audioType;
 
     // ------------------------------------------------------------------------
     // Methods

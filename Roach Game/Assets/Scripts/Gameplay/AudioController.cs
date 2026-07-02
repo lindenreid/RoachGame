@@ -6,6 +6,7 @@
  */
 
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class AudioController : MonoBehaviour
 {
@@ -51,10 +52,19 @@ public class AudioController : MonoBehaviour
     // ------------------------------------------------------------------------
     private void HandleSequenceStarted(Sequence sequence)
     {
-        if(sequence._Music != null)
+        switch(sequence._AudioType)
         {
-            _musicAudioSource.clip = sequence._Music;
-            _musicAudioSource.Play();   
+            case SequenceAudioType.ContinuePreviousClip:
+                // do nothing (intentionally)
+                break;
+            case SequenceAudioType.StopClipOnly:
+                _musicAudioSource.Stop();
+                break;
+            case SequenceAudioType.PlayNewClip:
+                Assert.IsNotNull(sequence._Music);
+                _musicAudioSource.clip = sequence._Music;
+                _musicAudioSource.Play();   
+                break;
         }
     }
 }
