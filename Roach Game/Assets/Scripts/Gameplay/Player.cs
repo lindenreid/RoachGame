@@ -99,6 +99,8 @@ public class Player : MonoBehaviour
         _reticleInvalid = new Color(1, 0, 0, _reticleAlpha);
 
         _splineAnimator.transform.position = _shoeDefaultPos.position;
+
+        MatchMouseToRotation();
     }
 
     // ------------------------------------------------------------------------
@@ -123,6 +125,17 @@ public class Player : MonoBehaviour
         {
             ResetShoeAnim();
         }
+        else
+        {
+            MatchMouseToRotation();
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    private void MatchMouseToRotation ()
+    {
+        _rotationY = -_cameraTrans.localEulerAngles.x;
+        _rotationX = transform.localEulerAngles.y;
     }
 
     // ------------------------------------------------------------------------
