@@ -55,4 +55,14 @@ public partial class SequenceController : MonoBehaviour
             controller._player.SetInputEnabled(false);
         }
     }
+
+    // ------------------------------------------------------------------------
+    public class GameMenuState : GameState
+    {
+        public override void EnterState(SequenceController controller)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            controller._player.SetInputEnabled(false);
+        }
+    }
 }

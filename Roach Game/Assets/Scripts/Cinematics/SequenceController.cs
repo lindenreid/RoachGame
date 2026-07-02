@@ -11,7 +11,7 @@ using UnityEngine;
 
 public enum GameStateType
 {
-    Invalid, Action, Cinematic, Dialogue
+    Invalid, Action, Cinematic, Dialogue, Menu
 }
 
 public partial class SequenceController : MonoBehaviour
@@ -19,6 +19,7 @@ public partial class SequenceController : MonoBehaviour
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
+    [SerializeField] private Sequence _openGameSequence;
     [SerializeField] private Player _player;
 
     private GameState _activeState;
@@ -74,6 +75,8 @@ public partial class SequenceController : MonoBehaviour
 
         EventBus._Instance.ClueUnlocked += HandleClueUnlocked;
         EventBus._Instance.VisitDialogueNode += HandleVisitDialogueNode;
+
+        ActivateSequence(_openGameSequence);
     }
 
     // ------------------------------------------------------------------------
@@ -84,12 +87,18 @@ public partial class SequenceController : MonoBehaviour
             Sequence unlockedSeq = _sequencesByClueUnlock[clue];
             if(unlockedSeq != null)
             {
-                _activeSequence = unlockedSeq;
-                _activeSequence.StartSequence();
-                EnterState(_activeSequence._GameStateType);
-                Debug.LogFormat("unlocked sequence: {0}", _activeSequence);
+                ActivateSequence(unlockedSeq);
             }   
         }
+    }
+
+    // ------------------------------------------------------------------------
+    private void ActivateSequence (Sequence sequence)
+    {
+        _activeSequence = sequence;
+        _activeSequence.StartSequence();
+        EnterState(_activeSequence._GameStateType);
+        Debug.LogFormat("unlocked sequence: {0}", _activeSequence);
     }
 
     // ------------------------------------------------------------------------
@@ -108,6 +117,7 @@ public partial class SequenceController : MonoBehaviour
             case GameStateType.Action: _activeState = new GameActionState(); break;
             case GameStateType.Cinematic: _activeState = new GameCinematicState(); break;
             case GameStateType.Dialogue: _activeState = new GameDialogueState(); break;
+            case GameStateType.Menu: _activeState = new GameMenuState(); break;
             default: Debug.LogError("unhandled game state: " + newState); break;
         }
         Debug.LogFormat("{0} new state: {1}", gameObject.name, _activeState);

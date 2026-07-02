@@ -18,8 +18,6 @@ public class GameController : MonoBehaviour
     [SerializeField] private ClueData _postHitFirstRoach;
 
     private bool _hitFirstRoach;
-    private bool _initialized;
-
     private Roach _targetRoach;
 
     // ------------------------------------------------------------------------
@@ -51,18 +49,9 @@ public class GameController : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
-    private void Update ()
+    // button callback
+    public void StartGame ()
     {
-        if(!_initialized)
-        {
-            Initialize();
-        }
-    }
-
-    // ------------------------------------------------------------------------
-    private void Initialize()
-    {
-        _initialized = true;
         EventBus._Instance.InvokeClueUnlocked(_gameStartClue);
     }
 
