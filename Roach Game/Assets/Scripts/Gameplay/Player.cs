@@ -179,6 +179,15 @@ public class Player : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    public void TeleportTo(Transform newLoc)
+    {
+        _cc.enabled = false;
+        transform.position = newLoc.position;
+        transform.rotation = newLoc.rotation;
+        _cc.enabled = true;
+    }
+
+    // ------------------------------------------------------------------------
     private void UpdateShoe ()
     {
         SetShoeSplineStartPos();

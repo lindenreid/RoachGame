@@ -18,6 +18,7 @@ public class Sequence : MonoBehaviour
     [SerializeField] private GameStateType _gameStateType;
     [SerializeField] private AudioClip _music;
     [SerializeField] private Transform _playerStartPos;
+    [SerializeField] private bool _onlySetPlayerLocOnRestart;
 
     // stuff for action sequences to keep track of for restarting
     private Roach[] _roaches;
@@ -37,7 +38,7 @@ public class Sequence : MonoBehaviour
     {
         EventBus._Instance.InvokeSequenceStarted(this);
 
-        SetupPlayer();
+        SetupPlayer(!_onlySetPlayerLocOnRestart);
 
         if(_objects != null)
         {
@@ -75,16 +76,15 @@ public class Sequence : MonoBehaviour
             _roaches[i].ResetRoach(_roachOriginalPositions[i]);
         }
 
-        SetupPlayer();
+        SetupPlayer(true);
     }
 
     // ------------------------------------------------------------------------
-    private void SetupPlayer ()
+    private void SetupPlayer (bool setPlayerPosition)
     {
-        if(_playerStartPos != null)
+        if(setPlayerPosition && _playerStartPos != null)
         {
-            Player._Instance.transform.position = _playerStartPos.position;
-            Player._Instance.transform.rotation = _playerStartPos.rotation;   
+            Player._Instance.TeleportTo(_playerStartPos); 
         }
 
         if(_gameStateType == GameStateType.Action)
