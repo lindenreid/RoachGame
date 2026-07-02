@@ -17,6 +17,11 @@ public class Sequence : MonoBehaviour
     [SerializeField] private GameObject _objects;
     [SerializeField] private GameStateType _gameStateType;
     [SerializeField] private AudioClip _music;
+    [SerializeField] private Transform _playerStartPos;
+
+    // stuff for action sequences to keep track of for restarting
+    private Roach[] _roaches;
+    private Vector3[] _roachOriginalPositions;
 
     // ------------------------------------------------------------------------
     // Properties
@@ -32,9 +37,18 @@ public class Sequence : MonoBehaviour
     {
         EventBus._Instance.InvokeSequenceStarted(this);
 
+        SetupPlayer();
+
         if(_objects != null)
         {
-            _objects.SetActive(true);   
+            _objects.SetActive(true);
+
+            _roaches = _objects.GetComponentsInChildren<Roach>();
+            _roachOriginalPositions = new Vector3[_roaches.Length];
+            for(int i = 0; i < _roaches.Length; i++)
+            {
+                _roachOriginalPositions[i] = _roaches[i].transform.position;
+            }
         }
     }
 
@@ -44,6 +58,38 @@ public class Sequence : MonoBehaviour
         if(_finishClue != null)
         {
             EventBus._Instance.InvokeClueUnlocked(_finishClue);
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    public void RestartSequence()
+    {
+        if(_gameStateType != GameStateType.Action)
+        {
+            Debug.LogError("Trying to restart non-action sequence.");
+            return;
+        }
+
+        for(int i = 0; i < _roaches.Length; i++)
+        {
+            _roaches[i].ResetRoach(_roachOriginalPositions[i]);
+        }
+
+        SetupPlayer();
+    }
+
+    // ------------------------------------------------------------------------
+    private void SetupPlayer ()
+    {
+        if(_playerStartPos != null)
+        {
+            Player._Instance.transform.position = _playerStartPos.position;
+            Player._Instance.transform.rotation = _playerStartPos.rotation;   
+        }
+
+        if(_gameStateType == GameStateType.Action)
+        {
+            Player._Instance.SetupForActionSequence();
         }
     }
 }

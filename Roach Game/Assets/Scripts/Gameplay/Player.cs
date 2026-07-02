@@ -129,7 +129,23 @@ public class Player : MonoBehaviour
     public void Damage ()
     {
         _health--;
-        EventBus._Instance.InvokePlayerDamaged();
+        EventBus._Instance.InvokePlayerHealthChanged();
+
+        if(_health == 0)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            SetInputEnabled(false);
+            EventBus._Instance.InvokePlayerDied();
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    public void SetupForActionSequence ()
+    {
+        SetInputEnabled(true);
+        Cursor.lockState = CursorLockMode.Locked;
+        _health = _maxHealth;
+        EventBus._Instance.InvokePlayerHealthChanged();
     }
 
     // ------------------------------------------------------------------------

@@ -120,4 +120,17 @@ public partial class SequenceController : MonoBehaviour
     {
         _activeSequence.EndSequence();
     }
+
+    // ------------------------------------------------------------------------
+    // button callback
+    public void RestartActionSequence ()
+    {
+        if(_activeSequence == null || _activeSequence._GameStateType != GameStateType.Action)
+        {
+            Debug.LogError("No active sequence, or active sequence is not action.");
+            return;
+        }
+
+        _activeSequence.RestartSequence();
+    }
 }

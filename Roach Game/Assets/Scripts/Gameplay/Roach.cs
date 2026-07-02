@@ -163,6 +163,17 @@ public partial class Roach : NPC
     }
 
     // ------------------------------------------------------------------------
+    public void ResetRoach(Vector3 originalPos)
+    {
+        _health = _maxHealth;
+
+        transform.SetParent(null);
+        transform.position = originalPos;
+
+        EnterState(RoachStateType.Idle);
+    } 
+
+    // ------------------------------------------------------------------------
     private void EnterState(RoachStateType newState)
     {
         _currentState?.ExitState();

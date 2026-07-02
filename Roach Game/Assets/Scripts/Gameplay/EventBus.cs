@@ -19,7 +19,8 @@ public class EventBus : MonoBehaviour
     public event ClueDelegate ClueUnlocked;
 
     public delegate void EmptyDelegate();
-    public event EmptyDelegate PlayerDamaged;
+    public event EmptyDelegate PlayerHealthChanged;
+    public event EmptyDelegate PlayerDied;
 
     public delegate void RoachDelegate(Roach roach);
     public event RoachDelegate RoachHit;
@@ -78,8 +79,14 @@ public class EventBus : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
-    public void InvokePlayerDamaged ()
+    public void InvokePlayerHealthChanged ()
     {
-        PlayerDamaged?.Invoke();
+        PlayerHealthChanged?.Invoke();
+    }
+
+    // ------------------------------------------------------------------------
+    public void InvokePlayerDied ()
+    {
+        PlayerDied?.Invoke();
     }
 }

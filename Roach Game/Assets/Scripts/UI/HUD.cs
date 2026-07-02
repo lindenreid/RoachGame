@@ -19,15 +19,19 @@ public class HUD : MonoBehaviour
     private void Start ()
     {
         EventBus._Instance.VisitDialogueNode += HandleVisitDialogueNode;
-        EventBus._Instance.PlayerDamaged += HandlePlayerDamaged;
+        EventBus._Instance.PlayerHealthChanged += HandlePlayerHealthChanged;
 
-        HandlePlayerDamaged();
+        HandlePlayerHealthChanged();
     }
 
     // ------------------------------------------------------------------------
-    private void HandlePlayerDamaged ()
+    private void HandlePlayerHealthChanged ()
     {
-        _healthText.text = Player._Instance._Health.ToString();
+        int health = Player._Instance._Health;
+        if(health >= 0)
+        {
+            _healthText.text = health.ToString();
+        }
     }
 
     // ------------------------------------------------------------------------
