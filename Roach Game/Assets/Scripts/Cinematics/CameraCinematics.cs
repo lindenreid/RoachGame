@@ -31,7 +31,7 @@ public class CameraCinematics : MonoBehaviour
     // ------------------------------------------------------------------------
     public void AnimateRoachZoomIn ()
     {
-        Roach targetRoach = GameController._Instance._HitRoach;
+        Roach targetRoach = GameController._Instance._TargetRoach;
 
         _roachTransform = targetRoach.transform;
         _zooming = true;

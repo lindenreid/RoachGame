@@ -18,6 +18,7 @@ public class Sequence : MonoBehaviour
     [SerializeField] private GameStateType _gameStateType;
     [SerializeField] private AudioClip _music;
     [SerializeField] private Transform _playerStartPos;
+    [SerializeField] private Transform _cameraStartRot;
     [SerializeField] private bool _onlySetPlayerLocOnRestart;
 
     // stuff for action sequences to keep track of for restarting
@@ -82,9 +83,17 @@ public class Sequence : MonoBehaviour
     // ------------------------------------------------------------------------
     private void SetupPlayer (bool setPlayerPosition)
     {
-        if(setPlayerPosition && _playerStartPos != null)
+        if(setPlayerPosition)
         {
-            Player._Instance.TeleportTo(_playerStartPos); 
+            if(_playerStartPos != null)
+            {
+                Player._Instance.TeleportTo(_playerStartPos);   
+            }
+
+            if(_cameraStartRot != null)
+            {
+                Player._Instance._CameraTransform.localEulerAngles = _cameraStartRot.localEulerAngles;
+            }
         }
 
         if(_gameStateType == GameStateType.Action)

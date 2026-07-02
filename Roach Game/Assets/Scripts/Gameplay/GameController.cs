@@ -20,14 +20,14 @@ public class GameController : MonoBehaviour
     private bool _hitFirstRoach;
     private bool _initialized;
 
-    private Roach _hitRoach;
+    private Roach _targetRoach;
 
     // ------------------------------------------------------------------------
     // Properties
     // ------------------------------------------------------------------------
     public static GameController _Instance { get; private set; }
     
-    public Roach _HitRoach => _hitRoach;
+    public Roach _TargetRoach => _targetRoach;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -71,7 +71,7 @@ public class GameController : MonoBehaviour
     {
         if(!_hitFirstRoach)
         {
-            _hitRoach = roach;
+            _targetRoach = roach;
             EventBus._Instance.InvokeClueUnlocked(_firstRoachHitClue);
             EventBus._Instance.RoachHit -= HandleRoachHit;
         }
@@ -82,7 +82,7 @@ public class GameController : MonoBehaviour
     {
         if(clue == _postHitFirstRoach)
         {
-            _hitRoach = null;
+            _targetRoach = null;
         }
     }
 }

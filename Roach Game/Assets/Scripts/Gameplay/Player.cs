@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
 
     public Vector3 _Position => transform.position;
     public int _Health => _health;
+    public Transform _CameraTransform => _cameraTransform;
     public Vector3 _CameraPosition => _cameraTransform.position;
 
     // ------------------------------------------------------------------------

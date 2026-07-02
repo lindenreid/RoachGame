@@ -130,7 +130,7 @@ public partial class Roach : NPC
 
         _health--;
 
-        if(GameController._Instance._HitRoach == this)
+        if(GameController._Instance._TargetRoach == this)
         {
             EnterState(RoachStateType.Cinematic);
         }
