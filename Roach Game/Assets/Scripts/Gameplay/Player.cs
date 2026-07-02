@@ -126,7 +126,7 @@ public class Player : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
-    public void Damage ()
+    public bool DamageAndTryKill ()
     {
         _health--;
         EventBus._Instance.InvokePlayerHealthChanged();
@@ -137,6 +137,8 @@ public class Player : MonoBehaviour
             SetInputEnabled(false);
             EventBus._Instance.InvokePlayerDied();
         }
+
+        return _health == 0;
     }
 
     // ------------------------------------------------------------------------

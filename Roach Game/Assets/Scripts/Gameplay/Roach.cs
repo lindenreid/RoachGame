@@ -163,6 +163,12 @@ public partial class Roach : NPC
     }
 
     // ------------------------------------------------------------------------
+    public void KilledPlayer ()
+    {
+        EnterState(RoachStateType.Running);
+    }
+
+    // ------------------------------------------------------------------------
     public void ResetRoach(Vector3 originalPos)
     {
         _health = _maxHealth;

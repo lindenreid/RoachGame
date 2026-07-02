@@ -2238,6 +2238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06c154e1526114ac481d6aa12094f8a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _owner: {fileID: 7337665383833818599}
   _pivot: {fileID: 8040429107509513753}
   _bangText: {fileID: 618048971216834576}
   _textAppearTime: 0.1
