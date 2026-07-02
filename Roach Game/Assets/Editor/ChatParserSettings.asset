@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: ChatParserSettings
   m_EditorClassIdentifier: 
   ChatList: {fileID: 11400000, guid: a8f1b87689a7d46f68d6fb935faf558f, type: 2}
-  GameData: {fileID: 0}
+  GameData: {fileID: 11400000, guid: aa5dfd5f5c33040a99b4b635e0b24e7b, type: 2}
   InputFolder: /Users/lindenreid/Documents/GitHub/RoachGame/Chats

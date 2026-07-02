@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e0daad46901c44068c3b2394bbee7f6, type: 3}
-  m_Name: clue_TestClue
+  m_Name: clue_StartSeq0.5
   m_EditorClassIdentifier: 
-  _id: 5
-  _name: TestClue
+  _id: 0
+  _name: StartSeq0.5

@@ -1,0 +1,21 @@
+{
+  "passages": [
+    {
+      "text": "<clue> StartSeq0Dialogue\n<line> ... bug nightmares again....\n<line> ..... i must be freaking out because the landlord is inspecting soon...\n<line> but we got rid of the roaches... i think...\n<line> i'm gonna drink some water and go back to bed...",
+      "name": "start",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    }
+  ],
+  "name": "Seq0",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "0B09A282-6831-4F18-B6C1-C119E32F4EC1"
+}

@@ -50,7 +50,7 @@ public static class ChatParser {
         if(!foundGameData) return false;
 
         // parse all chat input files
-        string[] files = Directory.GetFiles(inputPath);
+        string[] files = Directory.GetFiles(inputPath, "*.json");
         List<ChatData> chats = new List<ChatData>();
 
         bool successful = true;
@@ -378,7 +378,9 @@ public static class ChatParser {
     // ------------------------------------------------------------------------
     private static string GetClueFilePath(ClueData clue)
     {
-        return c_clueOutputPath + "/" + clue._FileName + ".asset";
+        string path = c_clueOutputPath + "/" + clue._FileName + ".asset";
+        Debug.Log("clue path: " + path);
+        return path;
     }
 
     // ------------------------------------------------------------------------
