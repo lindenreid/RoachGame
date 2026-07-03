@@ -36,11 +36,6 @@ public class DialogueRunner : MonoBehaviour
         _currentNode = node;
         Debug.Log("runner visit node: " + node);
         EventBus._Instance.InvokeVisitDialogue(node);
-
-        if(_currentNode._Options == null || _currentNode._Options.Length == 0)
-        {
-            EventBus._Instance.InvokeReachedLeafDialogueNode();
-        }
     }
 
     // ------------------------------------------------------------------------

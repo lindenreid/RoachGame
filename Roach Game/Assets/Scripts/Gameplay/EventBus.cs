@@ -21,7 +21,7 @@ public class EventBus : MonoBehaviour
     public delegate void EmptyDelegate();
     public event EmptyDelegate PlayerHealthChanged;
     public event EmptyDelegate PlayerDied;
-    public event EmptyDelegate ReachedLeafDialogueNode;
+    public event EmptyDelegate TyperwriterFinished;
 
     public delegate void RoachDelegate(Roach roach);
     public event RoachDelegate RoachHit;
@@ -92,8 +92,8 @@ public class EventBus : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
-    public void InvokeReachedLeafDialogueNode ()
+    public void InvokeTyperwriterFinished()
     {
-        ReachedLeafDialogueNode?.Invoke();
+        TyperwriterFinished?.Invoke();
     }
 }

@@ -6904,7 +6904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _text: {fileID: 1520865173}
-  _characterRevealSpeedSeconds: 0.1
+  _characterRevealSpeedSeconds: 0.05
 --- !u!1 &1545551477
 GameObject:
   m_ObjectHideFlags: 0

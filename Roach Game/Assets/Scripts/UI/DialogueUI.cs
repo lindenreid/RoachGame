@@ -8,6 +8,7 @@
 using System.Text;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.UI;
 
 public class DialogueUI : MonoBehaviour
@@ -22,18 +23,22 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private Transform _optionsParent;
     [SerializeField] private Button _continueButton;
 
+    private DialogueNode _currentNode;
+
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
     private void Start ()
     {
         EventBus._Instance.VisitDialogueNode += HandleVisitDialogueNode;
-        EventBus._Instance.ReachedLeafDialogueNode += HandleReachedLeafDialogueNode;
+        EventBus._Instance.TyperwriterFinished += HandleTypewriterFinished;
     }
 
     // ------------------------------------------------------------------------
     private void HandleVisitDialogueNode(DialogueNode node)
     {
+        _currentNode = node;
+
         _dialogueWindow.SetActive(true);
         foreach(Transform t in _optionsParent)
         {
@@ -52,19 +57,26 @@ public class DialogueUI : MonoBehaviour
             }
         }
         _dialogueText.SetText(sb.ToString());
-
-        foreach(DialogueOption option in node._Options)
-        {
-            OptionButton button = Instantiate(_optionButtonPrefab, _optionsParent);
-            button.SetupButton(option);
-        }
     }
 
     // ------------------------------------------------------------------------
-    private void HandleReachedLeafDialogueNode ()
+    private void HandleTypewriterFinished ()
     {
-        Button button = Instantiate(_continueButton, _optionsParent);
-        button.onClick.AddListener(delegate{ExitDialogue();});
+        Assert.IsNotNull(_currentNode);
+
+        if(_currentNode._Options == null || _currentNode._Options.Length == 0)
+        {
+            Button continueButton = Instantiate(_continueButton, _optionsParent);
+            continueButton.onClick.AddListener(delegate{ExitDialogue();});
+        }
+        else
+        {
+            foreach(DialogueOption option in _currentNode._Options)
+            {
+                OptionButton optionButton = Instantiate(_optionButtonPrefab, _optionsParent);
+                optionButton.SetupButton(option);
+            }
+        }
     }
 
     // ------------------------------------------------------------------------

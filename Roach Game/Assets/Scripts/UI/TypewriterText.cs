@@ -39,5 +39,7 @@ public class TypewriterText : MonoBehaviour
             _text.maxVisibleCharacters++;
             yield return new WaitForSeconds(_characterRevealSpeedSeconds);
         }
+
+        EventBus._Instance.InvokeTyperwriterFinished();
     }
 }
