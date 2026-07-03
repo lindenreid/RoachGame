@@ -10,6 +10,7 @@ using UnityEngine;
 
 public class HUD : MonoBehaviour
 {
+    [SerializeField] private GameObject _centerCursor;
     [SerializeField] private GameObject _hud;
     [SerializeField] private TMP_Text _healthText;
 
@@ -20,8 +21,25 @@ public class HUD : MonoBehaviour
     {
         EventBus._Instance.VisitDialogueNode += HandleVisitDialogueNode;
         EventBus._Instance.PlayerHealthChanged += HandlePlayerHealthChanged;
+        EventBus._Instance.SequenceStarted += HandleSequenceStarted;
 
         HandlePlayerHealthChanged();
+    }
+
+    // ------------------------------------------------------------------------
+    private void HandleSequenceStarted(Sequence sequence)
+    {
+        switch(sequence._GameStateType)
+        {
+            case GameStateType.Action:
+                _centerCursor.SetActive(true);
+                break;
+            case GameStateType.Cinematic:
+            case GameStateType.Dialogue:
+            case GameStateType.Menu:
+                _centerCursor.SetActive(false);
+                break;
+        }
     }
 
     // ------------------------------------------------------------------------
