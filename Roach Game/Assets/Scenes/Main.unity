@@ -350,7 +350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialogueWindow: {fileID: 820326609}
   _speakerText: {fileID: 1359834288}
-  _dialogueText: {fileID: 1520865173}
+  _dialogueText: {fileID: 1520865175}
   _optionButtonPrefab: {fileID: 8654329547650332662, guid: 66d95847e891944ddb6207cb98486bfb, type: 3}
   _optionsParent: {fileID: 2062592344}
   _continueButton: {fileID: 5504839529551001155, guid: e22578afee3df40549f04651788abb4a, type: 3}
@@ -6767,6 +6767,7 @@ GameObject:
   - component: {fileID: 1520865172}
   - component: {fileID: 1520865174}
   - component: {fileID: 1520865173}
+  - component: {fileID: 1520865175}
   m_Layer: 5
   m_Name: Text_Lines
   m_TagString: Untagged
@@ -6890,6 +6891,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1520865171}
   m_CullTransparentMesh: 1
+--- !u!114 &1520865175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1520865171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1202bffb1c45747509ad999f0a509472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 1520865173}
+  _characterRevealSpeedSeconds: 0.1
 --- !u!1 &1545551477
 GameObject:
   m_ObjectHideFlags: 0
@@ -8485,8 +8500,6 @@ PlayableDirector:
     value: {fileID: 173867087}
   - key: {fileID: 2055334860695810525, guid: b04b03ecca3ad4191b0eba8b00b7c9f4, type: 2}
     value: {fileID: 1944527208}
-  - key: {fileID: 3913107420184642050, guid: b04b03ecca3ad4191b0eba8b00b7c9f4, type: 2}
-    value: {fileID: 405359563}
   - key: {fileID: -5178480662111742432, guid: b04b03ecca3ad4191b0eba8b00b7c9f4, type: 2}
     value: {fileID: 1321469028}
   - key: {fileID: 3008962127236249895, guid: b04b03ecca3ad4191b0eba8b00b7c9f4, type: 2}

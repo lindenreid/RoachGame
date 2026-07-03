@@ -17,7 +17,7 @@ public class DialogueUI : MonoBehaviour
     // ------------------------------------------------------------------------
     [SerializeField] private GameObject _dialogueWindow;
     [SerializeField] private TMP_Text _speakerText;
-    [SerializeField] private TMP_Text _dialogueText;
+    [SerializeField] private TypewriterText _dialogueText;
     [SerializeField] private OptionButton _optionButtonPrefab;
     [SerializeField] private Transform _optionsParent;
     [SerializeField] private Button _continueButton;
@@ -51,7 +51,7 @@ public class DialogueUI : MonoBehaviour
                 sb.Append("<br><br>");   
             }
         }
-        _dialogueText.text = sb.ToString();
+        _dialogueText.SetText(sb.ToString());
 
         foreach(DialogueOption option in node._Options)
         {
