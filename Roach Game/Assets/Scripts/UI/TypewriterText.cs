@@ -18,6 +18,8 @@ public class TypewriterText : MonoBehaviour
     // ------------------------------------------------------------------------
     [SerializeField] private TMP_Text _text;
     [SerializeField] private float _characterRevealSpeedSeconds = 0.01f;
+    
+    private bool _animating;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -28,8 +30,23 @@ public class TypewriterText : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    private void Update()
+    {
+        if(_animating)
+        {
+            if(Input.GetMouseButtonDown(0))
+            {
+                StopAllCoroutines();
+                FinishAnimation();
+            }
+        }
+    }
+
+    // ------------------------------------------------------------------------
     IEnumerator IncreaseMaxVisibleChar(string message)
     {
+        _animating = true;
+
         _text.text = message;
         _text.maxVisibleCharacters = 0;
 
@@ -40,6 +57,14 @@ public class TypewriterText : MonoBehaviour
             yield return new WaitForSeconds(_characterRevealSpeedSeconds);
         }
 
+        FinishAnimation();
+    }
+
+    // ------------------------------------------------------------------------
+    private void FinishAnimation ()
+    {
+        _text.maxVisibleCharacters = _text.text.Length;
+        _animating = false;
         EventBus._Instance.InvokeTyperwriterFinished();
     }
 }
