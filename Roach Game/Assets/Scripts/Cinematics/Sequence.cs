@@ -18,6 +18,7 @@ public class Sequence : MonoBehaviour
     [Header("Gameplay")]
     [SerializeField] private GameStateType _gameStateType;
     [SerializeField] private GameObject _objects;
+    [SerializeField] private bool _disableObjectsAtEnd;
     [SerializeField] private DialogueNode _dialogueStartNode;
     [Header("Player & Camera Setup")]
     [SerializeField] private Transform _playerStartPos;
@@ -69,6 +70,11 @@ public class Sequence : MonoBehaviour
     // ------------------------------------------------------------------------
     public void EndSequence ()
     {
+        if(_disableObjectsAtEnd)
+        {
+            _objects.SetActive(false);
+        }
+
         if(_finishClue != null)
         {
             EventBus._Instance.InvokeClueUnlocked(_finishClue);

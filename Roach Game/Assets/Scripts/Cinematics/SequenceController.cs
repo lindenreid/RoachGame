@@ -79,7 +79,6 @@ public partial class SequenceController : MonoBehaviour
         }
 
         EventBus._Instance.ClueUnlocked += HandleClueUnlocked;
-        EventBus._Instance.VisitDialogueNode += HandleVisitDialogueNode;
 
         ActivateSequence(_openGameSequence);
     }
@@ -104,12 +103,6 @@ public partial class SequenceController : MonoBehaviour
         _activeSequence.StartSequence();
         EnterState(_activeSequence._GameStateType);
         Debug.LogFormat("unlocked sequence: {0}", _activeSequence);
-    }
-
-    // ------------------------------------------------------------------------
-    private void HandleVisitDialogueNode(DialogueNode node)
-    {
-        EnterState(GameStateType.Dialogue);
     }
 
     // ------------------------------------------------------------------------

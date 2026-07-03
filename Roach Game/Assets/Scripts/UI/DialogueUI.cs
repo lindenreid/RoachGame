@@ -8,6 +8,7 @@
 using System.Text;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueUI : MonoBehaviour
 {
@@ -19,6 +20,7 @@ public class DialogueUI : MonoBehaviour
     [SerializeField] private TMP_Text _dialogueText;
     [SerializeField] private OptionButton _optionButtonPrefab;
     [SerializeField] private Transform _optionsParent;
+    [SerializeField] private Button _continueButton;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -26,6 +28,7 @@ public class DialogueUI : MonoBehaviour
     private void Start ()
     {
         EventBus._Instance.VisitDialogueNode += HandleVisitDialogueNode;
+        EventBus._Instance.ReachedLeafDialogueNode += HandleReachedLeafDialogueNode;
     }
 
     // ------------------------------------------------------------------------
@@ -45,7 +48,7 @@ public class DialogueUI : MonoBehaviour
             sb.Append(node._Lines[i]);
             if(i < node._Lines.Length - 1)
             {
-                sb.Append("<br>");   
+                sb.Append("<br><br>");   
             }
         }
         _dialogueText.text = sb.ToString();
@@ -55,5 +58,20 @@ public class DialogueUI : MonoBehaviour
             OptionButton button = Instantiate(_optionButtonPrefab, _optionsParent);
             button.SetupButton(option);
         }
+    }
+
+    // ------------------------------------------------------------------------
+    private void HandleReachedLeafDialogueNode ()
+    {
+        Button button = Instantiate(_continueButton, _optionsParent);
+        button.onClick.AddListener(delegate{ExitDialogue();});
+    }
+
+    // ------------------------------------------------------------------------
+    private void ExitDialogue ()
+    {
+        Debug.Log("exit dialogue");
+        SequenceController._Instance.EndCurrentSequence();
+        _dialogueWindow.SetActive(false);
     }
 }
