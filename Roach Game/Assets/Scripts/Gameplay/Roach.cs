@@ -12,7 +12,7 @@ using UnityEngine.AI;
 using UnityEngine.Playables;
 using UnityEngine.Splines;
 
-public partial class Roach : NPC
+public partial class Roach : MonoBehaviour
 {
     // ------------------------------------------------------------------------
     // Types

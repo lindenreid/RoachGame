@@ -26,7 +26,7 @@ public class OptionButton : MonoBehaviour
 
         _button.onClick.AddListener(delegate
         {
-           DialogueRunner.Instance.SelectOption(option._NextNode); 
+           DialogueRunner._Instance.SelectOption(option._NextNode); 
         });
     }
 }

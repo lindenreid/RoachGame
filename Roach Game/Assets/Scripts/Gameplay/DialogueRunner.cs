@@ -14,20 +14,20 @@ public class DialogueRunner : MonoBehaviour
     // ------------------------------------------------------------------------
     private DialogueNode _currentNode;
 
-    public static DialogueRunner Instance { get; private set; }
+    public static DialogueRunner _Instance { get; private set; }
 
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
     private void Awake()
     {
-        if (Instance != null && Instance != this)
+        if (_Instance != null && _Instance != this)
         {
             Destroy(this);
             return;
         }
 
-        Instance = this;
+        _Instance = this;
     }
 
     // ------------------------------------------------------------------------

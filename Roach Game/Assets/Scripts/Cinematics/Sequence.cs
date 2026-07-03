@@ -18,6 +18,7 @@ public class Sequence : MonoBehaviour
     [Header("Gameplay")]
     [SerializeField] private GameStateType _gameStateType;
     [SerializeField] private GameObject _objects;
+    [SerializeField] private DialogueNode _dialogueStartNode;
     [Header("Player & Camera Setup")]
     [SerializeField] private Transform _playerStartPos;
     [SerializeField] private Transform _cameraStartRot;
@@ -57,6 +58,11 @@ public class Sequence : MonoBehaviour
             {
                 _roachOriginalPositions[i] = _roaches[i].transform.position;
             }
+        }
+
+        if(_gameStateType == GameStateType.Dialogue && _dialogueStartNode != null)
+        {
+            DialogueRunner._Instance.StartDialogue(_dialogueStartNode);
         }
     }
 
