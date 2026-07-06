@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42e11d128b481421794c653e67183381, type: 3}
-  m_Name: ChatList
+  m_Script: {fileID: 11500000, guid: 03fd60e1f812941e3b3ce1edcb42870d, type: 3}
+  m_Name: FriendData_manager
   m_EditorClassIdentifier: 
-  Chats:
-  - {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}
-  - {fileID: 11400000, guid: c2ef28d8ca94a40608909a2c963aa5d5, type: 2}
+  _id: 64324
+  _name: Manager

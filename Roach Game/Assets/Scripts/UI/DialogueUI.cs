@@ -37,6 +37,8 @@ public class DialogueUI : MonoBehaviour
     // ------------------------------------------------------------------------
     private void HandleVisitDialogueNode(DialogueNode node)
     {
+        Debug.LogFormat("showing dialogue node: {0}", node);
+
         _currentNode = node;
 
         _dialogueWindow.SetActive(true);
@@ -82,6 +84,11 @@ public class DialogueUI : MonoBehaviour
     // ------------------------------------------------------------------------
     private void ExitDialogue ()
     {
+        Debug.LogFormat("HIDING dialogue node: {0}", _currentNode);
+        // MUST hide UI before unlocking clues
+        //      in case a future clue turns dialogue back on lol
+        _dialogueWindow.SetActive(false);
+
         // MUST end sequence before unlocking clues
         // since clue unlocks usually lead to a new sequence
         SequenceController._Instance.EndCurrentSequence();
@@ -90,7 +97,5 @@ public class DialogueUI : MonoBehaviour
         {
             EventBus._Instance.InvokeClueUnlocked(clue);
         }
-
-        _dialogueWindow.SetActive(false);
     }
 }

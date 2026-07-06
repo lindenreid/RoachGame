@@ -1,0 +1,95 @@
+{
+  "passages": [
+    {
+      "text": "<clue> EndSeq2.1\n<line> ((ok. ask her politely for help))\n\n[[ask politely]]\n[[show your frustration]]",
+      "links": [
+        {
+          "name": "ask politely",
+          "link": "ask politely",
+          "pid": "2"
+        },
+        {
+          "name": "show your frustration",
+          "link": "show your frustration",
+          "pid": "3"
+        }
+      ],
+      "name": "start",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> hey, could you help us get rid of the roaches please?\n<line> i don't think pest control finished the job\n\n[[(yeah... she should listen to that.)]]",
+      "links": [
+        {
+          "name": "(yeah... she should listen to that.)",
+          "link": "(yeah... she should listen to that.)",
+          "pid": "4"
+        }
+      ],
+      "name": "ask politely",
+      "pid": "2",
+      "position": {
+        "x": "537.5",
+        "y": "375"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> our apartment is filled with roaches. it's disgusting and unliveable\n<line> fix it.\n\n[[(that should make her understand.)]]",
+      "links": [
+        {
+          "name": "(that should make her understand.)",
+          "link": "(that should make her understand.)",
+          "pid": "5"
+        }
+      ],
+      "name": "show your frustration",
+      "pid": "3",
+      "position": {
+        "x": "662.5",
+        "y": "375"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> i'll send pest control\n<line> but the roaches are your problem",
+      "name": "(yeah... she should listen to that.)",
+      "pid": "4",
+      "position": {
+        "x": "537.5",
+        "y": "500"
+      },
+      "tags": [
+        "Manager"
+      ]
+    },
+    {
+      "text": "<line> you're going to see roaches.\n<line> i think you should work on getting used to it",
+      "name": "(that should make her understand.)",
+      "pid": "5",
+      "position": {
+        "x": "662.5",
+        "y": "500"
+      },
+      "tags": [
+        "Manager"
+      ]
+    }
+  ],
+  "name": "Seq2.2",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "1572DDEB-8D04-4B91-B4EE-D7B638D1082D"
+}
