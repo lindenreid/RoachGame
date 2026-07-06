@@ -16,3 +16,4 @@ Play the latest WIP build in your browser [on Itch here](https://outofmanna.itch
 - Family stock photos by [Kampus Production](https://www.pexels.com/photo/a-woman-using-a-laptop-6248447/) and [Dmitry Rodionov](https://www.pexels.com/photo/family-playing-together-next-to-the-christmas-tree-15293999/)
 ### 3D Models
 - [Pistol model by DJ Maesen](https://sketchfab.com/3d-models/low-poly-pistol-0342cf497fef4b07804b32b4ab7271e5)
+- [Office chair model by Elbolilloduro](https://elbolilloduro.itch.io/paquete-de-modelos-low-poly-estilo-psx-2)
