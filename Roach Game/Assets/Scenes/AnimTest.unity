@@ -3278,6 +3278,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7611000832605570722, guid: e1b6b718988461e488009954fbfb58cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4569,7 +4573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8820377858282758083}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.058502834, y: -0.20498297, z: 0.01227517, w: 0.9769384}
+  m_LocalRotation: {x: 0.05223128, y: -0.48546565, z: 0.02907155, w: 0.8722098}
   m_LocalPosition: {x: 1.27, y: 5.67, z: -1.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4578,7 +4582,7 @@ Transform:
   - {fileID: 1936038634979803223}
   - {fileID: 7001492374286477572}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 6.854, y: -23.7, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.854, y: -58.2, z: 0}
 --- !u!4 &3241234191556008064 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7718386743554941139, guid: c97c5b89ca3f73543bbb527eea205358, type: 3}
