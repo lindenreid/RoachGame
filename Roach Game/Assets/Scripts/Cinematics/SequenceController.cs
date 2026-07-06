@@ -36,6 +36,7 @@ public partial class SequenceController : MonoBehaviour
     // Properties
     // ------------------------------------------------------------------------
     public static SequenceController _Instance { get; private set; }
+    public Sequence _ActiveSequence => _activeSequence;
 
     public GameStateType _ActiveStateType
     {

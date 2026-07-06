@@ -1494,6 +1494,7 @@ MonoBehaviour:
   _gameStartClue: {fileID: 11400000, guid: 581071a1b7f1e4449868dc6887c94234, type: 2}
   _firstRoachHitClue: {fileID: 11400000, guid: e439e1228acdf479393f155e87cbc202, type: 2}
   _postHitFirstRoach: {fileID: 11400000, guid: b60f27301696a471680816415870c90d, type: 2}
+  _firstRoachGunSequence: {fileID: 731272070}
 --- !u!114 &374279148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5163,7 +5164,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5666340172471909981, guid: e430c236efcc54aacab7a4e3c9d4c6ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.72
+      value: 3.7199914
       objectReference: {fileID: 0}
     - target: {fileID: 5666340172471909981, guid: e430c236efcc54aacab7a4e3c9d4c6ee, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5171,19 +5172,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5666340172471909981, guid: e430c236efcc54aacab7a4e3c9d4c6ee, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9381971
+      value: 0.99883807
       objectReference: {fileID: 0}
     - target: {fileID: 5666340172471909981, guid: e430c236efcc54aacab7a4e3c9d4c6ee, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0003024822
+      value: -0.0004779031
       objectReference: {fileID: 0}
     - target: {fileID: 5666340172471909981, guid: e430c236efcc54aacab7a4e3c9d4c6ee, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.34610128
+      value: -0.048189536
       objectReference: {fileID: 0}
     - target: {fileID: 5666340172471909981, guid: e430c236efcc54aacab7a4e3c9d4c6ee, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0004137147
+      value: -0.00015695312
       objectReference: {fileID: 0}
     - target: {fileID: 5666340172471909981, guid: e430c236efcc54aacab7a4e3c9d4c6ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5199,7 +5200,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5824890116372132804, guid: e430c236efcc54aacab7a4e3c9d4c6ee, type: 3}
       propertyPath: m_Name
-      value: Roach
+      value: FirstRoach
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337665383833818599, guid: e430c236efcc54aacab7a4e3c9d4c6ee, type: 3}
+      propertyPath: _isDocile
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

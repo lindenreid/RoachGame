@@ -25,6 +25,8 @@ public partial class Roach : MonoBehaviour
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
+    [Header("Unique Values")]
+    [SerializeField] private bool _isDocile;
     [Header("Movement")]
     [SerializeField] private Vector2 _idleTimeMinMax;
     [SerializeField] private float _pathKnotDistance = 0.5f;
@@ -148,7 +150,7 @@ public partial class Roach : MonoBehaviour
             {
                 EnterState(RoachStateType.Dead);
             }
-            else
+            else if(!_isDocile)
             {
                 EnterState(RoachStateType.Attacking);
             }

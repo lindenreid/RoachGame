@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private ClueData _gameStartClue;
     [SerializeField] private ClueData _firstRoachHitClue;
     [SerializeField] private ClueData _postHitFirstRoach;
+    [SerializeField] private Sequence _firstRoachGunSequence;
 
     private bool _hitFirstRoach;
     private Roach _targetRoach;
@@ -64,6 +65,11 @@ public class GameController : MonoBehaviour
     // ------------------------------------------------------------------------
     private void HandleRoachHit (Roach roach)
     {
+        if(SequenceController._Instance._ActiveSequence != _firstRoachGunSequence)
+        {
+            return;
+        }
+
         if(!_hitFirstRoach)
         {
             SetTargetRoach(roach);
