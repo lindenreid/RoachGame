@@ -1,0 +1,21 @@
+{
+  "passages": [
+    {
+      "text": "<clue> StartSeq2\n<cluegiven> EndSeq2.1\n<line> i need to ask the apartment manger for help\n<line> i mean she's kind of an idiot\n<line> and really mean\n<line> but she'll send pest control right??",
+      "name": "start",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    }
+  ],
+  "name": "Seq2.1",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "8D5BE245-1572-4DEB-8D04-8B91F4EED7B6"
+}

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
+  m_Name: node_2817_185245
+  m_EditorClassIdentifier: 
+  _id: 185245
+  _requiredClues:
+  - {fileID: 11400000, guid: e21d21f8e9fa6479d8b02ceceedf4437, type: 2}
+  _cluesGiven:
+  - {fileID: 11400000, guid: 9e73c74317ae74a158dfb9869f27af1b, type: 2}
+  _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
+  _lines:
+  - i need to ask the apartment manger for help
+  - i mean she's kind of an idiot
+  - and really mean
+  - but she'll send pest control right??
+  _options: []
+  _Chat: {fileID: 11400000, guid: c2ef28d8ca94a40608909a2c963aa5d5, type: 2}
