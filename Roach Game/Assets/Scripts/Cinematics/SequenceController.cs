@@ -100,16 +100,19 @@ public partial class SequenceController : MonoBehaviour
     // ------------------------------------------------------------------------
     private void ActivateSequence (Sequence sequence)
     {
+        EnterState(sequence._GameStateType);
         _activeSequence = sequence;
         _activeSequence.StartSequence();
-        EnterState(_activeSequence._GameStateType);
         Debug.LogFormat("unlocked sequence: {0}", _activeSequence);
     }
 
     // ------------------------------------------------------------------------
     private void EnterState(GameStateType newState)
     {
-        _activeState?.ExitState();
+        if(_activeState != null)
+        {
+            _activeState?.ExitState();
+        }
 
         switch(newState)
         {
@@ -127,6 +130,7 @@ public partial class SequenceController : MonoBehaviour
     // timeline signal callback
     public void EndCurrentSequence ()
     {
+        Debug.Log("ended sequence");
         _activeSequence.EndSequence();
     }
 
