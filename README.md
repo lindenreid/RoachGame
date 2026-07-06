@@ -17,3 +17,4 @@ Play the latest WIP build in your browser [on Itch here](https://outofmanna.itch
 ### 3D Models
 - [Pistol model by DJ Maesen](https://sketchfab.com/3d-models/low-poly-pistol-0342cf497fef4b07804b32b4ab7271e5)
 - [Office chair model by Elbolilloduro](https://elbolilloduro.itch.io/paquete-de-modelos-low-poly-estilo-psx-2)
+- [Old lady model by Elbolilloduro](https://elbolilloduro.itch.io/objetos-low-poly-estilo-psx)
