@@ -49,6 +49,7 @@ public partial class Roach : MonoBehaviour
     [SerializeField] private Vector3 _legAnim;
     [SerializeField] private float _legFlipTime;
     [Header("Health")]
+    [SerializeField] private ParticleSystem _bloodParticles;
     [SerializeField] private GameObject _healthCanvas;
     [SerializeField] private TMP_Text _healthText;
     [SerializeField] private int _maxHealth = 1;
@@ -166,6 +167,8 @@ public partial class Roach : MonoBehaviour
                 EnterState(RoachStateType.Attacking);
             }
         }
+
+        _bloodParticles.Play();
 
         // fire event AFTER everything else, so roach has most accurate
         //      health and state information for rest of game
