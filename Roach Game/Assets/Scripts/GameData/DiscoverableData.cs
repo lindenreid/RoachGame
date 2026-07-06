@@ -10,6 +10,8 @@ using UnityEngine;
 public class DiscoverableData : GameData
 {
     [SerializeField] protected ClueData[] _requiredClues;
+    [SerializeField] protected ClueData[] _cluesGiven;
 
     public ClueData[] _RequiredClues => _requiredClues;
+    public ClueData[] _CluesGiven => _cluesGiven;
 }

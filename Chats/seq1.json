@@ -1,0 +1,21 @@
+{
+  "passages": [
+    {
+      "text": "<clue> StartSeq1\n<cluegiven> EndSeq1.1\n<line> ROACH?!?\n<line> i gotta get rid of these guys before the landlord comes for the inspection!!",
+      "name": "Untitled Passage",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    }
+  ],
+  "name": "Seq1",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "839F1C36-8D5B-4245-9572-DDEB8D048B91"
+}

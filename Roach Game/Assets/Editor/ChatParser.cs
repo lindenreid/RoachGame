@@ -35,6 +35,7 @@ public static class ChatParser {
     private static readonly char c_escapeChar = '\n';
     private static readonly string c_line_Label = "<line>";
     private static readonly string c_clue_Label = "<clue>";
+    private static readonly string c_clueGiven_Label = "<cluegiven>";
 
     // ------------------------------------------------------------------------
     // Methods
@@ -272,6 +273,7 @@ public static class ChatParser {
 
         List<string> dialogueLines = new List<string>();
         List<string> clues = new List<string>();
+        List<string> cluesGiven = new List<string>();
 
         foreach(string text in splitText)
         {
@@ -287,10 +289,17 @@ public static class ChatParser {
                     text.IndexOf(c_clue_Label) + c_clue_Label.Length + 1
                 ));
             }
+            else if(text.StartsWith(c_clueGiven_Label))
+            {
+                cluesGiven.Add(text.Substring(
+                    text.IndexOf(c_clueGiven_Label) + c_clueGiven_Label.Length + 1
+                ));
+            }
         }
 
         nodeParseData._lines = dialogueLines.ToArray();
         nodeParseData._clues = clues.ToArray();
+        nodeParseData._cluesGiven = cluesGiven.ToArray();
 
         return nodeParseData;
     }
@@ -331,21 +340,10 @@ public static class ChatParser {
             i++;
 
             // also, for this dialogue node, find OR create new permanent assets for all clues
-            int j = 0;
-            ClueData[] loadedClueFiles = new ClueData[loadedNodeFile._RequiredClues.Length];
-            foreach(ClueData clue in loadedNodeFile._RequiredClues)
-            {
-                path = GetClueFilePath(clue);
-                ClueData loadedClueFile = (ClueData)AssetDatabase.LoadAssetAtPath<ClueData>(path); 
-                if(loadedClueFile == null)
-                {
-                    AssetDatabase.CreateAsset(clue, path);
-                    loadedClueFile = (ClueData)AssetDatabase.LoadAssetAtPath<ClueData>(path);    
-                } 
-                loadedClueFiles[j] = loadedClueFile;
-                j++;
-            }
-            loadedNodeFile.LoadClueDataAssets(loadedClueFiles);
+            loadedNodeFile.LoadClueDataAssets(
+                LoadClueAssets(loadedNodeFile._RequiredClues),
+                LoadClueAssets(loadedNodeFile._CluesGiven)
+            );
         }
         AssetDatabase.SaveAssets();
 
@@ -361,6 +359,27 @@ public static class ChatParser {
         loadedChatFile.FinalizeDialogueNodeReferences(generatedNodeFiles);
 
         EditorUtility.SetDirty(loadedChatFile);
+    }
+
+    // ------------------------------------------------------------------------
+    private static ClueData[] LoadClueAssets(ClueData[] clues)
+    {
+        int j = 0;
+        string path = "";
+        ClueData[] loadedClueFiles = new ClueData[clues.Length];
+        foreach(ClueData clue in clues)
+        {
+            path = GetClueFilePath(clue);
+            ClueData loadedClueFile = (ClueData)AssetDatabase.LoadAssetAtPath<ClueData>(path); 
+            if(loadedClueFile == null)
+            {
+                AssetDatabase.CreateAsset(clue, path);
+                loadedClueFile = (ClueData)AssetDatabase.LoadAssetAtPath<ClueData>(path);    
+            } 
+            loadedClueFiles[j] = loadedClueFile;
+            j++;
+        }
+        return loadedClueFiles;
     }
 
     // ------------------------------------------------------------------------

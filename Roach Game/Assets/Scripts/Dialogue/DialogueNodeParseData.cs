@@ -16,6 +16,7 @@ public struct DialogueNodeParseData
     public string _nodeId; // id within twine file
     public string[] _lines;
     public string[] _clues;
+    public string[] _cluesGiven;
     public string _friend;
     public DialogueOptionParseData[] _options;
 }

@@ -15,5 +15,6 @@ MonoBehaviour:
   _id: 2817
   _nodes:
   - {fileID: 11400000, guid: 45678234396744c60acb6421fd26af7a, type: 2}
+  - {fileID: 11400000, guid: b490e5c7609dd4854994b528aed648ed, type: 2}
   _friends:
   - {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}

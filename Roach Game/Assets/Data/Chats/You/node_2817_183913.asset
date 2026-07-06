@@ -10,17 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
-  m_Name: node_2817_100928
+  m_Name: node_2817_183913
   m_EditorClassIdentifier: 
-  _id: 100928
+  _id: 183913
   _requiredClues:
-  - {fileID: 11400000, guid: 4fdc663159c8c40ad8ebee06f5aad3c4, type: 2}
-  _cluesGiven: []
+  - {fileID: 11400000, guid: 93cac2c63f86d47ab8ac7cff7c2d690c, type: 2}
+  _cluesGiven:
+  - {fileID: 11400000, guid: 01d76d0f9635741ae83ad5b8ec9435c9, type: 2}
   _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
   _lines:
-  - ... bug nightmares again....
-  - ..... i must be freaking out because the landlord is inspecting soon...
-  - but we got rid of the roaches... i think...
-  - i'm gonna drink some water and go back to bed...
+  - ROACH?!?
+  - i gotta get rid of these guys before the landlord comes for the inspection!!
   _options: []
   _Chat: {fileID: 11400000, guid: c2ef28d8ca94a40608909a2c963aa5d5, type: 2}

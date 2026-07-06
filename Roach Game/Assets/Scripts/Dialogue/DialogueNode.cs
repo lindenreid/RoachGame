@@ -160,6 +160,25 @@ public class DialogueNode : DiscoverableData
         }
         _requiredClues = clues.ToArray();
 
+        List<ClueData> cluesGiven = new List<ClueData>();
+        foreach(string clueName in _parseData._cluesGiven)
+        {
+            if(cluesByName.Keys.Contains(clueName))
+            {
+                cluesGiven.Add(cluesByName[clueName]);
+            }
+            else
+            {
+                ClueData clue = ScriptableObject.CreateInstance<ClueData>(); 
+                clue.InitFromParseData(clueName);
+
+                cluesByName.Add(clueName, clue);
+
+                cluesGiven.Add(clue);
+            }
+        }
+        _cluesGiven = cluesGiven.ToArray();
+
         // init options list by finding actual DialogueNode by parse Data ID
         _options = new DialogueOption[_parseData._options.Length];
         int i = 0;
@@ -177,8 +196,9 @@ public class DialogueNode : DiscoverableData
     }
 
     // ------------------------------------------------------------------------
-    public void LoadClueDataAssets(ClueData[] clueAssets)
+    public void LoadClueDataAssets(ClueData[] requiredClueAssets, ClueData[] givenClueAssets)
     {
-        _requiredClues = clueAssets;
+        _requiredClues = requiredClueAssets;
+        _cluesGiven = givenClueAssets;
     }
 }
