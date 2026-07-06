@@ -74,6 +74,11 @@ public partial class Roach : MonoBehaviour
     private Quaternion _rightAntennaeNeutralRot;
 
     // ------------------------------------------------------------------------
+    // Properties
+    // ------------------------------------------------------------------------
+    public bool _IsDead => _health <= 0;
+
+    // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
     private void Start ()
@@ -140,9 +145,7 @@ public partial class Roach : MonoBehaviour
         {
             return;
         }
-        if(_health <= 0) return;
-
-        EventBus._Instance.InvokeRoachHit(this);
+        if(_IsDead) return;
 
         _health--;
 
@@ -163,6 +166,10 @@ public partial class Roach : MonoBehaviour
                 EnterState(RoachStateType.Attacking);
             }
         }
+
+        // fire event AFTER everything else, so roach has most accurate
+        //      health and state information for rest of game
+        EventBus._Instance.InvokeRoachHit(this);
     }
 
     // ------------------------------------------------------------------------

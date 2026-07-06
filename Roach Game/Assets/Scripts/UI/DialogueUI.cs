@@ -82,12 +82,15 @@ public class DialogueUI : MonoBehaviour
     // ------------------------------------------------------------------------
     private void ExitDialogue ()
     {
+        // MUST end sequence before unlocking clues
+        // since clue unlocks usually lead to a new sequence
+        SequenceController._Instance.EndCurrentSequence();
+
         foreach(ClueData clue in _currentNode._CluesGiven)
         {
             EventBus._Instance.InvokeClueUnlocked(clue);
         }
-        
-        SequenceController._Instance.EndCurrentSequence();
+
         _dialogueWindow.SetActive(false);
     }
 }

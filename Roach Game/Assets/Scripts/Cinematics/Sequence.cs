@@ -5,6 +5,7 @@
  * Copyright 2019 - 2026 Studio Tilia
  */
 
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Sequence : MonoBehaviour
@@ -39,6 +40,7 @@ public class Sequence : MonoBehaviour
     public GameStateType _GameStateType => _gameStateType;
     public AudioClip _Music => _music;
     public SequenceAudioType _AudioType => _audioType;
+    public Roach[] _Roaches => _objects == null ? new Roach[0] : _objects.GetComponentsInChildren<Roach>();
 
     // ------------------------------------------------------------------------
     // Methods

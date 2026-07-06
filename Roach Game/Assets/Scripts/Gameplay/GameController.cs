@@ -5,7 +5,10 @@
  * Copyright 2019 - 2026 Studio Tilia
  */
 
+using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 // Handles hard-coded clues for very specific sequence triggers
 public class GameController : MonoBehaviour
@@ -20,6 +23,7 @@ public class GameController : MonoBehaviour
 
     private bool _hitFirstRoach;
     private Roach _targetRoach;
+    private List<Roach> _activeRoaches;
 
     // ------------------------------------------------------------------------
     // Properties
@@ -40,6 +44,8 @@ public class GameController : MonoBehaviour
         }
 
         _Instance = this;
+
+        _activeRoaches = new List<Roach>();
     }
 
     // ------------------------------------------------------------------------
@@ -47,6 +53,7 @@ public class GameController : MonoBehaviour
     {
         EventBus._Instance.RoachHit += HandleRoachHit;
         EventBus._Instance.ClueUnlocked += HandleClueUnlocked;
+        EventBus._Instance.SequenceStarted += HandleSequenceStarted;
     }
 
     // ------------------------------------------------------------------------
@@ -63,18 +70,25 @@ public class GameController : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    private void HandleSequenceStarted(Sequence sequence)
+    {
+        _activeRoaches.AddRange(sequence._Roaches);
+    }
+
+    // ------------------------------------------------------------------------
     private void HandleRoachHit (Roach roach)
     {
-        if(SequenceController._Instance._ActiveSequence != _firstRoachGunSequence)
-        {
-            return;
-        }
-
-        if(!_hitFirstRoach)
+        if(SequenceController._Instance._ActiveSequence == _firstRoachGunSequence && !_hitFirstRoach)
         {
             SetTargetRoach(roach);
             EventBus._Instance.InvokeClueUnlocked(_firstRoachHitClue);
             EventBus._Instance.RoachHit -= HandleRoachHit;
+        }
+
+        int deadRoaches = _activeRoaches.Count(r => r._IsDead);
+        if(deadRoaches == _activeRoaches.Count())
+        {
+            SequenceController._Instance.EndCurrentSequence();
         }
     }
 
