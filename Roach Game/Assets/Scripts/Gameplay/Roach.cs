@@ -6,6 +6,8 @@
  */
 
 using System.Linq;
+using System.Text;
+using TMPro;
 
 using UnityEngine;
 using UnityEngine.AI;
@@ -47,6 +49,8 @@ public partial class Roach : MonoBehaviour
     [SerializeField] private Vector3 _legAnim;
     [SerializeField] private float _legFlipTime;
     [Header("Health")]
+    [SerializeField] private GameObject _healthCanvas;
+    [SerializeField] private TMP_Text _healthText;
     [SerializeField] private int _maxHealth = 1;
     [SerializeField] private Collider _collider;
     [Header("Weapons")]
@@ -75,6 +79,8 @@ public partial class Roach : MonoBehaviour
     private void Start ()
     {
         _health = _maxHealth;
+
+        _healthCanvas.SetActive(false);
 
         _roachSplines.SetParent(null);
 
@@ -140,6 +146,8 @@ public partial class Roach : MonoBehaviour
 
         _health--;
 
+        UpdateHealthText();
+
         if(GameController._Instance._TargetRoach == this)
         {
             EnterState(RoachStateType.Cinematic);
@@ -154,6 +162,23 @@ public partial class Roach : MonoBehaviour
             {
                 EnterState(RoachStateType.Attacking);
             }
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    private void UpdateHealthText ()
+    {
+        bool show = _health > 0;
+        _healthCanvas.SetActive(show);
+
+        if(show)
+        {
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i < _health; i++)
+            {
+                sb.Append(".");
+            }
+            _healthText.text = sb.ToString();
         }
     }
 
