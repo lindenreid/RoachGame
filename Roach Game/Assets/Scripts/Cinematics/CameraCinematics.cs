@@ -27,8 +27,26 @@ public class CameraCinematics : MonoBehaviour
     private bool _zooming;
 
     // ------------------------------------------------------------------------
+    // Properties
+    // ------------------------------------------------------------------------
+    public static CameraCinematics _Instance { get; private set; }
+
+    // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
+    private void Awake()
+    {
+        if (_Instance != null && _Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+
+        _Instance = this;
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
     public void AnimateRoachZoomIn ()
     {
         Roach targetRoach = GameController._Instance._TargetRoach;
@@ -63,6 +81,7 @@ public class CameraCinematics : MonoBehaviour
     } 
 
     // ------------------------------------------------------------------------
+    // timeline signal callback
     public void AnimateRoachZoomOut ()
     {
         _roachZoomOutSplineAnimator.Play();

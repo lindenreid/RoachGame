@@ -56,11 +56,17 @@ public class GameController : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    public void SetTargetRoach (Roach roach)
+    {
+        _targetRoach = roach;
+    }
+
+    // ------------------------------------------------------------------------
     private void HandleRoachHit (Roach roach)
     {
         if(!_hitFirstRoach)
         {
-            _targetRoach = roach;
+            SetTargetRoach(roach);
             EventBus._Instance.InvokeClueUnlocked(_firstRoachHitClue);
             EventBus._Instance.RoachHit -= HandleRoachHit;
         }

@@ -2662,7 +2662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerClue: {fileID: 11400000, guid: fdb58fe56643e46dcb93ab666ac465a6, type: 2}
-  _finishClue: {fileID: 11400000, guid: 9e0a2573de7a04409a022e8005bebad7, type: 2}
+  _finishClue: {fileID: 0}
   _gameStateType: 2
   _objects: {fileID: 1562633697}
   _disableObjectsAtEnd: 0

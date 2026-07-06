@@ -118,6 +118,14 @@ public partial class Roach : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void ZoomInToRoach ()
+    {
+        GameController._Instance.SetTargetRoach(this);
+        CameraCinematics._Instance.AnimateRoachZoomIn();
+    }
+
+    // ------------------------------------------------------------------------
     public void Hit ()
     {
         if(SequenceController._Instance._ActiveStateType != GameStateType.Action)
