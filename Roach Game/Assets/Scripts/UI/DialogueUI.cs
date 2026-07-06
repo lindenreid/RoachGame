@@ -82,7 +82,11 @@ public class DialogueUI : MonoBehaviour
     // ------------------------------------------------------------------------
     private void ExitDialogue ()
     {
-        Debug.Log("exit dialogue");
+        foreach(ClueData clue in _currentNode._CluesGiven)
+        {
+            EventBus._Instance.InvokeClueUnlocked(clue);
+        }
+        
         SequenceController._Instance.EndCurrentSequence();
         _dialogueWindow.SetActive(false);
     }
