@@ -84,6 +84,9 @@ public class DialogueUI : MonoBehaviour
     // ------------------------------------------------------------------------
     private void ExitDialogue ()
     {
+        // cache current node in case next sequence switches to a new one
+        DialogueNode endNode = _currentNode;
+
         Debug.LogFormat("HIDING dialogue node: {0}", _currentNode);
         // MUST hide UI before unlocking clues
         //      in case a future clue turns dialogue back on lol
@@ -93,7 +96,8 @@ public class DialogueUI : MonoBehaviour
         // since clue unlocks usually lead to a new sequence
         SequenceController._Instance.EndCurrentSequence();
 
-        foreach(ClueData clue in _currentNode._CluesGiven)
+        // invoke clues on dialogue node that just ended
+        foreach(ClueData clue in endNode._CluesGiven)
         {
             EventBus._Instance.InvokeClueUnlocked(clue);
         }

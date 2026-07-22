@@ -58,6 +58,7 @@ public class EventBus : MonoBehaviour
     // ------------------------------------------------------------------------
     public void InvokeClueUnlocked(ClueData clue)
     {
+        Debug.LogFormat("unlocked clue: {0}", clue._Name);
         ClueUnlocked?.Invoke(clue);
     }
 
