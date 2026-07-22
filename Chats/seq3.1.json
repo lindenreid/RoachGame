@@ -1,0 +1,21 @@
+{
+  "passages": [
+    {
+      "text": "<clue> EndSeq2.3\n<cluegiven> EndSeq3.1\n<line> i miss emily\n<line> i need to have this sorted before she gets back from her trip\n<line> she'll be sooo stressed out if she comes home to the roaches\n<line> or an eviction notice...",
+      "name": "start",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    }
+  ],
+  "name": "Seq3.1",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "50B5D2C4-8384-4837-BBF5-0F35B8AA0504"
+}
