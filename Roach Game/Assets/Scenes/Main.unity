@@ -929,7 +929,8 @@ MonoBehaviour:
   _triggerClue: {fileID: 11400000, guid: 9e73c74317ae74a158dfb9869f27af1b, type: 2}
   _finishClue: {fileID: 11400000, guid: 73faa572ed26d4b308e277ab8566075a, type: 2}
   _gameStateType: 2
-  _objects: {fileID: 900999529}
+  _objects:
+  - {fileID: 900999529}
   _disableObjectsAtEnd: 1
   _dialogueStartNode: {fileID: 0}
   _playerStartPos: {fileID: 0}
@@ -1041,6 +1042,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173867087}
   m_CullTransparentMesh: 1
+--- !u!1 &210514579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 210514580}
+  m_Layer: 0
+  m_Name: Seq_3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &210514580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210514579}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 374279144}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &214846783
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,6 +1322,7 @@ Transform:
   - {fileID: 282716069}
   - {fileID: 1603200234}
   - {fileID: 1481123908}
+  - {fileID: 210514580}
   - {fileID: 1203660317}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1499,9 +1532,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerClue: {fileID: 11400000, guid: 73faa572ed26d4b308e277ab8566075a, type: 2}
-  _finishClue: {fileID: 0}
+  _finishClue: {fileID: 11400000, guid: 9bbe4679f947a4064b266e782737ce35, type: 2}
   _gameStateType: 3
-  _objects: {fileID: 1324973834560979814}
+  _objects:
+  - {fileID: 1324973834560979814}
   _disableObjectsAtEnd: 1
   _dialogueStartNode: {fileID: 11400000, guid: ac460ddeca89444378959fd937ae3493, type: 2}
   _playerStartPos: {fileID: 535240412}
@@ -1734,7 +1768,8 @@ MonoBehaviour:
   _triggerClue: {fileID: 11400000, guid: e21d21f8e9fa6479d8b02ceceedf4437, type: 2}
   _finishClue: {fileID: 0}
   _gameStateType: 3
-  _objects: {fileID: 865359250}
+  _objects:
+  - {fileID: 865359250}
   _disableObjectsAtEnd: 1
   _dialogueStartNode: {fileID: 11400000, guid: cc1468fa4b6be4dcea20f4fee02a613f, type: 2}
   _playerStartPos: {fileID: 0}
@@ -2152,7 +2187,7 @@ MonoBehaviour:
   _triggerClue: {fileID: 11400000, guid: e439e1228acdf479393f155e87cbc202, type: 2}
   _finishClue: {fileID: 11400000, guid: b60f27301696a471680816415870c90d, type: 2}
   _gameStateType: 2
-  _objects: {fileID: 332266283}
+  _objects: []
   _disableObjectsAtEnd: 0
   _dialogueStartNode: {fileID: 0}
   _playerStartPos: {fileID: 0}
@@ -2655,7 +2690,8 @@ MonoBehaviour:
   _triggerClue: {fileID: 11400000, guid: 25868c4cbe625478181b6bbdecc4651a, type: 2}
   _finishClue: {fileID: 0}
   _gameStateType: 4
-  _objects: {fileID: 786100325}
+  _objects:
+  - {fileID: 786100325}
   _disableObjectsAtEnd: 0
   _dialogueStartNode: {fileID: 0}
   _playerStartPos: {fileID: 0}
@@ -2710,7 +2746,8 @@ MonoBehaviour:
   _triggerClue: {fileID: 11400000, guid: fdb58fe56643e46dcb93ab666ac465a6, type: 2}
   _finishClue: {fileID: 11400000, guid: 93cac2c63f86d47ab8ac7cff7c2d690c, type: 2}
   _gameStateType: 2
-  _objects: {fileID: 1562633697}
+  _objects:
+  - {fileID: 1562633697}
   _disableObjectsAtEnd: 0
   _dialogueStartNode: {fileID: 0}
   _playerStartPos: {fileID: 55755714}
@@ -3081,7 +3118,7 @@ MonoBehaviour:
   _triggerClue: {fileID: 11400000, guid: 9e0a2573de7a04409a022e8005bebad7, type: 2}
   _finishClue: {fileID: 0}
   _gameStateType: 1
-  _objects: {fileID: 1349198773}
+  _objects: []
   _disableObjectsAtEnd: 0
   _dialogueStartNode: {fileID: 0}
   _playerStartPos: {fileID: 0}
@@ -4966,7 +5003,8 @@ MonoBehaviour:
   _triggerClue: {fileID: 11400000, guid: 4fdc663159c8c40ad8ebee06f5aad3c4, type: 2}
   _finishClue: {fileID: 11400000, guid: fdb58fe56643e46dcb93ab666ac465a6, type: 2}
   _gameStateType: 3
-  _objects: {fileID: 1053491380}
+  _objects:
+  - {fileID: 1053491380}
   _disableObjectsAtEnd: 1
   _dialogueStartNode: {fileID: 11400000, guid: 45678234396744c60acb6421fd26af7a, type: 2}
   _playerStartPos: {fileID: 0}
@@ -6442,7 +6480,7 @@ MonoBehaviour:
   _triggerClue: {fileID: 11400000, guid: 93cac2c63f86d47ab8ac7cff7c2d690c, type: 2}
   _finishClue: {fileID: 0}
   _gameStateType: 3
-  _objects: {fileID: 0}
+  _objects: []
   _disableObjectsAtEnd: 0
   _dialogueStartNode: {fileID: 11400000, guid: b490e5c7609dd4854994b528aed648ed, type: 2}
   _playerStartPos: {fileID: 0}
@@ -7270,7 +7308,7 @@ MonoBehaviour:
   _triggerClue: {fileID: 11400000, guid: 01d76d0f9635741ae83ad5b8ec9435c9, type: 2}
   _finishClue: {fileID: 11400000, guid: e21d21f8e9fa6479d8b02ceceedf4437, type: 2}
   _gameStateType: 1
-  _objects: {fileID: 0}
+  _objects: []
   _disableObjectsAtEnd: 0
   _dialogueStartNode: {fileID: 0}
   _playerStartPos: {fileID: 0}
@@ -7325,7 +7363,8 @@ MonoBehaviour:
   _triggerClue: {fileID: 11400000, guid: 581071a1b7f1e4449868dc6887c94234, type: 2}
   _finishClue: {fileID: 11400000, guid: 4fdc663159c8c40ad8ebee06f5aad3c4, type: 2}
   _gameStateType: 2
-  _objects: {fileID: 1994016131}
+  _objects:
+  - {fileID: 1994016131}
   _disableObjectsAtEnd: 0
   _dialogueStartNode: {fileID: 0}
   _playerStartPos: {fileID: 0}
@@ -9488,7 +9527,7 @@ MonoBehaviour:
   _triggerClue: {fileID: 11400000, guid: b60f27301696a471680816415870c90d, type: 2}
   _finishClue: {fileID: 0}
   _gameStateType: 1
-  _objects: {fileID: 0}
+  _objects: []
   _disableObjectsAtEnd: 0
   _dialogueStartNode: {fileID: 0}
   _playerStartPos: {fileID: 55755714}

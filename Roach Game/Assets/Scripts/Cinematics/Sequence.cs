@@ -18,7 +18,7 @@ public class Sequence : MonoBehaviour
     [SerializeField] private ClueData _finishClue;
     [Header("Gameplay")]
     [SerializeField] private GameStateType _gameStateType;
-    [SerializeField] private GameObject _objects;
+    [SerializeField] private GameObject[] _objects;
     [SerializeField] private bool _disableObjectsAtEnd;
     [SerializeField] private DialogueNode _dialogueStartNode;
     [Header("Player & Camera Setup")]
@@ -40,7 +40,7 @@ public class Sequence : MonoBehaviour
     public GameStateType _GameStateType => _gameStateType;
     public AudioClip _Music => _music;
     public SequenceAudioType _AudioType => _audioType;
-    public Roach[] _Roaches => _objects == null ? new Roach[0] : _objects.GetComponentsInChildren<Roach>();
+    public Roach[] _Roaches => _roaches == null ? FindRoaches() : _roaches;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -53,14 +53,25 @@ public class Sequence : MonoBehaviour
 
         if(_objects != null)
         {
-            _objects.SetActive(true);
+            foreach(GameObject obj in _objects)
+            {
+                obj.SetActive(true);
+            }
 
-            _roaches = _objects.GetComponentsInChildren<Roach>();
+            if(_roaches == null)
+            {
+                FindRoaches();
+            }
+
             _roachOriginalPositions = new Vector3[_roaches.Length];
             for(int i = 0; i < _roaches.Length; i++)
             {
                 _roachOriginalPositions[i] = _roaches[i].transform.position;
             }
+        }
+        else
+        {
+            _roaches = new Roach[0];
         }
 
         if(_gameStateType == GameStateType.Dialogue && _dialogueStartNode != null)
@@ -70,11 +81,26 @@ public class Sequence : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    private Roach[] FindRoaches ()
+    {
+        List<Roach> _roachList = new List<Roach>();
+        foreach(GameObject obj in _objects)
+        {
+            _roachList.AddRange(obj.GetComponentsInChildren<Roach>());
+        }
+        _roaches = _roachList.ToArray();
+        return _roaches;
+    }
+
+    // ------------------------------------------------------------------------
     public void EndSequence ()
     {
-        if(_disableObjectsAtEnd)
+        if(_disableObjectsAtEnd && _objects != null)
         {
-            _objects.SetActive(false);
+            foreach(GameObject obj in _objects)
+            {
+                obj.SetActive(false);
+            }
         }
 
         if(_finishClue != null)
