@@ -104,7 +104,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _AnimSpeed: 1
+    - _AnimSpeed: 0.8
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -120,7 +120,9 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _GrowAmount: 0.1
+    - _GrowAmount: 0
+    - _GrowAmountMax: 0.1
+    - _GrowAmountMin: 0
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
