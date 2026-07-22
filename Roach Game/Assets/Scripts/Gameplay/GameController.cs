@@ -31,6 +31,7 @@ public class GameController : MonoBehaviour
     public static GameController _Instance { get; private set; }
     
     public Roach _TargetRoach => _targetRoach;
+    public int _LivingRoaches => _activeRoaches == null ? 0 : _activeRoaches.Count(r => !r._IsDead);
 
     // ------------------------------------------------------------------------
     // Methods
@@ -72,6 +73,7 @@ public class GameController : MonoBehaviour
     // ------------------------------------------------------------------------
     private void HandleSequenceStarted(Sequence sequence)
     {
+        _activeRoaches.Clear();
         _activeRoaches.AddRange(sequence._Roaches);
     }
 

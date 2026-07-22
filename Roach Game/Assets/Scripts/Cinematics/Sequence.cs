@@ -47,8 +47,6 @@ public class Sequence : MonoBehaviour
     // ------------------------------------------------------------------------
     public void StartSequence ()
     {
-        EventBus._Instance.InvokeSequenceStarted(this);
-
         SetupPlayer(!_onlySetPlayerLocOnRestart);
 
         if(_objects != null)
@@ -73,6 +71,9 @@ public class Sequence : MonoBehaviour
         {
             _roaches = new Roach[0];
         }
+
+        // MUST set up roach list before firing sequence start event
+        EventBus._Instance.InvokeSequenceStarted(this);
 
         if(_gameStateType == GameStateType.Dialogue && _dialogueStartNode != null)
         {

@@ -5,6 +5,7 @@
  * Copyright 2019 - 2026 Studio Tilia
  */
 
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -13,15 +14,16 @@ public class HUD : MonoBehaviour
     [SerializeField] private GameObject _centerCursor;
     [SerializeField] private GameObject _hud;
     [SerializeField] private TMP_Text _healthText;
+    [SerializeField] private TMP_Text _roachesText;
 
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
     private void Start ()
     {
-        EventBus._Instance.VisitDialogueNode += HandleVisitDialogueNode;
         EventBus._Instance.PlayerHealthChanged += HandlePlayerHealthChanged;
         EventBus._Instance.SequenceStarted += HandleSequenceStarted;
+        EventBus._Instance.RoachHit += HandleRoachHit;
 
         HandlePlayerHealthChanged();
     }
@@ -32,14 +34,29 @@ public class HUD : MonoBehaviour
         switch(sequence._GameStateType)
         {
             case GameStateType.Action:
+                OpenHud(sequence);
                 _centerCursor.SetActive(true);
                 break;
             case GameStateType.Cinematic:
             case GameStateType.Dialogue:
             case GameStateType.Menu:
+                _hud.SetActive(false);
                 _centerCursor.SetActive(false);
                 break;
         }
+    }
+
+    // ------------------------------------------------------------------------
+    private void OpenHud (Sequence sequence)
+    {
+        _hud.SetActive(true);
+        _roachesText.text = sequence._Roaches.Count().ToString();
+    }
+
+    // ------------------------------------------------------------------------
+    private void HandleRoachHit (Roach roach)
+    {
+        _roachesText.text = GameController._Instance._LivingRoaches.ToString();
     }
 
     // ------------------------------------------------------------------------
@@ -50,11 +67,5 @@ public class HUD : MonoBehaviour
         {
             _healthText.text = health.ToString();
         }
-    }
-
-    // ------------------------------------------------------------------------
-    private void HandleVisitDialogueNode(DialogueNode node)
-    {
-        _hud.SetActive(false);
     }
 }
