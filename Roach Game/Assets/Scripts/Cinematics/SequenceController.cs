@@ -122,7 +122,7 @@ public partial class SequenceController : MonoBehaviour
             case GameStateType.Menu: _activeState = new GameMenuState(); break;
             default: Debug.LogError("unhandled game state: " + newState); break;
         }
-        Debug.LogFormat("{0} new state: {1}", gameObject.name, _activeState);
+        //Debug.LogFormat("{0} new state: {1}", gameObject.name, _activeState);
         _activeState.EnterState(this);
     }
 
@@ -130,7 +130,7 @@ public partial class SequenceController : MonoBehaviour
     // timeline signal callback
     public void EndCurrentSequence ()
     {
-        Debug.Log("ended sequence");
+        //Debug.Log("ended sequence");
         _activeSequence.EndSequence();
     }
 

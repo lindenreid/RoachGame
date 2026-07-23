@@ -87,7 +87,7 @@ public class DialogueUI : MonoBehaviour
         // cache current node in case next sequence switches to a new one
         DialogueNode endNode = _currentNode;
 
-        Debug.LogFormat("HIDING dialogue node: {0}", _currentNode);
+        //Debug.LogFormat("HIDING dialogue node: {0}", _currentNode);
         // MUST hide UI before unlocking clues
         //      in case a future clue turns dialogue back on lol
         _dialogueWindow.SetActive(false);
