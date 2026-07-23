@@ -1,0 +1,21 @@
+{
+  "passages": [
+    {
+      "text": "<clue> EndSeq3.3\n<cluegiven> EndSeq3.4\n<line> i guess i'm just on guard duty with these roaches till pest control gets here...\n<line> even if it takes all night...",
+      "name": "start",
+      "pid": "1",
+      "position": {
+        "x": "450",
+        "y": "200"
+      },
+      "tags": [
+        "You"
+      ]
+    }
+  ],
+  "name": "Seq3.4",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "5160bc46-236d-42c6-a9b1-81b85cd0f450"
+}

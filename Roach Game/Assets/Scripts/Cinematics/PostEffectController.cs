@@ -19,9 +19,11 @@ public class PostEffectController : MonoBehaviour
     // ------------------------------------------------------------------------
     [SerializeField] public Volume _ppVolume;
     [SerializeField] public int _fadeInDurationFrames = 120;
+    [SerializeField] public int _fadeOutDurationFrames = 360;
 
     private ColorAdjustments _colorAdjustments;
     private bool _doFadeIn;
+    private bool _doFadeOut;
     private int _fadeTimeFrames;
 
     // ------------------------------------------------------------------------
@@ -50,6 +52,18 @@ public class PostEffectController : MonoBehaviour
                 _doFadeIn = false;
             }
         }
+        else if(_doFadeOut)
+        {
+            _fadeTimeFrames += 1;
+
+            SetFadeOutValue((float)_fadeTimeFrames / (float)_fadeOutDurationFrames);
+
+            if(_fadeTimeFrames >= _fadeOutDurationFrames)
+            {
+                SetFadeOutValue(1.0f);
+                _doFadeOut = false;
+            }
+        }
     } 
 
     // ------------------------------------------------------------------------
@@ -57,6 +71,16 @@ public class PostEffectController : MonoBehaviour
     public void StartFadeIn ()
     {
         _doFadeIn = true;
+        _doFadeOut = false;
+        _fadeTimeFrames = 0;
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void StartFadeOut ()
+    {
+        _doFadeIn = false;
+        _doFadeOut = true;
         _fadeTimeFrames = 0;
     }
 
@@ -65,6 +89,15 @@ public class PostEffectController : MonoBehaviour
     {
         _colorAdjustments.colorFilter.SetValue(new ColorParameter(
             Color.Lerp(Color.black, Color.white, t),
+            true
+        ));
+    }
+
+    // ------------------------------------------------------------------------
+    private void SetFadeOutValue(float t)
+    {
+        _colorAdjustments.colorFilter.SetValue(new ColorParameter(
+            Color.Lerp(Color.white, Color.black, t),
             true
         ));
     }
