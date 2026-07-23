@@ -13,6 +13,7 @@ Play the latest WIP build in your browser [on Itch here](https://outofmanna.itch
 - [Crackle and squish sound by CVLTIV8R](https://freesound.org/people/CVLTIV8R/sounds/812067/)
 - [Orchestral horror swarm by Coghezzi](https://freesound.org/people/Coghezzi/sounds/854154/)
 - [Door opening and closing by JakLocke](https://freesound.org/people/JakLocke/sounds/261110/)
+- [Shop door bell jingle by 3bagbrew](https://freesound.org/people/3bagbrew/sounds/57743/)
 ### Photos
 - Family stock photos by [Kampus Production](https://www.pexels.com/photo/a-woman-using-a-laptop-6248447/) and [Dmitry Rodionov](https://www.pexels.com/photo/family-playing-together-next-to-the-christmas-tree-15293999/)
 ### 3D Models
