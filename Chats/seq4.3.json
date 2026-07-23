@@ -1,0 +1,21 @@
+{
+  "passages": [
+    {
+      "text": "<clue> EndSeq4.2\n<cluegiven> EndSeq4.3\n<line> YOU GOTTA BE KIDDING ME!!!",
+      "name": "start",
+      "pid": "1",
+      "position": {
+        "x": "450",
+        "y": "200"
+      },
+      "tags": [
+        "You"
+      ]
+    }
+  ],
+  "name": "Seq4.3",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "81b85cd0-f450-4058-892e-b51dd79a6aa0"
+}
