@@ -2630,7 +2630,7 @@ MonoBehaviour:
   _cameraStartRot: {fileID: 0}
   _onlySetPlayerLocOnRestart: 0
   _music: {fileID: 0}
-  _audioType: 0
+  _audioType: 1
 --- !u!1 &550473262
 GameObject:
   m_ObjectHideFlags: 0
@@ -3204,8 +3204,8 @@ MonoBehaviour:
   _disableObjectsAtEnd: 0
   _removeRoachesInHandAtEnd: 1
   _dialogueStartNode: {fileID: 11400000, guid: 63fbdfa0b21094b0bb26cc13fbf153e1, type: 2}
-  _playerStartPos: {fileID: 0}
-  _cameraStartRot: {fileID: 0}
+  _playerStartPos: {fileID: 399232727}
+  _cameraStartRot: {fileID: 991511031}
   _onlySetPlayerLocOnRestart: 0
   _music: {fileID: 0}
   _audioType: 0
