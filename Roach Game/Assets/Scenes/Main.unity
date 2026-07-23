@@ -1935,7 +1935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ppVolume: {fileID: 1193821023}
-  _fadeInDurationFrames: 360
+  _fadeInDurationFrames: 180
   _fadeOutDurationFrames: 180
 --- !u!114 &374279150
 MonoBehaviour:
@@ -3733,6 +3733,7 @@ MonoBehaviour:
   _finishClue: {fileID: 11400000, guid: 93cac2c63f86d47ab8ac7cff7c2d690c, type: 2}
   _gameStateType: 2
   _objects:
+  - {fileID: 1780914853}
   - {fileID: 1562633697}
   _disableObjectsAtEnd: 0
   _removeRoachesInHandAtEnd: 1
@@ -5884,6 +5885,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1780914854}
   - {fileID: 900999530}
   - {fileID: 1108591063}
   - {fileID: 205216644}
@@ -9431,7 +9433,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1780914854}
   - {fileID: 1162308689}
   m_Father: {fileID: 865359251}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10562,7 +10563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1780914854
 Transform:
   m_ObjectHideFlags: 0
@@ -10572,12 +10573,12 @@ Transform:
   m_GameObject: {fileID: 1780914853}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.4002686, y: 3.6549335, z: -4.842518}
+  m_LocalPosition: {x: -0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 520984971}
-  m_Father: {fileID: 1562633698}
+  m_Father: {fileID: 1062708958}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!320 &1780914855
 PlayableDirector:
