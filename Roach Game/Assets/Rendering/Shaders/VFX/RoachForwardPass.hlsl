@@ -279,6 +279,8 @@ void RoachLitPassFragment(
 
     outColor = saturate(color + _Brightness*color);
 
+    clip(outColor.a - 0.5);
+
 #ifdef _WRITE_RENDERING_LAYERS
     outRenderingLayers = EncodeMeshRenderingLayer();
 #endif

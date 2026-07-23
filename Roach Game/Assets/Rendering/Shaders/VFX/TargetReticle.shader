@@ -11,6 +11,8 @@
     {
         Tags
         {
+            "LightMode"="UniversalForward"
+            "Queue"="Transparent"
             "RenderType"="Transparent" 
             "RenderPipeline"="UniversalPipeline"
         }
@@ -26,6 +28,8 @@
             {
                 "LightMode"="UniversalForward"
                 "Queue"="Transparent"
+                "RenderType"="Transparent" 
+                "RenderPipeline"="UniversalPipeline"
             }
 
             ZWrite Off

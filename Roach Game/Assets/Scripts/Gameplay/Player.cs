@@ -26,8 +26,8 @@ public class Player : MonoBehaviour
     [SerializeField] private SplineContainer _shoeSpline;
     [SerializeField] private SplineAnimate _splineAnimator;
     [Header("Aiming reticle")]
-    [SerializeField] private Transform _reticleDefaultPosition;
     [SerializeField] private MeshRenderer _reticleRenderer;
+    [SerializeField] private Transform _defaultReticlePos;
     [SerializeField] private Transform _aimReticle;
     [SerializeField] private float _maxAimDistance;
     [SerializeField] private LayerMask _aimLayers;
@@ -231,14 +231,10 @@ public class Player : MonoBehaviour
                 _reticleMat.color = _reticleHit;
                 SetValidAim(raycastHit);
             }
-            else if(raycastHit.normal == Vector3.up)
+            else
             {
                 _reticleMat.color = _reticleMiss;
                 SetValidAim(raycastHit);
-            }
-            else
-            {
-                SetInvalidAim();
             }
         }
         else
@@ -269,8 +265,8 @@ public class Player : MonoBehaviour
     private void SetInvalidAim ()
     {
         _reticleMat.color = _reticleInvalid;
-        _aimReticle.position = _reticleDefaultPosition.position;
-        SetShoeSplineDestination(_reticleDefaultPosition.position);
+        _aimReticle.position = _defaultReticlePos.position;
+        SetShoeSplineDestination(_defaultReticlePos.position);
     }
 
     // ------------------------------------------------------------------------
