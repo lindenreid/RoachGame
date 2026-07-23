@@ -82,15 +82,19 @@ public class GameController : MonoBehaviour
     {
         if(SequenceController._Instance._ActiveSequence == _firstRoachGunSequence && !_hitFirstRoach)
         {
+            Debug.Log("set target roach: " + roach);
+            _hitFirstRoach = true;
             SetTargetRoach(roach);
             EventBus._Instance.InvokeClueUnlocked(_firstRoachHitClue);
             EventBus._Instance.RoachHit -= HandleRoachHit;
         }
-
-        int deadRoaches = _activeRoaches.Count(r => r._IsDead);
-        if(deadRoaches == _activeRoaches.Count())
+        else // don't bother counting dead roaches if we're checking for first roach gun
         {
-            SequenceController._Instance.EndCurrentSequence();
+            int deadRoaches = _activeRoaches.Count(r => r._IsDead);
+            if(deadRoaches == _activeRoaches.Count())
+            {
+                SequenceController._Instance.EndCurrentSequence();
+            } 
         }
     }
 

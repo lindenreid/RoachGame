@@ -50,7 +50,7 @@ public class HUD : MonoBehaviour
     private void OpenHud (Sequence sequence)
     {
         _hud.SetActive(true);
-        _roachesText.text = sequence._Roaches.Count().ToString();
+        _roachesText.text = sequence._Roaches.Count(r => !r._IsDead).ToString();
     }
 
     // ------------------------------------------------------------------------
