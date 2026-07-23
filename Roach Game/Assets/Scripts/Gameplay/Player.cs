@@ -115,6 +115,15 @@ public class Player : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    public void RemoveRoachesFromHand ()
+    {
+        foreach(Transform t in _roachHoldLoc)
+        {
+            Destroy(t.gameObject);
+        }
+    }
+
+    // ------------------------------------------------------------------------
     public void SetInputEnabled(bool enabled)
     {
         _inputEnabled = enabled;

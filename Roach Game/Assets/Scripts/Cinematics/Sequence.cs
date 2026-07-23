@@ -20,6 +20,7 @@ public class Sequence : MonoBehaviour
     [SerializeField] private GameStateType _gameStateType;
     [SerializeField] private GameObject[] _objects;
     [SerializeField] private bool _disableObjectsAtEnd;
+    [SerializeField] private bool _removeRoachesInHandAtEnd = true;
     [SerializeField] private DialogueNode _dialogueStartNode;
     [Header("Player & Camera Setup")]
     [SerializeField] private Transform _playerStartPos;
@@ -102,6 +103,11 @@ public class Sequence : MonoBehaviour
             {
                 obj.SetActive(false);
             }
+        }
+
+        if(_removeRoachesInHandAtEnd)
+        {
+            Player._Instance.RemoveRoachesFromHand();
         }
 
         if(_finishClue != null)
