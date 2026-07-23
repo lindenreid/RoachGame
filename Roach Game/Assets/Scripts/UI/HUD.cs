@@ -13,6 +13,7 @@ public class HUD : MonoBehaviour
 {
     [SerializeField] private GameObject _centerCursor;
     [SerializeField] private GameObject _hud;
+    [SerializeField] private GameObject _healthDisplay;
     [SerializeField] private TMP_Text _healthText;
     [SerializeField] private TMP_Text _roachesText;
 
@@ -51,6 +52,8 @@ public class HUD : MonoBehaviour
     {
         _hud.SetActive(true);
         _roachesText.text = sequence._Roaches.Count(r => !r._IsDead).ToString();
+
+        _healthDisplay.SetActive(GameController._Instance._ReadyForHealthDisplay);
     }
 
     // ------------------------------------------------------------------------

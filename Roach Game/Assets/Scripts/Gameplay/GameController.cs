@@ -32,6 +32,7 @@ public class GameController : MonoBehaviour
     
     public Roach _TargetRoach => _targetRoach;
     public int _LivingRoaches => _activeRoaches == null ? 0 : _activeRoaches.Count(r => !r._IsDead);
+    public bool _ReadyForHealthDisplay => _hitFirstRoach;
 
     // ------------------------------------------------------------------------
     // Methods

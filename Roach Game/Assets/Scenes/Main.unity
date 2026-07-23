@@ -368,6 +368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _centerCursor: {fileID: 1418725098}
   _hud: {fileID: 757523287}
+  _healthDisplay: {fileID: 519322299}
   _healthText: {fileID: 1073858191}
   _roachesText: {fileID: 1493585049}
 --- !u!114 &38801836
