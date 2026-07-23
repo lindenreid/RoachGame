@@ -18,13 +18,13 @@ public class PostEffectController : MonoBehaviour
     // Variables
     // ------------------------------------------------------------------------
     [SerializeField] public Volume _ppVolume;
-    [SerializeField] public int _fadeInDurationFrames = 120;
-    [SerializeField] public int _fadeOutDurationFrames = 360;
+    [SerializeField] public float _fadeInDurationSeconds = 2.0f;
+    [SerializeField] public float _fadeOutDurationSeconds = 2.0f;
 
     private ColorAdjustments _colorAdjustments;
     private bool _doFadeIn;
     private bool _doFadeOut;
-    private int _fadeTimeFrames;
+    private float _fadeTimeSeconds;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -34,7 +34,7 @@ public class PostEffectController : MonoBehaviour
         _ppVolume.profile.TryGet<ColorAdjustments>(out _colorAdjustments);
         Assert.IsNotNull(_colorAdjustments);
 
-        SetFadeInValue(1.0f);
+        SetFadeInNormalizedValue(1.0f);
     }
 
     // ------------------------------------------------------------------------
@@ -42,25 +42,25 @@ public class PostEffectController : MonoBehaviour
     {
         if(_doFadeIn)
         {
-            _fadeTimeFrames += 1;
+            _fadeTimeSeconds += Time.deltaTime;
 
-            SetFadeInValue((float)_fadeTimeFrames / (float)_fadeInDurationFrames);
+            SetFadeInNormalizedValue((float)_fadeTimeSeconds / (float)_fadeInDurationSeconds);
 
-            if(_fadeTimeFrames >= _fadeInDurationFrames)
+            if(_fadeTimeSeconds >= _fadeInDurationSeconds)
             {
-                SetFadeInValue(1.0f);
+                SetFadeInNormalizedValue(1.0f);
                 _doFadeIn = false;
             }
         }
         else if(_doFadeOut)
         {
-            _fadeTimeFrames += 1;
+            _fadeTimeSeconds += Time.deltaTime;
 
-            SetFadeOutValue((float)_fadeTimeFrames / (float)_fadeOutDurationFrames);
+            SetFadeOutNormalizedValue((float)_fadeTimeSeconds / (float)_fadeOutDurationSeconds);
 
-            if(_fadeTimeFrames >= _fadeOutDurationFrames)
+            if(_fadeTimeSeconds >= _fadeOutDurationSeconds)
             {
-                SetFadeOutValue(1.0f);
+                SetFadeOutNormalizedValue(1.0f);
                 _doFadeOut = false;
             }
         }
@@ -72,7 +72,7 @@ public class PostEffectController : MonoBehaviour
     {
         _doFadeIn = true;
         _doFadeOut = false;
-        _fadeTimeFrames = 0;
+        _fadeTimeSeconds = 0;
     }
 
     // ------------------------------------------------------------------------
@@ -81,11 +81,11 @@ public class PostEffectController : MonoBehaviour
     {
         _doFadeIn = false;
         _doFadeOut = true;
-        _fadeTimeFrames = 0;
+        _fadeTimeSeconds = 0;
     }
 
     // ------------------------------------------------------------------------
-    private void SetFadeInValue(float t)
+    private void SetFadeInNormalizedValue(float t)
     {
         _colorAdjustments.colorFilter.SetValue(new ColorParameter(
             Color.Lerp(Color.black, Color.white, t),
@@ -94,7 +94,7 @@ public class PostEffectController : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
-    private void SetFadeOutValue(float t)
+    private void SetFadeOutNormalizedValue(float t)
     {
         _colorAdjustments.colorFilter.SetValue(new ColorParameter(
             Color.Lerp(Color.white, Color.black, t),
