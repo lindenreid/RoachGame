@@ -4963,7 +4963,8 @@ MonoBehaviour:
   _gameStateType: 2
   _objects:
   - {fileID: 205216642}
-  _disableObjectsAtEnd: 0
+  - {fileID: 1424192617}
+  _disableObjectsAtEnd: 1
   _removeRoachesInHandAtEnd: 1
   _dialogueStartNode: {fileID: 0}
   _playerStartPos: {fileID: 0}
@@ -9396,7 +9397,8 @@ MonoBehaviour:
   _gameStateType: 2
   _objects:
   - {fileID: 1994016131}
-  _disableObjectsAtEnd: 0
+  - {fileID: 2139158525}
+  _disableObjectsAtEnd: 1
   _removeRoachesInHandAtEnd: 1
   _dialogueStartNode: {fileID: 0}
   _playerStartPos: {fileID: 0}
