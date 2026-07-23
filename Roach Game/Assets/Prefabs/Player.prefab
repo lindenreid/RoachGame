@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3755512434844205073}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: RoachHoldPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2893303521740618276}
   - component: {fileID: 8472456908316520702}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: Spline_ShoeHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +159,7 @@ GameObject:
   - component: {fileID: 8648538736896394305}
   - component: {fileID: 4134185679594967333}
   - component: {fileID: 2344514724167332325}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ GameObject:
   - component: {fileID: 6815273770356565284}
   - component: {fileID: 4015341797027391373}
   - component: {fileID: 7839691336058466243}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,6 +474,9 @@ MonoBehaviour:
   _reticleRenderer: {fileID: 0}
   _aimReticle: {fileID: 0}
   _maxAimDistance: 10
+  _aimLayers:
+    serializedVersion: 2
+    m_Bits: 72
   _roachLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -519,7 +522,7 @@ GameObject:
   - component: {fileID: 3391504039186547359}
   - component: {fileID: 6985864123908224303}
   - component: {fileID: 6183467744944764856}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: Shoe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,8 +537,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4582253528972259613}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.3826835, y: -0.00000006961861, z: 0.000000031191036, w: 0.9238797}
-  m_LocalPosition: {x: 2.8899999, y: 2.029397, z: 2.6375084}
+  m_LocalRotation: {x: 0, y: -0.00000010141176, z: 0, w: 1.0000002}
+  m_LocalPosition: {x: 2.890001, y: 0.5699997, z: 2.3000011}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -635,7 +638,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3300238034138758278}
   - component: {fileID: 5890807781099259656}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spline_CameraZoomInToRoach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -748,7 +751,7 @@ GameObject:
   - component: {fileID: 7024297956862880997}
   - component: {fileID: 7892228118657366944}
   - component: {fileID: 7340798675897187825}
-  m_Layer: 2
+  m_Layer: 8
   m_Name: ShoeMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -829,7 +832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3219950285245140882}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: ReticleDefaultPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -861,7 +864,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2437505959954585015}
   - component: {fileID: 9137330466490924226}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spline_CameraZoomOutOfRoach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,7 +975,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5758483728530106690}
-  m_Layer: 2
+  m_Layer: 9
   m_Name: ShoeStartPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

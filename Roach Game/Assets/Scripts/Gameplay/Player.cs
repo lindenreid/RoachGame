@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
     [SerializeField] private MeshRenderer _reticleRenderer;
     [SerializeField] private Transform _aimReticle;
     [SerializeField] private float _maxAimDistance;
+    [SerializeField] private LayerMask _aimLayers;
     [Header("Roach collection")]
     [SerializeField] private LayerMask _roachLayer;
     [SerializeField] private Transform _roachHoldLoc;
@@ -220,7 +221,8 @@ public class Player : MonoBehaviour
                 Camera.main.transform.position,
                 Camera.main.transform.forward,
                 out raycastHit,
-                _maxAimDistance
+                _maxAimDistance,
+                _aimLayers
         );
         if(aimRaycastHit)
         {
