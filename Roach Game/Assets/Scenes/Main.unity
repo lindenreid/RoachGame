@@ -2117,8 +2117,8 @@ MonoBehaviour:
   _playerStartPos: {fileID: 0}
   _cameraStartRot: {fileID: 0}
   _onlySetPlayerLocOnRestart: 0
-  _music: {fileID: 8300000, guid: 5b1f972506ab7490c8f279d8e9785aff, type: 3}
-  _audioType: 2
+  _music: {fileID: 0}
+  _audioType: 0
 --- !u!1 &392242408
 GameObject:
   m_ObjectHideFlags: 0
