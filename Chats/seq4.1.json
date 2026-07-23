@@ -1,0 +1,21 @@
+{
+  "passages": [
+    {
+      "text": "<clue> EndSeq3.5\n<cluegiven> EndSeq4.1\n<line> ... i don't think they're coming...\n<line> did management even send them?\n<line> or did they just not show?",
+      "name": "start",
+      "pid": "1",
+      "position": {
+        "x": "450",
+        "y": "200"
+      },
+      "tags": [
+        "You"
+      ]
+    }
+  ],
+  "name": "Seq4.1",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "6d82c6a9-b181-485c-90f4-501058892eb5"
+}
