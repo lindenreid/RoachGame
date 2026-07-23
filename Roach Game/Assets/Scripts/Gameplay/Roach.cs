@@ -168,6 +168,7 @@ public partial class Roach : MonoBehaviour
             }
         }
 
+        _bloodParticles.transform.SetParent(null);
         _bloodParticles.Play();
 
         // fire event AFTER everything else, so roach has most accurate
