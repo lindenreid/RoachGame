@@ -3,7 +3,8 @@ Play the latest WIP build in your browser [on Itch here](https://outofmanna.itch
 
 ## Open-Source Assets
 ### Fonts
-- [Never Ending font by Vladimir Nikolic](https://www.dafont.com/never-ending-2.font?text=BANG%21+00&back=theme)
+- [Never Ending font by Vladimir Nikolic](https://www.dafont.com/never-ending-2.font)
+- [Analog by J. Delpesco](https://www.dafont.com/analog.font)
 ### SFX
 - [Splat sound by mrickey13](https://freesound.org/people/mrickey13/sounds/515620/)
 - [Gun reloading sound by Filmsounduser](https://freesound.org/people/Filmsounduser/sounds/804823/)
