@@ -12187,7 +12187,7 @@ MonoBehaviour:
   _objects:
   - {fileID: 1349198773}
   _disableObjectsAtEnd: 0
-  _removeRoachesInHandAtEnd: 1
+  _removeRoachesInHandAtEnd: 0
   _dialogueStartNode: {fileID: 0}
   _playerStartPos: {fileID: 55755714}
   _cameraStartRot: {fileID: 0}

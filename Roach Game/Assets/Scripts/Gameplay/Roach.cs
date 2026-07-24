@@ -180,7 +180,7 @@ public partial class Roach : MonoBehaviour
     // ------------------------------------------------------------------------
     private void UpdateHealthText ()
     {
-        bool show = _health > 0;
+        bool show = _health > 0 && _health != _maxHealth;
         _healthCanvas.SetActive(show);
 
         if(show)
@@ -218,7 +218,14 @@ public partial class Roach : MonoBehaviour
     // ------------------------------------------------------------------------
     public void ResetRoach(Vector3 originalPos)
     {
+        ResetAntennae();
+        _agent.enabled = true;
+        _collider.enabled = true;
+        _movementSplineAnimator.enabled = true;
+        _deathSplineAnimator.enabled = true;
+
         _health = _maxHealth;
+        UpdateHealthText();
 
         transform.SetParent(null);
         transform.position = originalPos;
