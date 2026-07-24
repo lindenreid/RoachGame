@@ -155,10 +155,10 @@ GameObject:
   - component: {fileID: 2938371587523948076}
   - component: {fileID: 5177807077436232610}
   - component: {fileID: 2254719107837527198}
+  - component: {fileID: 2344514724167332325}
   - component: {fileID: 5490644007378001235}
   - component: {fileID: 8648538736896394305}
   - component: {fileID: 4134185679594967333}
-  - component: {fileID: 2344514724167332325}
   m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -175,7 +175,7 @@ Transform:
   m_GameObject: {fileID: 3412682330037958358}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.000000013318235, z: 0, w: 1.0000001}
-  m_LocalPosition: {x: -0.00000047219288, y: -1, z: 0.99999976}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -288,6 +288,29 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &2344514724167332325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3412682330037958358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 9137330466490924226}
+  m_PlayOnAwake: 0
+  m_LoopMode: 0
+  m_Method: 0
+  m_Duration: 1
+  m_MaxSpeed: 2.8284268
+  m_EasingMode: 1
+  m_AlignmentMode: 0
+  m_ObjectForwardAxis: 2
+  m_ObjectUpAxis: 1
+  m_StartOffset: 0
 --- !u!114 &5490644007378001235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,29 +412,6 @@ MonoBehaviour:
   _roachZoomSplineAnimator: {fileID: 5490644007378001235}
   _roachZoomOutSpline: {fileID: 9137330466490924226}
   _roachZoomOutSplineAnimator: {fileID: 2344514724167332325}
---- !u!114 &2344514724167332325
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3412682330037958358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29a074d529cf945029ef7cf40540c9df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Target: {fileID: 9137330466490924226}
-  m_PlayOnAwake: 0
-  m_LoopMode: 0
-  m_Method: 0
-  m_Duration: 1
-  m_MaxSpeed: 2.8284268
-  m_EasingMode: 1
-  m_AlignmentMode: 0
-  m_ObjectForwardAxis: 2
-  m_ObjectUpAxis: 1
-  m_StartOffset: 0
 --- !u!1 &4180907493077115905
 GameObject:
   m_ObjectHideFlags: 0
