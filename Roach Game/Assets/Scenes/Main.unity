@@ -8085,8 +8085,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSources:
   - {fileID: 1307050854}
-  _startVolume: 0.1
-  _endVolume: 1
+  _startVolume: 0.01
+  _endVolume: 0.5
   _durationSeconds: 10
 --- !u!114 &1307050856
 MonoBehaviour:
