@@ -9,6 +9,11 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Splines;
 
+public enum PlayerMovementType
+{
+    Walking, Running, Still
+}
+
 public class Player : MonoBehaviour
 {
     // ------------------------------------------------------------------------
@@ -54,6 +59,8 @@ public class Player : MonoBehaviour
     private Color _reticleHit;
     private Color _reticleMiss;
     private Color _reticleInvalid;
+
+    private PlayerMovementType _movementType = PlayerMovementType.Still;
 
     // ------------------------------------------------------------------------
     // Properties
@@ -136,6 +143,12 @@ public class Player : MonoBehaviour
         if(!enabled)
         {
             ResetShoeAnim();
+
+            if(_movementType != PlayerMovementType.Still)
+            {
+                _movementType = PlayerMovementType.Still;
+                EventBus._Instance.InvokePlayerMovementChanged(PlayerMovementType.Still);
+            }
         }
         else
         {
@@ -192,7 +205,8 @@ public class Player : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
 
         float speed = _walkSpeed;
-        if(Input.GetKey(KeyCode.LeftShift))
+        bool running = Input.GetKey(KeyCode.LeftShift);
+        if(running)
         {
             speed = _runSpeed;
         }
@@ -201,6 +215,21 @@ public class Player : MonoBehaviour
         Vector3 playerRight = transform.TransformDirection(Vector3.right);
         _cc.Move(((vertical * playerForward) + (horizontal * playerRight))
             * speed * Time.deltaTime);
+
+        if(vertical != 0 || horizontal != 0)
+        {
+            // TODO: running
+            if(_movementType != PlayerMovementType.Walking)
+            {
+                _movementType = PlayerMovementType.Walking;
+                EventBus._Instance.InvokePlayerMovementChanged(PlayerMovementType.Walking);
+            }
+        }
+        else if(_movementType != PlayerMovementType.Still)
+        {
+            _movementType = PlayerMovementType.Still;
+            EventBus._Instance.InvokePlayerMovementChanged(PlayerMovementType.Still);
+        }
     }
 
     // ------------------------------------------------------------------------

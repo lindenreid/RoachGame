@@ -15,7 +15,14 @@ public class AudioController : MonoBehaviour
     // ------------------------------------------------------------------------
     [SerializeField] private AudioSource _sfxAudioSource;
     [SerializeField] private AudioSource _musicAudioSource;
+    [SerializeField] private AudioSource _footstepsAudioSource;
     [SerializeField] private AudioClip _roachHitClip;
+    [SerializeField] private AudioClip _step1Clip;
+    [SerializeField] private AudioClip _step2Clip;
+
+    private bool _playSteps;
+    private float _clipTime;
+    private bool _flipClip;
 
     // ------------------------------------------------------------------------
     // Properties
@@ -41,6 +48,23 @@ public class AudioController : MonoBehaviour
     {
         EventBus._Instance.RoachHit += HandleRoachHit;
         EventBus._Instance.SequenceStarted += HandleSequenceStarted;
+        EventBus._Instance.PlayerMovementChanged += HandlePlayerMovementChanged;
+    }
+
+    // ------------------------------------------------------------------------
+    private void Update ()
+    {
+        if(_playSteps)
+        {
+            _clipTime += Time.deltaTime;
+            if(_clipTime >= _footstepsAudioSource.clip.length)
+            {
+                _clipTime = 0.0f;
+                _flipClip = !_flipClip;
+                _footstepsAudioSource.clip = _flipClip ? _step2Clip : _step1Clip;
+                _footstepsAudioSource.Play();
+            }
+        }
     }
 
     // ------------------------------------------------------------------------
@@ -66,5 +90,36 @@ public class AudioController : MonoBehaviour
                 _musicAudioSource.Play();   
                 break;
         }
+    }
+
+    // ------------------------------------------------------------------------
+    private void HandlePlayerMovementChanged (PlayerMovementType movementType)
+    {
+        switch(movementType)
+        {
+            case PlayerMovementType.Still:
+                _footstepsAudioSource.Stop();
+                _playSteps = false;
+                break;
+            case PlayerMovementType.Walking:
+            case PlayerMovementType.Running:    
+                StartPlayingSteps();
+                break;
+            default:
+                Debug.LogError("Unhandled player movement type.");
+                break;
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    private void StartPlayingSteps ()
+    {
+        // TODO... play faster for running
+        Debug.Log("start playing steps");
+        _footstepsAudioSource.clip = _step1Clip;
+        _flipClip = false;
+        _footstepsAudioSource.Play();
+        _playSteps = true;
+        _clipTime = 0;
     }
 }

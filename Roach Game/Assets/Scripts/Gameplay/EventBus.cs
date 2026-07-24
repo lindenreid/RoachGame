@@ -23,6 +23,9 @@ public class EventBus : MonoBehaviour
     public event EmptyDelegate PlayerDied;
     public event EmptyDelegate TyperwriterFinished;
 
+    public delegate void PlayerMovementTypeDelegate(PlayerMovementType movementType);
+    public event PlayerMovementTypeDelegate PlayerMovementChanged;
+
     public delegate void RoachDelegate(Roach roach);
     public event RoachDelegate RoachHit;
     public event RoachDelegate RoachCollected;
@@ -66,6 +69,12 @@ public class EventBus : MonoBehaviour
     public void InvokeVisitDialogue(DialogueNode node)
     {
         VisitDialogueNode?.Invoke(node);
+    }
+
+    // ------------------------------------------------------------------------
+    public void InvokePlayerMovementChanged (PlayerMovementType movementType)
+    {
+        PlayerMovementChanged?.Invoke(movementType);
     }
 
     // ------------------------------------------------------------------------
