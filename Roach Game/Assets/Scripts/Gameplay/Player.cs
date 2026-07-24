@@ -86,6 +86,7 @@ public class Player : MonoBehaviour
     private void Start ()
     {
         _cameraTrans = Camera.main.transform;
+        _cameraTrans.localPosition = Vector3.zero;
 
 #if UNITY_WEBGL
         _mouseSensitivity = _mouseSensitivity / 2.0f;
