@@ -4392,6 +4392,21 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "b6211b185f2b4093b2f22565a1daafe0",
+    "m_Id": 3,
+    "m_DisplayName": "Noise",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Noise",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.SampleTexture2DNode",
     "m_ObjectId": "b6a9ccc342e840cab08cc28793c17b39",
     "m_Group": {
@@ -5493,29 +5508,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector3MaterialSlot",
-    "m_ObjectId": "de5a0a74cf71481a99773ea479565c14",
-    "m_Id": 3,
-    "m_DisplayName": "Color",
-    "m_SlotType": 1,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "Color",
-    "m_StageCapability": 3,
-    "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_DefaultValue": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
-    },
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector3Node",
     "m_ObjectId": "dfbcf5cb71a94a32b863dbb361ea5b56",
     "m_Group": {
@@ -6049,7 +6041,7 @@
             "m_Id": "96aab8786f4e409da1f5924f5538f66f"
         },
         {
-            "m_Id": "de5a0a74cf71481a99773ea479565c14"
+            "m_Id": "b6211b185f2b4093b2f22565a1daafe0"
         }
     ],
     "synonyms": [
