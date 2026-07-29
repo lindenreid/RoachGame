@@ -22,3 +22,4 @@ Play the latest WIP build in your browser [on Itch here](https://outofmanna.itch
 - [Office chair model by Elbolilloduro](https://elbolilloduro.itch.io/paquete-de-modelos-low-poly-estilo-psx-2)
 - [Old lady model by Elbolilloduro](https://elbolilloduro.itch.io/objetos-low-poly-estilo-psx)
 - [Photo frame by Theo Clarke](https://sketchfab.com/3d-models/photo-frame-low-poly-speed-model-3e6dc5d42e1a4e78a7bad4dac7754cb9)
+- [Safe by Justin.Foley](https://sketchfab.com/3d-models/pbr-combination-safe-free-0fbfeb546e56452a9e1f3863931eff39)
