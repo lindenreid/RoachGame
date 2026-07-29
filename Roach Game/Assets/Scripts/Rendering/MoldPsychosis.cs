@@ -25,6 +25,7 @@ public class MoldPsychosis : VolumeComponent, IPostProcessComponent
     public BoolParameter useVideo3 = new BoolParameter(false);
     public ClampedFloatParameter chromaticAbberation = new ClampedFloatParameter(0, 0, 1);
     public BoolParameter useMold = new BoolParameter(false);
+    public ClampedFloatParameter moldCoverage = new ClampedFloatParameter(0.4f, 0, 1);
     public FloatParameter voronoiSpeed = new FloatParameter(2);
     public FloatParameter voronoiDensity = new FloatParameter(5);
     public TextureParameter video1Tex = new TextureParameter(null);
