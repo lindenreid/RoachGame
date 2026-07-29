@@ -26,7 +26,7 @@ float level(float2 p)
     return 0.0;
 }
 
-float Voronoi(float2 uv)
+float VoronoiClusters(float2 uv)
 {
     float2 f_uv = floor(uv);
 
@@ -86,10 +86,34 @@ float Voronoi(float2 uv)
     return md;
 }
 
-void Voronoize_float(float2 UV, float AngularOffset, float Density, out float Noise)
+void VoronoiClusters_float(float2 UV, float AngularOffset, float Density, out float Noise)
 {
     // TODO: use angular offset to animate
     float2 v = UV * Density;
-    Noise = Voronoi(v);
+    Noise = VoronoiClusters(v);
 }
+
+void VoronoiSimple_float(float2 UV, float Speed, float Density, out float Noise)
+{
+    float2 value = UV * Density;
+    
+    float2 i_st = floor(value);
+    float2 f_st = frac(value);
+
+    float minDist = 100;
+
+    for(int y = -1; y <= 1; y++)
+    {
+        for(int x = -1; x <= 1; x++)
+        {
+            float2 neighbor = float2(x, y);
+            float2 pt = random3(i_st + neighbor).xy;
+            float dist = length(neighbor + pt - f_st);
+            minDist = min(minDist, dist);
+        }
+    }
+
+    Noise = minDist;
+}
+
 #endif //MYHLSLINCLUDE_INCLUDED
