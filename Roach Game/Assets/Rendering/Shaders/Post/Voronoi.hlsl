@@ -46,6 +46,8 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Mov
 
     // big numbah
     float minDist = 1e10;
+    
+    float offsetAmt = 2.0;
 
     // loop through self + 8 neighbos - self is at (0,0)
     // 3 nested for loops to create clusters inside individual cells
@@ -60,8 +62,13 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Mov
             float2 cellRandCenter = 0.5 + 0.5 * sin(Time * MoveSpeed + 6.2831 * cellRand);
             float2 blobCenter = neighborCoords1 + cellRandCenter.xy;
 
+            // animate size of blob by factoring a weight into the distance equation
+            //      and animating the weight value
+            // the random start offset is based off of a neighboring cell's random value
+            //      because i'm running out of random values i can generate from one 2d position lol
             float weight = random1(neighborCoords1) + 0.8;
-            weight = weight + sin(Time * GrowSpeed) * weight/4.0;
+            float randomStartOffset = random1(neighborCoords1 - float2(1,1));
+            weight = weight + sin(randomStartOffset*offsetAmt + Time * GrowSpeed) * weight/6.0;
             float dist = weightedDist(blobCenter, uv, weight);
 
             // random value to determine if this cell should create a cluster
@@ -87,8 +94,9 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Mov
 
                         // weight inner clusters to be smaller
                         // cluster 1 min is 0.5, max is 0.8
-                        float weight = random1(neighborCoords2) * 0.8 + 0.5;
-                        weight = weight + sin(Time * GrowSpeed) * weight/4.0;
+                        weight = random1(neighborCoords2) * 0.8 + 0.5;
+                        randomStartOffset = random1(neighborCoords2 - float2(1,1));
+                        weight = weight + sin(randomStartOffset*offsetAmt + Time * GrowSpeed) * weight/4.0;
                         dist = weightedDist(blobCenter, uv, weight);
 
                         cluster = cellRand.z;
@@ -109,7 +117,8 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Mov
                                     blobCenter = neighborCoords3 + cellRandCenter.xy/4.0;
 
                                     weight = random1(neighborCoords3) * 0.5 + 0.2;
-                                    weight = weight + sin(Time * GrowSpeed) * weight/4.0;
+                                    randomStartOffset = random1(neighborCoords3 - float2(1,1));
+                                    weight = weight + sin(randomStartOffset*offsetAmt + Time * GrowSpeed) * weight/4.0;
                                     dist = weightedDist(blobCenter, uv, weight);
 
                                     cluster = cellRand.z;
