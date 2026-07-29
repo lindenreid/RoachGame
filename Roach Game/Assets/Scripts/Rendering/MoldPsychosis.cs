@@ -18,7 +18,6 @@ public class MoldPsychosis : VolumeComponent, IPostProcessComponent
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
-    public BoolParameter showEffect = new BoolParameter(false);
     public BoolParameter useWhiteBackground = new BoolParameter(false);
 	public BoolParameter useVideo1 = new BoolParameter(false);
     public BoolParameter useVideo2 = new BoolParameter(false);
@@ -32,7 +31,7 @@ public class MoldPsychosis : VolumeComponent, IPostProcessComponent
     public TextureParameter video2Tex = new TextureParameter(null);
     public TextureParameter video3Tex = new TextureParameter(null);
     
-    public bool IsActive() => showEffect.value;
+    public bool IsActive() => useWhiteBackground.value || useVideo1.value || useVideo2.value || useVideo3.value || useMold.value;
    
     public bool IsTileCompatible() => true;
 }

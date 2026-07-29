@@ -13,9 +13,6 @@ MonoBehaviour:
   m_Name: MoldPsychosisVolume
   m_EditorClassIdentifier: 
   active: 1
-  showEffect:
-    m_OverrideState: 1
-    m_Value: 1
   useWhiteBackground:
     m_OverrideState: 1
     m_Value: 0
@@ -33,10 +30,10 @@ MonoBehaviour:
     m_Value: 0
   useMold:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   moldCoverage:
     m_OverrideState: 1
-    m_Value: 0.649
+    m_Value: 0.091
   voronoiSpeed:
     m_OverrideState: 1
     m_Value: 1
