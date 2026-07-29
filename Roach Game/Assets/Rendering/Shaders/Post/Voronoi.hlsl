@@ -6,6 +6,8 @@
 // Created by inigo quilez - iq/2013
 // License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
 // http://www.iquilezles.org/www/articles/voronoilines/voronoilines.htm
+// Edited by Sangil Lee
+// Translated to HLSL and further edited by Travis Reid
 
 float3 random3 (float2 p)
 {
@@ -71,7 +73,10 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Ani
                         cellRand = random3(neighborCoords2);
                         cellRandCenter = 0.5 + 0.5 * sin(Time * AnimSpeed + 6.2831 * cellRand);
                         blobCenter = neighborCoords2 + cellRandCenter.xy/2.0;
-                        dist = length(blobCenter - uv);
+
+                        // weight inner clusters to be smaller
+                        dist = weightedDist(blobCenter, uv, 0.5);
+
                         cluster = cellRand.z;
 
                         if(cluster < 1.0 - ClusterPropability)
@@ -88,7 +93,7 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Ani
                                     cellRand = random3(neighborCoords3);
                                     cellRandCenter = 0.5 + 0.5 * sin(Time * AnimSpeed + 6.2831 * cellRand);
                                     blobCenter = neighborCoords3 + cellRandCenter.xy/4.0;
-                                    dist = length(blobCenter - uv);
+                                    dist = weightedDist(blobCenter, uv, 0.25);
                                     cluster = cellRand.z;
 
                                     minDist = min(minDist, dist);
