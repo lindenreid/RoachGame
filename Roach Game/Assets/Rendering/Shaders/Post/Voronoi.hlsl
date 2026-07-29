@@ -52,6 +52,7 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Ani
             float dist = length(blobCenter - uv);
 
             // random value to determine if this cell should create a cluster
+            // keep original random value- NOT animated- as the chance of clustering should remain the same over time
             float cluster = cellRand.z;
 
             if(cluster < 1.0 - ClusterPropability)
