@@ -22,6 +22,7 @@ public class PostEffectController : MonoBehaviour
     [SerializeField] private float _fadeOutDurationSeconds = 2.0f;
 
     private ColorAdjustments _colorAdjustments;
+    private MoldPsychosis _moldPostEffect;
     private bool _doFadeIn;
     private bool _doFadeOut;
     private float _fadeTimeSeconds;
@@ -32,7 +33,9 @@ public class PostEffectController : MonoBehaviour
     private void Start()
     {
         _ppVolume.profile.TryGet<ColorAdjustments>(out _colorAdjustments);
+        _ppVolume.profile.TryGet<MoldPsychosis>(out _moldPostEffect);
         Assert.IsNotNull(_colorAdjustments);
+        Assert.IsNotNull(_moldPostEffect);
 
         SetFadeInNormalizedValue(1.0f);
     }
@@ -68,10 +71,31 @@ public class PostEffectController : MonoBehaviour
 
     // ------------------------------------------------------------------------
     // timeline signal callback
+    public void SetWhiteBackgroundEnabled (bool enabled)
+    {
+        _moldPostEffect.useWhiteBackground.SetValue(new BoolParameter(enabled, true));
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
     public void SetVideo1Enabled (bool enabled)
     {
-        Debug.LogFormat("set video enabled: {0}", enabled);
-    } 
+        _moldPostEffect.useVideo1.SetValue(new BoolParameter(enabled, true));
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void SetVideo2Enabled (bool enabled)
+    {
+        _moldPostEffect.useVideo2.SetValue(new BoolParameter(enabled, true));
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void SetVideo3Enabled (bool enabled)
+    {
+        _moldPostEffect.useVideo3.SetValue(new BoolParameter(enabled, true));
+    }
 
     // ------------------------------------------------------------------------
     // timeline signal callback

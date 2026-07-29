@@ -16,6 +16,9 @@ MonoBehaviour:
   showEffect:
     m_OverrideState: 1
     m_Value: 1
+  useWhiteBackground:
+    m_OverrideState: 1
+    m_Value: 0
   useVideo1:
     m_OverrideState: 1
     m_Value: 0

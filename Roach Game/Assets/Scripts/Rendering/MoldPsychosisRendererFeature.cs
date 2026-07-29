@@ -33,7 +33,7 @@ public class MoldPsychosisRendererFeature : ScriptableRendererFeature
             if (shader != null)
                 material = new Material(shader);
                 
-            renderPassEvent = RenderPassEvent.AfterRenderingPostProcessing; 
+            renderPassEvent = RenderPassEvent.AfterRenderingPostProcessing;
         }
 
         // --------------------------------------------------------------------
@@ -55,6 +55,7 @@ public class MoldPsychosisRendererFeature : ScriptableRendererFeature
             material.SetInt("_UseVideo1", volumeComponent.useVideo1.value? 1 : 0);
             material.SetInt("_UseVideo2", volumeComponent.useVideo2.value? 1 : 0);
             material.SetInt("_UseVideo3", volumeComponent.useVideo3.value? 1 : 0);
+            material.SetInt("_UseWhiteBackground", volumeComponent.useWhiteBackground.value? 1 : 0);
             material.SetFloat("_ChromaticAbberation", volumeComponent.chromaticAbberation.value);
 
             // Fetch camera target textures for the blit process

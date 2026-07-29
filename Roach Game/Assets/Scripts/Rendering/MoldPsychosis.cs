@@ -19,6 +19,7 @@ public class MoldPsychosis : VolumeComponent, IPostProcessComponent
     // Variables
     // ------------------------------------------------------------------------
     public BoolParameter showEffect = new BoolParameter(false);
+    public BoolParameter useWhiteBackground = new BoolParameter(false);
 	public BoolParameter useVideo1 = new BoolParameter(false);
     public BoolParameter useVideo2 = new BoolParameter(false);
     public BoolParameter useVideo3 = new BoolParameter(false);
