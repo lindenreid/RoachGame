@@ -40,6 +40,18 @@ MonoBehaviour:
   voronoiDensity:
     m_OverrideState: 1
     m_Value: 10
+  video1Tex:
+    m_OverrideState: 1
+    m_Value: {fileID: 8400000, guid: ce5c13f45f54e43b0b750da4a9eb99ac, type: 2}
+    dimension: 1
+  video2Tex:
+    m_OverrideState: 1
+    m_Value: {fileID: 8400000, guid: 0fd5177b033114ff6be35612bb21bd01, type: 2}
+    dimension: 1
+  video3Tex:
+    m_OverrideState: 1
+    m_Value: {fileID: 8400000, guid: 8ed8a5dac2cef4451836b18d874060d2, type: 2}
+    dimension: 1
 --- !u!114 &-1246535059260827272
 MonoBehaviour:
   m_ObjectHideFlags: 3
