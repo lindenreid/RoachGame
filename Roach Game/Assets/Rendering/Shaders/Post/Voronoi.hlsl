@@ -9,6 +9,14 @@
 // Edited by Sangil Lee
 // Translated to HLSL and further edited by Travis Reid
 
+float random1 (float2 value, float2 dotDir = float2(12.9898, 78.233))
+{
+    float2 smallValue = sin(value);
+    float random = dot(smallValue, dotDir);
+    random = frac(sin(random) * 143758.5453);
+    return random;
+}
+
 float3 random3 (float2 p)
 {
     float3 q = float3( dot(p, float2(127.1,311.7)), 
@@ -31,7 +39,7 @@ float level(float2 p)
     return 0.0;
 }
 
-float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float MoveSpeed)
+float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float MoveSpeed, float GrowSpeed)
 {
     // quantize to create the tiles
     float2 cellCoords = floor(uv);
@@ -75,7 +83,8 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Mov
                         blobCenter = neighborCoords2 + cellRandCenter.xy/2.0;
 
                         // weight inner clusters to be smaller
-                        dist = weightedDist(blobCenter, uv, 0.5);
+                        float weight = random1(neighborCoords2) * 0.8 + 0.5;
+                        dist = weightedDist(blobCenter, uv, weight);
 
                         cluster = cellRand.z;
 
@@ -93,7 +102,10 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Mov
                                     cellRand = random3(neighborCoords3);
                                     cellRandCenter = 0.5 + 0.5 * sin(Time * MoveSpeed + 6.2831 * cellRand);
                                     blobCenter = neighborCoords3 + cellRandCenter.xy/4.0;
-                                    dist = weightedDist(blobCenter, uv, 0.25);
+
+                                    weight = random1(neighborCoords3) * 0.5 + 0.2;
+                                    dist = weightedDist(blobCenter, uv, weight);
+
                                     cluster = cellRand.z;
 
                                     minDist = min(minDist, dist);
@@ -109,11 +121,11 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Mov
     return minDist;
 }
 
-void VoronoiClusters_float(float2 UV, float Time, float MoveSpeed, float Density, float ClusterPropability, out float Noise)
+void VoronoiClusters_float(float2 UV, float Time, float MoveSpeed, float GrowSpeed, float Density, float ClusterPropability, out float Noise)
 {
     // TODO: use angular offset to animate
     float2 v = UV * Density;
-    Noise = VoronoiClusters(v, ClusterPropability, Time, MoveSpeed);
+    Noise = VoronoiClusters(v, ClusterPropability, Time, MoveSpeed, GrowSpeed);
 }
 
 void VoronoiWeighted_float(float2 UV, float Time, float MoveSpeed, float Density, out float Noise)
