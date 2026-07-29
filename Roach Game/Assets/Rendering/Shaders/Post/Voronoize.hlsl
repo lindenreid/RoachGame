@@ -17,29 +17,79 @@ float weightedDist(float2 x, float2 y, float w)
     return 1.0/w * length(x-y);
 }
 
-void Voronoize_float(float2 UV, float Speed, float Density, out float Noise)
+float level(float2 p)
 {
-    float2 value = UV * Density;
-    
-    float2 i_st = floor(value);
-    float2 f_st = frac(value);
-
-    float minDist = 100;
-
-    for(int y = -2; y <= 2; y++)
+    if (p.x == 1.0 && p.y == 1.0)
     {
-        for(int x = -2; x <= 2; x++)
+        return 1.0;
+    }
+    return 0.0;
+}
+
+float Voronoi(float2 uv)
+{
+    float2 f_uv = floor(uv);
+
+    float md = 1e10;
+    for(int i = -1; i <= 1; i++)
+    {
+        for(int j = -1; j <= 1; j++)
         {
-            float2 neighbor = float2(x, y);
-            float2 pt = random3(i_st + neighbor).xy;
+            float2 g1 = f_uv + float2(i, j);
+            float3 rr = random3(g1);
+            float2 o = g1 + rr.xy;
+            float d = length(o - uv);
+            float z = rr.z;
 
-            float weight = 0.2 + 0.8 * random3(i_st + neighbor).z;
-            float dist = weightedDist(neighbor + pt, f_st, weight);
+            if(z < 0.75)
+            {
+                md = min(md, d);
+            }
+            else 
+            {
+                for(int k = 0; k <= 1; k++)
+                {
+                    for(int l = 0; l <= 1; l++)
+                    {
+                        float2 g2 = g1 + float2(k, l)/2.0;
+                        rr = random3(g2);
+                        o = g2 + rr.xy/2.0;
+                        d = length(o - uv);
+                        z = rr.z;
 
-            minDist = min(minDist, dist);
+                        if(z < 0.75)
+                        {
+                            md = min(md, d);
+                        }
+                        else 
+                        {
+                            for(int n = 0; n <= 1; n++)
+                            {
+                                for(int m = 0; m <= 1; m++)
+                                {
+                                    float2 g3 = g2 + float2(m, n)/4.0;
+                                    rr = random3(g3);
+                                    o = g3 + rr.xy/4.0;
+                                    d = length(o - uv);
+                                    z = rr.z;
+
+                                    md = min(md, d);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
-    Noise = minDist;
+    return md;
+}
+
+void Voronoize_float(float2 UV, float AngularOffset, float Density, out float Noise)
+{
+    // TODO: use angular offset to animate
+    float2 v = UV * Density;
+    Noise = Voronoi(v);
 }
 #endif //MYHLSLINCLUDE_INCLUDED
