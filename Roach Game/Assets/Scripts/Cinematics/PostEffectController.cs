@@ -37,6 +37,8 @@ public class PostEffectController : MonoBehaviour
         Assert.IsNotNull(_colorAdjustments);
         Assert.IsNotNull(_moldPostEffect);
 
+        DisableMoldPsychosis();
+
         SetFadeInNormalizedValue(1.0f);
     }
 
@@ -67,6 +69,12 @@ public class PostEffectController : MonoBehaviour
                 _doFadeOut = false;
             }
         }
+    }
+
+    // ------------------------------------------------------------------------
+    public void DisableMoldPsychosis ()
+    {
+        _moldPostEffect.useMold.SetValue(new BoolParameter(false, true));
     }
 
     // ------------------------------------------------------------------------
