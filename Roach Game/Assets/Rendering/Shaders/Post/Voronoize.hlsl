@@ -12,6 +12,11 @@ float3 random3 (float2 p)
     return frac(sin(q) * 43758.5453);
 }
 
+float weightedDist(float2 x, float2 y, float w)
+{
+    return 1.0/w * length(x-y);
+}
+
 void Voronoize_float(float2 UV, float Speed, float Density, out float Noise)
 {
     float2 value = UV * Density;
@@ -21,13 +26,16 @@ void Voronoize_float(float2 UV, float Speed, float Density, out float Noise)
 
     float minDist = 100;
 
-    for(int y = -1; y <= 1; y++)
+    for(int y = -2; y <= 2; y++)
     {
-        for(int x = -1; x <= 1; x++)
+        for(int x = -2; x <= 2; x++)
         {
             float2 neighbor = float2(x, y);
             float2 pt = random3(i_st + neighbor).xy;
-            float dist = length(neighbor + pt - f_st);
+
+            float weight = 0.2 + 0.8 * random3(i_st + neighbor).z;
+            float dist = weightedDist(neighbor + pt, f_st, weight);
+
             minDist = min(minDist, dist);
         }
     }
