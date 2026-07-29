@@ -15,12 +15,16 @@ public class LightingController : MonoBehaviour
     // Variables
     // ------------------------------------------------------------------------
     [SerializeField] private Light _mainDirLight;
+    [SerializeField] private Color _defaultLightColor = Color.white;
+    [SerializeField] private Color _redLightColor = Color.red;
     [SerializeField] private float _ambientLightIntensityLightsOff = 0.2f;
+    [SerializeField] private float _ambientLightIntensityLightsRed = 0.6f;
     [SerializeField] private float _ambientLightIntensityLightsOn = 1.0f;
 
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
+    // timeline signal callback
     public void TurnLightsOff ()
     {
         RenderSettings.ambientIntensity = _ambientLightIntensityLightsOff;
@@ -28,9 +32,18 @@ public class LightingController : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    // timeline signal callback
     public void TurnLightsOn ()
     {
         RenderSettings.ambientIntensity = _ambientLightIntensityLightsOn;
         _mainDirLight.enabled = true;
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void ActivateRedLights (bool activate)
+    {
+        _mainDirLight.color = activate ? _redLightColor : _defaultLightColor;
+        RenderSettings.ambientIntensity = activate? _ambientLightIntensityLightsRed : _ambientLightIntensityLightsOn;
     }
 }

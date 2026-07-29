@@ -1773,6 +1773,8 @@ PlayableDirector:
     value: {fileID: 374279148}
   - key: {fileID: 2681148405312591560, guid: 7c902d9d2af914a00b6f6ef6527bc8d3, type: 2}
     value: {fileID: 38801836}
+  - key: {fileID: -8521155483926578225, guid: 7c902d9d2af914a00b6f6ef6527bc8d3, type: 2}
+    value: {fileID: 374279148}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &374279142
@@ -1902,6 +1904,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 0441675459c9249b2bc5a3a5619f86ac, type: 2}
     - {fileID: 11400000, guid: 3bbb068528bc3471fb57926b261f3c62, type: 2}
     - {fileID: 11400000, guid: 44669d7404d1d428299615b8857f114a, type: 2}
+    - {fileID: 11400000, guid: 3dde39a0ecddb43de905f61d226ccc8c, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -2093,6 +2096,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 374279150}
+          m_TargetAssemblyTypeName: LightingController, Assembly-CSharp
+          m_MethodName: ActivateRedLights
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!114 &374279149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2121,7 +2138,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainDirLight: {fileID: 705507994}
+  _defaultLightColor: {r: 1, g: 0.5686275, b: 0.2784314, a: 1}
+  _redLightColor: {r: 1, g: 0.039215688, b: 0, a: 1}
   _ambientLightIntensityLightsOff: 0.28
+  _ambientLightIntensityLightsRed: 0.6
   _ambientLightIntensityLightsOn: 0.8
 --- !u!1 &376857940
 GameObject:
@@ -3954,7 +3974,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.5678854, b: 0.27843142, a: 1}
+  m_Color: {r: 1, g: 0.5686275, b: 0.2784314, a: 1}
   m_Intensity: 0.32
   m_Range: 10
   m_SpotAngle: 30
@@ -12648,19 +12668,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.53435236
+      value: 0.7839414
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.8452618
+      value: -0.6208348
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -12668,7 +12688,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -101.969
+      value: -76.754
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
