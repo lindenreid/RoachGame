@@ -96,6 +96,32 @@ void VoronoiClusters_float(float2 UV, float AngularOffset, float Density, out fl
     Noise = VoronoiClusters(v);
 }
 
+void VoronoiWeighted_float(float2 UV, float Speed, float Density, out float Noise)
+{
+    float2 value = UV * Density;
+    
+    float2 i_st = floor(value);
+    float2 f_st = frac(value);
+
+    float minDist = 100;
+
+    for(int y = -2; y <= 2; y++)
+    {
+        for(int x = -2; x <= 2; x++)
+        {
+            float2 neighbor = float2(x, y);
+            float2 pt = random3(i_st + neighbor).xy;
+
+            float weight = 0.2 + 0.8 * random3(i_st + neighbor).z;
+            float dist = weightedDist(neighbor + pt, f_st, weight);
+
+            minDist = min(minDist, dist);
+        }
+    }
+
+    Noise = minDist;
+}
+
 void VoronoiSimple_float(float2 UV, float Speed, float Density, out float Noise)
 {
     // UV is 0-1 value, so make it larger based on how many tiles we want to have
