@@ -125,7 +125,6 @@ public class PostEffectController : MonoBehaviour
     // ------------------------------------------------------------------------
     private void SetMoldValue (float val)
     {
-        Debug.LogFormat("set mold val: {0}", val);
         _moldPostEffect.moldCoverage.SetValue(new FloatParameter(val, true));
     }
 
