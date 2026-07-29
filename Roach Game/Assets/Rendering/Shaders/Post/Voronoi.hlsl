@@ -106,7 +106,7 @@ void VoronoiClusters_float(float2 UV, float AngularOffset, float Density, float 
     Noise = VoronoiClusters(v, ClusterPropability);
 }
 
-void VoronoiWeighted_float(float2 UV, float Speed, float Density, out float Noise)
+void VoronoiWeighted_float(float2 UV, float Time, float AnimSpeed, float Density, out float Noise)
 {
     float2 value = UV * Density;
     
@@ -119,11 +119,13 @@ void VoronoiWeighted_float(float2 UV, float Speed, float Density, out float Nois
     {
         for(int x = -2; x <= 2; x++)
         {
-            float2 neighbor = float2(x, y);
-            float2 pt = random3(i_st + neighbor).xy;
+            float2 neighborCoords = float2(x, y);
 
-            float weight = 0.2 + 0.8 * random3(i_st + neighbor).z;
-            float dist = weightedDist(neighbor + pt, f_st, weight);
+            float2 blobCenter = random3(i_st + neighborCoords).xy;
+            blobCenter = 0.5 + 0.5 * sin(Time * AnimSpeed + 6.2831 * blobCenter);
+
+            float weight = 0.2 + 0.8 * random3(i_st + neighborCoords).z;
+            float dist = weightedDist(neighborCoords + blobCenter, f_st, weight);
 
             minDist = min(minDist, dist);
         }
@@ -139,7 +141,9 @@ void VoronoiSimple_float(float2 UV, float Time, float AnimSpeed, float Density, 
     
     // quantize to create the tiles
     float2 cellCoords = floor(value);
-    float2 f_st = frac(value);
+
+    // get this pixel's exact position inside the cell
+    float2 innerCellPos = frac(value);
 
     // big numbah
     float minDist = 1e10;
@@ -163,7 +167,7 @@ void VoronoiSimple_float(float2 UV, float Time, float AnimSpeed, float Density, 
             blobCenter = 0.5 + 0.5 * sin(Time * AnimSpeed + 6.2831 * blobCenter);
 
             // get the distance from this pixel to the neighboring blob center
-            float dist = length(neighborCoords + blobCenter - f_st);
+            float dist = length(neighborCoords + blobCenter - innerCellPos);
 
             // keep the closest distance value from all cell comparisons
             minDist = min(minDist, dist);
