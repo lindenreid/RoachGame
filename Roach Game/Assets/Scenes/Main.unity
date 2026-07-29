@@ -1860,9 +1860,9 @@ GameObject:
   - component: {fileID: 374279145}
   - component: {fileID: 374279146}
   - component: {fileID: 374279147}
-  - component: {fileID: 374279148}
   - component: {fileID: 374279149}
   - component: {fileID: 374279150}
+  - component: {fileID: 374279148}
   m_Layer: 0
   m_Name: Controllers
   m_TagString: Untagged
@@ -1969,6 +1969,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: e1ffcf4085cf744e29af4eba8aac0b8f, type: 2}
     - {fileID: 11400000, guid: 0a936a1b85ab7452797646d5ffae2536, type: 2}
     - {fileID: 11400000, guid: 97c96e3aa62fb4c6b93fab8f927d2123, type: 2}
+    - {fileID: 11400000, guid: a492e7fe41d2849de949a2335631fcce, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -2054,6 +2055,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 374279149}
+          m_TargetAssemblyTypeName: PostEffectController, Assembly-CSharp
+          m_MethodName: SetVideo1Enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!114 &374279149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2069,6 +2084,7 @@ MonoBehaviour:
   _ppVolume: {fileID: 1193821023}
   _fadeInDurationSeconds: 2
   _fadeOutDurationSeconds: 2
+  _renderer: {fileID: 11400000, guid: b320607f66d4642f4a68766ccf0d3935, type: 2}
 --- !u!114 &374279150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11828,12 +11844,6 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: 5920810001604037759, guid: b04b03ecca3ad4191b0eba8b00b7c9f4, type: 2}
-    value: {fileID: 1065174686}
-  - key: {fileID: 7088854892652055552, guid: b04b03ecca3ad4191b0eba8b00b7c9f4, type: 2}
-    value: {fileID: 173867087}
-  - key: {fileID: 2055334860695810525, guid: b04b03ecca3ad4191b0eba8b00b7c9f4, type: 2}
-    value: {fileID: 1944527208}
   - key: {fileID: -5178480662111742432, guid: b04b03ecca3ad4191b0eba8b00b7c9f4, type: 2}
     value: {fileID: 1321469028}
   - key: {fileID: 3008962127236249895, guid: b04b03ecca3ad4191b0eba8b00b7c9f4, type: 2}

@@ -17,9 +17,9 @@ public class PostEffectController : MonoBehaviour
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
-    [SerializeField] public Volume _ppVolume;
-    [SerializeField] public float _fadeInDurationSeconds = 2.0f;
-    [SerializeField] public float _fadeOutDurationSeconds = 2.0f;
+    [SerializeField] private Volume _ppVolume;
+    [SerializeField] private float _fadeInDurationSeconds = 2.0f;
+    [SerializeField] private float _fadeOutDurationSeconds = 2.0f;
 
     private ColorAdjustments _colorAdjustments;
     private bool _doFadeIn;
@@ -64,6 +64,13 @@ public class PostEffectController : MonoBehaviour
                 _doFadeOut = false;
             }
         }
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void SetVideo1Enabled (bool enabled)
+    {
+        Debug.LogFormat("set video enabled: {0}", enabled);
     } 
 
     // ------------------------------------------------------------------------

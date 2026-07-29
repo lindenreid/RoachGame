@@ -1,5 +1,33 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6305191423011853329
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb15e49541084a1abb50b342a18fcf8, type: 3}
+  m_Name: MoldPsychosisVolume
+  m_EditorClassIdentifier: 
+  active: 1
+  showEffect:
+    m_OverrideState: 1
+    m_Value: 1
+  useVideo1:
+    m_OverrideState: 1
+    m_Value: 0
+  useVideo2:
+    m_OverrideState: 1
+    m_Value: 0
+  useVideo3:
+    m_OverrideState: 1
+    m_Value: 0
+  chromaticAbberation:
+    m_OverrideState: 1
+    m_Value: 0
 --- !u!114 &-1246535059260827272
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -44,6 +72,7 @@ MonoBehaviour:
   - {fileID: 1139369939279257237}
   - {fileID: 4118234700353459157}
   - {fileID: -1246535059260827272}
+  - {fileID: -6305191423011853329}
 --- !u!114 &1139369939279257237
 MonoBehaviour:
   m_ObjectHideFlags: 3
