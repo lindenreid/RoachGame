@@ -29,40 +29,50 @@ float level(float2 p)
     return 0.0;
 }
 
-float VoronoiClusters(float2 uv)
+float VoronoiClusters(float2 uv, float ClusterPropability)
 {
-    float2 f_uv = floor(uv);
+    // quantize to create the tiles
+    float2 cellCoords = floor(uv);
 
-    float md = 1e10;
+    // big numbah
+    float minDist = 1e10;
+
+    // loop through self + 8 neighbos - self is at (0,0)
+    // 3 nested for loops to create clusters inside individual cells
     for(int i = -1; i <= 1; i++)
     {
         for(int j = -1; j <= 1; j++)
         {
-            float2 g1 = f_uv + float2(i, j);
-            float3 rr = random3(g1);
-            float2 o = g1 + rr.xy;
-            float d = length(o - uv);
-            float z = rr.z;
+            // get distance from this pixel to neighbor cell's blob center
+            float2 neighborCoords1 = cellCoords + float2(i, j);
+            float3 cellRand = random3(neighborCoords1);
+            float2 blobCenter = neighborCoords1 + cellRand.xy;
+            float dist = length(blobCenter - uv);
 
-            if(z < 0.75)
+            // random value to determine if this cell should create a cluster
+            float cluster = cellRand.z;
+
+            if(cluster > ClusterPropability)
             {
-                md = min(md, d);
+                // if we don't need an inner cluster, stop here
+                minDist = min(minDist, dist);
             }
             else 
             {
+                // otherwise, loop again to create a cluster inside this cell
                 for(int k = 0; k <= 1; k++)
                 {
                     for(int l = 0; l <= 1; l++)
                     {
-                        float2 g2 = g1 + float2(k, l)/2.0;
-                        rr = random3(g2);
-                        o = g2 + rr.xy/2.0;
-                        d = length(o - uv);
-                        z = rr.z;
+                        float2 neighborCoords2 = neighborCoords1 + float2(k, l)/2.0;
+                        cellRand = random3(neighborCoords2);
+                        blobCenter = neighborCoords2 + cellRand.xy/2.0;
+                        dist = length(blobCenter - uv);
+                        cluster = cellRand.z;
 
-                        if(z < 0.75)
+                        if(cluster > ClusterPropability)
                         {
-                            md = min(md, d);
+                            minDist = min(minDist, dist);
                         }
                         else 
                         {
@@ -70,13 +80,13 @@ float VoronoiClusters(float2 uv)
                             {
                                 for(int m = 0; m <= 1; m++)
                                 {
-                                    float2 g3 = g2 + float2(m, n)/4.0;
-                                    rr = random3(g3);
-                                    o = g3 + rr.xy/4.0;
-                                    d = length(o - uv);
-                                    z = rr.z;
+                                    float2 neighborCoords3 = neighborCoords2 + float2(m, n)/4.0;
+                                    cellRand = random3(neighborCoords3);
+                                    blobCenter = neighborCoords3 + cellRand.xy/4.0;
+                                    dist = length(blobCenter - uv);
+                                    cluster = cellRand.z;
 
-                                    md = min(md, d);
+                                    minDist = min(minDist, dist);
                                 }
                             }
                         }
@@ -86,14 +96,14 @@ float VoronoiClusters(float2 uv)
         }
     }
 
-    return md;
+    return minDist;
 }
 
-void VoronoiClusters_float(float2 UV, float AngularOffset, float Density, out float Noise)
+void VoronoiClusters_float(float2 UV, float AngularOffset, float Density, float ClusterPropability, out float Noise)
 {
     // TODO: use angular offset to animate
     float2 v = UV * Density;
-    Noise = VoronoiClusters(v);
+    Noise = VoronoiClusters(v, ClusterPropability);
 }
 
 void VoronoiWeighted_float(float2 UV, float Speed, float Density, out float Noise)
