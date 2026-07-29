@@ -29,7 +29,7 @@ float level(float2 p)
     return 0.0;
 }
 
-float VoronoiClusters(float2 uv, float ClusterPropability)
+float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float AnimSpeed)
 {
     // quantize to create the tiles
     float2 cellCoords = floor(uv);
@@ -46,13 +46,15 @@ float VoronoiClusters(float2 uv, float ClusterPropability)
             // get distance from this pixel to neighbor cell's blob center
             float2 neighborCoords1 = cellCoords + float2(i, j);
             float3 cellRand = random3(neighborCoords1);
+            // must animate blob's center location BEFORE applying neighbor coords
+            cellRand = 0.5 + 0.5 * sin(Time * AnimSpeed + 6.2831 * cellRand);
             float2 blobCenter = neighborCoords1 + cellRand.xy;
             float dist = length(blobCenter - uv);
 
             // random value to determine if this cell should create a cluster
             float cluster = cellRand.z;
 
-            if(cluster > ClusterPropability)
+            if(cluster < 1.0 - ClusterPropability)
             {
                 // if we don't need an inner cluster, stop here
                 minDist = min(minDist, dist);
@@ -66,11 +68,12 @@ float VoronoiClusters(float2 uv, float ClusterPropability)
                     {
                         float2 neighborCoords2 = neighborCoords1 + float2(k, l)/2.0;
                         cellRand = random3(neighborCoords2);
+                        cellRand = 0.5 + 0.5 * sin(Time * AnimSpeed + 6.2831 * cellRand);
                         blobCenter = neighborCoords2 + cellRand.xy/2.0;
                         dist = length(blobCenter - uv);
                         cluster = cellRand.z;
 
-                        if(cluster > ClusterPropability)
+                        if(cluster < 1.0 - ClusterPropability)
                         {
                             minDist = min(minDist, dist);
                         }
@@ -82,6 +85,7 @@ float VoronoiClusters(float2 uv, float ClusterPropability)
                                 {
                                     float2 neighborCoords3 = neighborCoords2 + float2(m, n)/4.0;
                                     cellRand = random3(neighborCoords3);
+                                    cellRand = 0.5 + 0.5 * sin(Time * AnimSpeed + 6.2831 * cellRand);
                                     blobCenter = neighborCoords3 + cellRand.xy/4.0;
                                     dist = length(blobCenter - uv);
                                     cluster = cellRand.z;
@@ -99,11 +103,11 @@ float VoronoiClusters(float2 uv, float ClusterPropability)
     return minDist;
 }
 
-void VoronoiClusters_float(float2 UV, float AngularOffset, float Density, float ClusterPropability, out float Noise)
+void VoronoiClusters_float(float2 UV, float Time, float AnimSpeed, float Density, float ClusterPropability, out float Noise)
 {
     // TODO: use angular offset to animate
     float2 v = UV * Density;
-    Noise = VoronoiClusters(v, ClusterPropability);
+    Noise = VoronoiClusters(v, ClusterPropability, Time, AnimSpeed);
 }
 
 void VoronoiWeighted_float(float2 UV, float Time, float AnimSpeed, float Density, out float Noise)
