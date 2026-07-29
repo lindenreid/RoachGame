@@ -95,20 +95,33 @@ void VoronoiClusters_float(float2 UV, float AngularOffset, float Density, out fl
 
 void VoronoiSimple_float(float2 UV, float Speed, float Density, out float Noise)
 {
+    // UV is 0-1 value, so make it larger based on how many tiles we want to have
     float2 value = UV * Density;
     
-    float2 i_st = floor(value);
+    // quantize to create the tiles
+    float2 cellCoords = floor(value);
     float2 f_st = frac(value);
 
-    float minDist = 100;
+    // big numbah
+    float minDist = 1e10;
 
+    // loop through self + 8 neighbors (9 cells total)
+    // self is at (0,0)
     for(int y = -1; y <= 1; y++)
     {
         for(int x = -1; x <= 1; x++)
         {
-            float2 neighbor = float2(x, y);
-            float2 pt = random3(i_st + neighbor).xy;
-            float dist = length(neighbor + pt - f_st);
+            // get coordinates for neighbor tile
+            float2 neighborCoords = float2(x, y);
+
+            // get center of tile
+            // center is a randomized value using the UV as the seed
+            float2 blobCenter = random3(cellCoords + neighborCoords).xy;
+
+            // get the distance from this pixel to the neighboring blob center
+            float dist = length(neighborCoords + blobCenter - f_st);
+
+            // keep the closest distance value from all cell comparisons
             minDist = min(minDist, dist);
         }
     }
