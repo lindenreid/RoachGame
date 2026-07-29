@@ -57,6 +57,9 @@ public class MoldPsychosisRendererFeature : ScriptableRendererFeature
             material.SetInt("_UseVideo3", volumeComponent.useVideo3.value? 1 : 0);
             material.SetInt("_UseWhiteBackground", volumeComponent.useWhiteBackground.value? 1 : 0);
             material.SetFloat("_ChromaticAbberation", volumeComponent.chromaticAbberation.value);
+            material.SetFloat("_VoronoiSpeed", volumeComponent.voronoiSpeed.value);
+            material.SetFloat("_VoronoiDensity", volumeComponent.voronoiDensity.value);
+            material.SetInt("_UseMold", volumeComponent.useMold.value? 1 : 0);
 
             // Fetch camera target textures for the blit process
             RTHandle source = renderingData.cameraData.renderer.cameraColorTargetHandle;

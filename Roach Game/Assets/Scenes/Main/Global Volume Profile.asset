@@ -31,6 +31,15 @@ MonoBehaviour:
   chromaticAbberation:
     m_OverrideState: 1
     m_Value: 0
+  useMold:
+    m_OverrideState: 1
+    m_Value: 0
+  voronoiSpeed:
+    m_OverrideState: 1
+    m_Value: 2
+  voronoiDensity:
+    m_OverrideState: 1
+    m_Value: 10
 --- !u!114 &-1246535059260827272
 MonoBehaviour:
   m_ObjectHideFlags: 3
