@@ -132,7 +132,7 @@ void VoronoiWeighted_float(float2 UV, float Speed, float Density, out float Nois
     Noise = minDist;
 }
 
-void VoronoiSimple_float(float2 UV, float Time, float Density, out float Noise)
+void VoronoiSimple_float(float2 UV, float Time, float AnimSpeed, float Density, out float Noise)
 {
     // UV is 0-1 value, so make it larger based on how many tiles we want to have
     float2 value = UV * Density;
@@ -157,10 +157,10 @@ void VoronoiSimple_float(float2 UV, float Time, float Density, out float Noise)
             // center is a randomized value using the UV as the seed
             float2 blobCenter = random3(cellCoords + neighborCoords).xy;
 
-            // animate based on time 
+            // animate center of blob based on time 
             // for some reason, _Time isn't working properly inside this custom ShaderGraph function,
             // so that's why i'm passing it in from function arguments >~>
-            blobCenter = 0.5 + 0.5 * sin(Time + 6.2831 * blobCenter);
+            blobCenter = 0.5 + 0.5 * sin(Time * AnimSpeed + 6.2831 * blobCenter);
 
             // get the distance from this pixel to the neighboring blob center
             float dist = length(neighborCoords + blobCenter - f_st);
