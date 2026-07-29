@@ -3,6 +3,9 @@
 #define MYHLSLINCLUDE_INCLUDED
 
 // thank you https://sangillee.com/_posts/2025-04-18-Cellular-noises/
+// Created by inigo quilez - iq/2013
+// License Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+// http://www.iquilezles.org/www/articles/voronoilines/voronoilines.htm
 
 float3 random3 (float2 p)
 {
