@@ -59,7 +59,10 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Mov
             // must animate blob's center location BEFORE applying neighbor coords
             float2 cellRandCenter = 0.5 + 0.5 * sin(Time * MoveSpeed + 6.2831 * cellRand);
             float2 blobCenter = neighborCoords1 + cellRandCenter.xy;
-            float dist = length(blobCenter - uv);
+
+            float weight = random1(neighborCoords1) + 0.8;
+            weight = weight + sin(Time * GrowSpeed) * weight/4.0;
+            float dist = weightedDist(blobCenter, uv, weight);
 
             // random value to determine if this cell should create a cluster
             // keep original random value- NOT animated- as the chance of clustering should remain the same over time
@@ -83,7 +86,9 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Mov
                         blobCenter = neighborCoords2 + cellRandCenter.xy/2.0;
 
                         // weight inner clusters to be smaller
+                        // cluster 1 min is 0.5, max is 0.8
                         float weight = random1(neighborCoords2) * 0.8 + 0.5;
+                        weight = weight + sin(Time * GrowSpeed) * weight/4.0;
                         dist = weightedDist(blobCenter, uv, weight);
 
                         cluster = cellRand.z;
@@ -104,6 +109,7 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Mov
                                     blobCenter = neighborCoords3 + cellRandCenter.xy/4.0;
 
                                     weight = random1(neighborCoords3) * 0.5 + 0.2;
+                                    weight = weight + sin(Time * GrowSpeed) * weight/4.0;
                                     dist = weightedDist(blobCenter, uv, weight);
 
                                     cluster = cellRand.z;
