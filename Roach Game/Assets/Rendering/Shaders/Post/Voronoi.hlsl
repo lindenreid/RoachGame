@@ -1,6 +1,6 @@
 //UNITY_SHADER_NO_UPGRADE
-#ifndef MYHLSLINCLUDE_INCLUDED
-#define MYHLSLINCLUDE_INCLUDED
+#ifndef REID_VORONOI_INCLUDED
+#define REID_VORONOI_INCLUDED
 
 // thank you https://sangillee.com/_posts/2025-04-18-Cellular-noises/
 // Created by inigo quilez - iq/2013
@@ -214,4 +214,4 @@ void VoronoiSimple_float(float2 UV, float Time, float MoveSpeed, float Density, 
     Noise = minDist;
 }
 
-#endif //MYHLSLINCLUDE_INCLUDED
+#endif //REID_VORONOI_INCLUDED
