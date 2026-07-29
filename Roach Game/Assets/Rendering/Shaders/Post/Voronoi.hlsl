@@ -47,8 +47,8 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Ani
             float2 neighborCoords1 = cellCoords + float2(i, j);
             float3 cellRand = random3(neighborCoords1);
             // must animate blob's center location BEFORE applying neighbor coords
-            cellRand = 0.5 + 0.5 * sin(Time * AnimSpeed + 6.2831 * cellRand);
-            float2 blobCenter = neighborCoords1 + cellRand.xy;
+            float2 cellRandCenter = 0.5 + 0.5 * sin(Time * AnimSpeed + 6.2831 * cellRand);
+            float2 blobCenter = neighborCoords1 + cellRandCenter.xy;
             float dist = length(blobCenter - uv);
 
             // random value to determine if this cell should create a cluster
@@ -68,8 +68,8 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Ani
                     {
                         float2 neighborCoords2 = neighborCoords1 + float2(k, l)/2.0;
                         cellRand = random3(neighborCoords2);
-                        cellRand = 0.5 + 0.5 * sin(Time * AnimSpeed + 6.2831 * cellRand);
-                        blobCenter = neighborCoords2 + cellRand.xy/2.0;
+                        cellRandCenter = 0.5 + 0.5 * sin(Time * AnimSpeed + 6.2831 * cellRand);
+                        blobCenter = neighborCoords2 + cellRandCenter.xy/2.0;
                         dist = length(blobCenter - uv);
                         cluster = cellRand.z;
 
@@ -85,8 +85,8 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Ani
                                 {
                                     float2 neighborCoords3 = neighborCoords2 + float2(m, n)/4.0;
                                     cellRand = random3(neighborCoords3);
-                                    cellRand = 0.5 + 0.5 * sin(Time * AnimSpeed + 6.2831 * cellRand);
-                                    blobCenter = neighborCoords3 + cellRand.xy/4.0;
+                                    cellRandCenter = 0.5 + 0.5 * sin(Time * AnimSpeed + 6.2831 * cellRand);
+                                    blobCenter = neighborCoords3 + cellRandCenter.xy/4.0;
                                     dist = length(blobCenter - uv);
                                     cluster = cellRand.z;
 
