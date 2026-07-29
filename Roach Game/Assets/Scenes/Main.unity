@@ -1904,6 +1904,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 3bbb068528bc3471fb57926b261f3c62, type: 2}
     - {fileID: 11400000, guid: 44669d7404d1d428299615b8857f114a, type: 2}
     - {fileID: 11400000, guid: 3dde39a0ecddb43de905f61d226ccc8c, type: 2}
+    - {fileID: 11400000, guid: 6c6f487e444ee49a88c70b371b8174f3, type: 2}
+    - {fileID: 11400000, guid: 1d6f2c8a41da44e8a8b13aeec7cf4eb1, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -2109,6 +2111,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 374279149}
+          m_TargetAssemblyTypeName: PostEffectController, Assembly-CSharp
+          m_MethodName: StartSeq0MoldAnimation
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 374279149}
+          m_TargetAssemblyTypeName: PostEffectController, Assembly-CSharp
+          m_MethodName: DisableMoldPsychosis
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &374279149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2124,6 +2154,9 @@ MonoBehaviour:
   _ppVolume: {fileID: 1193821023}
   _fadeInDurationSeconds: 2
   _fadeOutDurationSeconds: 2
+  _seq0MoldStartValue: 0
+  _seq0MoldEndValue: 0.75
+  _seq0MoldTime: 9
 --- !u!114 &374279150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11524,6 +11557,8 @@ PlayableDirector:
   - key: {fileID: 8476684231943834161, guid: b04b03ecca3ad4191b0eba8b00b7c9f4, type: 2}
     value: {fileID: 1307050856}
   - key: {fileID: -3567452357887748678, guid: b04b03ecca3ad4191b0eba8b00b7c9f4, type: 2}
+    value: {fileID: 374279148}
+  - key: {fileID: -8432666505948096348, guid: b04b03ecca3ad4191b0eba8b00b7c9f4, type: 2}
     value: {fileID: 374279148}
   m_ExposedReferences:
     m_References: []

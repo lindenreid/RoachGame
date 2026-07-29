@@ -11,6 +11,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class PostEffectController : MonoBehaviour
 {
@@ -20,12 +21,22 @@ public class PostEffectController : MonoBehaviour
     [SerializeField] private Volume _ppVolume;
     [SerializeField] private float _fadeInDurationSeconds = 2.0f;
     [SerializeField] private float _fadeOutDurationSeconds = 2.0f;
+    [SerializeField][Range(0,1)] private float _seq0MoldStartValue = 0.0f;
+    [SerializeField][Range(0,1)] private float _seq0MoldEndValue = 0.4f;
+    [SerializeField] private float _seq0MoldTime = 10.0f;
 
     private ColorAdjustments _colorAdjustments;
     private MoldPsychosis _moldPostEffect;
+
     private bool _doFadeIn;
     private bool _doFadeOut;
     private float _fadeTimeSeconds;
+
+    private bool _doMoldFadeIn;
+    private float _moldMaxTimeSeconds;
+    private float _moldTimeSeconds;
+    private float _moldStartVal;
+    private float _moldEndVal;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -69,12 +80,53 @@ public class PostEffectController : MonoBehaviour
                 _doFadeOut = false;
             }
         }
+
+        if(_doMoldFadeIn)
+        {
+            _moldTimeSeconds += Time.deltaTime;
+
+            float tNorm = Mathf.InverseLerp(0, _moldMaxTimeSeconds, _moldTimeSeconds);
+            SetMoldValue(Mathf.Lerp(_moldStartVal, _moldEndVal, tNorm));
+
+            if(_moldTimeSeconds >= _moldMaxTimeSeconds)
+            {
+                SetMoldValue(_moldEndVal);
+                _doMoldFadeIn = false;
+            }
+        }
     }
 
     // ------------------------------------------------------------------------
+    // timeline signal callback
     public void DisableMoldPsychosis ()
     {
         _moldPostEffect.useMold.SetValue(new BoolParameter(false, true));
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void StartSeq0MoldAnimation ()
+    {
+        StartMoldAnimation(_seq0MoldStartValue, _seq0MoldEndValue, _seq0MoldTime);
+    }
+
+    // ------------------------------------------------------------------------
+    public void StartMoldAnimation (float startVal, float endVal, float time)
+    {
+        _moldTimeSeconds = 0.0f;
+        _doMoldFadeIn = true;
+        _moldMaxTimeSeconds = time;
+        _moldStartVal = startVal;
+        _moldEndVal = endVal;
+        _moldPostEffect.useMold.SetValue(new BoolParameter(true, true));
+        SetMoldValue(_moldStartVal);
+    }
+
+    // ------------------------------------------------------------------------
+    private void SetMoldValue (float val)
+    {
+        Debug.LogFormat("set mold val: {0}", val);
+        _moldPostEffect.moldCoverage.SetValue(new FloatParameter(val, true));
     }
 
     // ------------------------------------------------------------------------
