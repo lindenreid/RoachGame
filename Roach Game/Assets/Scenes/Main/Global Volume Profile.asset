@@ -33,13 +33,13 @@ MonoBehaviour:
     m_Value: 1
   moldCoverage:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 0.736
   voronoiSpeed:
     m_OverrideState: 1
     m_Value: 2
   voronoiDensity:
     m_OverrideState: 1
-    m_Value: 20
+    m_Value: 15
   video1Tex:
     m_OverrideState: 1
     m_Value: {fileID: 8400000, guid: ce5c13f45f54e43b0b750da4a9eb99ac, type: 2}
