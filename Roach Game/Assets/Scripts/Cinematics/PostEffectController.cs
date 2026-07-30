@@ -30,7 +30,7 @@ public class PostEffectController : MonoBehaviour
     [SerializeField] private float _seq3MoldTime = 5.0f;
 
     private ColorAdjustments _colorAdjustments;
-    private MoldPsychosisEffectVolumeComponent _moldPostEffect;
+    private MoldPsychosis _moldPostEffect;
 
     private bool _doFadeIn;
     private bool _doFadeOut;
@@ -48,7 +48,7 @@ public class PostEffectController : MonoBehaviour
     private void Start()
     {
         _ppVolume.profile.TryGet<ColorAdjustments>(out _colorAdjustments);
-        _ppVolume.profile.TryGet<MoldPsychosisEffectVolumeComponent>(out _moldPostEffect);
+        _ppVolume.profile.TryGet<MoldPsychosis>(out _moldPostEffect);
         Assert.IsNotNull(_colorAdjustments);
         Assert.IsNotNull(_moldPostEffect);
 

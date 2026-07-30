@@ -30,68 +30,16 @@ MonoBehaviour:
     m_Value: 0
   useMold:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   moldCoverage:
     m_OverrideState: 1
-    m_Value: 0.487
+    m_Value: 0.506
   voronoiSpeed:
     m_OverrideState: 1
     m_Value: 2
   voronoiDensity:
     m_OverrideState: 1
     m_Value: 15
-  video1Tex:
-    m_OverrideState: 1
-    m_Value: {fileID: 8400000, guid: ce5c13f45f54e43b0b750da4a9eb99ac, type: 2}
-    dimension: 1
-  video2Tex:
-    m_OverrideState: 1
-    m_Value: {fileID: 8400000, guid: 0fd5177b033114ff6be35612bb21bd01, type: 2}
-    dimension: 1
-  video3Tex:
-    m_OverrideState: 1
-    m_Value: {fileID: 8400000, guid: 8ed8a5dac2cef4451836b18d874060d2, type: 2}
-    dimension: 1
---- !u!114 &-4672806919953359287
-MonoBehaviour:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a296c8ea2114bd5438d905f04fa82d31, type: 3}
-  m_Name: MoldPsychosisEffectVolumeComponent
-  m_EditorClassIdentifier: Assembly-CSharp::MoldPsychosisEffectVolumeComponent
-  active: 1
-  useWhiteBackground:
-    m_OverrideState: 1
-    m_Value: 0
-  useVideo1:
-    m_OverrideState: 1
-    m_Value: 0
-  useVideo2:
-    m_OverrideState: 1
-    m_Value: 0
-  useVideo3:
-    m_OverrideState: 1
-    m_Value: 0
-  chromaticAbberation:
-    m_OverrideState: 1
-    m_Value: 0
-  useMold:
-    m_OverrideState: 1
-    m_Value: 0
-  moldCoverage:
-    m_OverrideState: 1
-    m_Value: 0.381
-  voronoiSpeed:
-    m_OverrideState: 1
-    m_Value: 2
-  voronoiDensity:
-    m_OverrideState: 1
-    m_Value: 10
   video1Tex:
     m_OverrideState: 1
     m_Value: {fileID: 8400000, guid: ce5c13f45f54e43b0b750da4a9eb99ac, type: 2}
@@ -148,7 +96,7 @@ MonoBehaviour:
   - {fileID: 1139369939279257237}
   - {fileID: 4118234700353459157}
   - {fileID: -1246535059260827272}
-  - {fileID: -4672806919953359287}
+  - {fileID: -6305191423011853329}
 --- !u!114 &1139369939279257237
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -395,7 +343,7 @@ MonoBehaviour:
     m_Value: {x: 1, y: 1, z: 1, w: -0.044485517}
   highlights:
     m_OverrideState: 0
-    m_Value: {x: 1, y: 0.24706048, z: 0.28083393, w: 0.0018536949}
+    m_Value: {x: 1, y: 0.24706048, z: 0.28083402, w: 0.0018536949}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
