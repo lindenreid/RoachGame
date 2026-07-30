@@ -82,7 +82,7 @@ MonoBehaviour:
     m_Value: 0
   useMold:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 0
   moldCoverage:
     m_OverrideState: 1
     m_Value: 0.467

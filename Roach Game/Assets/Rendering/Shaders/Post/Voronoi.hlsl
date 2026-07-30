@@ -138,7 +138,6 @@ float VoronoiClusters(float2 uv, float ClusterPropability, float Time, float Mov
 
 void VoronoiClusters_float(float2 UV, float Time, float MoveSpeed, float GrowSpeed, float Density, float ClusterPropability, out float Noise)
 {
-    // TODO: use angular offset to animate
     float2 v = UV * Density;
     Noise = VoronoiClusters(v, ClusterPropability, Time, MoveSpeed, GrowSpeed);
 }
