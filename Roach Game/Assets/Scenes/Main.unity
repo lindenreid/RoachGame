@@ -1452,6 +1452,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 611622148521869678, guid: 93b1c077fc47548328a0bd2662c71b52, type: 2}
     value: {fileID: 374279148}
+  - key: {fileID: -1692151069965539825, guid: 93b1c077fc47548328a0bd2662c71b52, type: 2}
+    value: {fileID: 374279148}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &205216644
@@ -1906,6 +1908,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 3dde39a0ecddb43de905f61d226ccc8c, type: 2}
     - {fileID: 11400000, guid: 6c6f487e444ee49a88c70b371b8174f3, type: 2}
     - {fileID: 11400000, guid: 1d6f2c8a41da44e8a8b13aeec7cf4eb1, type: 2}
+    - {fileID: 11400000, guid: 176388b4e69644e1aa2150ec488a5261, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -2139,6 +2142,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 374279149}
+          m_TargetAssemblyTypeName: PostEffectController, Assembly-CSharp
+          m_MethodName: StartSeq3MoldAnimation
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &374279149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2157,6 +2174,9 @@ MonoBehaviour:
   _seq0MoldStartValue: 0
   _seq0MoldEndValue: 0.75
   _seq0MoldTime: 9
+  _seq3MoldStartValue: 0
+  _seq3MoldEndValue: 0.2
+  _seq3MoldTime: 10
 --- !u!114 &374279150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6583,6 +6603,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -8057257906780817991, guid: 2e8077f22da2b4768af230874df5de69, type: 2}
     value: {fileID: 3469287837278128892}
+  - key: {fileID: 2450429109212850130, guid: 2e8077f22da2b4768af230874df5de69, type: 2}
+    value: {fileID: 374279148}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1108591063

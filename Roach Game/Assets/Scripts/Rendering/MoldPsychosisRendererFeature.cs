@@ -60,7 +60,7 @@ public class MoldPsychosisRendererFeature : ScriptableRendererFeature
             material.SetFloat("_VoronoiSpeed", volumeComponent.voronoiSpeed.value);
             material.SetFloat("_VoronoiDensity", volumeComponent.voronoiDensity.value);
             material.SetInt("_UseMold", volumeComponent.useMold.value? 1 : 0);
-            material.SetFloat("_MoldCoverage", (1.0f - volumeComponent.moldCoverage.value)*10.0f);
+            material.SetFloat("_MoldCoverage", (1.0f - volumeComponent.moldCoverage.value)*15.0f);
             material.SetTexture("_VideoRenderTex1", volumeComponent.video1Tex.value);
             material.SetTexture("_VideoRenderTex2", volumeComponent.video2Tex.value);
             material.SetTexture("_VideoRenderTex3", volumeComponent.video3Tex.value);
