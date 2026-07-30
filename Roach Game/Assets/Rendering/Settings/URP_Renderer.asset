@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Pixellation
   m_EditorClassIdentifier: 
   m_Active: 1
-  injectionPoint: 450
+  injectionPoint: 550
   fetchColorBuffer: 1
   requirements: 0
   passMaterial: {fileID: -876546973899608171, guid: a8c82b171f5c144abbcf8be587a626b0, type: 3}
