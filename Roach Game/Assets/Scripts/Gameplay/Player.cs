@@ -69,6 +69,7 @@ public class Player : MonoBehaviour
 
     public Vector3 _Position => transform.position;
     public int _Health => _health;
+    public bool _AtMaxHealth => _health == _maxHealth;
     public Transform _CameraTransform => _cameraTransform;
     public Vector3 _CameraPosition => _cameraTransform.position;
 

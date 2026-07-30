@@ -2171,6 +2171,7 @@ MonoBehaviour:
   _ppVolume: {fileID: 1193821023}
   _fadeInDurationSeconds: 2
   _fadeOutDurationSeconds: 2
+  _playerHitMoldAmount: 0.1
   _seq0MoldStartValue: 0
   _seq0MoldEndValue: 0.75
   _seq0MoldTime: 9
