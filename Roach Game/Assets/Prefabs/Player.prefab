@@ -463,7 +463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _walkSpeed: 7
   _runSpeed: 12
-  _mouseSensitivity: 7
+  _mouseSensitivity: 5
   _cc: {fileID: 7839691336058466243}
   _shoeCollider: {fileID: 1653384352851088951}
   _shoeRenderer: {fileID: 7340798675897187825}
