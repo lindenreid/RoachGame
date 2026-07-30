@@ -11,9 +11,7 @@ public sealed class MoldPsychosisEffectRendererFeature : ScriptableRendererFeatu
 
     // Declare the material used to render the post-processing effect.
     // Add a [SerializeField] attribute so Unity serializes the property and includes it in builds.
-    [SerializeField]
-    [HideInInspector]
-    private Material m_Material;
+    [SerializeField] private Material m_Material;
 
     // Declare the render pass that renders the effect.
     private CustomPostRenderPass m_FullScreenPass;
@@ -26,15 +24,6 @@ public sealed class MoldPsychosisEffectRendererFeature : ScriptableRendererFeatu
     // Unity calls this method when the Scriptable Renderer Feature loads for the first time, and when you change a property.
     public override void Create()
     {
-#if UNITY_EDITOR
-        // Assign a material asset to m_Material in the Unity Editor.
-        if (m_Material == null)
-        {
-            Shader shader = Shader.Find("Shader Graphs/MoldPsychosis");
-            m_Material = new Material(shader);
-        }
-#endif
-
         if(m_Material)
             m_FullScreenPass = new CustomPostRenderPass(name, m_Material);
     }

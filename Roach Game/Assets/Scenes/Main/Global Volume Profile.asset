@@ -85,7 +85,7 @@ MonoBehaviour:
     m_Value: 1
   moldCoverage:
     m_OverrideState: 1
-    m_Value: 0.381
+    m_Value: 0.467
   voronoiSpeed:
     m_OverrideState: 1
     m_Value: 2

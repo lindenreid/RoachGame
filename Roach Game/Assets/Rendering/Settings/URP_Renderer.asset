@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: MoldPsychosis
   m_EditorClassIdentifier: Assembly-CSharp::MoldPsychosisEffectRendererFeature
   m_Active: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 070e7a5328a8b4cde861c8e464cb2fe3, type: 2}
 --- !u!114 &-2272296198043597398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -62,7 +62,7 @@ MonoBehaviour:
   - {fileID: -2272296198043597398}
   - {fileID: -6227083580026712088}
   m_RendererFeatureMap: aa0524a3a52e77e0e80fd7f979f494a9
-  xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}
+  xrSystemData: {fileID: 0}
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   m_AssetVersion: 3
   m_PrepassLayerMask:
