@@ -87,14 +87,16 @@ public class MoldPsychosisRendererFeature : ScriptableRendererFeature
     public override void Create()
     {
         Shader shader = Shader.Find("Shader Graphs/MoldPsychosis");
-        Assert.IsNotNull(shader);
-        moldPass = new MoldPsychosisPass(shader);
+        if(shader != null)
+        {
+            moldPass = new MoldPsychosisPass(shader);
+        }
     }
 
     // ------------------------------------------------------------------------
     public override void AddRenderPasses(ScriptableRenderer renderer, ref RenderingData renderingData)
     {
-        if (renderingData.cameraData.postProcessEnabled)
+        if (renderingData.cameraData.postProcessEnabled && moldPass != null)
         {
             renderer.EnqueuePass(moldPass);
         }
