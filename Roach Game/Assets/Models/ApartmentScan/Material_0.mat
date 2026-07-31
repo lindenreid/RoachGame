@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Material_0
-  m_Shader: {fileID: -6465566751694194690, guid: a68fe0c5179fd472abdea6a795d524df, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: d2fc34b8ef62948f09383e7ee108c930, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -93,6 +93,7 @@ Material:
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _AnimSpeed: 0.8
+    - _BiplanarBlend: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -115,7 +116,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _MoldClusterPropabiity: 0.25
-    - _MoldDensity: 3
+    - _MoldDensity: 1.5
     - _MoldGrowSpeed: 2
     - _MoldMoveSpeed: 2
     - _MoldOpacity: 0.75
@@ -131,6 +132,7 @@ Material:
     - _SrcBlendAlpha: 1
     - _Surface: 0
     - _UVSec: 0
+    - _UseMold: 1
     - _VoronoiDensity: 5
     - _VoronoiOffset: 10
     - _WorkflowMode: 1
