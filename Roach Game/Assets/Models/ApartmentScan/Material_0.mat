@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Material_0
-  m_Shader: {fileID: -6465566751694194690, guid: d2fc34b8ef62948f09383e7ee108c930, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: a68fe0c5179fd472abdea6a795d524df, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -118,6 +118,7 @@ Material:
     - _MoldDensity: 3
     - _MoldGrowSpeed: 2
     - _MoldMoveSpeed: 2
+    - _MoldOpacity: 0.75
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueControl: 0
