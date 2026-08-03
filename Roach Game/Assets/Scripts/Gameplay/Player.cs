@@ -248,29 +248,39 @@ public class Player : MonoBehaviour
         SetShoeSplineStartPos();
 
         RaycastHit raycastHit;
+        Vector3 raycastStart = Camera.main.transform.position;
         bool aimRaycastHit = Physics.Raycast(
-                Camera.main.transform.position,
+                raycastStart,
                 Camera.main.transform.forward,
                 out raycastHit,
-                _maxAimDistance,
+                100.0f,
                 _aimLayers
         );
         if(aimRaycastHit)
         {
-            if(((1<<raycastHit.collider.gameObject.layer) & _roachLayer) != 0)
+            if(Vector3.Distance(raycastHit.point, raycastStart) <= _maxAimDistance)
             {
-                _reticleMat.color = _reticleHit;
-                SetValidAim(raycastHit);
+                if(((1<<raycastHit.collider.gameObject.layer) & _roachLayer) != 0)
+                {
+                    _reticleMat.color = _reticleHit;
+                    SetTargetPosition(raycastHit.point);
+                }
+                else
+                {
+                    _reticleMat.color = _reticleMiss;
+                    SetTargetPosition(raycastHit.point);
+                }
             }
             else
             {
-                _reticleMat.color = _reticleMiss;
-                SetValidAim(raycastHit);
+                _reticleMat.color = _reticleInvalid;
+                SetTargetPosition(raycastHit.point);
             }
         }
         else
         {
-            SetInvalidAim();
+            _reticleMat.color = _reticleInvalid;
+            SetTargetPosition(_defaultReticlePos.position);
         }
 
         if(aimRaycastHit && Input.GetMouseButtonDown(0))
@@ -286,18 +296,10 @@ public class Player : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
-    private void SetValidAim (RaycastHit raycastHit)
+    private void SetTargetPosition (Vector3 position)
     {
-        _aimReticle.position = raycastHit.point + _reticleOffset;
-        SetShoeSplineDestination(raycastHit.point);
-    }
-
-    // ------------------------------------------------------------------------
-    private void SetInvalidAim ()
-    {
-        _reticleMat.color = _reticleInvalid;
-        _aimReticle.position = _defaultReticlePos.position;
-        SetShoeSplineDestination(_defaultReticlePos.position);
+        _aimReticle.position = position + _reticleOffset;
+        SetShoeSplineDestination(position);
     }
 
     // ------------------------------------------------------------------------
