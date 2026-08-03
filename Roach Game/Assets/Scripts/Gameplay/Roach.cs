@@ -269,4 +269,15 @@ public partial class Roach : MonoBehaviour
 
         _currentState.OnDrawGizmos();
     }
+
+#if UNITY_EDITOR
+    // ------------------------------------------------------------------------
+    public void DebugKill ()
+    {
+        for(int i = 0; i < _health; i++)
+        {
+            Hit();
+        }
+    }
+#endif
 }

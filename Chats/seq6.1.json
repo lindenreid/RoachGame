@@ -1,0 +1,21 @@
+{
+  "passages": [
+    {
+      "text": "<clue> EndSeq5.3\n<cluegiven> EndSeq6.1\n<line> guns?!?\n<line> GUNS????\n<line> genuinely what the FUCK\n<line> i'm not letting management get away with this!!",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    }
+  ],
+  "name": "Seq6.1",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "5628A474-5080-42FF-9271-EA37AA881DF3"
+}

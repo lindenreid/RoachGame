@@ -122,6 +122,13 @@ public class Player : MonoBehaviour
             LookAndMove();   
             UpdateShoe();
         }
+
+#if UNITY_EDITOR
+        if(Input.GetKey(KeyCode.K))
+        {
+            GameController._Instance.DebugKillAllRoaches();
+        }
+#endif
     }
 
     // ------------------------------------------------------------------------

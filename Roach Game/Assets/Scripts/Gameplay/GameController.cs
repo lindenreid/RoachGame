@@ -28,6 +28,8 @@ public class GameController : MonoBehaviour
     // ------------------------------------------------------------------------
     // Properties
     // ------------------------------------------------------------------------
+    private bool _waitingForFirstRoachGunCinematic => SequenceController._Instance._ActiveSequence == _firstRoachGunSequence && !_hitFirstRoach;
+
     public static GameController _Instance { get; private set; }
     
     public Roach _TargetRoach => _targetRoach;
@@ -81,7 +83,7 @@ public class GameController : MonoBehaviour
     // ------------------------------------------------------------------------
     private void HandleRoachHit (Roach roach)
     {
-        if(SequenceController._Instance._ActiveSequence == _firstRoachGunSequence && !_hitFirstRoach)
+        if(_waitingForFirstRoachGunCinematic)
         {
             //Debug.Log("set target roach: " + roach);
             _hitFirstRoach = true;
@@ -107,4 +109,24 @@ public class GameController : MonoBehaviour
             _targetRoach = null;
         }
     }
+
+#if UNITY_EDITOR
+    // ------------------------------------------------------------------------
+    public void DebugKillAllRoaches ()
+    {
+        if(_waitingForFirstRoachGunCinematic)
+        {
+            // only kill one roach if we're waiting on the roach gun cinematic
+            // if we don't, the foreach loop below won't be able to finish executing
+            _activeRoaches[0].DebugKill();
+        }
+        else
+        {
+            foreach(Roach roach in _activeRoaches)
+            {
+                roach.DebugKill();
+            }
+        }
+    }
+#endif
 }
