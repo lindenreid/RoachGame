@@ -19,6 +19,8 @@ Play the latest WIP build in your browser [on Itch here](https://outofmanna.itch
 - [Explosion by ijudman](https://freesound.org/people/ljudman/sounds/33245/)
 - [Shotgun reload by Paul368](https://freesound.org/people/Paul368/sounds/200966/)
 - [AK 47 action rack - used for bazooka - by dwightsabeast](https://freesound.org/people/dwightsabeast/sounds/543597/)
+- [Bank vault combination lock by Pixeliota](https://freesound.org/people/Pixeliota/sounds/678254/)
+- [Vault door opening by Funkelfang](https://freesound.org/people/Funkelfang/sounds/844296/)
 ### Photos
 - Family stock photos by [Kampus Production](https://www.pexels.com/photo/a-woman-using-a-laptop-6248447/) and [Dmitry Rodionov](https://www.pexels.com/photo/family-playing-together-next-to-the-christmas-tree-15293999/)
 ### 3D Models
