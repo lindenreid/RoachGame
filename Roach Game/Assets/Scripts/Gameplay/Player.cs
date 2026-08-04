@@ -254,6 +254,8 @@ public class Player : MonoBehaviour
     {
         SetShoeSplineStartPos();
 
+        bool weaponCanReachTarget = false;
+
         RaycastHit raycastHit;
         Vector3 raycastStart = Camera.main.transform.position;
         bool aimRaycastHit = Physics.Raycast(
@@ -269,11 +271,13 @@ public class Player : MonoBehaviour
             {
                 if(((1<<raycastHit.collider.gameObject.layer) & _roachLayer) != 0)
                 {
+                    weaponCanReachTarget = true;
                     _reticleMat.color = _reticleHit;
                     SetTargetPosition(raycastHit.point);
                 }
                 else
                 {
+                    weaponCanReachTarget = true;
                     _reticleMat.color = _reticleMiss;
                     SetTargetPosition(raycastHit.point);
                 }
@@ -290,7 +294,7 @@ public class Player : MonoBehaviour
             SetTargetPosition(_defaultReticlePos.position);
         }
 
-        if(aimRaycastHit && Input.GetMouseButtonDown(0))
+        if(weaponCanReachTarget && Input.GetMouseButtonDown(0))
         {
             _splineAnimator.Play();
             _needsAnimRestart = true;
