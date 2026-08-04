@@ -15,6 +15,8 @@ Play the latest WIP build in your browser [on Itch here](https://outofmanna.itch
 - [Orchestral horror swarm by Coghezzi](https://freesound.org/people/Coghezzi/sounds/854154/)
 - [Door opening and closing by JakLocke](https://freesound.org/people/JakLocke/sounds/261110/)
 - [Shop door bell jingle by 3bagbrew](https://freesound.org/people/3bagbrew/sounds/57743/)
+- [Shotgun by AbuNijmeh](https://freesound.org/people/AbuNijmeh/sounds/318973/)
+- [Explosion by ijudman](https://freesound.org/people/ljudman/sounds/33245/)
 ### Photos
 - Family stock photos by [Kampus Production](https://www.pexels.com/photo/a-woman-using-a-laptop-6248447/) and [Dmitry Rodionov](https://www.pexels.com/photo/family-playing-together-next-to-the-christmas-tree-15293999/)
 ### 3D Models
