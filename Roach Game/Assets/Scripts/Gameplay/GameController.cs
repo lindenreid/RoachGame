@@ -16,16 +16,21 @@ public class GameController : MonoBehaviour
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
+    [Header("Game start")]
     [SerializeField] private ClueData _gameStartClue;
+    [Header("First roach gun")]
     [SerializeField] private ClueData _firstRoachHitClue;
     [SerializeField] private ClueData _postHitFirstRoach;
     [SerializeField] private Sequence _firstRoachGunSequence;
+    [Header("Second roach gun")]
     [SerializeField] private ClueData _secondRoachGunClue;
     [SerializeField] private ClueData _postSecondRoachGun;
     [SerializeField] private Sequence _secondRoachGunSequence;
+    [Header("Player gets gun")]
+    [SerializeField] private Sequence _playerGetsGunSequence;
+    [SerializeField] private ClueData _playerGunClue;
 
     private bool _hitFirstRoach;
-    private bool _hitSecondRoachGun;
     private Roach _targetRoach;
     private List<Roach> _activeRoaches;
 
@@ -33,7 +38,8 @@ public class GameController : MonoBehaviour
     // Properties
     // ------------------------------------------------------------------------
     public bool _WaitingForFirstRoachGunCinematic => SequenceController._Instance._ActiveSequence == _firstRoachGunSequence && !_hitFirstRoach;
-    public bool _WaitingForSecondRoachGunCinematic => SequenceController._Instance._ActiveSequence == _secondRoachGunSequence && !_hitSecondRoachGun;
+    public bool _WaitingForSecondRoachGunCinematic => SequenceController._Instance._ActiveSequence == _secondRoachGunSequence;
+    public bool _WaitingForPlayerGunCinematic => SequenceController._Instance._ActiveSequence == _playerGetsGunSequence;
 
     public static GameController _Instance { get; private set; }
     
@@ -97,7 +103,6 @@ public class GameController : MonoBehaviour
         }
         else if(_WaitingForSecondRoachGunCinematic)
         {
-            _hitSecondRoachGun = true;
             SetTargetRoach(roach);
             EventBus._Instance.InvokeClueUnlocked(_secondRoachGunClue);
         }
@@ -105,7 +110,12 @@ public class GameController : MonoBehaviour
         {
             int deadRoaches = _activeRoaches.Count(r => r._IsDead);
             //Debug.LogFormat("dead roaches: {0}; total roaches: {1}", deadRoaches, _activeRoaches.Count());
-            if(deadRoaches == _activeRoaches.Count())
+
+            if(_WaitingForPlayerGunCinematic && deadRoaches >= _activeRoaches.Count()/2)
+            {
+                EventBus._Instance.InvokeClueUnlocked(_playerGunClue);
+            }
+            else if(deadRoaches == _activeRoaches.Count())
             {
                 SequenceController._Instance.EndCurrentSequence();
             } 

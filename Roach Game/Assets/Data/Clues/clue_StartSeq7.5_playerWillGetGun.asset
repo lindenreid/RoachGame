@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e0daad46901c44068c3b2394bbee7f6, type: 3}
-  m_Name: clue_EndSeq4.2
-  m_EditorClassIdentifier: 
-  _id: 734524
-  _name: EndSeq4.2
+  m_Name: clue_StartSeq7.5_playerWillGetGun
+  m_EditorClassIdentifier: Assembly-CSharp::ClueData
+  _id: 34562
+  _name: StartSeq7.5

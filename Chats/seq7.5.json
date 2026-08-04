@@ -1,0 +1,21 @@
+{
+  "passages": [
+    {
+      "text": "<cluegiven> EndSeq7.5\n<line> wait\n<line> this is absurd\n<line> it's time to fight absurdity with absurdity\n<line> i'm getting my gun",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    }
+  ],
+  "name": "Seq7.5",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "40ac0bee-585f-4f8e-815a-68eba6882bda"
+}
