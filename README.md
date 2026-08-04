@@ -7,7 +7,7 @@ Play the latest WIP build in your browser [on Itch here](https://outofmanna.itch
 - [Analog by J. Delpesco](https://www.dafont.com/analog.font)
 ### SFX
 - [Splat sound by mrickey13](https://freesound.org/people/mrickey13/sounds/515620/)
-- [Gun reloading sound by Filmsounduser](https://freesound.org/people/Filmsounduser/sounds/804823/)
+- [Pistol reloading sound by Filmsounduser](https://freesound.org/people/Filmsounduser/sounds/804823/)
 - [Gunshot sound by okieactor](https://freesound.org/people/okieactor/sounds/415912/)
 - [Crackling sound by Valerie-Vivegnis](https://freesound.org/people/Valerie-Vivegnis/sounds/759129/)
 - [Light switch by kwahmah_02](https://freesound.org/people/kwahmah_02/sounds/244923/)
@@ -17,6 +17,8 @@ Play the latest WIP build in your browser [on Itch here](https://outofmanna.itch
 - [Shop door bell jingle by 3bagbrew](https://freesound.org/people/3bagbrew/sounds/57743/)
 - [Shotgun by AbuNijmeh](https://freesound.org/people/AbuNijmeh/sounds/318973/)
 - [Explosion by ijudman](https://freesound.org/people/ljudman/sounds/33245/)
+- [Shotgun reload by Paul368](https://freesound.org/people/Paul368/sounds/200966/)
+- [AK 47 action rack - used for bazooka - by dwightsabeast](https://freesound.org/people/dwightsabeast/sounds/543597/)
 ### Photos
 - Family stock photos by [Kampus Production](https://www.pexels.com/photo/a-woman-using-a-laptop-6248447/) and [Dmitry Rodionov](https://www.pexels.com/photo/family-playing-together-next-to-the-christmas-tree-15293999/)
 ### 3D Models
