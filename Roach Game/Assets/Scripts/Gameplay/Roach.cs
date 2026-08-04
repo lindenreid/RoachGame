@@ -55,12 +55,18 @@ public partial class Roach : MonoBehaviour
     [SerializeField] private int _maxHealth = 1;
     [SerializeField] private Collider _collider;
     [Header("Weapons")]
-    [SerializeField] private RoachWeapon _gun;
+    [SerializeField] private int _gunLevel = 1;
+    [SerializeField] private RoachWeapon _level1Gun;
+    [SerializeField] private RoachWeapon _level2Gun;
+    [SerializeField] private RoachWeapon _level3Gun;
     [SerializeField] private float _weaponUseInterval;
     [Header("Collection")]
     [SerializeField] private GameObject _collectUI;
     [Header("Cinematics")]
     [SerializeField] private PlayableDirector _firstGunTimeline;
+
+    // weapon
+    private RoachWeapon _gun;
 
     // shared state variables
     private int _health;
@@ -85,6 +91,8 @@ public partial class Roach : MonoBehaviour
     private void Start ()
     {
         _health = _maxHealth;
+
+        AssignGun();
 
         _healthCanvas.SetActive(false);
 
@@ -129,6 +137,28 @@ public partial class Roach : MonoBehaviour
     private void OnMouseExit ()
     {
         _currentState.OnMouseExit();
+    }
+
+    // ------------------------------------------------------------------------
+    public void SetRoachGunLevel (int level)
+    {
+        _gunLevel = level;
+        AssignGun();
+    }
+
+    // ------------------------------------------------------------------------
+    private void AssignGun ()
+    {
+        switch(_gunLevel)
+        {
+            case 1: _gun = _level1Gun; break;
+            case 2: _gun = _level2Gun; break;
+            case 3: _gun = _level3Gun; break;
+            default:
+                Debug.LogError("Invalid roach gun level: " + _gunLevel);
+                _gun = _level1Gun;
+                break;
+        }
     }
 
     // ------------------------------------------------------------------------

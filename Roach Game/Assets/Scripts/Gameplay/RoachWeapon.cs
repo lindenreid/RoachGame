@@ -12,11 +12,14 @@ public class RoachWeapon : MonoBehaviour
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
+    [Header("Obj references")]
     [SerializeField] private Roach _owner;
     [SerializeField] private Transform _pivot;
     [SerializeField] private GameObject _bangText;
-    [SerializeField] private float _textAppearTime;
     [SerializeField] private AudioSource _audioSource;
+    [Header("Tuning")]
+    [SerializeField] private float _textAppearTime;
+    [SerializeField] private int _damage = 1;
     [SerializeField] private AudioClip _shootClip;
 
     private float _textTime;
@@ -50,7 +53,7 @@ public class RoachWeapon : MonoBehaviour
 
         _audioSource.PlayOneShot(_shootClip);
         
-        if(Player._Instance.DamageAndTryKill())
+        if(Player._Instance.DamageAndTryKill(_damage))
         {
             _owner.KilledPlayer();
         }

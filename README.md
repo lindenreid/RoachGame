@@ -24,3 +24,4 @@ Play the latest WIP build in your browser [on Itch here](https://outofmanna.itch
 - [Photo frame by Theo Clarke](https://sketchfab.com/3d-models/photo-frame-low-poly-speed-model-3e6dc5d42e1a4e78a7bad4dac7754cb9)
 - [Safe by Justin.Foley](https://sketchfab.com/3d-models/pbr-combination-safe-free-0fbfeb546e56452a9e1f3863931eff39)
 - [Shotgun by Csaba Baity](https://sketchfab.com/3d-models/jolly-the-shotgun-low-poly-3d-coat-texture-test-7cbc0a5c8e35414a8388b5a1b3a5d5c9)
+- [Bazooka by Pieter Ferreira](https://sketchfab.com/3d-models/bazooka-2eb22174208c4f3b96cce7443dbd1572)

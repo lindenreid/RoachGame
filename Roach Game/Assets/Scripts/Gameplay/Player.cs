@@ -172,12 +172,12 @@ public class Player : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
-    public bool DamageAndTryKill ()
+    public bool DamageAndTryKill (int damage)
     {
-        _health--;
+        _health -= damage;
         EventBus._Instance.InvokePlayerHealthChanged();
 
-        if(_health == 0)
+        if(_health <= 0)
         {
             Cursor.lockState = CursorLockMode.None;
             SetInputEnabled(false);
