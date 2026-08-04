@@ -18,6 +18,7 @@ public class CameraCinematics : MonoBehaviour
     // ------------------------------------------------------------------------
     [SerializeField] private Transform _cameraTransform;
     [SerializeField] private Vector3 _roachZoomOffset = Vector3.zero;
+    [SerializeField] private Vector3 _roachZoomOffset2 = Vector3.zero;
     [SerializeField] private SplineContainer _roachZoomSpline;
     [SerializeField] private SplineAnimate _roachZoomSplineAnimator;
     [SerializeField] private SplineContainer _roachZoomOutSpline;
@@ -49,12 +50,25 @@ public class CameraCinematics : MonoBehaviour
     // timeline signal callback
     public void AnimateRoachZoomIn ()
     {
+        AnimateZoomIn(_roachZoomOffset);
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void AnimateRoachZoomIn2 ()
+    {
+        AnimateZoomIn(_roachZoomOffset2);
+    }
+
+    // ------------------------------------------------------------------------
+    private void AnimateZoomIn(Vector3 offset)
+    {
         Roach targetRoach = GameController._Instance._TargetRoach;
 
         _roachTransform = targetRoach.transform;
         _zooming = true;
 
-        Vector3 targetRoachPosLocal = _roachZoomSpline.transform.InverseTransformPoint(targetRoach.gameObject.transform.position) + _roachZoomOffset;
+        Vector3 targetRoachPosLocal = _roachZoomSpline.transform.InverseTransformPoint(targetRoach.gameObject.transform.position) + offset;
 
         var targetKnot = _roachZoomSpline.Spline.Knots.ToArray()[1];
         targetKnot.Position = targetRoachPosLocal;
