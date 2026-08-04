@@ -1,0 +1,21 @@
+{
+  "passages": [
+    {
+      "text": "<clue> EndSeq6.3\n<cluegiven> EndSeq7.1\n<line> ok roaches... i came here to bitch at my manager and crush roaches...\n<line> and i'm all out of manager to bitch at",
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    }
+  ],
+  "name": "Seq7.1",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "F3062240-AC0B-4E58-9F4F-8E815A68EBA6"
+}
