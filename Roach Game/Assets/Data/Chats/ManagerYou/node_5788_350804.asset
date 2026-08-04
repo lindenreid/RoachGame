@@ -25,5 +25,5 @@ MonoBehaviour:
   - thank you again for the help
   _options:
   - _optionText: ((please... please help))
-    _nextNode: {fileID: 11400000, guid: 43c11874b2b79454db8d045a8c7eef54, type: 2}
-  _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}
+    _nextNode: {fileID: 0}
+  _Chat: {fileID: 0}

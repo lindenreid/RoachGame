@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
   m_Name: node_5788_115728
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _id: 115728
   _requiredClues:
   - {fileID: 11400000, guid: 9e73c74317ae74a158dfb9869f27af1b, type: 2}
@@ -21,7 +21,7 @@ MonoBehaviour:
   - ((ok. ask her politely for help))
   _options:
   - _optionText: ask politely
-    _nextNode: {fileID: 11400000, guid: 267128da24f824997a7b71752882b37a, type: 2}
+    _nextNode: {fileID: 0}
   - _optionText: show your frustration
-    _nextNode: {fileID: 11400000, guid: de11f0cdb13c149cd8f7e0512c5fc247, type: 2}
-  _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}
+    _nextNode: {fileID: 0}
+  _Chat: {fileID: 0}

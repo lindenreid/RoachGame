@@ -20,5 +20,5 @@ MonoBehaviour:
   - and the roaches have guns now!?!
   _options:
   - _optionText: ((she'd better help us this time...))
-    _nextNode: {fileID: 11400000, guid: 478c1131c0b2d4c2a86e28345686f538, type: 2}
-  _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}
+    _nextNode: {fileID: 0}
+  _Chat: {fileID: 0}

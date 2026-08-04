@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b134f48b71acf45d19d4356eb767df36, type: 3}
   m_Name: chat_You
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChatData
   _id: 2817
   _nodes:
   - {fileID: 11400000, guid: 45678234396744c60acb6421fd26af7a, type: 2}

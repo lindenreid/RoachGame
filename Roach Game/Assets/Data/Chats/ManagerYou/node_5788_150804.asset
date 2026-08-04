@@ -21,7 +21,7 @@ MonoBehaviour:
   - pest control didn't come
   _options:
   - _optionText: and the roaches have guns
-    _nextNode: {fileID: 11400000, guid: eed92ee719a874e08b15fd7beba1aa8e, type: 2}
+    _nextNode: {fileID: 0}
   - _optionText: do you know when they'll arrive?
-    _nextNode: {fileID: 11400000, guid: c897d9cc81869491b92c38f26ae12c62, type: 2}
-  _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}
+    _nextNode: {fileID: 0}
+  _Chat: {fileID: 0}

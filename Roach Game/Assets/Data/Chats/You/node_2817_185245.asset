@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
   m_Name: node_2817_185245
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _id: 185245
   _requiredClues:
   - {fileID: 11400000, guid: e21d21f8e9fa6479d8b02ceceedf4437, type: 2}
@@ -24,4 +24,4 @@ MonoBehaviour:
   - and really mean
   - but she'll send pest control right??
   _options: []
-  _Chat: {fileID: 11400000, guid: c2ef28d8ca94a40608909a2c963aa5d5, type: 2}
+  _Chat: {fileID: 0}

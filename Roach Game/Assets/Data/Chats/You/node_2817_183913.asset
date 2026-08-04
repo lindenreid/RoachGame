@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
   m_Name: node_2817_183913
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _id: 183913
   _requiredClues:
   - {fileID: 11400000, guid: 93cac2c63f86d47ab8ac7cff7c2d690c, type: 2}
@@ -22,4 +22,4 @@ MonoBehaviour:
   - ROACH?!?
   - i gotta get rid of these guys before the landlord comes for the inspection!!
   _options: []
-  _Chat: {fileID: 11400000, guid: c2ef28d8ca94a40608909a2c963aa5d5, type: 2}
+  _Chat: {fileID: 0}

@@ -22,4 +22,4 @@ MonoBehaviour:
   - Pest control will come tomorrow
   - But either way, cleaning the apartment before the inspection is your responsibility.
   _options: []
-  _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}
+  _Chat: {fileID: 0}

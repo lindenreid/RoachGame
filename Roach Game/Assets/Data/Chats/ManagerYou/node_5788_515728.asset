@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
   m_Name: node_5788_515728
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _id: 515728
   _requiredClues: []
   _cluesGiven: []
@@ -20,4 +20,4 @@ MonoBehaviour:
   - you're going to see roaches.
   - i think you should work on getting used to it
   _options: []
-  _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}
+  _Chat: {fileID: 0}
