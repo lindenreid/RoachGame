@@ -20,6 +20,9 @@ public class GameController : MonoBehaviour
     [SerializeField] private ClueData _firstRoachHitClue;
     [SerializeField] private ClueData _postHitFirstRoach;
     [SerializeField] private Sequence _firstRoachGunSequence;
+    [SerializeField] private ClueData _secondRoachGunClue;
+    [SerializeField] private ClueData _postSecondRoachGun;
+    [SerializeField] private Sequence _secondRoachGunSequence;
 
     private bool _hitFirstRoach;
     private bool _hitSecondRoachGun;
@@ -29,8 +32,8 @@ public class GameController : MonoBehaviour
     // ------------------------------------------------------------------------
     // Properties
     // ------------------------------------------------------------------------
-    private bool _waitingForFirstRoachGunCinematic => SequenceController._Instance._ActiveSequence == _firstRoachGunSequence && !_hitFirstRoach;
-    private bool _waitingForSecondRoachGunCinematic => SequenceController._Instance._ActiveSequence == _secondRoachGunSequence && !_hitSecondRoachGun;
+    public bool _WaitingForFirstRoachGunCinematic => SequenceController._Instance._ActiveSequence == _firstRoachGunSequence && !_hitFirstRoach;
+    public bool _WaitingForSecondRoachGunCinematic => SequenceController._Instance._ActiveSequence == _secondRoachGunSequence && !_hitSecondRoachGun;
 
     public static GameController _Instance { get; private set; }
     
@@ -85,14 +88,14 @@ public class GameController : MonoBehaviour
     // ------------------------------------------------------------------------
     private void HandleRoachHit (Roach roach)
     {
-        if(_waitingForFirstRoachGunCinematic)
+        if(_WaitingForFirstRoachGunCinematic)
         {
             //Debug.Log("set target roach: " + roach);
             _hitFirstRoach = true;
             SetTargetRoach(roach);
             EventBus._Instance.InvokeClueUnlocked(_firstRoachHitClue);
         }
-        else if(_waitingForSecondRoachGunCinematic)
+        else if(_WaitingForSecondRoachGunCinematic)
         {
             _hitSecondRoachGun = true;
             SetTargetRoach(roach);
@@ -122,7 +125,7 @@ public class GameController : MonoBehaviour
     // ------------------------------------------------------------------------
     public void DebugKillAllRoaches ()
     {
-        if(_waitingForFirstRoachGunCinematic || _waitingForSecondRoachGunCinematic)
+        if(_WaitingForFirstRoachGunCinematic || _WaitingForSecondRoachGunCinematic)
         {
             // only kill one roach if we're waiting on a roach gun cinematic
             // if we don't, the foreach loop below won't be able to finish executing

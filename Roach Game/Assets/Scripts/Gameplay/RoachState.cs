@@ -321,8 +321,8 @@ public partial class Roach
         public override void EnterState(Roach roach)
         {
             base.EnterState(roach);
-
-            roach._firstGunTimeline.Play();
+            _roach._gun.SkipFirstReloadAudio();
+            roach._activeCinematic.Play();
         }
     }
 }

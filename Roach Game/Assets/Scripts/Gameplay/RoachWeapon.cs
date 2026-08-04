@@ -23,6 +23,7 @@ public class RoachWeapon : MonoBehaviour
     [SerializeField] private AudioClip _shootClip;
 
     private float _textTime;
+    private bool _skipReloadAudio;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -37,6 +38,23 @@ public class RoachWeapon : MonoBehaviour
                 _bangText.SetActive(false);
             }
         }
+    }
+
+    // ------------------------------------------------------------------------
+    private void Start()
+    {
+        // play reloading audio when activated
+        // unless we've been told not to (because of cinematic reload)
+        if(!_skipReloadAudio)
+        {
+            _audioSource.Play();
+        }
+    } 
+
+    // ------------------------------------------------------------------------
+    public void SkipFirstReloadAudio ()
+    {
+        _skipReloadAudio = true;
     }
 
     // ------------------------------------------------------------------------

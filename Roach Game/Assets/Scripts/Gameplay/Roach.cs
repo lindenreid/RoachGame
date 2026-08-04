@@ -64,9 +64,11 @@ public partial class Roach : MonoBehaviour
     [SerializeField] private GameObject _collectUI;
     [Header("Cinematics")]
     [SerializeField] private PlayableDirector _firstGunTimeline;
+    [SerializeField] private PlayableDirector _secondGunTimeline;
 
     // weapon
     private RoachWeapon _gun;
+    [SerializeField] private PlayableDirector _activeCinematic;
 
     // shared state variables
     private int _health;
@@ -182,8 +184,14 @@ public partial class Roach : MonoBehaviour
 
         UpdateHealthText();
 
-        if(GameController._Instance._TargetRoach == this)
+        if(GameController._Instance._WaitingForFirstRoachGunCinematic)
         {
+            _activeCinematic = _firstGunTimeline;
+            EnterState(RoachStateType.Cinematic);
+        }
+        else if(GameController._Instance._WaitingForSecondRoachGunCinematic)
+        {
+            _activeCinematic = _secondGunTimeline;
             EnterState(RoachStateType.Cinematic);
         }
         else
@@ -228,6 +236,15 @@ public partial class Roach : MonoBehaviour
     // also a Timeline signal callback- do not rename
     public void ShowGun ()
     {
+        _gun.gameObject.SetActive(true);
+        _gun.PointAtPlayer();
+    }
+
+    // ------------------------------------------------------------------------
+    // Timeline signal callback
+    public void ShowLevel2Gun ()
+    {
+        _gun = _level2Gun;
         _gun.gameObject.SetActive(true);
         _gun.PointAtPlayer();
     }
