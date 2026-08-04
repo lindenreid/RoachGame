@@ -127,8 +127,8 @@ Material:
     - _Mode: 0
     - _MoldClusterPropabiity: 0.25
     - _MoldDensity: 2
-    - _MoldGrowSpeed: 2
-    - _MoldMoveSpeed: 2
+    - _MoldGrowSpeed: 1
+    - _MoldMoveSpeed: 0.25
     - _MoldOpacity: 1
     - _MoldSpreadSpeed: 1
     - _OcclusionStrength: 1
