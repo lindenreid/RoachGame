@@ -22,4 +22,4 @@ MonoBehaviour:
   _options:
   - _optionText: (yeah... she should listen to that.)
     _nextNode: {fileID: 11400000, guid: a9ba780ec899a44c898799d22a95c85f, type: 2}
-  _Chat: {fileID: 0}
+  _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}

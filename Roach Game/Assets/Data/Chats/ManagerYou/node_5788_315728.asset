@@ -21,5 +21,5 @@ MonoBehaviour:
   - fix it.
   _options:
   - _optionText: (that should make her understand.)
-    _nextNode: {fileID: 0}
-  _Chat: {fileID: 0}
+    _nextNode: {fileID: 11400000, guid: 5ced43612f7094b26b208ebe8e541774, type: 2}
+  _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}

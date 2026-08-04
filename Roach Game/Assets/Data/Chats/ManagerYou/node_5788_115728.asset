@@ -21,7 +21,7 @@ MonoBehaviour:
   - ((ok. ask her politely for help))
   _options:
   - _optionText: ask politely
-    _nextNode: {fileID: 0}
+    _nextNode: {fileID: 11400000, guid: 267128da24f824997a7b71752882b37a, type: 2}
   - _optionText: show your frustration
-    _nextNode: {fileID: 0}
-  _Chat: {fileID: 0}
+    _nextNode: {fileID: 11400000, guid: de11f0cdb13c149cd8f7e0512c5fc247, type: 2}
+  _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}
