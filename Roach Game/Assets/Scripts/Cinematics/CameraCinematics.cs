@@ -68,7 +68,7 @@ public class CameraCinematics : MonoBehaviour
         targetKnot.Position = _roachZoomOutSpline.transform.InverseTransformPoint(_cameraTransform.position);
         _roachZoomOutSpline.Spline.SetKnot(1, targetKnot);
 
-        _roachZoomSplineAnimator.Play();
+        _roachZoomSplineAnimator.Restart(autoplay:true);
     }
 
     // ------------------------------------------------------------------------
@@ -84,7 +84,7 @@ public class CameraCinematics : MonoBehaviour
     // timeline signal callback
     public void AnimateRoachZoomOut ()
     {
-        _roachZoomOutSplineAnimator.Play();
+        _roachZoomOutSplineAnimator.Restart(autoplay:true);
     }
 
     // ------------------------------------------------------------------------

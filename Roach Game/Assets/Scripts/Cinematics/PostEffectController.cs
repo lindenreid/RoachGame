@@ -28,6 +28,8 @@ public class PostEffectController : MonoBehaviour
     [SerializeField][Range(0,1)] private float _seq3MoldStartValue = 0.0f;
     [SerializeField][Range(0,1)] private float _seq3MoldEndValue = 0.3f;
     [SerializeField] private float _seq3MoldTime = 5.0f;
+    [SerializeField] private float _seq7MoldIncrease = 0.1f;
+    [SerializeField] private float _seq7MoldTime = 10.0f;
 
     private ColorAdjustments _colorAdjustments;
     private MoldPsychosisEffectVolumeComponent _moldPostEffect;
@@ -135,6 +137,17 @@ public class PostEffectController : MonoBehaviour
     public void StartSeq3MoldAnimation ()
     {
         StartMoldAnimation(_seq3MoldStartValue, _seq3MoldEndValue, _seq3MoldTime);
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void StartSeq7MoldAnimation ()
+    {
+        StartMoldAnimation(
+            _moldPostEffect.moldCoverage.value,
+            _moldPostEffect.moldCoverage.value + _seq7MoldIncrease,
+            _seq7MoldTime
+        );
     }
 
     // ------------------------------------------------------------------------

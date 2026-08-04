@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private Sequence _firstRoachGunSequence;
 
     private bool _hitFirstRoach;
+    private bool _hitSecondRoachGun;
     private Roach _targetRoach;
     private List<Roach> _activeRoaches;
 
@@ -29,6 +30,7 @@ public class GameController : MonoBehaviour
     // Properties
     // ------------------------------------------------------------------------
     private bool _waitingForFirstRoachGunCinematic => SequenceController._Instance._ActiveSequence == _firstRoachGunSequence && !_hitFirstRoach;
+    private bool _waitingForSecondRoachGunCinematic => SequenceController._Instance._ActiveSequence == _secondRoachGunSequence && !_hitSecondRoachGun;
 
     public static GameController _Instance { get; private set; }
     
@@ -90,6 +92,12 @@ public class GameController : MonoBehaviour
             SetTargetRoach(roach);
             EventBus._Instance.InvokeClueUnlocked(_firstRoachHitClue);
         }
+        else if(_waitingForSecondRoachGunCinematic)
+        {
+            _hitSecondRoachGun = true;
+            SetTargetRoach(roach);
+            EventBus._Instance.InvokeClueUnlocked(_secondRoachGunClue);
+        }
         else // don't bother counting dead roaches if we're checking for first roach gun
         {
             int deadRoaches = _activeRoaches.Count(r => r._IsDead);
@@ -104,7 +112,7 @@ public class GameController : MonoBehaviour
     // ------------------------------------------------------------------------
     private void HandleClueUnlocked (ClueData clue)
     {
-        if(clue == _postHitFirstRoach)
+        if(clue == _postHitFirstRoach || clue == _postSecondRoachGun)
         {
             _targetRoach = null;
         }
@@ -114,9 +122,9 @@ public class GameController : MonoBehaviour
     // ------------------------------------------------------------------------
     public void DebugKillAllRoaches ()
     {
-        if(_waitingForFirstRoachGunCinematic)
+        if(_waitingForFirstRoachGunCinematic || _waitingForSecondRoachGunCinematic)
         {
-            // only kill one roach if we're waiting on the roach gun cinematic
+            // only kill one roach if we're waiting on a roach gun cinematic
             // if we don't, the foreach loop below won't be able to finish executing
             _activeRoaches[0].DebugKill();
         }

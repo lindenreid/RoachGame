@@ -2254,6 +2254,9 @@ MonoBehaviour:
   _firstRoachHitClue: {fileID: 11400000, guid: e439e1228acdf479393f155e87cbc202, type: 2}
   _postHitFirstRoach: {fileID: 11400000, guid: b60f27301696a471680816415870c90d, type: 2}
   _firstRoachGunSequence: {fileID: 731272070}
+  _secondRoachGunClue: {fileID: 11400000, guid: 4d5d7496fea9d4fcd9825bae8e2793e4, type: 2}
+  _postSecondRoachGun: {fileID: 11400000, guid: 8a1617cd4f38943b8bcb0cca96542bd3, type: 2}
+  _secondRoachGunSequence: {fileID: 1542258956}
 --- !u!114 &374279148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2283,6 +2286,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 6c6f487e444ee49a88c70b371b8174f3, type: 2}
     - {fileID: 11400000, guid: 1d6f2c8a41da44e8a8b13aeec7cf4eb1, type: 2}
     - {fileID: 11400000, guid: 176388b4e69644e1aa2150ec488a5261, type: 2}
+    - {fileID: 11400000, guid: 7726c9e4f1f904aab9174a2a09fb4759, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -2530,6 +2534,20 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 374279149}
+          m_TargetAssemblyTypeName: PostEffectController, Assembly-CSharp
+          m_MethodName: StartSeq7MoldAnimation
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &374279149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2552,6 +2570,8 @@ MonoBehaviour:
   _seq3MoldStartValue: 0
   _seq3MoldEndValue: 0.2
   _seq3MoldTime: 10
+  _seq7MoldIncrease: 0.1
+  _seq7MoldTime: 10
 --- !u!114 &374279150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2724,7 +2744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e25364fca4e324e0995e340fea7c1e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _triggerClue: {fileID: 11400000, guid: 00edb518e354e4fe09142e598d0e229f, type: 2}
+  _triggerClue: {fileID: 11400000, guid: de6a8d40fa30a4764b31c1b5a8012e23, type: 2}
   _finishClue: {fileID: 0}
   _gameStateType: 4
   _objects:
@@ -2879,6 +2899,63 @@ MonoBehaviour:
   _onlySetPlayerLocOnRestart: 0
   _music: {fileID: 8300000, guid: 5fb7327c0f90e3a4b90c5804a1c7ec47, type: 3}
   _audioType: 2
+--- !u!1 &454927334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 454927335}
+  - component: {fileID: 454927336}
+  m_Layer: 0
+  m_Name: Seq_7.3_secondRoachGun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &454927335
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454927334}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 491871952}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &454927336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454927334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25364fca4e324e0995e340fea7c1e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sequence
+  _triggerClue: {fileID: 11400000, guid: 4d5d7496fea9d4fcd9825bae8e2793e4, type: 2}
+  _finishClue: {fileID: 11400000, guid: 8a1617cd4f38943b8bcb0cca96542bd3, type: 2}
+  _gameStateType: 2
+  _objects:
+  - {fileID: 1435695183}
+  _disableObjectsAtEnd: 0
+  _removeRoachesInHandAtEnd: 0
+  _dialogueStartNode: {fileID: 0}
+  _playerStartPos: {fileID: 0}
+  _cameraStartRot: {fileID: 0}
+  _onlySetPlayerLocOnRestart: 0
+  _music: {fileID: 0}
+  _audioType: 1
 --- !u!1 &473415807
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,6 +3040,8 @@ Transform:
   m_Children:
   - {fileID: 1461574789}
   - {fileID: 1542258955}
+  - {fileID: 454927335}
+  - {fileID: 1461526887}
   m_Father: {fileID: 374279144}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &504456351
@@ -6757,6 +6836,7 @@ Transform:
   - {fileID: 205216644}
   - {fileID: 1175797658}
   - {fileID: 332266285}
+  - {fileID: 1435695184}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073858189
@@ -9888,6 +9968,73 @@ Transform:
   m_Children: []
   m_Father: {fileID: 865359251}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1435695183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1435695184}
+  - component: {fileID: 1435695185}
+  m_Layer: 0
+  m_Name: Cinematic_7.3_SecondRoachGun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1435695184
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435695183}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.0988944, y: -0.23122752, z: -1.2368639}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1062708958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &1435695185
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435695183}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 6fd2dd08eb26f4614942c417b580ab11, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 0}
+    value: {fileID: 6139548210068203798}
+  - key: {fileID: 4886139844559705606, guid: 7c902d9d2af914a00b6f6ef6527bc8d3, type: 2}
+    value: {fileID: 6139548210068203799}
+  - key: {fileID: 7461816914961810389, guid: 7c902d9d2af914a00b6f6ef6527bc8d3, type: 2}
+    value: {fileID: 374279148}
+  - key: {fileID: 2681148405312591560, guid: 7c902d9d2af914a00b6f6ef6527bc8d3, type: 2}
+    value: {fileID: 38801836}
+  - key: {fileID: -8521155483926578225, guid: 7c902d9d2af914a00b6f6ef6527bc8d3, type: 2}
+    value: {fileID: 374279148}
+  - key: {fileID: 4886139844559705606, guid: 6fd2dd08eb26f4614942c417b580ab11, type: 2}
+    value: {fileID: 6139548210068203799}
+  - key: {fileID: 7461816914961810389, guid: 6fd2dd08eb26f4614942c417b580ab11, type: 2}
+    value: {fileID: 374279148}
+  - key: {fileID: 2681148405312591560, guid: 6fd2dd08eb26f4614942c417b580ab11, type: 2}
+    value: {fileID: 38801836}
+  - key: {fileID: -8521155483926578225, guid: 6fd2dd08eb26f4614942c417b580ab11, type: 2}
+    value: {fileID: 374279148}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1453856538
 GameObject:
   m_ObjectHideFlags: 0
@@ -9941,6 +10088,63 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 9.2507, y: 3.1234252, z: 0.097820975}
   m_Center: {x: -2.1606822, y: 1.0617117, z: 0.024357582}
+--- !u!1 &1461526886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1461526887}
+  - component: {fileID: 1461526888}
+  m_Layer: 0
+  m_Name: Seq_7.4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1461526887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461526886}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 491871952}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1461526888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461526886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25364fca4e324e0995e340fea7c1e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sequence
+  _triggerClue: {fileID: 11400000, guid: 8a1617cd4f38943b8bcb0cca96542bd3, type: 2}
+  _finishClue: {fileID: 11400000, guid: de6a8d40fa30a4764b31c1b5a8012e23, type: 2}
+  _gameStateType: 1
+  _objects:
+  - {fileID: 1692925333}
+  _disableObjectsAtEnd: 0
+  _removeRoachesInHandAtEnd: 0
+  _dialogueStartNode: {fileID: 0}
+  _playerStartPos: {fileID: 399232727}
+  _cameraStartRot: {fileID: 991511031}
+  _onlySetPlayerLocOnRestart: 1
+  _music: {fileID: 8300000, guid: 4941ca7af4877654f8c0676278618a21, type: 3}
+  _audioType: 2
 --- !u!1 &1461574788
 GameObject:
   m_ObjectHideFlags: 0
@@ -14080,32 +14284,12 @@ PrefabInstance:
       value: 7.0863256
       objectReference: {fileID: 0}
     - target: {fileID: 8108288289591890457, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8108288289591890457, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8108288289591890457, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8108288289591890457, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
-      propertyPath: m_LocalRotation.w
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8108288289591890457, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8108288289591890457, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8108288289591890457, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
