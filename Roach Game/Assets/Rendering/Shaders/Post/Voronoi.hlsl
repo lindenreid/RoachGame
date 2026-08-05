@@ -51,8 +51,10 @@ half VoronoiClusters(half2 uv, half ClusterPropability, half Time, half MoveSpee
 
     // loop through self + 8 neighbos - self is at (0,0)
     // 3 nested for loops to create clusters inside individual cells
+    [unroll]
     for(int i = -1; i <= 1; i++)
     {
+        [unroll]
         for(int j = -1; j <= 1; j++)
         {
             // get distance from this pixel to neighbor cell's blob center
@@ -83,8 +85,10 @@ half VoronoiClusters(half2 uv, half ClusterPropability, half Time, half MoveSpee
             else 
             {
                 // otherwise, loop again to create a cluster inside this cell
+                [unroll]
                 for(int k = 0; k <= 1; k++)
                 {
+                    [unroll]
                     for(int l = 0; l <= 1; l++)
                     {
                         half2 neighborCoords2 = neighborCoords1 + half2(k, l)/2.0;
@@ -107,8 +111,10 @@ half VoronoiClusters(half2 uv, half ClusterPropability, half Time, half MoveSpee
                         }
                         else 
                         {
+                            [unroll]
                             for(int n = 0; n <= 1; n++)
                             {
+                                [unroll]
                                 for(int m = 0; m <= 1; m++)
                                 {
                                     half2 neighborCoords3 = neighborCoords2 + half2(m, n)/4.0;
@@ -151,8 +157,10 @@ void VoronoiWeighted_half(half2 UV, half Time, half MoveSpeed, half Density, hal
 
     half minDist = 100;
 
+    [unroll]
     for(int y = -2; y <= 2; y++)
     {
+        [unroll]
         for(int x = -2; x <= 2; x++)
         {
             half2 neighborCoords = half2(x, y);
@@ -186,8 +194,10 @@ void VoronoiSimple_half(half2 UV, half Time, half MoveSpeed, half Density, out h
 
     // loop through self + 8 neighbors (9 cells total)
     // self is at (0,0)
+    [unroll]
     for(int y = -1; y <= 1; y++)
     {
+        [unroll]
         for(int x = -1; x <= 1; x++)
         {
             // get coordinates for neighbor tile
