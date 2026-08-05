@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 3756079887441626173}
   - component: {fileID: 7052029917714317110}
   m_Layer: 0
-  m_Name: MeshRenderer_AptSafeMold (1)
+  m_Name: MeshRenderer_AptSafeMold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
