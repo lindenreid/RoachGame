@@ -1,0 +1,57 @@
+{
+  "passages": [
+    {
+      "text": "<line> MOLD?!?\n<line> IN THE SAFE?!?\n<line> .... am i....\n<line> seeing things?\n<line> ... the roach guns.. are they real?\n[[the guns are real, the mold is real, and the manager is evil]]\n[[it's not real. i'm actually going insane]]",
+      "links": [
+        {
+          "name": "the guns are real, the mold is real, and the manager is evil",
+          "link": "the guns are real, the mold is real, and the manager is evil",
+          "pid": "2"
+        },
+        {
+          "name": "it's not real. i'm actually going insane",
+          "link": "it's not real. i'm actually going insane",
+          "pid": "3"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<cluegiven> EndSeq8.2\n<line> AND SHE'S GOING TO PAY!!!\n<line> this apartment is disgusting!! and dangerous!!\n<line> the mold and roaches shouldn't even be my responsibility! it's on the landlord\n<line> and the mold... it's spreading...\n<line> i can't believe she keeps threatening me with something THEY'RE supposed to take care of!\n<line> i'm going to the office one last time...",
+      "name": "the guns are real, the mold is real, and the manager is evil",
+      "pid": "2",
+      "position": {
+        "x": "600",
+        "y": "375"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<cluegiven> EndSeq8.2\n<line> the mold must be why i'm seeing roaches with GUNS\n<line> i mean if they were real, i would be dead by now right?\n<line> ha... ha?\n<line> i have to have some kind of.. mold poisoning? \n<line> and it's spreading....\n<line> i'm going to management one last time\n<line> i KNOW they'll take care of mold.. right?",
+      "name": "it's not real. i'm actually going insane",
+      "pid": "3",
+      "position": {
+        "x": "725",
+        "y": "375"
+      },
+      "tags": [
+        "You"
+      ]
+    }
+  ],
+  "name": "Seq8.2",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "5f4f8e81-5a68-4ba6-882b-da161be4a412"
+}

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
+  m_Name: node_2817_154881
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  _id: 154881
+  _requiredClues: []
+  _cluesGiven: []
+  _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
+  _lines:
+  - MOLD?!?
+  - IN THE SAFE?!?
+  - .... am i....
+  - seeing things?
+  - ... the roach guns.. are they real?
+  _options:
+  - _optionText: the guns are real, the mold is real, and the manager is evil
+    _nextNode: {fileID: 11400000, guid: d0bee359e2b5342a98662342b49afa26, type: 2}
+  - _optionText: it's not real. i'm actually going insane
+    _nextNode: {fileID: 11400000, guid: ffbad85e0f28945858e51aca6c82f490, type: 2}
+  _Chat: {fileID: 0}

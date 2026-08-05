@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
+  m_Name: node_2817_354881
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  _id: 354881
+  _requiredClues: []
+  _cluesGiven:
+  - {fileID: 11400000, guid: 1211ad61b46a14776b192511f74ab5e0, type: 2}
+  _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
+  _lines:
+  - the mold must be why i'm seeing roaches with GUNS
+  - i mean if they were real, i would be dead by now right?
+  - ha... ha?
+  - 'i have to have some kind of.. mold poisoning? '
+  - and it's spreading....
+  - i'm going to management one last time
+  - i KNOW they'll take care of mold.. right?
+  _options: []
+  _Chat: {fileID: 0}
