@@ -130,7 +130,9 @@ Material:
     - _MoldGrowSpeed: 1
     - _MoldMoveSpeed: 0.25
     - _MoldOpacity: 1
+    - _MoldSpreadMaxTime: 10
     - _MoldSpreadSpeed: 1
+    - _MoldStartTime: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _QueueControl: 0
