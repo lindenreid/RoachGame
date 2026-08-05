@@ -7684,6 +7684,7 @@ Transform:
   - {fileID: 332266285}
   - {fileID: 1435695184}
   - {fileID: 2070575539}
+  - {fileID: 1782326798}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073858189
@@ -8141,8 +8142,9 @@ MonoBehaviour:
   _triggerClue: {fileID: 11400000, guid: b5367046299a74a5aa081b0578803899, type: 2}
   _finishClue: {fileID: 0}
   _gameStateType: 3
-  _objects: []
-  _disableObjectsAtEnd: 0
+  _objects:
+  - {fileID: 1782326797}
+  _disableObjectsAtEnd: 1
   _removeRoachesInHandAtEnd: 1
   _dialogueStartNode: {fileID: 11400000, guid: 0662b61b98eb34d8ab67ba730161065e, type: 2}
   _playerStartPos: {fileID: 0}
@@ -13367,6 +13369,57 @@ PlayableDirector:
   m_ExposedReferences:
     m_References:
     - 75c3053cb715a43d7b787ea44dc25eed: {fileID: 705507993}
+--- !u!1 &1782326797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1782326798}
+  - component: {fileID: 1782326799}
+  m_Layer: 0
+  m_Name: Cinematic_8.2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1782326798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782326797}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1062708958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!320 &1782326799
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782326797}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 68f471d6c1fbc4b1c98e1db195f2ebcd, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 3183343949588384590, guid: 68f471d6c1fbc4b1c98e1db195f2ebcd, type: 2}
+    value: {fileID: 374279148}
+  m_ExposedReferences:
+    m_References: []
 --- !u!1 &1811061522
 GameObject:
   m_ObjectHideFlags: 0
@@ -15209,7 +15262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2139158526
 Transform:
   m_ObjectHideFlags: 0

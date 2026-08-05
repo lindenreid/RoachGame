@@ -40,6 +40,7 @@ public class PropEffectsController : MonoBehaviour
     // timeline callback
     public void StartApartmentSafeMold()
     {
+        _aptWithSafeMoldMat = _apartmentWithSafeMoldRenderer.material;
         _aptWithSafeMoldMat.SetFloat("_MoldStartTime", Time.time);
     }
 }
