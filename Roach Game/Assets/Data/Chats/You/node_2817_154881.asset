@@ -27,4 +27,4 @@ MonoBehaviour:
     _nextNode: {fileID: 11400000, guid: d0bee359e2b5342a98662342b49afa26, type: 2}
   - _optionText: it's not real. i'm actually going insane
     _nextNode: {fileID: 11400000, guid: ffbad85e0f28945858e51aca6c82f490, type: 2}
-  _Chat: {fileID: 0}
+  _Chat: {fileID: 11400000, guid: c2ef28d8ca94a40608909a2c963aa5d5, type: 2}

@@ -1,0 +1,76 @@
+{
+  "passages": [
+    {
+      "text": "<line> the office...\n[[it's covered in roaches...]]",
+      "links": [
+        {
+          "name": "it's covered in roaches...",
+          "link": "it's covered in roaches...",
+          "pid": "2"
+        }
+      ],
+      "name": "Untitled Passage",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> THE TENANT UPRISING...\n<line> WILL BE SQUELCHED...\n<line> HIS MAJESTY ROACHLORD...\n<line> WILL RAISE THE RENT!!!!\n[[I'M GOING TO SMASH ALL THESE ROACHES DON'T WORRY!!]]\n[[I'M GOING TO KILL ALL THESE FUCKERS!! AND THEN YOU!!]]",
+      "links": [
+        {
+          "name": "I'M GOING TO SMASH ALL THESE ROACHES DON'T WORRY!!",
+          "link": "I'M GOING TO SMASH ALL THESE ROACHES DON'T WORRY!!",
+          "pid": "4"
+        },
+        {
+          "name": "I'M GOING TO KILL ALL THESE FUCKERS!! AND THEN YOU!!",
+          "link": "I'M GOING TO KILL ALL THESE FUCKERS!! AND THEN YOU!!",
+          "pid": "3"
+        }
+      ],
+      "name": "it's covered in roaches...",
+      "pid": "2",
+      "position": {
+        "x": "600",
+        "y": "375"
+      },
+      "tags": [
+        "Manager"
+      ]
+    },
+    {
+      "text": "<cluegiven> EndSeq9.2\n<line> I'M GOING TO SMASH ALL THESE ROACHES DON'T WORRY!!",
+      "name": "I'M GOING TO KILL ALL THESE FUCKERS!! AND THEN YOU!!",
+      "pid": "3",
+      "position": {
+        "x": "600",
+        "y": "500"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<cluegiven> EndSeq9.2\n<line> I'M GOING TO KILL ALL THESE FUCKERS!! AND THEN YOU!!",
+      "name": "I'M GOING TO SMASH ALL THESE ROACHES DON'T WORRY!!",
+      "pid": "4",
+      "position": {
+        "x": "725",
+        "y": "500"
+      },
+      "tags": [
+        "You"
+      ]
+    }
+  ],
+  "name": "Seq9.2",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "882BDA16-1BE4-4412-9C1E-121B15D0B8A3"
+}

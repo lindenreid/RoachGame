@@ -409,7 +409,10 @@ public static class ChatParser {
         {
             string path = GetClueFilePath(clue);
             ClueData loadedClueFile = (ClueData)AssetDatabase.LoadAssetAtPath<ClueData>(path);
-            EditorUtility.SetDirty(loadedClueFile);
+            if(loadedClueFile != null)
+            {
+                EditorUtility.SetDirty(loadedClueFile);
+            }
         }
     }
 
