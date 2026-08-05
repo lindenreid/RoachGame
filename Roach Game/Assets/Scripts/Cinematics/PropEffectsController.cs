@@ -15,6 +15,9 @@ public class PropEffectsController : MonoBehaviour
     // Variables
     // ------------------------------------------------------------------------
     [SerializeField] private Renderer _safeRenderer;
+    [SerializeField] private Renderer _aptNoMoldRenderer;
+    [SerializeField] private Renderer _apartmentWithSafeMoldRenderer;
+    [SerializeField] private float _apartmentSafeMoldOffsetTime = 5.0f;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -24,5 +27,11 @@ public class PropEffectsController : MonoBehaviour
     {
         Material safeMat = _safeRenderer.material;
         safeMat.SetFloat("_MoldStartTime", Time.time);
+
+        _aptNoMoldRenderer.enabled = false;
+        _apartmentWithSafeMoldRenderer.enabled = true;
+
+        Material aptMat = _apartmentWithSafeMoldRenderer.material;
+        aptMat.SetFloat("_MoldStartTime", Time.time + _apartmentSafeMoldOffsetTime);
     }
 }

@@ -2822,6 +2822,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PropEffectsController
   _safeRenderer: {fileID: 425488601}
+  _aptNoMoldRenderer: {fileID: 1462581620}
+  _apartmentWithSafeMoldRenderer: {fileID: 5800666044891212097}
 --- !u!1 &376857940
 GameObject:
   m_ObjectHideFlags: 0
@@ -11245,6 +11247,11 @@ MonoBehaviour:
   _onlySetPlayerLocOnRestart: 0
   _music: {fileID: 0}
   _audioType: 0
+--- !u!23 &1462581620 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2618690092518326283, guid: c97c5b89ca3f73543bbb527eea205358, type: 3}
+  m_PrefabInstance: {fileID: 5800666044891212096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1481123907
 GameObject:
   m_ObjectHideFlags: 0
@@ -15913,6 +15920,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c97c5b89ca3f73543bbb527eea205358, type: 3}
+--- !u!23 &5800666044891212097 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7052029917714317110, guid: c97c5b89ca3f73543bbb527eea205358, type: 3}
+  m_PrefabInstance: {fileID: 5800666044891212096}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6139548210068203797
 PrefabInstance:
   m_ObjectHideFlags: 0
