@@ -133,7 +133,7 @@ Material:
     - _MoldGrowSpeed: 0.5
     - _MoldMoveSpeed: 0.1
     - _MoldOpacity: 1
-    - _MoldSpreadMaxTime: 15
+    - _MoldSpreadMaxTime: 40
     - _MoldSpreadSpeed: 1
     - _MoldStartTime: 0
     - _OcclusionStrength: 1
