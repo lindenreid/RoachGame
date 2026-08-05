@@ -17,7 +17,8 @@ public class PropEffectsController : MonoBehaviour
     [SerializeField] private Renderer _safeRenderer;
     [SerializeField] private Renderer _aptNoMoldRenderer;
     [SerializeField] private Renderer _apartmentWithSafeMoldRenderer;
-    [SerializeField] private float _apartmentSafeMoldOffsetTime = 5.0f;
+
+    private Material _aptWithSafeMoldMat;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -31,7 +32,14 @@ public class PropEffectsController : MonoBehaviour
         _aptNoMoldRenderer.enabled = false;
         _apartmentWithSafeMoldRenderer.enabled = true;
 
-        Material aptMat = _apartmentWithSafeMoldRenderer.material;
-        aptMat.SetFloat("_MoldStartTime", Time.time + _apartmentSafeMoldOffsetTime);
+        _aptWithSafeMoldMat = _apartmentWithSafeMoldRenderer.material;
+        _aptWithSafeMoldMat.SetFloat("_MoldStartTime", Time.time + 100000);
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline callback
+    public void StartApartmentSafeMold()
+    {
+        _aptWithSafeMoldMat.SetFloat("_MoldStartTime", Time.time);
     }
 }
