@@ -142,7 +142,7 @@ void VoronoiClusters_half(half2 UV, half Time, half MoveSpeed, half GrowSpeed, h
     Noise = VoronoiClusters(v, ClusterPropability, Time, MoveSpeed, GrowSpeed);
 }
 
-void VoronoiWeighted_half(half2 UV, half Time, half MoveSpeed, half Density, out half Noise)
+void VoronoiWeighted_half(half2 UV, half Time, half MoveSpeed, half Density, half minSize, half maxSize, out half Noise)
 {
     half2 value = UV * Density;
     
@@ -160,7 +160,7 @@ void VoronoiWeighted_half(half2 UV, half Time, half MoveSpeed, half Density, out
             half2 blobCenter = random3(i_st + neighborCoords).xy;
             blobCenter = 0.5 + 0.5 * sin(Time * MoveSpeed + 6.2831 * blobCenter);
 
-            half weight = 0.2 + 0.8 * random3(i_st + neighborCoords).z;
+            half weight = minSize + maxSize * random3(i_st + neighborCoords).z;
             half dist = weightedDist(neighborCoords + blobCenter, f_st, weight);
 
             minDist = min(minDist, dist);
