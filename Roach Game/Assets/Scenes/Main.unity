@@ -2494,7 +2494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7232dec1ba15340229892af1f553fd29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _openGameSequence: {fileID: 1461574790}
+  _openGameSequence: {fileID: 675514834}
   _player: {fileID: 989307900}
 --- !u!114 &374279147
 MonoBehaviour:
@@ -5028,6 +5028,7 @@ MonoBehaviour:
   _gameStateType: 4
   _objects:
   - {fileID: 786100325}
+  - {fileID: 2139158525}
   _disableObjectsAtEnd: 0
   _removeRoachesInHandAtEnd: 1
   _dialogueStartNode: {fileID: 0}
@@ -12409,7 +12410,6 @@ MonoBehaviour:
   _gameStateType: 2
   _objects:
   - {fileID: 1994016131}
-  - {fileID: 2139158525}
   _disableObjectsAtEnd: 1
   _removeRoachesInHandAtEnd: 1
   _dialogueStartNode: {fileID: 0}
