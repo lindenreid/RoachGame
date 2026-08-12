@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FriendData_roachLord
   m_EditorClassIdentifier: Assembly-CSharp::FriendData
   _id: 9267583
-  _name: roachlord
+  _name: Roachlord
   _nameColor: {r: 1, g: 0.05882353, b: 0, a: 1}

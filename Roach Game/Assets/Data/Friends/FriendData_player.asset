@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: FriendData_player
   m_EditorClassIdentifier: 
   _id: 4563
-  _name: you
+  _name: You
   _nameColor: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 1}
