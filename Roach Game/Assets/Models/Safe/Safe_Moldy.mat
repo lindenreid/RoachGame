@@ -123,11 +123,13 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Height: 10
-    - _Metallic: 0
+    - _Metallic: 0.9
     - _Mode: 0
     - _MoldClusterPropabiity: 0.25
     - _MoldDensity: 2.5
     - _MoldGrowSpeed: 0.5
+    - _MoldMaxSize: 1
+    - _MoldMinSize: 0.2
     - _MoldMoveSpeed: 0.1
     - _MoldOpacity: 1
     - _MoldSpreadMaxTime: 10
