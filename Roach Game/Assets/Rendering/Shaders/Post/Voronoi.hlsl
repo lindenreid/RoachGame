@@ -30,6 +30,11 @@ half weightedDist(half2 x, half2 y, half w)
     return 1.0/w * length(x-y);
 }
 
+half weightedDistSquared(half2 x, half2 y, half w)
+{
+    return 1.0/w * dot(x-y, x-y);
+}
+
 half level(half2 p)
 {
     if (p.x == 1.0 && p.y == 1.0)
@@ -155,27 +160,32 @@ void VoronoiWeighted_half(half2 UV, half Time, half MoveSpeed, half Density, hal
     half2 i_st = floor(value);
     half2 f_st = frac(value);
 
-    half minDist = 100;
+    half minDistSquared = 100 * 100;
 
-    [unroll]
+    float scaledTime = Time * MoveSpeed;
+
+    [loop]
     for(int y = -2; y <= 2; y++)
     {
-        [unroll]
+        [loop]
         for(int x = -2; x <= 2; x++)
         {
             half2 neighborCoords = half2(x, y);
 
-            half2 blobCenter = random3(i_st + neighborCoords).xy;
-            blobCenter = 0.5 + 0.5 * sin(Time * MoveSpeed + 6.2831 * blobCenter);
+            // Added
+            half3 randVal = random3(i_st + neighborCoords);
 
-            half weight = minSize + maxSize * random3(i_st + neighborCoords).z;
-            half dist = weightedDist(neighborCoords + blobCenter, f_st, weight);
+            half2 blobCenter = randVal.xy;
+            blobCenter = 0.5 + 0.5 * sin(scaledTime + 6.2831 * blobCenter);
 
-            minDist = min(minDist, dist);
+            half weight = minSize + maxSize * randVal.z;
+            half dist = weightedDistSquared(neighborCoords + blobCenter, f_st, weight);
+
+            minDistSquared = min(minDistSquared, dist);
         }
     }
 
-    Noise = minDist;
+    Noise = sqrt(minDistSquared);
 }
 
 void VoronoiSimple_half(half2 UV, half Time, half MoveSpeed, half Density, out half Noise)
