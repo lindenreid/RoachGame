@@ -11,6 +11,8 @@ using UnityEngine;
 public class FriendData : GameData
 {
     [SerializeField] private string _name;
+    [SerializeField] private Color _nameColor = Color.grey;
 
     public string _Name => _name;
+    public Color _NameColor => _nameColor;
 }

@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: FriendData_manager
   m_EditorClassIdentifier: 
   _id: 64324
-  _name: Manager
+  _name: manager
+  _nameColor: {r: 1, g: 0.40784314, b: 0, a: 1}

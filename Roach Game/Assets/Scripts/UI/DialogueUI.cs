@@ -48,6 +48,7 @@ public class DialogueUI : MonoBehaviour
         }
 
         _speakerText.text = node._Speaker._Name;
+        _speakerText.color = node._Speaker._NameColor;
 
         StringBuilder sb = new StringBuilder();
         for(int i = 0; i < node._Lines.Length; i++)

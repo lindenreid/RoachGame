@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03fd60e1f812941e3b3ce1edcb42870d, type: 3}
-  m_Name: FriendData_player
-  m_EditorClassIdentifier: 
-  _id: 4563
-  _name: you
-  _nameColor: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 1}
+  m_Name: FriendData_roachLord
+  m_EditorClassIdentifier: Assembly-CSharp::FriendData
+  _id: 9267583
+  _name: roachlord
+  _nameColor: {r: 1, g: 0.05882353, b: 0, a: 1}
