@@ -109,7 +109,8 @@ public class Player : MonoBehaviour
         _reticleMiss = new Color(1, 1, 0, _reticleAlpha);
         _reticleInvalid = new Color(1, 0, 0, _reticleAlpha);
 
-        _splineAnimator.transform.position = _shoeDefaultPos.position;
+        SetShoeSplineStartPos();
+        ResetShoeAnim();
 
         MatchMouseToRotation();
     }
@@ -150,8 +151,6 @@ public class Player : MonoBehaviour
 
         if(!enabled)
         {
-            ResetShoeAnim();
-
             if(_movementType != PlayerMovementType.Still)
             {
                 _movementType = PlayerMovementType.Still;
@@ -162,6 +161,9 @@ public class Player : MonoBehaviour
         {
             MatchMouseToRotation();
         }
+
+        SetShoeSplineStartPos();
+        ResetShoeAnim();
     }
 
     // ------------------------------------------------------------------------
