@@ -31,9 +31,6 @@ public class PropEffectsController : MonoBehaviour
 
         _aptNoMoldRenderer.enabled = false;
         _apartmentWithSafeMoldRenderer.enabled = true;
-
-        _aptWithSafeMoldMat = _apartmentWithSafeMoldRenderer.material;
-        _aptWithSafeMoldMat.SetFloat("_MoldStartTime", Time.time + 100000);
     }
 
     // ------------------------------------------------------------------------
