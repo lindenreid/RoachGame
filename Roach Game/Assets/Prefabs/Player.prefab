@@ -940,6 +940,10 @@ MonoBehaviour:
   _cameraTransform: {fileID: 8108288289591890457}
   _pistol: {fileID: 9103563694994872831}
   _pistolAudio: {fileID: 7316371809258258713}
+  _bulletHoleLayers:
+    serializedVersion: 2
+    m_Bits: 192
+  _bulletHoleObj: {fileID: 961008689417180602, guid: 6f1ec2177297242a1a91f8e5f5645a78, type: 3}
 --- !u!143 &7839691336058466243
 CharacterController:
   m_ObjectHideFlags: 0

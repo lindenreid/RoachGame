@@ -53,6 +53,8 @@ public class Player : MonoBehaviour
     [Header("Pistol")]
     [SerializeField] private GameObject _pistol;
     [SerializeField] private AudioSource _pistolAudio;
+    [SerializeField] private LayerMask _bulletHoleLayers;
+    [SerializeField] private GameObject _bulletHoleObj;
 
     // movement and aiming
     private bool _inputEnabled;
@@ -302,10 +304,23 @@ public class Player : MonoBehaviour
     {
         RoachHitInfo hitInfo = UpdateTargetReticle();
 
-        // TODO: point pistol at aiming reticle
-
         if(Input.GetMouseButtonDown(0))
         {
+            // find the nearest walkable surface, and put a bullet hole there
+            RaycastHit raycastHit;
+            Vector3 raycastStart = Camera.main.transform.position;
+            bool aimRaycastHit = Physics.Raycast(
+                    raycastStart,
+                    Camera.main.transform.forward,
+                    out raycastHit,
+                    100.0f,
+                    _bulletHoleLayers
+            );
+            if(aimRaycastHit)
+            {
+                Instantiate(_bulletHoleObj, raycastHit.point, Quaternion.LookRotation(-raycastHit.normal));
+            }
+
             _pistolAudio.Play();
 
             if(hitInfo.hit && hitInfo.roachObj != null)
