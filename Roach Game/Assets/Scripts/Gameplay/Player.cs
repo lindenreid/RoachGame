@@ -271,16 +271,31 @@ public class Player : MonoBehaviour
         _cc.enabled = true;
     }
 
+    private struct RoachHitInfo
+    {
+        public bool hit;
+        public GameObject roachObj;
+    }
+
     // ------------------------------------------------------------------------
     private void UpdatePistol ()
     {
-        bool weaponCanReachTarget = UpdateTargetReticle();
+        RoachHitInfo hitInfo = UpdateTargetReticle();
 
-        // point pistol at aiming reticle
+        // TODO: point pistol at aiming reticle
 
-        if(weaponCanReachTarget && Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0))
         {
             Debug.Log("SHOT PISTOL");
+
+            // TODO: play gunshot noise
+
+
+            if(hitInfo.hit && hitInfo.roachObj != null)
+            {
+                // TODO: shoot roach
+                Debug.LogFormat("hit {0}", hitInfo.roachObj.name);
+            }
         }
     }
 
@@ -289,7 +304,7 @@ public class Player : MonoBehaviour
     {
         SetShoeSplineStartPos();
 
-        bool weaponCanReachTarget = UpdateTargetReticle();
+        bool weaponCanReachTarget = UpdateTargetReticle().hit;
 
         if(weaponCanReachTarget && Input.GetMouseButtonDown(0))
         {
@@ -304,9 +319,10 @@ public class Player : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
-    private bool UpdateTargetReticle ()
+    private RoachHitInfo UpdateTargetReticle ()
     {
         bool weaponCanReachTarget = false;
+        GameObject hitRoach = null;
 
         RaycastHit raycastHit;
         Vector3 raycastStart = Camera.main.transform.position;
@@ -323,6 +339,8 @@ public class Player : MonoBehaviour
             {
                 if(((1<<raycastHit.collider.gameObject.layer) & _roachLayer) != 0)
                 {
+                    hitRoach = raycastHit.collider.gameObject;
+
                     weaponCanReachTarget = true;
                     _reticleMat.color = _reticleHit;
                     SetTargetPosition(raycastHit.point);
@@ -346,7 +364,11 @@ public class Player : MonoBehaviour
             SetTargetPosition(_defaultReticlePos.position);
         }
 
-        return weaponCanReachTarget;
+        return new RoachHitInfo()
+        {
+            hit = weaponCanReachTarget,
+            roachObj = hitRoach
+        };
     }
 
     // ------------------------------------------------------------------------
