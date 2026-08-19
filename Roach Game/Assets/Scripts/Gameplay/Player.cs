@@ -6,6 +6,7 @@
  */
 
 using System.Linq;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Splines;
 
@@ -309,8 +310,9 @@ public class Player : MonoBehaviour
 
             if(hitInfo.hit && hitInfo.roachObj != null)
             {
-                // TODO: shoot roach
-                Debug.LogFormat("hit {0}", hitInfo.roachObj.name);
+                Roach roach = hitInfo.roachObj.GetComponent<Roach>();
+                Assert.IsNotNull(roach);
+                roach.Hit();
             }
         }
     }
