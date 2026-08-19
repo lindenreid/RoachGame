@@ -14,6 +14,11 @@ public enum PlayerMovementType
     Walking, Running, Still
 }
 
+public enum PlayerWeaponType
+{
+    Shoe, Pistol
+}
+
 public class Player : MonoBehaviour
 {
     // ------------------------------------------------------------------------
@@ -41,8 +46,11 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _roachHoldLoc;
     [Header("Combat")]
     [SerializeField] private int _maxHealth = 5;
+    [SerializeField] private PlayerWeaponType _currentWeapon = PlayerWeaponType.Shoe;
     [Header("Cinematics")]
     [SerializeField] private Transform _cameraTransform;
+    [Header("Pistol")]
+    [SerializeField] private GameObject _pistol;
 
     // movement and aiming
     private bool _inputEnabled;
@@ -121,7 +129,12 @@ public class Player : MonoBehaviour
         if(_inputEnabled)
         {
             LookAndMove();   
-            UpdateShoe();
+
+            switch(_currentWeapon)
+            {
+                case PlayerWeaponType.Shoe: UpdateShoe(); break;
+                case PlayerWeaponType.Pistol: UpdatePistol(); break;
+            }
         }
 
 #if UNITY_EDITOR
@@ -139,6 +152,13 @@ public class Player : MonoBehaviour
         {
             Destroy(t.gameObject);
         }
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline callback
+    public void SwitchToPistol ()
+    {
+        _currentWeapon = PlayerWeaponType.Pistol;
     }
 
     // ------------------------------------------------------------------------
@@ -252,10 +272,40 @@ public class Player : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    private void UpdatePistol ()
+    {
+        bool weaponCanReachTarget = UpdateTargetReticle();
+
+        // point pistol at aiming reticle
+
+        if(weaponCanReachTarget && Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("SHOT PISTOL");
+        }
+    }
+
+    // ------------------------------------------------------------------------
     private void UpdateShoe ()
     {
         SetShoeSplineStartPos();
 
+        bool weaponCanReachTarget = UpdateTargetReticle();
+
+        if(weaponCanReachTarget && Input.GetMouseButtonDown(0))
+        {
+            _splineAnimator.Play();
+            _needsAnimRestart = true;
+        }
+
+        if(_needsAnimRestart && _splineAnimator.ElapsedTime >= _splineAnimator.Duration*2)
+        {
+            ResetShoeAnim();
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    private bool UpdateTargetReticle ()
+    {
         bool weaponCanReachTarget = false;
 
         RaycastHit raycastHit;
@@ -296,16 +346,7 @@ public class Player : MonoBehaviour
             SetTargetPosition(_defaultReticlePos.position);
         }
 
-        if(weaponCanReachTarget && Input.GetMouseButtonDown(0))
-        {
-            _splineAnimator.Play();
-            _needsAnimRestart = true;
-        }
-
-        if(_needsAnimRestart && _splineAnimator.ElapsedTime >= _splineAnimator.Duration*2)
-        {
-            ResetShoeAnim();
-        }
+        return weaponCanReachTarget;
     }
 
     // ------------------------------------------------------------------------
