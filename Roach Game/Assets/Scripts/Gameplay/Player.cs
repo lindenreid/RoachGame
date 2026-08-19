@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _cameraTransform;
     [Header("Pistol")]
     [SerializeField] private GameObject _pistol;
+    [SerializeField] private AudioSource _pistolAudio;
 
     // movement and aiming
     private bool _inputEnabled;
@@ -166,8 +167,26 @@ public class Player : MonoBehaviour
     {
         _inputEnabled = enabled;
         _reticleRenderer.enabled = enabled;
-        _shoeRenderer.enabled = enabled;
-        _shoeCollider.enabled = enabled;
+
+        if(enabled)
+        {
+            switch(_currentWeapon)
+            {
+                case PlayerWeaponType.Shoe: 
+                    _shoeRenderer.enabled = true;
+                    _shoeCollider.enabled = true;
+                break;
+                case PlayerWeaponType.Pistol:
+                    _pistol.SetActive(true);
+                break;
+            }   
+        }
+        else
+        {
+            _shoeRenderer.enabled = false;
+            _shoeCollider.enabled = false;
+            _pistol.SetActive(false);
+        }
 
         if(!enabled)
         {
@@ -286,10 +305,7 @@ public class Player : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0))
         {
-            Debug.Log("SHOT PISTOL");
-
-            // TODO: play gunshot noise
-
+            _pistolAudio.Play();
 
             if(hitInfo.hit && hitInfo.roachObj != null)
             {
