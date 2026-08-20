@@ -939,7 +939,7 @@ MonoBehaviour:
   _currentWeapon: 0
   _cameraTransform: {fileID: 8108288289591890457}
   _manager: {fileID: 0}
-  _lookAtManagerSpeed: 0.05
+  _lookAtManagerSpeed: 1
   _pistol: {fileID: 9103563694994872831}
   _pistolAudio: {fileID: 7316371809258258713}
   _bulletHoleLayers:

@@ -152,7 +152,14 @@ public class Player : MonoBehaviour
             Vector3 managerPosXZ = new Vector3(_manager.position.x, 0, _manager.position.z);
             Vector3 posXZ = new Vector3(transform.position.x, 0, transform.position.z);
             Quaternion targetRotation = Quaternion.LookRotation(managerPosXZ - posXZ);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, (Time.time - _rotateStartTime) * _lookAtManagerSpeed);
+            float t =(Time.time - _rotateStartTime)/_lookAtManagerSpeed;
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, t);
+
+            if(t >= 1.0f)
+            {
+                _shouldRotateToManager = false;
+                SequenceController._Instance.EndCurrentSequence();
+            }
         }
 
 #if UNITY_EDITOR

@@ -1,0 +1,119 @@
+{
+  "passages": [
+    {
+      "text": "<line> please don't hurt me\n<line> i just do what the Roachlord tells me to do\n[[the who?]]\n[[don't play with me right now.]]",
+      "links": [
+        {
+          "name": "the who?",
+          "link": "the who?",
+          "pid": "2"
+        },
+        {
+          "name": "don't play with me right now.",
+          "link": "don't play with me right now.",
+          "pid": "3"
+        }
+      ],
+      "name": "start",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "Manager"
+      ]
+    },
+    {
+      "text": "<line> The who?\n[[((have I seen him before...?))]]",
+      "links": [
+        {
+          "name": "((have I seen him before...?))",
+          "link": "((have I seen him before...?))",
+          "pid": "4"
+        }
+      ],
+      "name": "the who?",
+      "pid": "2",
+      "position": {
+        "x": "600",
+        "y": "375"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> Don't play with me right now.\n<line> Quit making shit up.\n[[((have I seen him before...?))]]",
+      "links": [
+        {
+          "name": "((have I seen him before...?))",
+          "link": "((have I seen him before...?))",
+          "pid": "4"
+        }
+      ],
+      "name": "don't play with me right now.",
+      "pid": "3",
+      "position": {
+        "x": "725",
+        "y": "375"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> You know him\n<line> You've seen him\n<line> He's the one who owns this place\n<line> He owns all of us\n<line> Please, put the gun down.\n<line> I have a daughter. I'm just trying to feed her. I have to do what he says.\n[[((Shoot her.))]]\n[[((Spare her.))]]",
+      "links": [
+        {
+          "name": "((Shoot her.))",
+          "link": "((Shoot her.))",
+          "pid": "5"
+        },
+        {
+          "name": "((Spare her.))",
+          "link": "((Spare her.))",
+          "pid": "6"
+        }
+      ],
+      "name": "((have I seen him before...?))",
+      "pid": "4",
+      "position": {
+        "x": "600",
+        "y": "500"
+      },
+      "tags": [
+        "Manager"
+      ]
+    },
+    {
+      "text": "<cluegiven> ShootManager\n<line> You shoot the manager.",
+      "name": "((Shoot her.))",
+      "pid": "5",
+      "position": {
+        "x": "537.5",
+        "y": "625"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<cluegiven> SpareManager\n<line> You spare the manager.",
+      "name": "((Spare her.))",
+      "pid": "6",
+      "position": {
+        "x": "662.5",
+        "y": "625"
+      },
+      "tags": [
+        "You"
+      ]
+    }
+  ],
+  "name": "Seq11.2",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "9BA35253-1B4E-43DD-ACFF-CC7A8926EF03"
+}
