@@ -149,17 +149,27 @@ public class Player : MonoBehaviour
 
         if(_shouldRotateToManager)
         {
-            Vector3 managerPosXZ = new Vector3(_manager.position.x, 0, _manager.position.z);
-            Vector3 posXZ = new Vector3(transform.position.x, 0, transform.position.z);
-            Quaternion targetRotation = Quaternion.LookRotation(managerPosXZ - posXZ);
             float t =(Time.time - _rotateStartTime)/_lookAtManagerSpeed;
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, t);
 
             if(t >= 1.0f)
             {
                 _shouldRotateToManager = false;
                 SequenceController._Instance.EndCurrentSequence();
             }
+
+            // turn player towards manager on Y axis
+            Vector3 managerPosXZ = new Vector3(_manager.position.x, 0, _manager.position.z);
+            Vector3 posXZ = new Vector3(transform.position.x, 0, transform.position.z);
+            Quaternion targetRotation = Quaternion.LookRotation(managerPosXZ - posXZ);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, t);
+
+            // turn camera towards manager on X axis
+            Vector3 cameraTargetXRot = _manager.position - _cameraTrans.position;
+            Quaternion cameraTargetQuat = Quaternion.LookRotation(cameraTargetXRot);
+            Vector3 currentCameraXRot = _cameraTrans.rotation.eulerAngles;
+            currentCameraXRot.y = 0;
+            currentCameraXRot.z = 0;
+            _cameraTrans.rotation = Quaternion.Lerp(Quaternion.Euler(currentCameraXRot), cameraTargetQuat, t);
         }
 
 #if UNITY_EDITOR
