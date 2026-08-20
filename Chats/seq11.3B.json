@@ -1,0 +1,21 @@
+{
+  "passages": [
+    {
+      "text": "<cluegiven> EndSeq11\n<line> Thank you...\n<line> Let's deal with him together\n<line> He's going to be at your apartment shortly\n<line> I'll come with you",
+      "name": "start",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "Manager"
+      ]
+    }
+  ],
+  "name": "Seq11.3B",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "035AFF08-C1CA-4C3E-BBFF-84E95DCC81F6"
+}
