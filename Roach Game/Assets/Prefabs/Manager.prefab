@@ -1136,6 +1136,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 16cb63d3a05da4cf5aa0644b9836561a, type: 2}
     - {fileID: 11400000, guid: e7f913752752d4e31ade5971453841f6, type: 2}
     - {fileID: 11400000, guid: 674f32447cde946aebe2fd78c1a6a6b7, type: 2}
+    - {fileID: 11400000, guid: 829e328467e8c4e21beeab4b615e5b7d, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -1203,6 +1204,20 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: Death
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5660230194180942011}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Thankful
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &8605493111404300719
