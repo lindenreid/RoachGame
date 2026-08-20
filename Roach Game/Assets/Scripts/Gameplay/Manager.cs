@@ -26,4 +26,15 @@ public class Manager : MonoBehaviour
         transform.position = _cowerPos.position;
         transform.rotation = _cowerPos.rotation;
     }
+
+    // ------------------------------------------------------------------------
+    // timeline callback
+    public void FacePlayer ()
+    {
+        Transform playerTransform = Player._Instance.transform;
+
+        Vector3 playerPosXZ = new Vector3(playerTransform.position.x, 0, playerTransform.position.z);
+        Vector3 posXZ = new Vector3(transform.position.x, 0, transform.position.z);
+        transform.rotation = Quaternion.LookRotation(playerPosXZ - posXZ);
+    }
 }

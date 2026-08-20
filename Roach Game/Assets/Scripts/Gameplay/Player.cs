@@ -50,6 +50,8 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerWeaponType _currentWeapon = PlayerWeaponType.Shoe;
     [Header("Cinematics")]
     [SerializeField] private Transform _cameraTransform;
+    [SerializeField] private Transform _manager;
+    [SerializeField] private float _lookAtManagerSpeed = 0.1f;
     [Header("Pistol")]
     [SerializeField] private GameObject _pistol;
     [SerializeField] private AudioSource _pistolAudio;
@@ -71,6 +73,10 @@ public class Player : MonoBehaviour
     private Color _reticleHit;
     private Color _reticleMiss;
     private Color _reticleInvalid;
+
+    // cinematics
+    private bool _shouldRotateToManager;
+    private float _rotateStartTime;
 
     private PlayerMovementType _movementType = PlayerMovementType.Still;
 
@@ -141,12 +147,28 @@ public class Player : MonoBehaviour
             }
         }
 
+        if(_shouldRotateToManager)
+        {
+            Vector3 managerPosXZ = new Vector3(_manager.position.x, 0, _manager.position.z);
+            Vector3 posXZ = new Vector3(transform.position.x, 0, transform.position.z);
+            Quaternion targetRotation = Quaternion.LookRotation(managerPosXZ - posXZ);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, (Time.time - _rotateStartTime) * _lookAtManagerSpeed);
+        }
+
 #if UNITY_EDITOR
         if(Input.GetKey(KeyCode.K))
         {
             GameController._Instance.DebugKillAllRoaches();
         }
 #endif
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline callback
+    public void TurnAndLookAtManager ()
+    {
+        _shouldRotateToManager = true;
+        _rotateStartTime = Time.time;
     }
 
     // ------------------------------------------------------------------------
@@ -186,9 +208,10 @@ public class Player : MonoBehaviour
         }
         else
         {
+            // purposefully never disabling gun
+            // because you should always have it once it activates
             _shoeRenderer.enabled = false;
             _shoeCollider.enabled = false;
-            _pistol.SetActive(false);
         }
 
         if(!enabled)
