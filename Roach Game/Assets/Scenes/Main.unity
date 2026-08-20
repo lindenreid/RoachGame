@@ -17747,6 +17747,10 @@ PrefabInstance:
       propertyPath: m_MaxSpeed
       value: 2.828427
       objectReference: {fileID: 0}
+    - target: {fileID: 6620158989303735339, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
+      propertyPath: m_MaxSpeed
+      value: 3.0009253
+      objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.43
@@ -17790,6 +17794,10 @@ PrefabInstance:
     - target: {fileID: 7863429050220793073, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_MaxSpeed
       value: 7.0863256
+      objectReference: {fileID: 0}
+    - target: {fileID: 8655540858296271125, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
+      propertyPath: m_MaxSpeed
+      value: 1.154291
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
