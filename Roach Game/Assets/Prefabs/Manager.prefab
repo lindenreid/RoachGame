@@ -1063,7 +1063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23b639b4ed7048b692a25a7388f3ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Manager
-  _cowerPos: {x: 0, y: 0, z: 0}
+  _cowerPos: {fileID: 0}
 --- !u!95 &5660230194180942011
 Animator:
   serializedVersion: 7
