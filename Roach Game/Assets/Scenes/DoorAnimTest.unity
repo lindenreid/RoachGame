@@ -750,6 +750,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 1090871622815902671, guid: f096f1b4d9ae8b7458d24e529663b4a3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -985,6 +989,10 @@ PrefabInstance:
     - target: {fileID: 3885289629378722541, guid: 298f754a2264af54cbf0b21fd0c94fe8, type: 3}
       propertyPath: m_Name
       value: DoorNoAnim
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885289629378722541, guid: 298f754a2264af54cbf0b21fd0c94fe8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9174595617604106885, guid: 298f754a2264af54cbf0b21fd0c94fe8, type: 3}
       propertyPath: m_LocalPosition.x
