@@ -16,9 +16,19 @@ public class Manager : MonoBehaviour
     // ------------------------------------------------------------------------
     [Header("Movement")]
     [SerializeField] private Transform _cowerPos;
+    [SerializeField] private Renderer _renderer;
 
     // ------------------------------------------------------------------------
     // Methods
+    // ------------------------------------------------------------------------
+    // timeline callback
+    public void StartDissolve ()
+    {
+        Material mat = _renderer.material;
+        mat.SetInt("_DoDissolve", 1);
+        mat.SetFloat("_DissolveStartTime", Time.time);
+    }
+
     // ------------------------------------------------------------------------
     // timeline callback
     public void TeleportToCowerPos ()
