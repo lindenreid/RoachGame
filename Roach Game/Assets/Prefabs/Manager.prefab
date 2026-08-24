@@ -728,6 +728,37 @@ Transform:
   - {fileID: 7923971324480484751}
   m_Father: {fileID: 6872408086649851629}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4765603176748713874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7680375569175543590}
+  m_Layer: 0
+  m_Name: LookAtTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7680375569175543590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4765603176748713874}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 6.22, z: 0.32}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5326333841311703355}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4977730650348596700
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,6 +1055,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5326333841311703355}
+  - component: {fileID: 4801473145899033399}
   - component: {fileID: 5660230194180942011}
   - component: {fileID: 6957503391734870316}
   m_Layer: 0
@@ -1048,8 +1080,22 @@ Transform:
   m_Children:
   - {fileID: 7689407221882075188}
   - {fileID: 5572737289558103825}
+  - {fileID: 7680375569175543590}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 167.008, z: 0}
+--- !u!114 &4801473145899033399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611000832605570722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a23b639b4ed7048b692a25a7388f3ff6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Manager
+  _cowerPos: {fileID: 0}
 --- !u!95 &5660230194180942011
 Animator:
   serializedVersion: 7
@@ -1087,6 +1133,10 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 365f0d2d141454a59bb763487877705a, type: 2}
+    - {fileID: 11400000, guid: 16cb63d3a05da4cf5aa0644b9836561a, type: 2}
+    - {fileID: 11400000, guid: e7f913752752d4e31ade5971453841f6, type: 2}
+    - {fileID: 11400000, guid: 674f32447cde946aebe2fd78c1a6a6b7, type: 2}
+    - {fileID: 11400000, guid: 829e328467e8c4e21beeab4b615e5b7d, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -1100,6 +1150,74 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: SittingHeadInHands
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5660230194180942011}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Terrified
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 4801473145899033399}
+          m_TargetAssemblyTypeName: Manager, Assembly-CSharp
+          m_MethodName: TeleportToCowerPos
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 4801473145899033399}
+          m_TargetAssemblyTypeName: Manager, Assembly-CSharp
+          m_MethodName: FacePlayer
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5660230194180942011}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Death
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 5660230194180942011}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Thankful
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!1 &8605493111404300719

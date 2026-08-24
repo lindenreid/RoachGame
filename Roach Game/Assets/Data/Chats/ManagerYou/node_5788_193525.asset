@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
+  m_Name: node_5788_193525
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  _id: 193525
+  _requiredClues: []
+  _cluesGiven: []
+  _speaker: {fileID: 11400000, guid: 5744fcc6345674224af0fbb105164c08, type: 2}
+  _lines:
+  - please don't hurt me
+  - i just do what the Roachlord tells me to do
+  _options:
+  - _optionText: the who?
+    _nextNode: {fileID: 11400000, guid: 4d1384242a6ea42ea80784ec3df95eb9, type: 2}
+  - _optionText: don't play with me right now.
+    _nextNode: {fileID: 11400000, guid: 94a6a7ef758754112803f4bffec1ff15, type: 2}
+  _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: ChatList
   m_EditorClassIdentifier: 
   Chats:
+  - {fileID: 11400000, guid: b919c975c33414c26966270164bcf4f7, type: 2}
   - {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}
   - {fileID: 11400000, guid: c2ef28d8ca94a40608909a2c963aa5d5, type: 2}

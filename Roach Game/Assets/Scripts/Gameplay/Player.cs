@@ -6,12 +6,18 @@
  */
 
 using System.Linq;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Splines;
 
 public enum PlayerMovementType
 {
     Walking, Running, Still
+}
+
+public enum PlayerWeaponType
+{
+    Shoe, Pistol
 }
 
 public class Player : MonoBehaviour
@@ -41,8 +47,16 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _roachHoldLoc;
     [Header("Combat")]
     [SerializeField] private int _maxHealth = 5;
+    [SerializeField] private PlayerWeaponType _currentWeapon = PlayerWeaponType.Shoe;
     [Header("Cinematics")]
     [SerializeField] private Transform _cameraTransform;
+    [SerializeField] private Transform _manager;
+    [SerializeField] private float _lookAtManagerSpeed = 0.1f;
+    [Header("Pistol")]
+    [SerializeField] private GameObject _pistol;
+    [SerializeField] private AudioSource _pistolAudio;
+    [SerializeField] private LayerMask _bulletHoleLayers;
+    [SerializeField] private GameObject _bulletHoleObj;
 
     // movement and aiming
     private bool _inputEnabled;
@@ -59,6 +73,10 @@ public class Player : MonoBehaviour
     private Color _reticleHit;
     private Color _reticleMiss;
     private Color _reticleInvalid;
+
+    // cinematics
+    private bool _shouldRotateToManager;
+    private float _rotateStartTime;
 
     private PlayerMovementType _movementType = PlayerMovementType.Still;
 
@@ -121,7 +139,37 @@ public class Player : MonoBehaviour
         if(_inputEnabled)
         {
             LookAndMove();   
-            UpdateShoe();
+
+            switch(_currentWeapon)
+            {
+                case PlayerWeaponType.Shoe: UpdateShoe(); break;
+                case PlayerWeaponType.Pistol: UpdatePistol(); break;
+            }
+        }
+
+        if(_shouldRotateToManager)
+        {
+            float t =(Time.time - _rotateStartTime)/_lookAtManagerSpeed;
+
+            if(t >= 1.0f)
+            {
+                _shouldRotateToManager = false;
+                SequenceController._Instance.EndCurrentSequence();
+            }
+
+            // turn player towards manager on Y axis
+            Vector3 managerPosXZ = new Vector3(_manager.position.x, 0, _manager.position.z);
+            Vector3 posXZ = new Vector3(transform.position.x, 0, transform.position.z);
+            Quaternion targetRotation = Quaternion.LookRotation(managerPosXZ - posXZ);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, t);
+
+            // turn camera towards manager on X axis
+            Vector3 cameraTargetXRot = _manager.position - _cameraTrans.position;
+            Quaternion cameraTargetQuat = Quaternion.LookRotation(cameraTargetXRot);
+            Vector3 currentCameraXRot = _cameraTrans.rotation.eulerAngles;
+            currentCameraXRot.y = 0;
+            currentCameraXRot.z = 0;
+            _cameraTrans.rotation = Quaternion.Lerp(Quaternion.Euler(currentCameraXRot), cameraTargetQuat, t);
         }
 
 #if UNITY_EDITOR
@@ -130,6 +178,14 @@ public class Player : MonoBehaviour
             GameController._Instance.DebugKillAllRoaches();
         }
 #endif
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline callback
+    public void TurnAndLookAtManager ()
+    {
+        _shouldRotateToManager = true;
+        _rotateStartTime = Time.time;
     }
 
     // ------------------------------------------------------------------------
@@ -142,12 +198,38 @@ public class Player : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    // timeline callback
+    public void SwitchToPistol ()
+    {
+        _currentWeapon = PlayerWeaponType.Pistol;
+    }
+
+    // ------------------------------------------------------------------------
     public void SetInputEnabled(bool enabled)
     {
         _inputEnabled = enabled;
         _reticleRenderer.enabled = enabled;
-        _shoeRenderer.enabled = enabled;
-        _shoeCollider.enabled = enabled;
+
+        if(enabled)
+        {
+            switch(_currentWeapon)
+            {
+                case PlayerWeaponType.Shoe: 
+                    _shoeRenderer.enabled = true;
+                    _shoeCollider.enabled = true;
+                break;
+                case PlayerWeaponType.Pistol:
+                    _pistol.SetActive(true);
+                break;
+            }   
+        }
+        else
+        {
+            // purposefully never disabling gun
+            // because you should always have it once it activates
+            _shoeRenderer.enabled = false;
+            _shoeCollider.enabled = false;
+        }
 
         if(!enabled)
         {
@@ -251,12 +333,69 @@ public class Player : MonoBehaviour
         _cc.enabled = true;
     }
 
+    private struct RoachHitInfo
+    {
+        public bool hit;
+        public GameObject roachObj;
+    }
+
+    // ------------------------------------------------------------------------
+    private void UpdatePistol ()
+    {
+        RoachHitInfo hitInfo = UpdateTargetReticle();
+
+        if(Input.GetMouseButtonDown(0))
+        {
+            // find the nearest walkable surface, and put a bullet hole there
+            RaycastHit raycastHit;
+            Vector3 raycastStart = Camera.main.transform.position;
+            bool aimRaycastHit = Physics.Raycast(
+                    raycastStart,
+                    Camera.main.transform.forward,
+                    out raycastHit,
+                    100.0f,
+                    _bulletHoleLayers
+            );
+            if(aimRaycastHit)
+            {
+                Instantiate(_bulletHoleObj, raycastHit.point, Quaternion.LookRotation(-raycastHit.normal));
+            }
+
+            _pistolAudio.Play();
+
+            if(hitInfo.hit && hitInfo.roachObj != null)
+            {
+                Roach roach = hitInfo.roachObj.GetComponent<Roach>();
+                Assert.IsNotNull(roach);
+                roach.Hit();
+            }
+        }
+    }
+
     // ------------------------------------------------------------------------
     private void UpdateShoe ()
     {
         SetShoeSplineStartPos();
 
+        bool weaponCanReachTarget = UpdateTargetReticle().hit;
+
+        if(weaponCanReachTarget && Input.GetMouseButtonDown(0))
+        {
+            _splineAnimator.Play();
+            _needsAnimRestart = true;
+        }
+
+        if(_needsAnimRestart && _splineAnimator.ElapsedTime >= _splineAnimator.Duration*2)
+        {
+            ResetShoeAnim();
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    private RoachHitInfo UpdateTargetReticle ()
+    {
         bool weaponCanReachTarget = false;
+        GameObject hitRoach = null;
 
         RaycastHit raycastHit;
         Vector3 raycastStart = Camera.main.transform.position;
@@ -273,6 +412,8 @@ public class Player : MonoBehaviour
             {
                 if(((1<<raycastHit.collider.gameObject.layer) & _roachLayer) != 0)
                 {
+                    hitRoach = raycastHit.collider.gameObject;
+
                     weaponCanReachTarget = true;
                     _reticleMat.color = _reticleHit;
                     SetTargetPosition(raycastHit.point);
@@ -296,16 +437,11 @@ public class Player : MonoBehaviour
             SetTargetPosition(_defaultReticlePos.position);
         }
 
-        if(weaponCanReachTarget && Input.GetMouseButtonDown(0))
+        return new RoachHitInfo()
         {
-            _splineAnimator.Play();
-            _needsAnimRestart = true;
-        }
-
-        if(_needsAnimRestart && _splineAnimator.ElapsedTime >= _splineAnimator.Duration*2)
-        {
-            ResetShoeAnim();
-        }
+            hit = weaponCanReachTarget,
+            roachObj = hitRoach
+        };
     }
 
     // ------------------------------------------------------------------------
