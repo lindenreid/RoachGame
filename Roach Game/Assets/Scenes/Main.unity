@@ -2553,7 +2553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7232dec1ba15340229892af1f553fd29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _openGameSequence: {fileID: 1461574790}
+  _openGameSequence: {fileID: 675514834}
   _player: {fileID: 989307900}
 --- !u!114 &374279147
 MonoBehaviour:
@@ -5094,7 +5094,7 @@ MonoBehaviour:
   _playerStartPos: {fileID: 0}
   _cameraStartRot: {fileID: 0}
   _onlySetPlayerLocOnRestart: 0
-  _music: {fileID: 8300000, guid: 5b1f972506ab7490c8f279d8e9785aff, type: 3}
+  _music: {fileID: 8300000, guid: 8ce951513a1a549c0a0bcd6dc7b4e8fc, type: 3}
   _audioType: 2
 --- !u!1 &688051711
 GameObject:
@@ -10258,7 +10258,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: c7af96ca8828d431e949ac39c2a7436e, type: 3}
+  m_Resource: {fileID: 8300000, guid: e05a7c75ee4564ad085409b88db3afdf, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.1
   m_Pitch: 1
