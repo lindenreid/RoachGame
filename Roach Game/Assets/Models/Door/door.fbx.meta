@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 52c38ab2b31f2e942823b4781115119f
+guid: be1193bcbb8a15b4598e635580e9bba7
 ModelImporter:
   serializedVersion: 24501
   internalIDToNameTable: []
@@ -7,19 +7,14 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Material_0
-    second: {fileID: 2100000, guid: f5742c2cdcbfe1746be17dbc4db93169, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material_1
-    second: {fileID: 2100000, guid: 428884ade58b4aa419a7bab60556e287, type: 2}
+      name: Doors
+    second: {fileID: 2100000, guid: 731a61db44f04ea489a26ca895e6b824, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
-    searchTexturesGlobally: 1
+    searchTexturesGlobally: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -81,7 +76,7 @@ ModelImporter:
     secondaryUVMinLightmapResolution: 40
     secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
     strictVertexDataChecks: 0
   tangentSpace:
     normalSmoothAngle: 60
@@ -91,7 +86,7 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-    calculateBlendshapeNormalsDeltaFromImportedNormals: 1
+    calculateBlendshapeNormalsDeltaFromImportedNormals: 0
   referencedClips: []
   importAnimation: 1
   humanDescription:
