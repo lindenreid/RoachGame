@@ -104,6 +104,8 @@ public class Player : MonoBehaviour
 
         _Instance = this;
 
+        DontDestroyOnLoad(gameObject);
+
         _health = _maxHealth;
         _inputEnabled = true;
     }

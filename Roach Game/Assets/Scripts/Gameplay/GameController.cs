@@ -9,6 +9,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 // Handles hard-coded clues for very specific sequence triggers
 public class GameController : MonoBehaviour
@@ -29,6 +30,8 @@ public class GameController : MonoBehaviour
     [Header("Player gets gun")]
     [SerializeField] private Sequence _playerGetsGunSequence;
     [SerializeField] private ClueData _playerGunClue;
+    [Header("Roach world sequence")]
+    [SerializeField] private ClueData _roachWorldClue;
 
     private bool _hitFirstRoach;
     private Roach _targetRoach;
@@ -59,6 +62,8 @@ public class GameController : MonoBehaviour
         }
 
         _Instance = this;
+
+        DontDestroyOnLoad(gameObject);
 
         _activeRoaches = new List<Roach>();
     }
@@ -129,6 +134,16 @@ public class GameController : MonoBehaviour
         {
             _targetRoach = null;
         }
+        else if(clue == _roachWorldClue)
+        {
+            LoadRoachWorld();
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    public void LoadRoachWorld ()
+    {
+        SceneManager.LoadScene(1);
     }
 
 #if UNITY_EDITOR
