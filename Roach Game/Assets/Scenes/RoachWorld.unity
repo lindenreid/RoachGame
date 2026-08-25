@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.554717, g: 0.554717, b: 0.554717, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0.6
+  m_AmbientIntensity: 1.4
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.35557845, g: 0.6754716, b: 0.5889123, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: e3f53d34a2e034c9f835ae0b533507dd, type: 2}
@@ -15334,13 +15334,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7997184081407721212}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.24868982, z: -0, w: 0.9685832}
+  m_LocalPosition: {x: -16.02322, y: 6.05949, z: -9.24301}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8557143937842689011}
-  m_Father: {fileID: 4020145543757205470}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2714487948151913314
 GameObject:
@@ -16444,7 +16444,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2706607286840080857}
   - {fileID: 5686094257999860825}
   - {fileID: 1831268064935207868}
   - {fileID: 2689287344776462186}
@@ -17174,7 +17173,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -19039,9 +19038,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 013acd1b5508b4c37bb284c5b2228a30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isDocile: 0
+  _isDocile: 1
   _idleTimeMinMax: {x: 1, y: 3}
-  _pathKnotDistance: 2
+  _pathKnotDistance: 3
   _agent: {fileID: 4843959037542608484}
   _movementSplineContainer: {fileID: 2816497879549579948}
   _movementSplineAnimator: {fileID: 6742486210422405928}
@@ -20865,9 +20864,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7545180826837581418}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.76814187, y: -0.123201296, z: 0.188361, w: 0.5994162}
-  m_LocalPosition: {x: -109.904945, y: 28.981476, z: 96.29176}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalRotation: {x: 0.8012504, y: -0.25784603, z: -0.2545967, w: -0.47612375}
+  m_LocalPosition: {x: -109.90491, y: 28.981518, z: 96.291855}
+  m_LocalScale: {x: 20, y: 20, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7416139066004374235}
@@ -20888,7 +20887,7 @@ Transform:
   - {fileID: 8295684220019111415}
   - {fileID: 5980879449709773499}
   m_Father: {fileID: 2706607286840080857}
-  m_LocalEulerAnglesHint: {x: -44.081, y: -468.645, z: -289.174}
+  m_LocalEulerAnglesHint: {x: -118.701996, y: -290.165, z: -456.727}
 --- !u!23 &8638814097028815282
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21407,3 +21406,4 @@ SceneRoots:
   - {fileID: 1287682028}
   - {fileID: 4020145543757205470}
   - {fileID: 28181408}
+  - {fileID: 2706607286840080857}
