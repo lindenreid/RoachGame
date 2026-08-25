@@ -46,4 +46,11 @@ public class LightingController : MonoBehaviour
         _mainDirLight.color = activate ? _redLightColor : _defaultLightColor;
         RenderSettings.ambientIntensity = activate? _ambientLightIntensityLightsRed : _ambientLightIntensityLightsOn;
     }
+
+    // ------------------------------------------------------------------------
+    // timeline callback
+    public void ActivateRoachWorldLights ()
+    {
+        
+    }
 }
