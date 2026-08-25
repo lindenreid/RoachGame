@@ -137,7 +137,15 @@ public class GameController : MonoBehaviour
         else if(clue == _roachWorldClue)
         {
             LoadRoachWorld();
+            SceneManager.sceneLoaded += FinishSceneLoad;
         }
+    }
+
+    // ------------------------------------------------------------------------
+    private void FinishSceneLoad (Scene scene, LoadSceneMode mode)
+    {
+        SequenceController._Instance.RefreshSequenceMap();
+        SequenceController._Instance.HandleClueUnlocked(_roachWorldClue);
     }
 
     // ------------------------------------------------------------------------
