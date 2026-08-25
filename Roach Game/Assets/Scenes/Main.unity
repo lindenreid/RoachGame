@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 12228266}
   - component: {fileID: 12228265}
   - component: {fileID: 12228267}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: short_round (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 16933633}
   - component: {fileID: 16933632}
   - component: {fileID: 16933634}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: med_square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1461,7 +1461,7 @@ GameObject:
   - component: {fileID: 123682296}
   - component: {fileID: 123682295}
   - component: {fileID: 123682297}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tall_square_corner (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1963,7 +1963,7 @@ GameObject:
   m_Component:
   - component: {fileID: 148625271}
   m_Layer: 0
-  m_Name: PlayerStartPos_RoachWorld
+  m_Name: PlayerStartPos_Seq12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1978,12 +1978,12 @@ Transform:
   m_GameObject: {fileID: 148625270}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.92256314, z: -0, w: 0.38584614}
-  m_LocalPosition: {x: 0.22321987, y: -0.9594903, z: 1.3130097}
+  m_LocalPosition: {x: -15.8, y: 5.1, z: -7.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1449128114}
-  m_Father: {fileID: 1911928732}
+  m_Father: {fileID: 865359251}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &149278879
 GameObject:
@@ -2650,7 +2650,7 @@ GameObject:
   - component: {fileID: 248143026}
   - component: {fileID: 248143025}
   - component: {fileID: 248143027}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: short_round (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2830,7 +2830,7 @@ GameObject:
   - component: {fileID: 305314472}
   - component: {fileID: 305314471}
   - component: {fileID: 305314473}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: med_triangle (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3019,7 +3019,7 @@ GameObject:
   - component: {fileID: 322349844}
   - component: {fileID: 322349843}
   - component: {fileID: 322349845}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tall_tri (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4388,7 +4388,7 @@ GameObject:
   - component: {fileID: 493518579}
   - component: {fileID: 493518578}
   - component: {fileID: 493518580}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tallPentagon (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5123,7 +5123,7 @@ GameObject:
   - component: {fileID: 573265638}
   - component: {fileID: 573265637}
   - component: {fileID: 573265639}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: med_triangle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7310,7 +7310,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 13
   m_Type: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8509433, g: 1, b: 0.959667, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -7827,8 +7827,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865359250}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.13461553, z: -0, w: 0.9908979}
+  m_LocalPosition: {x: -76.05502, y: 0, z: 55.03353}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7849,8 +7849,9 @@ Transform:
   - {fileID: 984747652}
   - {fileID: 1426814045}
   - {fileID: 1417776742}
+  - {fileID: 148625271}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 15.473, z: 0}
 --- !u!1 &870332808
 GameObject:
   m_ObjectHideFlags: 0
@@ -7952,7 +7953,7 @@ GameObject:
   - component: {fileID: 880468251}
   - component: {fileID: 880468250}
   - component: {fileID: 880468252}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: short_round (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9201,7 +9202,7 @@ GameObject:
   - component: {fileID: 991932654}
   - component: {fileID: 991932653}
   - component: {fileID: 991932655}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: med_triangle (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9516,6 +9517,70 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.61982083, y: 1, z: 1.085933}
   m_Center: {x: -0.080420725, y: 0, z: -0.048305873}
+--- !u!1 &1041953703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1041953704}
+  - component: {fileID: 1041953705}
+  m_Layer: 0
+  m_Name: NavMesh_RoachWorld
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1041953704
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041953703}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1911928732}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1041953705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041953703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  m_UseGeometry: 1
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: 323c12b948a07a84ab57108803a9f1af, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!1 &1049160701
 GameObject:
   m_ObjectHideFlags: 0
@@ -9528,7 +9593,7 @@ GameObject:
   - component: {fileID: 1049160704}
   - component: {fileID: 1049160703}
   - component: {fileID: 1049160705}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tallPentagon (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10171,7 +10236,7 @@ GameObject:
   - component: {fileID: 1083778997}
   - component: {fileID: 1083778996}
   - component: {fileID: 1083778998}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: short_square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10930,7 +10995,7 @@ GameObject:
   - component: {fileID: 1178040256}
   - component: {fileID: 1178040255}
   - component: {fileID: 1178040257}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tall_square_corner (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11045,7 +11110,7 @@ GameObject:
   - component: {fileID: 1189655213}
   - component: {fileID: 1189655212}
   - component: {fileID: 1189655214}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: med_square (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12016,7 +12081,7 @@ Transform:
   m_GameObject: {fileID: 1273604137}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.3, y: -8.39, z: -9.2}
+  m_LocalPosition: {x: -92.9, y: -8.39, z: 48.9}
   m_LocalScale: {x: 50, y: 1, z: 50}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12560,7 +12625,7 @@ GameObject:
   - component: {fileID: 1329969525}
   - component: {fileID: 1329969524}
   - component: {fileID: 1329969526}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tallPentagon (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13383,7 +13448,7 @@ GameObject:
   - component: {fileID: 1361994675}
   - component: {fileID: 1361994674}
   - component: {fileID: 1361994676}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tall_tri (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13874,6 +13939,10 @@ PrefabInstance:
     - target: {fileID: 3885289629378722541, guid: 298f754a2264af54cbf0b21fd0c94fe8, type: 3}
       propertyPath: m_Name
       value: DoorNoAnim
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885289629378722541, guid: 298f754a2264af54cbf0b21fd0c94fe8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6483287789936737165, guid: 298f754a2264af54cbf0b21fd0c94fe8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14584,7 +14653,7 @@ GameObject:
   - component: {fileID: 1441319287}
   - component: {fileID: 1441319286}
   - component: {fileID: 1441319288}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tall_square_corner (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14699,7 +14768,7 @@ GameObject:
   - component: {fileID: 1444301956}
   - component: {fileID: 1444301955}
   - component: {fileID: 1444301957}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: short_square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15913,7 +15982,7 @@ GameObject:
   - component: {fileID: 1550153673}
   - component: {fileID: 1550153672}
   - component: {fileID: 1550153674}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: med_square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18753,12 +18822,12 @@ Transform:
   m_Children:
   - {fileID: 1425151086125409787}
   - {fileID: 812305673}
-  - {fileID: 148625271}
   - {fileID: 1273604138}
   - {fileID: 80123021}
   - {fileID: 1266560678}
   - {fileID: 1502646855}
   - {fileID: 410355849}
+  - {fileID: 1041953704}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1916821692
@@ -19030,7 +19099,7 @@ GameObject:
   - component: {fileID: 1963461907}
   - component: {fileID: 1963461906}
   - component: {fileID: 1963461908}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tall_tri (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19413,7 +19482,7 @@ GameObject:
   - component: {fileID: 2031377790}
   - component: {fileID: 2031377789}
   - component: {fileID: 2031377791}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: short_square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20556,7 +20625,7 @@ GameObject:
   - component: {fileID: 4346056749822462039}
   - component: {fileID: 4565766427118813396}
   - component: {fileID: 4565766427118813397}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: short_round
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20587,7 +20656,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769061364710784833}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.13295528, z: -0, w: 0.9911221}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 181.8, y: -33.24, z: 340.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -20621,7 +20690,7 @@ Transform:
   - {fileID: 1963461905}
   - {fileID: 493518577}
   m_Father: {fileID: 1911928732}
-  m_LocalEulerAnglesHint: {x: 0, y: -15.281, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1596590128870878112
 Transform:
   m_ObjectHideFlags: 0
@@ -20712,7 +20781,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1425151086125409787}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: skyScrapers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20727,8 +20796,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324973834560979814}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.13461553, z: -0, w: 0.9908979}
+  m_LocalPosition: {x: -76.05502, y: 0, z: 55.03353}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -20742,7 +20811,7 @@ Transform:
   - {fileID: 554867727}
   - {fileID: 2084988505}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 15.473, z: 0}
 --- !u!33 &1907903156613809289
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -20788,7 +20857,7 @@ GameObject:
   - component: {fileID: 3435397796641207420}
   - component: {fileID: 4672101375315983002}
   - component: {fileID: 4672101375315983003}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tallPentagon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20822,7 +20891,7 @@ GameObject:
   - component: {fileID: 8703598493844396323}
   - component: {fileID: 3331046546110555217}
   - component: {fileID: 8703598493844396324}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tall_square_corner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20955,7 +21024,7 @@ GameObject:
   - component: {fileID: 1994352353450258781}
   - component: {fileID: 5925230957391241399}
   - component: {fileID: 5925230957391241400}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: med_square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21399,7 +21468,7 @@ GameObject:
   - component: {fileID: 4788207295038222855}
   - component: {fileID: 6629638522886331065}
   - component: {fileID: 6629638522886331066}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: short_square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21622,7 +21691,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.768957
+      value: -91.08009
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -21630,23 +21699,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.698991
+      value: 50.383396
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.3893652
+      value: 0.5098133
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.92108345
+      value: -0.86028504
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -21654,7 +21723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -134.17
+      value: -118.697
       objectReference: {fileID: 0}
     - target: {fileID: 6815273770356565284, guid: 08ab0899f952992488f008b463b25c5c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -21755,7 +21824,7 @@ GameObject:
   - component: {fileID: 1907903156613809289}
   - component: {fileID: 6990838307703115901}
   - component: {fileID: 6990838307703115902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: tall_tri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22051,7 +22120,7 @@ GameObject:
   - component: {fileID: 7805493840633871411}
   - component: {fileID: 7369315665150512789}
   - component: {fileID: 7805493840633871412}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: med_triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
