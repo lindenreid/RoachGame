@@ -24,11 +24,18 @@ public partial class Roach : MonoBehaviour
         Idle, Running, Dead, Collected, Attacking, Cinematic
     }
 
+    private enum MovementPlane
+    {
+        XZ, XY, YZ
+    }
+
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
     [Header("Unique Values")]
     [SerializeField] private bool _isDocile;
+    [SerializeField] private bool _isImmobile;
+    [SerializeField] private MovementPlane _movementPlane = MovementPlane.XZ;
     [Header("Movement")]
     [SerializeField] private Vector2 _idleTimeMinMax;
     [SerializeField] private float _pathKnotDistance = 0.5f;

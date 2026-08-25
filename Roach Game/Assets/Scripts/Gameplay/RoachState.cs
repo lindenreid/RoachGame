@@ -80,10 +80,13 @@ public partial class Roach
             _roach._leftAntennae.Rotate(_leftRot * Time.deltaTime);
             _roach._rightAntennae.Rotate(_rightRot * Time.deltaTime);
 
-            _timeInState += Time.deltaTime;
-            if(_timeInState >= _maxStateTime)
+            if(!_roach._isImmobile)
             {
-                _roach.EnterState(RoachStateType.Running);
+                _timeInState += Time.deltaTime;
+                if(_timeInState >= _maxStateTime)
+                {
+                    _roach.EnterState(RoachStateType.Running);
+                }
             }
         }
     }
@@ -135,8 +138,22 @@ public partial class Roach
         private void SetKnotPosition(UnityEngine.Splines.BezierKnot[] knots, int splineIndex)
         {
             Vector3 randomDisplacement = Random.onUnitSphere;
-            randomDisplacement.y = 0;
-            randomDisplacement *= _roach._pathKnotDistance;
+
+            switch(_roach._movementPlane)
+            {
+                case MovementPlane.XZ:
+                    randomDisplacement.y = 0;
+                    randomDisplacement *= _roach._pathKnotDistance;
+                    break;
+                case MovementPlane.XY:
+                    randomDisplacement.z = 0;
+                    randomDisplacement *= _roach._pathKnotDistance;
+                    break;
+                case MovementPlane.YZ:
+                    randomDisplacement.x = 0;
+                    randomDisplacement *= _roach._pathKnotDistance;
+                    break;
+            }
 
             Vector3 prevKnotPos = _roach._movementSplineContainer.transform.TransformPoint((Vector3)knots[splineIndex - 1].Position);
             Vector3 randomPos = prevKnotPos + randomDisplacement;
