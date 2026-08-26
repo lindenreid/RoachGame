@@ -8,7 +8,9 @@
  */
 
 using UnityEngine;
+using System.Collections.Generic;
 
+[ExecuteInEditMode]
 public class ReflectionProbeBouncer : MonoBehaviour
 {
     // ------------------------------------------------------------------------
@@ -19,7 +21,7 @@ public class ReflectionProbeBouncer : MonoBehaviour
     [SerializeField] private int _matReplaceIndex = 2;
     [SerializeField] private Material _replacementMat;
 
-    private Material[] _originalMaterials;
+    private List<Material[]> _originalMaterials;
     private int[] _probeIDs;
     private bool _running;
 
@@ -57,19 +59,27 @@ public class ReflectionProbeBouncer : MonoBehaviour
     // ------------------------------------------------------------------------
     public void BakeProbes ()
     {
-        _originalMaterials = new Material[_metalRenderers.Length];
+        Debug.Log("Beginning bake");
+
+        _originalMaterials = new List<Material[]>();
         int i = 0;
         foreach(Renderer renderer in _metalRenderers)
         {
             if(Application.isPlaying)
             {
-                _originalMaterials[i] = renderer.materials[_matReplaceIndex];
-                renderer.materials[_matReplaceIndex] = _replacementMat;
+                _originalMaterials.Add(renderer.materials);
+                
+                List<Material> newMats = new List<Material>(renderer.materials);
+                newMats[_matReplaceIndex] = _replacementMat;
+                renderer.SetMaterials(newMats);
             }
             else
             {
-                _originalMaterials[i] = renderer.sharedMaterials[_matReplaceIndex];
-                renderer.sharedMaterials[_matReplaceIndex] = _replacementMat;
+                _originalMaterials.Add(renderer.sharedMaterials);
+
+                List<Material> newMats = new List<Material>(renderer.sharedMaterials);
+                newMats[_matReplaceIndex] = _replacementMat;
+                renderer.SetSharedMaterials(newMats);
             }
             i++;
         }
@@ -95,13 +105,15 @@ public class ReflectionProbeBouncer : MonoBehaviour
         {
             if(Application.isPlaying)
             {
-                renderer.materials[_matReplaceIndex] = _originalMaterials[i];
+                renderer.SetMaterials(new List<Material>(_originalMaterials[i]));
             }
             else
             {
-                renderer.sharedMaterials[_matReplaceIndex] = _originalMaterials[i];
+                renderer.SetSharedMaterials(new List<Material>(_originalMaterials[i]));
             }
             i++;
         }
+
+        Debug.LogFormat("Finished bake. updated renderers: {0}", _metalRenderers.Length);
     }
 }
