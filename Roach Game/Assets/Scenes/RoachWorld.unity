@@ -3284,12 +3284,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1090871622815902671, guid: f096f1b4d9ae8b7458d24e529663b4a3, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185178002597593079, guid: f096f1b4d9ae8b7458d24e529663b4a3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185178002597593079, guid: f096f1b4d9ae8b7458d24e529663b4a3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185178002597593079, guid: f096f1b4d9ae8b7458d24e529663b4a3, type: 3}
+      propertyPath: m_LocalRotation.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185178002597593079, guid: f096f1b4d9ae8b7458d24e529663b4a3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2185178002597593079, guid: f096f1b4d9ae8b7458d24e529663b4a3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1090871622815902671, guid: f096f1b4d9ae8b7458d24e529663b4a3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 650575694}
   m_SourcePrefab: {fileID: 100100000, guid: f096f1b4d9ae8b7458d24e529663b4a3, type: 3}
 --- !u!4 &650575691 stripped
 Transform:
@@ -3301,6 +3324,41 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1090871622815902671, guid: f096f1b4d9ae8b7458d24e529663b4a3, type: 3}
   m_PrefabInstance: {fileID: 650575690}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &650575693 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6025160892388152007, guid: f096f1b4d9ae8b7458d24e529663b4a3, type: 3}
+  m_PrefabInstance: {fileID: 650575690}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &650575694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650575692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 80579e2bfecab40bc8818bb995b7af49, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 650575693}
+          m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+          m_MethodName: Play
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: OpenDoor
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &663724429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4695,7 +4753,7 @@ PlayableDirector:
   - key: {fileID: 6888396756320581435, guid: 55474ebd07af840968032aebd9798c54, type: 2}
     value: {fileID: 1001910827}
   - key: {fileID: -6907144001851811740, guid: 55474ebd07af840968032aebd9798c54, type: 2}
-    value: {fileID: 1088855791}
+    value: {fileID: 650575694}
   m_ExposedReferences:
     m_References: []
 --- !u!82 &1001910827
@@ -5116,6 +5174,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DoorNoAnim
       objectReference: {fileID: 0}
+    - target: {fileID: 3885289629378722541, guid: 298f754a2264af54cbf0b21fd0c94fe8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6483287789936737165, guid: 298f754a2264af54cbf0b21fd0c94fe8, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
@@ -5179,63 +5241,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3885289629378722541, guid: 298f754a2264af54cbf0b21fd0c94fe8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1088855791}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 298f754a2264af54cbf0b21fd0c94fe8, type: 3}
 --- !u!4 &1088855789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9174595617604106885, guid: 298f754a2264af54cbf0b21fd0c94fe8, type: 3}
   m_PrefabInstance: {fileID: 1088855788}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1088855790 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3885289629378722541, guid: 298f754a2264af54cbf0b21fd0c94fe8, type: 3}
-  m_PrefabInstance: {fileID: 1088855788}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1088855791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1088855790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Timeline::UnityEngine.Timeline.SignalReceiver
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 80579e2bfecab40bc8818bb995b7af49, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 650575692}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 1088855790}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1099742134
 GameObject:
   m_ObjectHideFlags: 0
