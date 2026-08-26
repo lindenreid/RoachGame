@@ -22,6 +22,7 @@ Play the latest WIP build in your browser [on Itch here](https://outofmanna.itch
 - [Bank vault combination lock by Pixeliota](https://freesound.org/people/Pixeliota/sounds/678254/)
 - [Vault door opening by Funkelfang](https://freesound.org/people/Funkelfang/sounds/844296/)
 - [Body hitting the ground by newlocknew](https://freesound.org/people/newlocknew/sounds/691649/)
+- [Door knock by HunteR4708](https://freesound.org/people/HunteR4708/sounds/256513/)
 ### Photos and Textures
 - Family stock photos by [Kampus Production](https://www.pexels.com/photo/a-woman-using-a-laptop-6248447/) and [Dmitry Rodionov](https://www.pexels.com/photo/family-playing-together-next-to-the-christmas-tree-15293999/)
 - [Bullet hole texture by musdasch](https://opengameart.org/content/bullet-decal)
