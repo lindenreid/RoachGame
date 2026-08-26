@@ -68,6 +68,14 @@ public class AudioController : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    public void PlayMusicBackwards ()
+    {
+        _musicAudioSource.pitch = -1;
+        _musicAudioSource.time = _musicAudioSource.clip.length;
+        _musicAudioSource.Play();
+    }
+
+    // ------------------------------------------------------------------------
     private void HandleRoachHit (Roach roach)
     {
         _sfxAudioSource.PlayOneShot(_roachHitClip);
