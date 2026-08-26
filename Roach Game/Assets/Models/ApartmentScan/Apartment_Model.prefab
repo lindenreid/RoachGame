@@ -546,100 +546,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &6337562843461686468
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7728199292333017318}
-  - component: {fileID: 5731356662441638405}
-  - component: {fileID: 5976104196762089945}
-  m_Layer: 0
-  m_Name: MeshRenderer_AptCoveredInMold
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7728199292333017318
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6337562843461686468}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 7718386743554941139}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!33 &5731356662441638405
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6337562843461686468}
-  m_Mesh: {fileID: 2644587981833758393, guid: 135923ece0b7c2e43a97c14bc9976985, type: 3}
---- !u!23 &5976104196762089945
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6337562843461686468}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 8fc3a1a1db9e68f4fbc6c34b0f1aa620, type: 2}
-  - {fileID: 2100000, guid: ddfed735fad829949aeedb0b33720d9d, type: 2}
-  - {fileID: 2100000, guid: d053c8adec654fb41aa903211393d32d, type: 2}
-  - {fileID: 2100000, guid: 77a9ab4b0ec426b4b95e8f712eb434da, type: 2}
-  - {fileID: 2100000, guid: a5b549584274d974a939e48d05c53780, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_MaskInteraction: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &7110121945785190014
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +671,7 @@ GameObject:
   - component: {fileID: 3756079887441626173}
   - component: {fileID: 7052029917714317110}
   m_Layer: 0
-  m_Name: MeshRenderer_AptSafeMold
+  m_Name: MeshRenderer_AptMold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -793,7 +699,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7259302710632795284}
-  m_Mesh: {fileID: 2644587981833758393, guid: b264ddbc7d6f1ec46999ee19156a6f07, type: 3}
+  m_Mesh: {fileID: 2644587981833758393, guid: 8758b7c2fe3194cb8806ed4bbb3acee1, type: 3}
 --- !u!23 &7052029917714317110
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -881,7 +787,6 @@ Transform:
   - {fileID: 7436302769588715266}
   - {fileID: 2015828587093717161}
   - {fileID: 1555785801848180554}
-  - {fileID: 7728199292333017318}
   - {fileID: 3860871022060578181}
   - {fileID: 4723572774398817708}
   m_Father: {fileID: 0}
