@@ -2674,7 +2674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4727325806280860088, guid: c97c5b89ca3f73543bbb527eea205358, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5731356662441638405, guid: c97c5b89ca3f73543bbb527eea205358, type: 3}
       propertyPath: m_Mesh
@@ -2692,6 +2692,26 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7052029917714317110, guid: c97c5b89ca3f73543bbb527eea205358, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: eb3466dcdfbf34a6da930af957422f5e, type: 2}
+    - target: {fileID: 7052029917714317110, guid: c97c5b89ca3f73543bbb527eea205358, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 17bc98bb1fdae43efb764ea196a6dfdf, type: 2}
+    - target: {fileID: 7052029917714317110, guid: c97c5b89ca3f73543bbb527eea205358, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b53218af1b83c4781bab1503d271c2a0, type: 2}
+    - target: {fileID: 7052029917714317110, guid: c97c5b89ca3f73543bbb527eea205358, type: 3}
+      propertyPath: 'm_Materials.Array.data[3]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 61ab66c90cfec4371b806e9413f8c5ff, type: 2}
+    - target: {fileID: 7052029917714317110, guid: c97c5b89ca3f73543bbb527eea205358, type: 3}
+      propertyPath: 'm_Materials.Array.data[4]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 402a6cb59b2c6441e99ea8189a0fa4ea, type: 2}
     - target: {fileID: 7718386743554941139, guid: c97c5b89ca3f73543bbb527eea205358, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.06
@@ -2748,6 +2768,11 @@ PrefabInstance:
 --- !u!4 &594010187 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7718386743554941139, guid: c97c5b89ca3f73543bbb527eea205358, type: 3}
+  m_PrefabInstance: {fileID: 594010186}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &594010188 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7052029917714317110, guid: c97c5b89ca3f73543bbb527eea205358, type: 3}
   m_PrefabInstance: {fileID: 594010186}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &594792642
@@ -8867,12 +8892,27 @@ MonoBehaviour:
   m_Events:
     m_Signals:
     - {fileID: 11400000, guid: 7ee6235dd138d4b7abfef5ffbbfb3c66, type: 2}
+    - {fileID: 11400000, guid: a1e9d142d83d44b68818398e3e59354d, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1838582813}
           m_TargetAssemblyTypeName: SignalRouter, Assembly-CSharp
           m_MethodName: PlayMusicBackwards
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1838582813}
+          m_TargetAssemblyTypeName: SignalRouter, Assembly-CSharp
+          m_MethodName: StartApartmentDissolve
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -8894,6 +8934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04f26f04fa024aee88b6343eed5e01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SignalRouter
+  _apartmentRenderer: {fileID: 594010188}
 --- !u!4 &1838582814
 Transform:
   m_ObjectHideFlags: 0

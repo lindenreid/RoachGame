@@ -21,7 +21,24 @@ public class PropEffectsController : MonoBehaviour
     private Material _aptWithSafeMoldMat;
 
     // ------------------------------------------------------------------------
+    // Properties
+    // ------------------------------------------------------------------------
+    public static PropEffectsController _Instance { get; private set; }
+
+    // ------------------------------------------------------------------------
     // Methods
+    // ------------------------------------------------------------------------
+    private void Awake()
+    {
+        if (_Instance != null && _Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+
+        _Instance = this;
+    }
+
     // ------------------------------------------------------------------------
     // timeline callback
     public void StartSafeMold ()
@@ -39,5 +56,16 @@ public class PropEffectsController : MonoBehaviour
     {
         _aptWithSafeMoldMat = _apartmentWithSafeMoldRenderer.material;
         _aptWithSafeMoldMat.SetFloat("_MoldStartTime", Time.time);
+    }
+
+    // ------------------------------------------------------------------------
+    public void StartApartmentDoorDissolve (Renderer aptRenderer)
+    {
+        Material[] aptMats = aptRenderer.materials;
+        foreach(Material mat in aptMats)
+        {
+            mat.SetFloat("_DissolveStartTime", Time.time);
+            mat.SetInt("_DoDissolve", 1);
+        }
     }
 }
