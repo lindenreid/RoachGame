@@ -29,4 +29,11 @@ public class SignalRouter : MonoBehaviour
     {
         SequenceController._Instance.EndCurrentSequence();
     }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void StartFadeIn ()
+    {
+        PostEffectController._Instance.StartFadeIn();
+    }
 }

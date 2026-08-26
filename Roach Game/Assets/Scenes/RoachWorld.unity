@@ -1801,7 +1801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e25364fca4e324e0995e340fea7c1e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sequence
-  _triggerClue: {fileID: 11400000, guid: 664aa63f8a0ae472c9804d9c4ae1f788, type: 2}
+  _triggerClue: {fileID: 11400000, guid: ca07c7aa8354e4c40ab124a1a13400d7, type: 2}
   _finishClue: {fileID: 11400000, guid: 0de1a7b6069b5e44e9687b906740bc78, type: 2}
   _gameStateType: 2
   _objects:
@@ -3477,6 +3477,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 7ee6235dd138d4b7abfef5ffbbfb3c66, type: 2}
     - {fileID: 11400000, guid: a1e9d142d83d44b68818398e3e59354d, type: 2}
     - {fileID: 11400000, guid: 674f2b9f505de4ff39fba75fdd163b4c, type: 2}
+    - {fileID: 11400000, guid: 4448578849511439a971de4f1ea9fc53, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -3511,6 +3512,20 @@ MonoBehaviour:
         - m_Target: {fileID: 1838582813}
           m_TargetAssemblyTypeName: SignalRouter, Assembly-CSharp
           m_MethodName: EndSequence
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1838582813}
+          m_TargetAssemblyTypeName: SignalRouter, Assembly-CSharp
+          m_MethodName: StartFadeIn
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

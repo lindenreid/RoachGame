@@ -45,7 +45,24 @@ public class PostEffectController : MonoBehaviour
     private float _moldEndVal;
 
     // ------------------------------------------------------------------------
+    // Properties
+    // ------------------------------------------------------------------------
+    public static PostEffectController _Instance { get; private set; }
+
+    // ------------------------------------------------------------------------
     // Methods
+    // ------------------------------------------------------------------------
+    private void Awake()
+    {
+        if (_Instance != null && _Instance != this)
+        {
+            Destroy(this);
+            return;
+        }
+
+        _Instance = this;
+    }
+    
     // ------------------------------------------------------------------------
     private void Start()
     {
