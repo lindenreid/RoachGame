@@ -59,13 +59,16 @@ public class PropEffectsController : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
-    public void StartApartmentDoorDissolve (Renderer aptRenderer)
+    public void StartApartmentDoorDissolve (Renderer[] aptRenderers)
     {
-        Material[] aptMats = aptRenderer.materials;
-        foreach(Material mat in aptMats)
+        foreach(Renderer renderer in aptRenderers)
         {
-            mat.SetFloat("_DissolveStartTime", Time.time);
-            mat.SetInt("_DoDissolve", 1);
+            Material[] aptMats = renderer.materials;
+            foreach(Material mat in aptMats)
+            {
+                mat.SetFloat("_DissolveStartTime", Time.time);
+                mat.SetInt("_DoDissolve", 1);
+            }
         }
     }
 }

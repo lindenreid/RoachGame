@@ -5,7 +5,7 @@ public class SignalRouter : MonoBehaviour
     // ------------------------------------------------------------------------
     // Variables
     // ------------------------------------------------------------------------
-    [SerializeField] private Renderer _apartmentRenderer;
+    [SerializeField] private Renderer[] _apartmentRenderers;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -20,6 +20,13 @@ public class SignalRouter : MonoBehaviour
     // timeline signal callback
     public void StartApartmentDissolve ()
     {
-        PropEffectsController._Instance.StartApartmentDoorDissolve(_apartmentRenderer);
+        PropEffectsController._Instance.StartApartmentDoorDissolve(_apartmentRenderers);
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void EndSequence ()
+    {
+        SequenceController._Instance.EndCurrentSequence();
     }
 }
