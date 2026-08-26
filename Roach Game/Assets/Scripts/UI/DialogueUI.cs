@@ -35,6 +35,13 @@ public class DialogueUI : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    private void OnDisable()
+    {
+        EventBus._Instance.VisitDialogueNode -= HandleVisitDialogueNode;
+        EventBus._Instance.TyperwriterFinished -= HandleTypewriterFinished;
+    }
+
+    // ------------------------------------------------------------------------
     private void HandleVisitDialogueNode(DialogueNode node)
     {
         Debug.LogFormat("showing dialogue node: {0}", node);

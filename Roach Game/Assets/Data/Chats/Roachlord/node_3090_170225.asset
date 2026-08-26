@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
+  m_Name: node_3090_170225
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  _id: 170225
+  _requiredClues: []
+  _cluesGiven: []
+  _speaker: {fileID: 11400000, guid: 5b0efb9ebf8804f39a64eb09f5e67af0, type: 2}
+  _lines:
+  - I think you know by now...
+  - You've failed the inspection.
+  _options:
+  - _optionText: Who are you
+    _nextNode: {fileID: 11400000, guid: 0e4f193e40a334ae6937e90c1a7bf7b1, type: 2}
+  - _optionText: What do you want
+    _nextNode: {fileID: 11400000, guid: 0e4f193e40a334ae6937e90c1a7bf7b1, type: 2}
+  _Chat: {fileID: 11400000, guid: 1338b58c24a5c4180aa2c0c37690c24e, type: 2}

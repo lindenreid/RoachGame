@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b134f48b71acf45d19d4356eb767df36, type: 3}
+  m_Name: chat_Roachlord
+  m_EditorClassIdentifier: Assembly-CSharp::ChatData
+  _id: 3090
+  _nodes:
+  - {fileID: 11400000, guid: eebcf217a4ef04f59a1bf0714f5fd104, type: 2}
+  - {fileID: 11400000, guid: 0e4f193e40a334ae6937e90c1a7bf7b1, type: 2}
+  _friends:
+  - {fileID: 11400000, guid: 5b0efb9ebf8804f39a64eb09f5e67af0, type: 2}

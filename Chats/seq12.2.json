@@ -1,0 +1,45 @@
+{
+  "passages": [
+    {
+      "text": "<line> I think you know by now...\n<line> You've failed the inspection.\n[[Who are you->second]]\n[[What do you want->second]]",
+      "links": [
+        {
+          "name": "Who are you",
+          "link": "second",
+          "pid": "2"
+        },
+        {
+          "name": "What do you want",
+          "link": "second",
+          "pid": "2"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "Roachlord"
+      ]
+    },
+    {
+      "text": "<cluegiven> EndSeq12.2\n<line> I am your Roachlord.\n<line> As the roaches are to you, you are a pest to me.\n<line> Living on my property.\n<line> Getting it dirty. Messing it up.\n<line> Oh, my beautiful investments!!!",
+      "name": "second",
+      "pid": "2",
+      "position": {
+        "x": "600",
+        "y": "375"
+      },
+      "tags": [
+        "Roachlord"
+      ]
+    }
+  ],
+  "name": "Seq12.2",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "7ece0f22-5aa1-4c9f-bcb0-8fb4a77324f3"
+}
