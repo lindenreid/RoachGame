@@ -41,8 +41,8 @@ public class HUD : MonoBehaviour
             case GameStateType.Cinematic:
             case GameStateType.Dialogue:
             case GameStateType.Menu:
-                _hud.SetActive(false);
-                _centerCursor.SetActive(false);
+                if(_hud != null) _hud.SetActive(false);
+                if(_centerCursor != null) _centerCursor.SetActive(false);
                 break;
         }
     }

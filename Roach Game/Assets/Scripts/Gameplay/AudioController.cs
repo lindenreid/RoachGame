@@ -73,7 +73,6 @@ public class AudioController : MonoBehaviour
     {
         _musicAudioSource.clip = _roachlordRevealSong;
         _musicAudioSource.pitch = -1;
-        _musicAudioSource.time = _musicAudioSource.clip.length;
         _musicAudioSource.Play();
     }
 
