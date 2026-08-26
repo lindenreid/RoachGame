@@ -67,8 +67,18 @@ public partial class SequenceController : MonoBehaviour
     // ------------------------------------------------------------------------
     private void Start ()
     {
+        RefreshSequenceMap();
+
+        EventBus._Instance.ClueUnlocked += HandleClueUnlocked;
+
+        ActivateSequence(_openGameSequence);
+    }
+
+    // ------------------------------------------------------------------------
+    public void RefreshSequenceMap ()
+    {
         _sequencesByClueUnlock = new Dictionary<ClueData, Sequence>();
-        foreach(Sequence sequence in gameObject.GetComponentsInChildren<Sequence>())
+        foreach(Sequence sequence in FindObjectsByType<Sequence>())
         {
             if(_sequencesByClueUnlock.Keys.Contains(sequence._TriggerClue))
             {
@@ -78,14 +88,10 @@ public partial class SequenceController : MonoBehaviour
 
             _sequencesByClueUnlock.Add(sequence._TriggerClue, sequence);
         }
-
-        EventBus._Instance.ClueUnlocked += HandleClueUnlocked;
-
-        ActivateSequence(_openGameSequence);
     }
 
     // ------------------------------------------------------------------------
-    private void HandleClueUnlocked (ClueData clue)
+    public void HandleClueUnlocked (ClueData clue)
     {
         if(_sequencesByClueUnlock.Keys.Contains(clue))
         {
