@@ -19,6 +19,7 @@ public class AudioController : MonoBehaviour
     [SerializeField] private AudioClip _roachHitClip;
     [SerializeField] private AudioClip _step1Clip;
     [SerializeField] private AudioClip _step2Clip;
+    [SerializeField] private AudioClip _roachlordRevealSong;
 
     private bool _playSteps;
     private float _clipTime;
@@ -65,6 +66,15 @@ public class AudioController : MonoBehaviour
                 _footstepsAudioSource.Play();
             }
         }
+    }
+
+    // ------------------------------------------------------------------------
+    public void PlayMusicBackwards ()
+    {
+        _musicAudioSource.clip = _roachlordRevealSong;
+        _musicAudioSource.pitch = -1;
+        _musicAudioSource.time = _musicAudioSource.clip.length;
+        _musicAudioSource.Play();
     }
 
     // ------------------------------------------------------------------------

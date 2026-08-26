@@ -123,7 +123,7 @@ public partial class Roach : MonoBehaviour
     // ------------------------------------------------------------------------
     private void Update ()
     {
-        if(SequenceController._Instance._ActiveStateType != GameStateType.Action)
+        if(SequenceController._Instance == null || SequenceController._Instance._ActiveStateType != GameStateType.Action)
         {
             return;
         }
