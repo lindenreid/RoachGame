@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 864287110889519668}
   - component: {fileID: 5491927500616672629}
   - component: {fileID: 2445794103298195415}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: OfficeCeilingHolePatch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 1781678832066516}
   - component: {fileID: 1351083588730536104}
   - component: {fileID: 3076885424600218944}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: OfficeCeilingHolePatch2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 2015828587093717161}
   - component: {fileID: 1148782796413025259}
   - component: {fileID: 2618690092518326283}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MeshRenderer_AptNoMold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 3668908842335729562}
   - component: {fileID: 6142241151863497191}
   - component: {fileID: 4267676175362161924}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorPatchRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -445,7 +445,7 @@ GameObject:
   - component: {fileID: 4967614722301592013}
   - component: {fileID: 903251049161794065}
   - component: {fileID: 7558138544219211214}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: BedroomHallHolePatch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -558,7 +558,7 @@ GameObject:
   - component: {fileID: 7764723990776800228}
   - component: {fileID: 4366019262890256200}
   - component: {fileID: 5334564926580150127}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorPatchLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -670,7 +670,7 @@ GameObject:
   - component: {fileID: 1555785801848180554}
   - component: {fileID: 3756079887441626173}
   - component: {fileID: 7052029917714317110}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: MeshRenderer_AptMold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -762,7 +762,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7718386743554941139}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Apartment_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
