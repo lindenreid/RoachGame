@@ -6,8 +6,8 @@
  */
 
 using System.Linq;
-using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Splines;
 
 public enum PlayerMovementType
