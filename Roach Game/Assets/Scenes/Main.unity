@@ -13095,6 +13095,9 @@ MonoBehaviour:
   _ambientLightIntensityLightsOff: 0.28
   _ambientLightIntensityLightsRed: 0.4
   _ambientLightIntensityLightsOn: 0.6
+  _mainLightFadeInTime: 7
+  _mainLightMinIntensity: 0
+  _mainLightMaxIntensity: 1
 --- !u!114 &1565540855
 MonoBehaviour:
   m_ObjectHideFlags: 0

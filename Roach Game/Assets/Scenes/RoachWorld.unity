@@ -4747,6 +4747,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: a1e9d142d83d44b68818398e3e59354d, type: 2}
     - {fileID: 11400000, guid: 674f2b9f505de4ff39fba75fdd163b4c, type: 2}
     - {fileID: 11400000, guid: 4448578849511439a971de4f1ea9fc53, type: 2}
+    - {fileID: 11400000, guid: 58a802483137a439098e3625cc49b2b2, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -4795,6 +4796,20 @@ MonoBehaviour:
         - m_Target: {fileID: 1838582813}
           m_TargetAssemblyTypeName: SignalRouter, Assembly-CSharp
           m_MethodName: StartFadeIn
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1838582813}
+          m_TargetAssemblyTypeName: SignalRouter, Assembly-CSharp
+          m_MethodName: StartMainLightFadeIn
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7931,7 +7946,7 @@ Light:
   serializedVersion: 13
   m_Type: 1
   m_Color: {r: 0.8509433, g: 1, b: 0.959667, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.802082

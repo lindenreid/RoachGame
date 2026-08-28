@@ -36,4 +36,11 @@ public class SignalRouter : MonoBehaviour
     {
         PostEffectController._Instance.StartFadeIn();
     }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void StartMainLightFadeIn ()
+    {
+        LightingController._Instance.FadeInMainLight();
+    }
 }
