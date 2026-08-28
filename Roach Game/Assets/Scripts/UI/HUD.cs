@@ -30,6 +30,14 @@ public class HUD : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    private void OnDisable()
+    {
+        EventBus._Instance.PlayerHealthChanged -= HandlePlayerHealthChanged;
+        EventBus._Instance.SequenceStarted -= HandleSequenceStarted;
+        EventBus._Instance.RoachHit -= HandleRoachHit;
+    } 
+
+    // ------------------------------------------------------------------------
     private void HandleSequenceStarted(Sequence sequence)
     {
         switch(sequence._GameStateType)
