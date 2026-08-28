@@ -8,6 +8,7 @@
  */
 
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 [ExecuteInEditMode]
@@ -19,16 +20,17 @@ public class ReflectionProbeBouncer : MonoBehaviour
     [SerializeField] private ReflectionProbe[] _probes;
     [SerializeField] private Renderer[] _metalRenderers; 
     [SerializeField] private int _matReplaceIndex = 2;
-    [SerializeField] private Material _replacementMat;
+    [SerializeField] private float _originalSmoothness = 1.0f;
+    [SerializeField] private float _replaceSmoothness = 0.5f;
+    [SerializeField] private string _smoothnessPropertyName = "_Smoothness";
 
-    private List<Material[]> _originalMaterials;
     private int[] _probeIDs;
     private bool _running;
 
     // ------------------------------------------------------------------------
     // Methods
     // ------------------------------------------------------------------------
-    void Start()
+    private void Start ()
     {
         BakeProbes();
     }
@@ -59,33 +61,30 @@ public class ReflectionProbeBouncer : MonoBehaviour
     // ------------------------------------------------------------------------
     public void BakeProbes ()
     {
+        StartCoroutine(BakeProbesRoutine());
+    }
+
+    // ------------------------------------------------------------------------
+    public IEnumerator BakeProbesRoutine ()
+    {
         Debug.Log("Beginning bake");
 
-        _originalMaterials = new List<Material[]>();
-        int i = 0;
         foreach(Renderer renderer in _metalRenderers)
         {
             if(Application.isPlaying)
             {
-                _originalMaterials.Add(renderer.materials);
-                
-                List<Material> newMats = new List<Material>(renderer.materials);
-                newMats[_matReplaceIndex] = _replacementMat;
-                renderer.SetMaterials(newMats);
+                renderer.materials[_matReplaceIndex].SetFloat(_smoothnessPropertyName, _replaceSmoothness);
             }
             else
             {
-                _originalMaterials.Add(renderer.sharedMaterials);
-
-                List<Material> newMats = new List<Material>(renderer.sharedMaterials);
-                newMats[_matReplaceIndex] = _replacementMat;
-                renderer.SetSharedMaterials(newMats);
+                renderer.sharedMaterials[_matReplaceIndex].SetFloat(_smoothnessPropertyName, _replaceSmoothness);
             }
-            i++;
         }
 
+        yield return new WaitForEndOfFrame();
+
         _probeIDs = new int[_probes.Length];
-        i = 0;
+        int i = 0;
         foreach(ReflectionProbe probe in _probes)
         {
             _probeIDs[i] = probe.RenderProbe();
@@ -100,18 +99,16 @@ public class ReflectionProbeBouncer : MonoBehaviour
     {
         _running = false;
 
-        int i = 0;
         foreach(Renderer renderer in _metalRenderers)
         {
             if(Application.isPlaying)
             {
-                renderer.SetMaterials(new List<Material>(_originalMaterials[i]));
+                renderer.materials[_matReplaceIndex].SetFloat(_smoothnessPropertyName, _originalSmoothness);
             }
             else
             {
-                renderer.SetSharedMaterials(new List<Material>(_originalMaterials[i]));
+                renderer.sharedMaterials[_matReplaceIndex].SetFloat(_smoothnessPropertyName, _originalSmoothness);
             }
-            i++;
         }
 
         Debug.LogFormat("Finished bake. updated renderers: {0}", _metalRenderers.Length);

@@ -124,7 +124,7 @@ public class AudioController : MonoBehaviour
     private void StartPlayingSteps ()
     {
         // TODO... play faster for running
-        Debug.Log("start playing steps");
+        //Debug.Log("start playing steps");
         _footstepsAudioSource.clip = _step1Clip;
         _flipClip = false;
         _footstepsAudioSource.Play();
