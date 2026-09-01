@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: node_2817_151604
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _id: 151604
-  _requiredClues:
-  - {fileID: 11400000, guid: 88f30bf33d985499ba9304f073aec38d, type: 2}
+  _requiredClues: []
   _cluesGiven:
   - {fileID: 11400000, guid: 09cb132b6c1e4400b8264572cba1fc57, type: 2}
   _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
   _lines:
-  - i guess i'm just on guard duty with these roaches till pest control gets here...
-  - even if it takes all night...
+  - ... was something strange ... in my vision?
+  - no, i can't be having more issues right now
+  - i don't want to worry about my health or whatever
+  - i need to get rid of as many of these lil fuckers as i can
+  - seeing as pest control may or may not arrive...
   _options: []
   _Chat: {fileID: 11400000, guid: c2ef28d8ca94a40608909a2c963aa5d5, type: 2}
