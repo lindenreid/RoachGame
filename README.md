@@ -38,3 +38,4 @@ Play the latest WIP build in your browser [on Itch here](https://outofmanna.itch
 - [Bazooka by Pieter Ferreira](https://sketchfab.com/3d-models/bazooka-2eb22174208c4f3b96cce7443dbd1572)
 - [Door by Icevanilla](https://sketchfab.com/3d-models/low-poly-psx-style-essential-doors-pack-20d55059056044b885a5267c2de1ec18)
 - [Skyscrapers by exleute](https://sketchfab.com/3d-models/low-poly-skyscrapers-4d51f4281a8649528569021411820d28#download)
+- [Low poly cat by trasketo](https://sketchfab.com/3d-models/lowpolycat-625d2b17e61c401eaa415baeacc3778a)
