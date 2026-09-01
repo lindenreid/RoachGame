@@ -1,12 +1,67 @@
 {
   "passages": [
     {
-      "text": "<clue> EndSeq5.3\n<cluegiven> EndSeq6.1\n<line> guns?!?\n<line> GUNS????\n<line> genuinely what the FUCK\n<line> i'm not letting management get away with this!!",
+      "text": "<line> guns?!?\n<line> GUNS????\n<line> awesome!!!\n<line> i'm now not just the Prince of Roachland\n<line> i'm the Mad King of Roachland.\n[[((the Mad King who stayed up all night smashing roaches))]]",
+      "links": [
+        {
+          "name": "((the Mad King who stayed up all night smashing roaches))",
+          "link": "((the Mad King who stayed up all night smashing roaches))",
+          "pid": "4"
+        }
+      ],
       "name": "Start",
       "pid": "1",
       "position": {
         "x": "600",
         "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<cluegiven> EndSeq6.1\n<line> neither she nor the landlord can contest the power of PAPERWORK!!\n<line> i hope.",
+      "name": "((unless i bring some photos and documented complaints to management!))",
+      "pid": "2",
+      "position": {
+        "x": "650",
+        "y": "525"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<cluegiven> EndSeq6.1\n<line> i have GOT to get control of this situation.",
+      "name": "((or just straight up chew her out...))",
+      "pid": "3",
+      "position": {
+        "x": "500",
+        "y": "500"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> and emily will be the Itchy Queen.\n<line> and together we will fail inspection and be overtaken by the mcFreaking Roachlord.\n[[((unless i bring some photos and documented complaints to management!))]]\n[[((or just straight up chew her out...))]]",
+      "links": [
+        {
+          "name": "((unless i bring some photos and documented complaints to management!))",
+          "link": "((unless i bring some photos and documented complaints to management!))",
+          "pid": "2"
+        },
+        {
+          "name": "((or just straight up chew her out...))",
+          "link": "((or just straight up chew her out...))",
+          "pid": "3"
+        }
+      ],
+      "name": "((the Mad King who stayed up all night smashing roaches))",
+      "pid": "4",
+      "position": {
+        "x": "600",
+        "y": "375"
       },
       "tags": [
         "You"
