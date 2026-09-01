@@ -18,8 +18,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 00edb518e354e4fe09142e598d0e229f, type: 2}
   _speaker: {fileID: 11400000, guid: 5744fcc6345674224af0fbb105164c08, type: 2}
   _lines:
-  - Okay...
-  - Pest control will come tomorrow
-  - But either way, cleaning the apartment before the inspection is your responsibility.
-  _options: []
+  - Roach allergy? Okay.
+  - I've never heard of that.
+  - Oh, I have an idea.
+  - When this happens to my daughter I dust the apartment.
+  - Use a wet rag. That will get it.
+  _options:
+  - _optionText: ((... does she listen to anything i say??))
+    _nextNode: {fileID: 11400000, guid: 1fcd04296001540659f31ec06ad52e1d, type: 2}
+  - _optionText: ((i should tell her about the documentation i'm making!!))
+    _nextNode: {fileID: 11400000, guid: 9677717e75f6747deab9d63a56f27e86, type: 2}
   _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}

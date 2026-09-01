@@ -1,0 +1,207 @@
+{
+  "passages": [
+    {
+      "text": "<line> The roach problem is getting worse.\n<line> I was home all evening and pest control didn't show.\n[[((and- maybe don't mention the guns exactly, but make sure she understands how threatening this is getting))]]\n[[((er- actually maybe just bring up emily's allergies- make it a health and safety thing))]]",
+      "links": [
+        {
+          "name": "((and- maybe don't mention the guns exactly, but make sure she understands how threatening this is getting))",
+          "link": "((and- maybe don't mention the guns exactly, but make sure she understands how threatening this is getting))",
+          "pid": "2"
+        },
+        {
+          "name": "((er- actually maybe just bring up emily's allergies- make it a health and safety thing))",
+          "link": "((er- actually maybe just bring up emily's allergies- make it a health and safety thing))",
+          "pid": "3"
+        }
+      ],
+      "name": "Start",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> I don't care if it was pest control's fault for not showing up,\n<line> or if you just didn't call them,\n<line> but they're straight up attacking me.\n<line> They're... they're biting me.\n<line> You seriously can't let this fly.\n[[((i'm giving her my \"i'm serious\" face.))]]",
+      "links": [
+        {
+          "name": "((i'm giving her my \"i'm serious\" face.))",
+          "link": "((i'm giving her my \"i'm serious\" face.))",
+          "pid": "4"
+        }
+      ],
+      "name": "((and- maybe don't mention the guns exactly, but make sure she understands how threatening this is getting))",
+      "pid": "2",
+      "position": {
+        "x": "600",
+        "y": "375"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> I understand you were really swamped yesterday.\n<line> We still have time before Emily gets home.\n<line> That's what really matters- she's super allergic.\n<line> They made her really itchy last time.\n<line> When's the next scheduled pest control visit? Maybe I can call them?\n[[((i'm giving her my best polite smile.))]]",
+      "links": [
+        {
+          "name": "((i'm giving her my best polite smile.))",
+          "link": "((i'm giving her my best polite smile.))",
+          "pid": "5"
+        }
+      ],
+      "name": "((er- actually maybe just bring up emily's allergies- make it a health and safety thing))",
+      "pid": "3",
+      "position": {
+        "x": "725",
+        "y": "375"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> Okay they're biting you?\n<line> Biting you and flying?\n<line> Those don't sound like the roaches I've seen here.\n<line> We get German and American cockroaches here.\n<line> Pest control should give you a flyer about it.\n<line> Did pest control leave a note about visiting?\n[[((... that literally has nothing to do with what I just said??))->angry]]\n[[((but whatever, just tell her about the documentation))->photos]]",
+      "links": [
+        {
+          "name": "((... that literally has nothing to do with what I just said??))",
+          "link": "angry",
+          "pid": "6"
+        },
+        {
+          "name": "((but whatever, just tell her about the documentation))",
+          "link": "photos",
+          "pid": "7"
+        }
+      ],
+      "name": "((i'm giving her my \"i'm serious\" face.))",
+      "pid": "4",
+      "position": {
+        "x": "600",
+        "y": "500"
+      },
+      "tags": [
+        "Manager"
+      ]
+    },
+    {
+      "text": "<line> Roach allergy? Okay.\n<line> I've never heard of that.\n<line> Oh, I have an idea.\n<line> When this happens to my daughter I dust the apartment.\n<line> Use a wet rag. That will get it.\n[[((... does she listen to anything i say??))->angry]]\n[[((i should tell her about the documentation i'm making!!))->photos]]",
+      "links": [
+        {
+          "name": "((... does she listen to anything i say??))",
+          "link": "angry",
+          "pid": "6"
+        },
+        {
+          "name": "((i should tell her about the documentation i'm making!!))",
+          "link": "photos",
+          "pid": "7"
+        }
+      ],
+      "name": "((i'm giving her my best polite smile.))",
+      "pid": "5",
+      "position": {
+        "x": "725",
+        "y": "500"
+      },
+      "tags": [
+        "Manager"
+      ]
+    },
+    {
+      "text": "<line> No, I didn't say they were flying. I said THIS won't fly.\n<line> The roaches.\n<line> Being in the apartment.\n<line> And attacking me. And my home.\n<line> I don't want roaches in my home?!?\n<line> Is this not the landlord's responsibility anyway??\n[[((right??))]]",
+      "links": [
+        {
+          "name": "((right??))",
+          "link": "((right??))",
+          "pid": "9"
+        }
+      ],
+      "name": "angry",
+      "pid": "6",
+      "position": {
+        "x": "575",
+        "y": "675"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> Um, so I took photos and I can show them to you.\n<line> And I'm documenting all of our conversations now.\n<line> I'm pretty sure it's the management company's responsibility to get rid of roaches.\n<line> It's in my tenant's rights. Set by the city. And also the state.\n[[((checkmate!!))]]",
+      "links": [
+        {
+          "name": "((checkmate!!))",
+          "link": "((checkmate!!))",
+          "pid": "8"
+        }
+      ],
+      "name": "photos",
+      "pid": "7",
+      "position": {
+        "x": "725",
+        "y": "675"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> No, no I don't think that's right.\n<line> As I said, the office is very busy.\n<line> You can submit your photos and whatever documents you have about the situation in the tenant portal.\n[[((this is going so bad...))]]",
+      "links": [
+        {
+          "name": "((this is going so bad...))",
+          "link": "((this is going so bad...))",
+          "pid": "10"
+        }
+      ],
+      "name": "((checkmate!!))",
+      "pid": "8",
+      "position": {
+        "x": "725",
+        "y": "825"
+      },
+      "tags": [
+        "Manager"
+      ]
+    },
+    {
+      "text": "<line> Please don't raise your voice at me.\n<line> My daughter is just outside the door.\n<line> And no, the landlord can't get rid of all of your roaches for you.\n[[((this is going so bad...))]]",
+      "links": [
+        {
+          "name": "((this is going so bad...))",
+          "link": "((this is going so bad...))",
+          "pid": "10"
+        }
+      ],
+      "name": "((right??))",
+      "pid": "9",
+      "position": {
+        "x": "575",
+        "y": "825"
+      },
+      "tags": [
+        "Manager"
+      ]
+    },
+    {
+      "text": "<cluegiven> EndSeq6.3\n<line> I assure you, we will contact pest control as soon as we can. We can't always send them same day.\n<line> Pest control will come next Wednesday and address whatever kind of bug issue it is that you're having.\n<line> You'll just have to do what you can before the inspection tomorrow.",
+      "name": "((this is going so bad...))",
+      "pid": "10",
+      "position": {
+        "x": "650",
+        "y": "975"
+      },
+      "tags": [
+        "Manager"
+      ]
+    }
+  ],
+  "name": "Seq6.3",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "508042FF-1271-4A37-AA88-1DF3062240AC"
+}
