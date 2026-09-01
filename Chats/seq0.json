@@ -1,12 +1,74 @@
 {
   "passages": [
     {
-      "text": "<clue> StartSeq0Dialogue\n<line> ... bug nightmares again....\n<line> ..... i must be freaking out because the landlord is inspecting soon...\n<line> but we got rid of the roaches... i think...\n<line> i'm gonna drink some water and go back to bed...",
+      "text": "<clue> StartSeq0Dialogue\n<line> roach nightmares again...\n<line> the upcoming inspection has my brain in knots\n<line> i mean i thought pest control did the job last time\n[[((it's not just a nightmare, it's a premonition))]]\n[[((...that's ridiculous lol. i wish emily was here to hold me))]]",
+      "links": [
+        {
+          "name": "((it's not just a nightmare, it's a premonition))",
+          "link": "((it's not just a nightmare, it's a premonition))",
+          "pid": "3"
+        },
+        {
+          "name": "((...that's ridiculous lol. i wish emily was here to hold me))",
+          "link": "((...that's ridiculous lol. i wish emily was here to hold me))",
+          "pid": "2"
+        }
+      ],
       "name": "start",
       "pid": "1",
       "position": {
         "x": "600",
         "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> she knows how to calm me down\n[[((i'll check the kitchen... just to be sure))]]",
+      "links": [
+        {
+          "name": "((i'll check the kitchen... just to be sure))",
+          "link": "((i'll check the kitchen... just to be sure))",
+          "pid": "4"
+        }
+      ],
+      "name": "((...that's ridiculous lol. i wish emily was here to hold me))",
+      "pid": "2",
+      "position": {
+        "x": "725",
+        "y": "375"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> i mean, it was pretty bad last time\n<line> we could see them again\n[[((i'll check the kitchen... just to be sure))]]",
+      "links": [
+        {
+          "name": "((i'll check the kitchen... just to be sure))",
+          "link": "((i'll check the kitchen... just to be sure))",
+          "pid": "4"
+        }
+      ],
+      "name": "((it's not just a nightmare, it's a premonition))",
+      "pid": "3",
+      "position": {
+        "x": "475",
+        "y": "375"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<cluegiven> StartSeq0.5.1\n<line> since I'm already up...",
+      "name": "((i'll check the kitchen... just to be sure))",
+      "pid": "4",
+      "position": {
+        "x": "725",
+        "y": "500"
       },
       "tags": [
         "You"

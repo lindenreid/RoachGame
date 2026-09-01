@@ -12685,7 +12685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7232dec1ba15340229892af1f553fd29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _openGameSequence: {fileID: 1472639962}
+  _openGameSequence: {fileID: 952804067}
   _player: {fileID: 1466435970}
 --- !u!114 &1565540850
 MonoBehaviour:
@@ -13089,7 +13089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ccde16874a204ee3af6749e43ecad0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mainDirLight: {fileID: 1360299920}
   _defaultLightColor: {r: 1, g: 0.5686275, b: 0.2784314, a: 1}
   _redLightColor: {r: 1, g: 0.039215688, b: 0, a: 1}
   _ambientLightIntensityLightsOff: 0.28
@@ -15652,7 +15651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerClue: {fileID: 11400000, guid: 4fdc663159c8c40ad8ebee06f5aad3c4, type: 2}
-  _finishClue: {fileID: 11400000, guid: fdb58fe56643e46dcb93ab666ac465a6, type: 2}
+  _finishClue: {fileID: 0}
   _gameStateType: 3
   _objects:
   - {fileID: 1866932918}
