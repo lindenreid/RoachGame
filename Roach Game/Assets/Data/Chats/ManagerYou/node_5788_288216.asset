@@ -17,13 +17,11 @@ MonoBehaviour:
   _cluesGiven: []
   _speaker: {fileID: 11400000, guid: 5744fcc6345674224af0fbb105164c08, type: 2}
   _lines:
-  - THE TENANT UPRISING...
-  - WILL BE SQUELCHED...
-  - HIS MAJESTY ROACHLORD...
-  - WILL RAISE THE RENT!!!!
+  - THE TENANT REBELLION WILL BE SQUASHED
+  - THE INSPECTION WILL RIGHT THE WRONGS
+  - AND HIS MAJESTY THE ROACHLORD
+  - WILL RAISE THE RENT!!!
   _options:
-  - _optionText: I'M GOING TO SMASH ALL THESE ROACHES DON'T WORRY!!
-    _nextNode: {fileID: 11400000, guid: 20e88c859c73c4dfc9bef905fce73f24, type: 2}
-  - _optionText: I'M GOING TO KILL ALL THESE FUCKERS!! AND THEN YOU!!
+  - _optionText: ((okay so the mold might be making both of us insane))
     _nextNode: {fileID: 11400000, guid: 732867575ea3c4a4ca0026adee54c282, type: 2}
   _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}

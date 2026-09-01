@@ -1,15 +1,15 @@
 {
   "passages": [
     {
-      "text": "<line> the office...\n[[it's covered in roaches...]]",
+      "text": "<line> the office...\n[[it's covered in mold and roaches...]]",
       "links": [
         {
-          "name": "it's covered in roaches...",
-          "link": "it's covered in roaches...",
+          "name": "it's covered in mold and roaches...",
+          "link": "it's covered in mold and roaches...",
           "pid": "2"
         }
       ],
-      "name": "Untitled Passage",
+      "name": "start",
       "pid": "1",
       "position": {
         "x": "600",
@@ -20,23 +20,18 @@
       ]
     },
     {
-      "text": "<line> THE TENANT UPRISING...\n<line> WILL BE SQUELCHED...\n<line> HIS MAJESTY ROACHLORD...\n<line> WILL RAISE THE RENT!!!!\n[[I'M GOING TO SMASH ALL THESE ROACHES DON'T WORRY!!]]\n[[I'M GOING TO KILL ALL THESE FUCKERS!! AND THEN YOU!!]]",
+      "text": "<line> THE TENANT REBELLION WILL BE SQUASHED\n<line> THE INSPECTION WILL RIGHT THE WRONGS\n<line> AND HIS MAJESTY THE ROACHLORD\n<line> WILL RAISE THE RENT!!!\n[[((okay so the mold might be making both of us insane))]]",
       "links": [
         {
-          "name": "I'M GOING TO SMASH ALL THESE ROACHES DON'T WORRY!!",
-          "link": "I'M GOING TO SMASH ALL THESE ROACHES DON'T WORRY!!",
-          "pid": "4"
-        },
-        {
-          "name": "I'M GOING TO KILL ALL THESE FUCKERS!! AND THEN YOU!!",
-          "link": "I'M GOING TO KILL ALL THESE FUCKERS!! AND THEN YOU!!",
+          "name": "((okay so the mold might be making both of us insane))",
+          "link": "((okay so the mold might be making both of us insane))",
           "pid": "3"
         }
       ],
-      "name": "it's covered in roaches...",
+      "name": "it's covered in mold and roaches...",
       "pid": "2",
       "position": {
-        "x": "600",
+        "x": "725",
         "y": "375"
       },
       "tags": [
@@ -44,11 +39,18 @@
       ]
     },
     {
-      "text": "<cluegiven> EndSeq9.2\n<line> I'M GOING TO KILL ALL THESE FUCKERS!! AND THEN YOU!!",
-      "name": "I'M GOING TO KILL ALL THESE FUCKERS!! AND THEN YOU!!",
+      "text": "<line> Ma'am?? Are you in there somewhere?????\n[[((this might be hopeless.))]]",
+      "links": [
+        {
+          "name": "((this might be hopeless.))",
+          "link": "((this might be hopeless.))",
+          "pid": "4"
+        }
+      ],
+      "name": "((okay so the mold might be making both of us insane))",
       "pid": "3",
       "position": {
-        "x": "600",
+        "x": "725",
         "y": "500"
       },
       "tags": [
@@ -56,12 +58,48 @@
       ]
     },
     {
-      "text": "<cluegiven> EndSeq9.2\n<line> I'M GOING TO SMASH ALL THESE ROACHES DON'T WORRY!!",
-      "name": "I'M GOING TO SMASH ALL THESE ROACHES DON'T WORRY!!",
+      "text": "<line> ALL HAIL!!!\n<line> ALL HAIL ROACHLORD!!!\n<line> WE SHALL PROCEDE TO HIS DOMAIN\n<line> WITH HASTE!!!\n<line> AT THE INSPECTION...\n<line> YOU WILL WITNESS HIS MAJESTY!!!\n[[((the fuck we are!! this bitch is DEAD MEAT!))]]\n[[((she REALLY needs help))]]",
+      "links": [
+        {
+          "name": "((the fuck we are!! this bitch is DEAD MEAT!))",
+          "link": "((the fuck we are!! this bitch is DEAD MEAT!))",
+          "pid": "5"
+        },
+        {
+          "name": "((she REALLY needs help))",
+          "link": "((she REALLY needs help))",
+          "pid": "6"
+        }
+      ],
+      "name": "((this might be hopeless.))",
       "pid": "4",
       "position": {
         "x": "725",
-        "y": "500"
+        "y": "625"
+      },
+      "tags": [
+        "Manager"
+      ]
+    },
+    {
+      "text": "<cluegiven> EndSeq9.2\n<line> i'm going to kill all these roaches!!\n<line> AND THEN YOU!!",
+      "name": "((the fuck we are!! this bitch is DEAD MEAT!))",
+      "pid": "5",
+      "position": {
+        "x": "725",
+        "y": "750"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<cluegiven> EndSeq9.2\n<line> oh no!!\n<line> DON'T WORRY MA'AM!!\n<line> I'M GOING TO CLEAN THIS UP!!",
+      "name": "((she REALLY needs help))",
+      "pid": "6",
+      "position": {
+        "x": "850",
+        "y": "750"
       },
       "tags": [
         "You"
