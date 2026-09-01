@@ -1,7 +1,7 @@
 {
   "passages": [
     {
-      "text": "<cluegiven> EndSeq11\n<line> Thank you...\n<line> Let's deal with him together\n<line> He's going to be at your apartment shortly\n<line> I'll come with you",
+      "text": "<cluegiven> EndSeq11\n<line> Thank you.\n<line> There's not much we can do, but I guess we're dealing with him together.\n<line> He's going to be at your apartment shortly.\n<line> I'll come with you.",
       "name": "start",
       "pid": "1",
       "position": {

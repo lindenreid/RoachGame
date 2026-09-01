@@ -18,9 +18,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 664aa63f8a0ae472c9804d9c4ae1f788, type: 2}
   _speaker: {fileID: 11400000, guid: 5744fcc6345674224af0fbb105164c08, type: 2}
   _lines:
-  - Thank you...
-  - Let's deal with him together
-  - He's going to be at your apartment shortly
-  - I'll come with you
+  - Thank you.
+  - There's not much we can do, but I guess we're dealing with him together.
+  - He's going to be at your apartment shortly.
+  - I'll come with you.
   _options: []
   _Chat: {fileID: 11400000, guid: b919c975c33414c26966270164bcf4f7, type: 2}
