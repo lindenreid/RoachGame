@@ -1,12 +1,48 @@
 {
   "passages": [
     {
-      "text": "<clue> EndSeq2.3\n<cluegiven> EndSeq3.1\n<line> i miss emily\n<line> i need to have this sorted before she gets back from her trip\n<line> she'll be sooo stressed out if she comes home to the roaches\n<line> or an eviction notice...",
+      "text": "<line> god. i need to have this sorted before emily gets back from her trip\n<line> she'll be sooo stressed out if she comes home to the roaches\n<line> or an eviction notice...\n<line> the bugs made her sooo itchy last time\n<line> some freaking partner i am to be the prince of roachland\n[[((but i asked for help, that's the right thing to do))]]\n[[((unless our management is useless as always))]]",
+      "links": [
+        {
+          "name": "((but i asked for help, that's the right thing to do))",
+          "link": "((but i asked for help, that's the right thing to do))",
+          "pid": "2"
+        },
+        {
+          "name": "((unless our management is useless as always))",
+          "link": "((unless our management is useless as always))",
+          "pid": "3"
+        }
+      ],
       "name": "start",
       "pid": "1",
       "position": {
         "x": "600",
         "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<cluegiven> EndSeq3.1\n<line> right?\n<line> like i'm documenting that i'm taking care of the apartment\n<line> or whatever",
+      "name": "((but i asked for help, that's the right thing to do))",
+      "pid": "2",
+      "position": {
+        "x": "600",
+        "y": "375"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<cluegiven> EndSeq3.1\n<line> yeah, and if she don't help\n<line> i'll find a way to make her",
+      "name": "((unless our management is useless as always))",
+      "pid": "3",
+      "position": {
+        "x": "725",
+        "y": "375"
       },
       "tags": [
         "You"
