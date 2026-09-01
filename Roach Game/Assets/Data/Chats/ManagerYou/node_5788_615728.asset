@@ -10,17 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
-  m_Name: node_5788_315728
+  m_Name: node_5788_615728
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  _id: 315728
+  _id: 615728
   _requiredClues: []
   _cluesGiven: []
-  _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
-  _lines:
-  - Heya, good morning.
-  - We're just having a roach problem in our apartment again.
-  - I was wondering if you could send pest control to spray it?
-  _options:
-  - _optionText: ((kill 'em with kindness!))
-    _nextNode: {fileID: 11400000, guid: 5ced43612f7094b26b208ebe8e541774, type: 2}
+  _speaker: {fileID: 11400000, guid: 5744fcc6345674224af0fbb105164c08, type: 2}
+  _lines: []
+  _options: []
   _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}

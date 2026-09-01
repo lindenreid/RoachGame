@@ -13,15 +13,12 @@ MonoBehaviour:
   m_Name: node_5788_115728
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _id: 115728
-  _requiredClues:
-  - {fileID: 11400000, guid: 9e73c74317ae74a158dfb9869f27af1b, type: 2}
+  _requiredClues: []
   _cluesGiven: []
-  _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
+  _speaker: {fileID: 11400000, guid: 5744fcc6345674224af0fbb105164c08, type: 2}
   _lines:
-  - ((ok. ask her politely for help))
+  - Can I help you?
   _options:
-  - _optionText: ask politely
+  - _optionText: ((why does she always sound unhappy to see me...))
     _nextNode: {fileID: 11400000, guid: 267128da24f824997a7b71752882b37a, type: 2}
-  - _optionText: show your frustration
-    _nextNode: {fileID: 11400000, guid: de11f0cdb13c149cd8f7e0512c5fc247, type: 2}
   _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}

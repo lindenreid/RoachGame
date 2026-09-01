@@ -1,17 +1,12 @@
 {
   "passages": [
     {
-      "text": "<clue> EndSeq2.1\n<line> ((ok. ask her politely for help))\n\n[[ask politely]]\n[[show your frustration]]",
+      "text": "<line> Can I help you?\n[[((why does she always sound unhappy to see me...))]]",
       "links": [
         {
-          "name": "ask politely",
-          "link": "ask politely",
+          "name": "((why does she always sound unhappy to see me...))",
+          "link": "((why does she always sound unhappy to see me...))",
           "pid": "2"
-        },
-        {
-          "name": "show your frustration",
-          "link": "show your frustration",
-          "pid": "3"
         }
       ],
       "name": "start",
@@ -21,22 +16,27 @@
         "y": "250"
       },
       "tags": [
-        "You"
+        "Manager"
       ]
     },
     {
-      "text": "<line> hey, could you help us get rid of the roaches please?\n<line> i don't think pest control finished the job\n\n[[(yeah... she should listen to that.)]]",
+      "text": "<line> ((well, she's still supposed to help me.))\n[[((i should still be polite.))]]\n[[((or i could match her energy. and also sound annoyed. which i am. on account of the roaches.))]]",
       "links": [
         {
-          "name": "(yeah... she should listen to that.)",
-          "link": "(yeah... she should listen to that.)",
+          "name": "((i should still be polite.))",
+          "link": "((i should still be polite.))",
+          "pid": "3"
+        },
+        {
+          "name": "((or i could match her energy. and also sound annoyed. which i am. on account of the roaches.))",
+          "link": "((or i could match her energy. and also sound annoyed. which i am. on account of the roaches.))",
           "pid": "4"
         }
       ],
-      "name": "ask politely",
+      "name": "((why does she always sound unhappy to see me...))",
       "pid": "2",
       "position": {
-        "x": "537.5",
+        "x": "600",
         "y": "375"
       },
       "tags": [
@@ -44,50 +44,124 @@
       ]
     },
     {
-      "text": "<line> our apartment is filled with roaches. it's disgusting and unliveable\n<line> fix it.\n\n[[(that should make her understand.)]]",
+      "text": "<line> Heya, good morning.\n<line> We're just having a roach problem in our apartment again.\n<line> I was wondering if you could send pest control to spray it?\n[[((kill 'em with kindness!))]]",
       "links": [
         {
-          "name": "(that should make her understand.)",
-          "link": "(that should make her understand.)",
+          "name": "((kill 'em with kindness!))",
+          "link": "((kill 'em with kindness!))",
           "pid": "5"
         }
       ],
-      "name": "show your frustration",
+      "name": "((i should still be polite.))",
       "pid": "3",
       "position": {
-        "x": "662.5",
-        "y": "375"
+        "x": "600",
+        "y": "500"
       },
       "tags": [
         "You"
       ]
     },
     {
-      "text": "<line> i'll send pest control\n<line> but the roaches are your problem",
-      "name": "(yeah... she should listen to that.)",
+      "text": "<line> Pest control either didn't finish the job, or maybe you just didn't send them.\n<line> Our floor is crawling with roaches again.\n<line> Please send them again.\n<line> And make sure they actually finish the job this time.\n[[((yeah! straightforward.))->annoyed]]",
+      "links": [
+        {
+          "name": "((yeah! straightforward.))",
+          "link": "annoyed",
+          "pid": "8"
+        }
+      ],
+      "name": "((or i could match her energy. and also sound annoyed. which i am. on account of the roaches.))",
       "pid": "4",
       "position": {
-        "x": "537.5",
+        "x": "725",
         "y": "500"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> Okay.\n<line> You're not the only tenant with issues right now.\n<line> So we'll get to it when we can get to it.\n<line> Pest control is scheduled for Wednesdays, so they should be there in a few hours.\n[[((okay! that went well))]]\n[[((wait... so are they not able to order pest control today, or are they definitely coming...?))->annoyed]]",
+      "links": [
+        {
+          "name": "((okay! that went well))",
+          "link": "((okay! that went well))",
+          "pid": "7"
+        },
+        {
+          "name": "((wait... so are they not able to order pest control today, or are they definitely coming...?))",
+          "link": "annoyed",
+          "pid": "8"
+        }
+      ],
+      "name": "((kill 'em with kindness!))",
+      "pid": "5",
+      "position": {
+        "x": "600",
+        "y": "625"
       },
       "tags": [
         "Manager"
       ]
     },
     {
-      "text": "<line> you're going to see roaches.\n<line> i think you should work on getting used to it",
-      "name": "(that should make her understand.)",
-      "pid": "5",
+      "text": "",
+      "name": "((yeah! straightforward.))",
+      "pid": "6",
       "position": {
-        "x": "662.5",
-        "y": "500"
+        "x": "725",
+        "y": "625"
       },
       "tags": [
         "Manager"
       ]
+    },
+    {
+      "text": "<cluegiven> EndSeq2.3\n<line> ((okay, I think she's sending pest control...?))\n<line> ((god emily is so much better at talking to them))",
+      "name": "((okay! that went well))",
+      "pid": "7",
+      "position": {
+        "x": "575",
+        "y": "775"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> You're going to see roaches.\n<line> Even if we eliminate them in your unit, your neighbors might have them.\n<line> It's the tenant's job to be clean for inspections.\n<line> We'll see what we can do today.\n<line> Just make sure you have everything cleaned up by Thursday.\n[[((i'm just going to SEE. ROACHES.???))]]",
+      "links": [
+        {
+          "name": "((i'm just going to SEE. ROACHES.???))",
+          "link": "((i'm just going to SEE. ROACHES.???))",
+          "pid": "9"
+        }
+      ],
+      "name": "annoyed",
+      "pid": "8",
+      "position": {
+        "x": "725",
+        "y": "775"
+      },
+      "tags": [
+        "Manager"
+      ]
+    },
+    {
+      "text": "<cluegiven> EndSeq2.3\n<line> ((well that was almost useless))\n<line> ((if emily is here, she'd be so much better using her customer service voice on them...))\n<line> ((but i guess pest control is coming regardless?))",
+      "name": "((i'm just going to SEE. ROACHES.???))",
+      "pid": "9",
+      "position": {
+        "x": "725",
+        "y": "900"
+      },
+      "tags": [
+        "You"
+      ]
     }
   ],
-  "name": "Seq2.2",
+  "name": "Seq2.3",
   "startnode": "1",
   "creator": "Twine",
   "creator-version": "2.11.1",

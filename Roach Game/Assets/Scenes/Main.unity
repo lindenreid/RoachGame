@@ -3431,7 +3431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerClue: {fileID: 11400000, guid: 73faa572ed26d4b308e277ab8566075a, type: 2}
-  _finishClue: {fileID: 11400000, guid: 9bbe4679f947a4064b266e782737ce35, type: 2}
+  _finishClue: {fileID: 0}
   _gameStateType: 3
   _objects:
   - {fileID: 1861728222}

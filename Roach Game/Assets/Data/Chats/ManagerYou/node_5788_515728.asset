@@ -17,7 +17,14 @@ MonoBehaviour:
   _cluesGiven: []
   _speaker: {fileID: 11400000, guid: 5744fcc6345674224af0fbb105164c08, type: 2}
   _lines:
-  - you're going to see roaches.
-  - i think you should work on getting used to it
-  _options: []
+  - Okay.
+  - You're not the only tenant with issues right now.
+  - So we'll get to it when we can get to it.
+  - Pest control is scheduled for Wednesdays, so they should be there in a few hours.
+  _options:
+  - _optionText: ((okay! that went well))
+    _nextNode: {fileID: 11400000, guid: d8edac61bd23d4fd2815e3633c247368, type: 2}
+  - _optionText: ((wait... so are they not able to order pest control today, or are
+      they definitely coming...?))
+    _nextNode: {fileID: 11400000, guid: ca5c266c21ae74b8699bb6614df99d93, type: 2}
   _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}
