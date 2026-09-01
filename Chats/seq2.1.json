@@ -1,12 +1,36 @@
 {
   "passages": [
     {
-      "text": "<clue> StartSeq2\n<cluegiven> EndSeq2.1\n<line> i need to ask the apartment manger for help\n<line> i mean she's kind of an idiot\n<line> and really mean\n<line> but she'll send pest control right??",
+      "text": "<clue> StartSeq2\n<line> i thought we had dealt with this\n<line> but maybe pest control didn't do a great job\n[[((or never came. lmao))->help]]\n[[((i'll have to ask management to send them regardless))->help]]",
+      "links": [
+        {
+          "name": "((or never came. lmao))",
+          "link": "help",
+          "pid": "2"
+        },
+        {
+          "name": "((i'll have to ask management to send them regardless))",
+          "link": "help",
+          "pid": "2"
+        }
+      ],
       "name": "start",
       "pid": "1",
       "position": {
         "x": "600",
         "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<cluegiven> EndSeq2.1\n<line> eugh. why does going to the management office spike my cortisol\n<line> asking them to send pest control is protocol though i suppose\n<line> especially since the landlord is coming in a couple days for inspections\n<line> can't make it look like i trashed the property\n<line> i don't want him to give us cause to kick us out",
+      "name": "help",
+      "pid": "2",
+      "position": {
+        "x": "600",
+        "y": "375"
       },
       "tags": [
         "You"

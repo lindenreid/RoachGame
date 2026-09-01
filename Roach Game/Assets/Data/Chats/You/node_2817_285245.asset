@@ -10,20 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
-  m_Name: node_2817_185245
+  m_Name: node_2817_285245
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  _id: 185245
-  _requiredClues:
-  - {fileID: 11400000, guid: e21d21f8e9fa6479d8b02ceceedf4437, type: 2}
+  _id: 285245
+  _requiredClues: []
   _cluesGiven:
   - {fileID: 11400000, guid: 9e73c74317ae74a158dfb9869f27af1b, type: 2}
   _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
   _lines:
-  - i thought we had dealt with this
-  - but maybe pest control didn't do a great job
-  _options:
-  - _optionText: ((or never came. lmao))
-    _nextNode: {fileID: 11400000, guid: cfc2f52301c21494b9a76a7d75cd30f0, type: 2}
-  - _optionText: ((i'll have to ask management to send them regardless))
-    _nextNode: {fileID: 11400000, guid: cfc2f52301c21494b9a76a7d75cd30f0, type: 2}
+  - eugh. why does going to the management office spike my cortisol
+  - asking them to send pest control is protocol though i suppose
+  - especially since the landlord is coming in a couple days for inspections
+  - can't make it look like i trashed the property
+  - i don't want him to give us cause to kick us out
+  _options: []
   _Chat: {fileID: 11400000, guid: c2ef28d8ca94a40608909a2c963aa5d5, type: 2}
