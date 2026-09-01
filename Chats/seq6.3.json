@@ -63,7 +63,7 @@
       ]
     },
     {
-      "text": "<line> Okay they're biting you?\n<line> Biting you and flying?\n<line> Those don't sound like the roaches I've seen here.\n<line> We get German and American cockroaches here.\n<line> Pest control should give you a flyer about it.\n<line> Did pest control leave a note about visiting?\n[[((... that literally has nothing to do with what I just said??))->angry]]\n[[((but whatever, just tell her about the documentation))->photos]]",
+      "text": "<line> Okay they're biting you? Biting you and flying?\n<line> Those don't sound like the roaches I've seen here. We get German and American cockroaches here.\n<line> Pest control should give you a flyer about it.\n<line> Did pest control leave a note about visiting?\n[[((... that literally has nothing to do with what I just said??))->angry]]\n[[((but whatever, just tell her about the documentation))->photos]]",
       "links": [
         {
           "name": "((... that literally has nothing to do with what I just said??))",
@@ -87,7 +87,7 @@
       ]
     },
     {
-      "text": "<line> Roach allergy? Okay.\n<line> I've never heard of that.\n<line> Oh, I have an idea.\n<line> When this happens to my daughter I dust the apartment.\n<line> Use a wet rag. That will get it.\n[[((... does she listen to anything i say??))->angry]]\n[[((i should tell her about the documentation i'm making!!))->photos]]",
+      "text": "<line> Roach allergy? Okay. I've never heard of that.\n<line> Oh, I have an idea.\n<line> When this happens to my daughter I dust the apartment.\n<line> Use a wet rag. That will get it.\n[[((... does she listen to anything i say??))->angry]]\n[[((i should tell her about the documentation i'm making!!))->photos]]",
       "links": [
         {
           "name": "((... does she listen to anything i say??))",
@@ -111,7 +111,7 @@
       ]
     },
     {
-      "text": "<line> No, I didn't say they were flying. I said THIS won't fly.\n<line> The roaches.\n<line> Being in the apartment.\n<line> And attacking me. And my home.\n<line> I don't want roaches in my home?!?\n<line> Is this not the landlord's responsibility anyway??\n[[((right??))]]",
+      "text": "<line> No, I didn't say they were flying. I said THIS won't fly.\n<line> The roaches. Being in the apartment.\n<line> And attacking me. And my home.\n<line> I don't want roaches in my home?!?\n<line> Is this not the landlord's responsibility anyway??\n[[((right??))]]",
       "links": [
         {
           "name": "((right??))",

@@ -18,10 +18,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 00edb518e354e4fe09142e598d0e229f, type: 2}
   _speaker: {fileID: 11400000, guid: 5744fcc6345674224af0fbb105164c08, type: 2}
   _lines:
-  - Okay they're biting you?
-  - Biting you and flying?
-  - Those don't sound like the roaches I've seen here.
-  - We get German and American cockroaches here.
+  - Okay they're biting you? Biting you and flying?
+  - Those don't sound like the roaches I've seen here. We get German and American
+    cockroaches here.
   - Pest control should give you a flyer about it.
   - Did pest control leave a note about visiting?
   _options:

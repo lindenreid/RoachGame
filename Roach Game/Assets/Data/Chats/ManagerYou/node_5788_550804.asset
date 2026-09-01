@@ -18,8 +18,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 00edb518e354e4fe09142e598d0e229f, type: 2}
   _speaker: {fileID: 11400000, guid: 5744fcc6345674224af0fbb105164c08, type: 2}
   _lines:
-  - Roach allergy? Okay.
-  - I've never heard of that.
+  - Roach allergy? Okay. I've never heard of that.
   - Oh, I have an idea.
   - When this happens to my daughter I dust the apartment.
   - Use a wet rag. That will get it.
