@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
+  m_Name: node_5788_793525
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  _id: 793525
+  _requiredClues: []
+  _cluesGiven: []
+  _speaker: {fileID: 11400000, guid: 5744fcc6345674224af0fbb105164c08, type: 2}
+  _lines:
+  - Responsibility. Hahahahha. Hha hahaah.
+  - You always act like my world is going to revolve around yours. And not my little
+    girl's.
+  - I know you think I'm incompetent.
+  - I've followed every instruction I've gotten. I know you try to too. To pass the
+    inspection.
+  _options:
+  - _optionText: ((why can't we both just follow instructions?))
+    _nextNode: {fileID: 11400000, guid: 5b229449edf8c4498847f8897651f28b, type: 2}
+  - _optionText: ((i have a gun and she doesn't. and she's talking to me like this?))
+    _nextNode: {fileID: 11400000, guid: 3d479b27aadd44230a736590db276f36, type: 2}
+  _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}

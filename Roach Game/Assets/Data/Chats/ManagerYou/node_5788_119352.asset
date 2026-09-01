@@ -10,15 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
-  m_Name: node_5788_393525
+  m_Name: node_5788_119352
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  _id: 393525
+  _id: 119352
   _requiredClues: []
-  _cluesGiven:
-  - {fileID: 11400000, guid: a0b4841b38e834eda9979f0c2f6d01ef, type: 2}
+  _cluesGiven: []
   _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
   _lines:
-  - Okay.
-  - So what next?
-  _options: []
+  - GET. RID. OF THE MOLD!!!!!
+  - AND THE ROACHES!!!
+  - You're LITERALLY IN CHARGE!!
+  - All I can do is file paperwork!
+  - Or fire this gun!!
+  _options:
+  - _optionText: ((and i have like... 2 working brain cells left i think))
+    _nextNode: {fileID: 11400000, guid: 1f58be15141ba484c8e3ceef28fa393f, type: 2}
   _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}

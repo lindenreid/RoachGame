@@ -10,21 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
-  m_Name: node_5788_193525
+  m_Name: node_5788_139352
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  _id: 193525
+  _id: 139352
   _requiredClues: []
   _cluesGiven: []
   _speaker: {fileID: 11400000, guid: 5744fcc6345674224af0fbb105164c08, type: 2}
   _lines:
-  - Please.
-  - Please don't hurt me.
-  - 'I have to do what He says. '
-  - It's the only way I keep my daughter safe.
-  - I can bring you to him. The Inspection. He's coming.
+  - All I can do is escort you through the inspection.
+  - I might be able to help you... talk to the Roachlord.
+  - Is that enough for you?
   _options:
-  - _optionText: (the who? the Roachlord? which is...?))
-    _nextNode: {fileID: 11400000, guid: 47e4b0f6edb04416f838cdb4e0abab16, type: 2}
-  - _optionText: ((and what are we going to do about the inspection?))
-    _nextNode: {fileID: 11400000, guid: 93ff7b822997b43be98cae28cf22e817, type: 2}
+  - _optionText: ((Shoot her.))
+    _nextNode: {fileID: 11400000, guid: 4d1384242a6ea42ea80784ec3df95eb9, type: 2}
+  - _optionText: ((Spare her.))
+    _nextNode: {fileID: 11400000, guid: 94a6a7ef758754112803f4bffec1ff15, type: 2}
   _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}

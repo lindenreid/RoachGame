@@ -10,15 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
-  m_Name: node_5788_393525
+  m_Name: node_5788_993525
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  _id: 393525
+  _id: 993525
   _requiredClues: []
-  _cluesGiven:
-  - {fileID: 11400000, guid: a0b4841b38e834eda9979f0c2f6d01ef, type: 2}
+  _cluesGiven: []
   _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
   _lines:
-  - Okay.
-  - So what next?
-  _options: []
+  - You are incompenent.
+  - And now your office is covered in mold.
+  - And I have a gun.
+  - And you don't. You have mold.
+  - And some really simple instructions from me.
+  _options:
+  - _optionText: ((that she can follow, or i kill her. and the landlord. or roachlord.
+      whatever.))
+    _nextNode: {fileID: 11400000, guid: 235790c5bdbb44c56b8f288204d6fca0, type: 2}
   _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}

@@ -16,8 +16,12 @@ MonoBehaviour:
   _requiredClues: []
   _cluesGiven:
   - {fileID: 11400000, guid: d234d2da708c149f6aed6cab5c470234, type: 2}
-  _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
+  _speaker: {fileID: 11400000, guid: 5744fcc6345674224af0fbb105164c08, type: 2}
   _lines:
-  - You shoot the manager.
-  _options: []
+  - The Roachlord.
+  - He's real. The landlord. He's the Roachlord.
+  - Please. Put the gun down. Enough has happened already.
+  _options:
+  - _optionText: ((and what are we going to do about the inspection?))
+    _nextNode: {fileID: 11400000, guid: 93ff7b822997b43be98cae28cf22e817, type: 2}
   _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}

@@ -1,17 +1,17 @@
 {
   "passages": [
     {
-      "text": "<line> please don't hurt me\n<line> i just do what the Roachlord tells me to do\n[[the who?]]\n[[don't play with me right now.]]",
+      "text": "<line> Please.\n<line> Please don't hurt me.\n<line> I have to do what He says. \n<line> It's the only way I keep my daughter safe.\n<line> I can bring you to him. The Inspection. He's coming.\n[[(the who? the Roachlord? which is...?))]]\n[[((and what are we going to do about the inspection?))->inspection]]",
       "links": [
         {
-          "name": "the who?",
-          "link": "the who?",
-          "pid": "2"
+          "name": "(the who? the Roachlord? which is...?))",
+          "link": "(the who? the Roachlord? which is...?))",
+          "pid": "4"
         },
         {
-          "name": "don't play with me right now.",
-          "link": "don't play with me right now.",
-          "pid": "3"
+          "name": "((and what are we going to do about the inspection?))",
+          "link": "inspection",
+          "pid": "6"
         }
       ],
       "name": "start",
@@ -25,89 +25,227 @@
       ]
     },
     {
-      "text": "<line> The who?\n[[((have I seen him before...?))]]",
-      "links": [
-        {
-          "name": "((have I seen him before...?))",
-          "link": "((have I seen him before...?))",
-          "pid": "4"
-        }
-      ],
-      "name": "the who?",
+      "text": "<cluegiven> ShootManager\n<line> No.",
+      "name": "((Shoot her.))",
       "pid": "2",
       "position": {
-        "x": "600",
-        "y": "375"
+        "x": "850",
+        "y": "1325"
       },
       "tags": [
         "You"
       ]
     },
     {
-      "text": "<line> Don't play with me right now.\n<line> Quit making shit up.\n[[((have I seen him before...?))]]",
-      "links": [
-        {
-          "name": "((have I seen him before...?))",
-          "link": "((have I seen him before...?))",
-          "pid": "4"
-        }
-      ],
-      "name": "don't play with me right now.",
+      "text": "<cluegiven> SpareManager\n<line> Okay.\n<line> So what next?",
+      "name": "((Spare her.))",
       "pid": "3",
       "position": {
-        "x": "725",
-        "y": "375"
+        "x": "975",
+        "y": "1325"
       },
       "tags": [
         "You"
       ]
     },
     {
-      "text": "<line> You know him\n<line> You've seen him\n<line> He's the one who owns this place\n<line> He owns all of us\n<line> Please, put the gun down.\n<line> I have a daughter. I'm just trying to feed her. I have to do what he says.\n[[((Shoot her.))]]\n[[((Spare her.))]]",
+      "text": "<line> Bring me to who? For what?\n[[((i ask, as if she makes sense on a normal day...))]]",
       "links": [
         {
-          "name": "((Shoot her.))",
-          "link": "((Shoot her.))",
+          "name": "((i ask, as if she makes sense on a normal day...))",
+          "link": "((i ask, as if she makes sense on a normal day...))",
           "pid": "5"
-        },
+        }
+      ],
+      "name": "(the who? the Roachlord? which is...?))",
+      "pid": "4",
+      "position": {
+        "x": "400",
+        "y": "325"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> The Roachlord.\n<line> He's real. The landlord. He's the Roachlord.\n<line> Please. Put the gun down. Enough has happened already.\n[[((and what are we going to do about the inspection?))->inspection]]",
+      "links": [
         {
-          "name": "((Spare her.))",
-          "link": "((Spare her.))",
+          "name": "((and what are we going to do about the inspection?))",
+          "link": "inspection",
           "pid": "6"
         }
       ],
-      "name": "((have I seen him before...?))",
-      "pid": "4",
+      "name": "((i ask, as if she makes sense on a normal day...))",
+      "pid": "5",
       "position": {
-        "x": "600",
-        "y": "500"
+        "x": "475",
+        "y": "475"
       },
       "tags": [
         "Manager"
       ]
     },
     {
-      "text": "<cluegiven> ShootManager\n<line> You shoot the manager.",
-      "name": "((Shoot her.))",
-      "pid": "5",
+      "text": "<line> And what exactly are we going to do about the inspection?\n<line> How am I going to pass with all the mold and roaches?\n<line> When are you going to take responsibility for this?\n[[((not to mention he could be here any minute.))]]",
+      "links": [
+        {
+          "name": "((not to mention he could be here any minute.))",
+          "link": "((not to mention he could be here any minute.))",
+          "pid": "7"
+        }
+      ],
+      "name": "inspection",
+      "pid": "6",
       "position": {
-        "x": "537.5",
-        "y": "625"
+        "x": "675",
+        "y": "400"
       },
       "tags": [
         "You"
       ]
     },
     {
-      "text": "<cluegiven> SpareManager\n<line> You spare the manager.",
-      "name": "((Spare her.))",
-      "pid": "6",
+      "text": "<line> Responsibility. Hahahahha. Hha hahaah.\n<line> You always act like my world is going to revolve around yours. And not my little girl's.\n<line> I know you think I'm incompetent.\n<line> I've followed every instruction I've gotten. I know you try to too. To pass the inspection.\n[[((why can't we both just follow instructions?))]]\n[[((i have a gun and she doesn't. and she's talking to me like this?))]]",
+      "links": [
+        {
+          "name": "((why can't we both just follow instructions?))",
+          "link": "((why can't we both just follow instructions?))",
+          "pid": "8"
+        },
+        {
+          "name": "((i have a gun and she doesn't. and she's talking to me like this?))",
+          "link": "((i have a gun and she doesn't. and she's talking to me like this?))",
+          "pid": "9"
+        }
+      ],
+      "name": "((not to mention he could be here any minute.))",
+      "pid": "7",
       "position": {
-        "x": "662.5",
-        "y": "625"
+        "x": "800",
+        "y": "525"
+      },
+      "tags": [
+        "Manager"
+      ]
+    },
+    {
+      "text": "<line> I understand you're busy and you have your daughter.\n<line> I'm begging you for help here. This is getting so out of control.\n<line> Why can't you follow my instructions for once?\n<line> Or like. Doesn't your job description have instructions to help your tenants?\n[[((like... a little???))->authority]]",
+      "links": [
+        {
+          "name": "((like... a little???))",
+          "link": "authority",
+          "pid": "10"
+        }
+      ],
+      "name": "((why can't we both just follow instructions?))",
+      "pid": "8",
+      "position": {
+        "x": "800",
+        "y": "650"
       },
       "tags": [
         "You"
+      ]
+    },
+    {
+      "text": "<line> You are incompenent.\n<line> And now your office is covered in mold.\n<line> And I have a gun.\n<line> And you don't. You have mold.\n<line> And some really simple instructions from me.\n[[((that she can follow, or i kill her. and the landlord. or roachlord. whatever.))->authority]]",
+      "links": [
+        {
+          "name": "((that she can follow, or i kill her. and the landlord. or roachlord. whatever.))",
+          "link": "authority",
+          "pid": "10"
+        }
+      ],
+      "name": "((i have a gun and she doesn't. and she's talking to me like this?))",
+      "pid": "9",
+      "position": {
+        "x": "925",
+        "y": "650"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> And what do you want me to do?\n<line> What power do you think I have in this situation?\n[[((MAKE THIS GO AWAY!!! YOU'RE THE MANAGER!!))]]",
+      "links": [
+        {
+          "name": "((MAKE THIS GO AWAY!!! YOU'RE THE MANAGER!!))",
+          "link": "((MAKE THIS GO AWAY!!! YOU'RE THE MANAGER!!))",
+          "pid": "11"
+        }
+      ],
+      "name": "authority",
+      "pid": "10",
+      "position": {
+        "x": "800",
+        "y": "775"
+      },
+      "tags": [
+        "Manager"
+      ]
+    },
+    {
+      "text": "<line> GET. RID. OF THE MOLD!!!!!\n<line> AND THE ROACHES!!!\n<line> You're LITERALLY IN CHARGE!!\n<line> All I can do is file paperwork!\n<line> Or fire this gun!!\n[[((and i have like... 2 working brain cells left i think))]]",
+      "links": [
+        {
+          "name": "((and i have like... 2 working brain cells left i think))",
+          "link": "((and i have like... 2 working brain cells left i think))",
+          "pid": "12"
+        }
+      ],
+      "name": "((MAKE THIS GO AWAY!!! YOU'RE THE MANAGER!!))",
+      "pid": "11",
+      "position": {
+        "x": "925",
+        "y": "900"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> I can't do that.\n[[((...))]]",
+      "links": [
+        {
+          "name": "((...))",
+          "link": "((...))",
+          "pid": "13"
+        }
+      ],
+      "name": "((and i have like... 2 working brain cells left i think))",
+      "pid": "12",
+      "position": {
+        "x": "925",
+        "y": "1025"
+      },
+      "tags": [
+        "Manager"
+      ]
+    },
+    {
+      "text": "<line> All I can do is escort you through the inspection.\n<line> I might be able to help you... talk to the Roachlord.\n<line> Is that enough for you?\n[[((Shoot her.))]]\n[[((Spare her.))]]",
+      "links": [
+        {
+          "name": "((Shoot her.))",
+          "link": "((Shoot her.))",
+          "pid": "2"
+        },
+        {
+          "name": "((Spare her.))",
+          "link": "((Spare her.))",
+          "pid": "3"
+        }
+      ],
+      "name": "((...))",
+      "pid": "13",
+      "position": {
+        "x": "925",
+        "y": "1150"
+      },
+      "tags": [
+        "Manager"
       ]
     }
   ],
