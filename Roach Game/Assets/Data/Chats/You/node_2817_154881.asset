@@ -19,12 +19,10 @@ MonoBehaviour:
   _lines:
   - MOLD?!?
   - IN THE SAFE?!?
-  - .... am i....
-  - seeing things?
-  - ... the roach guns.. are they real?
+  - .... am i ... seeing things?
+  - do i have some kind of mold posioning?
+  - the manager couldn't have possibly been right about the roaches, or...
   _options:
-  - _optionText: the guns are real, the mold is real, and the manager is evil
-    _nextNode: {fileID: 11400000, guid: d0bee359e2b5342a98662342b49afa26, type: 2}
-  - _optionText: it's not real. i'm actually going insane
-    _nextNode: {fileID: 11400000, guid: ffbad85e0f28945858e51aca6c82f490, type: 2}
+  - _optionText: ((...))
+    _nextNode: {fileID: 11400000, guid: 25c3cf226708e4fa48e9833af219d284, type: 2}
   _Chat: {fileID: 11400000, guid: c2ef28d8ca94a40608909a2c963aa5d5, type: 2}
