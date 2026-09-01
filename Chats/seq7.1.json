@@ -1,7 +1,7 @@
 {
   "passages": [
     {
-      "text": "<clue> EndSeq6.3\n<cluegiven> EndSeq7.1\n<line> ok roaches... i came here to bitch at my manager and crush roaches...\n<line> and i'm all out of manager to bitch at",
+      "text": "<cluegiven> EndSeq7.1\n<line> i guess i should stop expecting pest control to come\n<line> if i can just...\n<line> kill as many as possible before emily gets home...\n<line> and the landlord arrives...",
       "name": "Start",
       "pid": "1",
       "position": {

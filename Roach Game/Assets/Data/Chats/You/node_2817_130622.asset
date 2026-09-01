@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: node_2817_130622
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _id: 130622
-  _requiredClues:
-  - {fileID: 11400000, guid: 00edb518e354e4fe09142e598d0e229f, type: 2}
+  _requiredClues: []
   _cluesGiven:
   - {fileID: 11400000, guid: bc49c08426d914963b5806b44f494fcd, type: 2}
   _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
   _lines:
-  - ok roaches... i came here to bitch at my manager and crush roaches...
-  - and i'm all out of manager to bitch at
+  - i guess i should stop expecting pest control to come
+  - if i can just...
+  - kill as many as possible before emily gets home...
+  - and the landlord arrives...
   _options: []
   _Chat: {fileID: 11400000, guid: c2ef28d8ca94a40608909a2c963aa5d5, type: 2}
