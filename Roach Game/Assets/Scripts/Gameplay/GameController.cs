@@ -137,7 +137,6 @@ public class GameController : MonoBehaviour
         else if(clue == _roachWorldClue)
         {
             LoadRoachWorld();
-            SceneManager.sceneLoaded += FinishSceneLoad;
         }
     }
 
@@ -146,12 +145,15 @@ public class GameController : MonoBehaviour
     {
         SequenceController._Instance.RefreshSequenceMap();
         SequenceController._Instance.HandleClueUnlocked(_roachWorldClue);
+
+        CameraCinematics._Instance.OpenRoachWorld();
     }
 
     // ------------------------------------------------------------------------
     public void LoadRoachWorld ()
     {
         SceneManager.LoadScene(1);
+        SceneManager.sceneLoaded += FinishSceneLoad;
     }
 
 #if UNITY_EDITOR

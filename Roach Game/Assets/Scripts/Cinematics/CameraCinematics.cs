@@ -61,6 +61,12 @@ public class CameraCinematics : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    public void OpenRoachWorld ()
+    {
+        Camera.main.clearFlags = CameraClearFlags.Skybox;
+    }
+
+    // ------------------------------------------------------------------------
     private void AnimateZoomIn(Vector3 offset)
     {
         Roach targetRoach = GameController._Instance._TargetRoach;
