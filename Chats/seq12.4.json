@@ -1,0 +1,21 @@
+{
+  "passages": [
+    {
+      "text": "<cluegiven> EndSeq12.4\n<line> EMILY!!!\n<line> I'M GOING TO FIX ALL THIS!!!",
+      "name": "start",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    }
+  ],
+  "name": "Seq12.4",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "fe138b6a-815f-4fc2-b829-cb4bbe7fd6df"
+}
