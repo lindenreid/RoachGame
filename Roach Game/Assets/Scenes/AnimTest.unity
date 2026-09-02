@@ -660,9 +660,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2979293413459554895, guid: 2f771a1786580554f9d71a08911ef871, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5002747336087931796, guid: 2f771a1786580554f9d71a08911ef871, type: 3}
       propertyPath: m_Name
       value: Girlfriend
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779658174810593477, guid: 2f771a1786580554f9d71a08911ef871, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5779658174810593477, guid: 2f771a1786580554f9d71a08911ef871, type: 3}
+      propertyPath: m_WarningMessage
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6625222038172106592, guid: 2f771a1786580554f9d71a08911ef871, type: 3}
       propertyPath: m_LocalPosition.x
