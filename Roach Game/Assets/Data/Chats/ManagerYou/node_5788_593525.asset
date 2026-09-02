@@ -24,4 +24,6 @@ MonoBehaviour:
   _options:
   - _optionText: ((and what are we going to do about the inspection?))
     _nextNode: {fileID: 11400000, guid: 93ff7b822997b43be98cae28cf22e817, type: 2}
+  - _optionText: ((so she's confessed. she planted the roaches and the mold.))
+    _nextNode: {fileID: 11400000, guid: 41e64713e03694c00ba56330b0d3576b, type: 2}
   _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}

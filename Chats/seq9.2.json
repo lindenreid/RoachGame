@@ -20,12 +20,17 @@
       ]
     },
     {
-      "text": "<line> THE TENANT REBELLION WILL BE SQUASHED\n<line> THE INSPECTION WILL RIGHT THE WRONGS\n<line> AND HIS MAJESTY THE ROACHLORD\n<line> WILL RAISE THE RENT!!!\n[[((okay so the mold might be making both of us insane))]]",
+      "text": "<line> THE TENANT REBELLION WILL BE SQUASHED\n<line> THE INSPECTION WILL RIGHT THE WRONGS\n<line> AND HIS MAJESTY THE ROACHLORD\n<line> WILL RAISE THE RENT!!!\n[[((okay so the mold might be making both of us insane))]]\n[[((i knew it. she's a monster))]]",
       "links": [
         {
           "name": "((okay so the mold might be making both of us insane))",
           "link": "((okay so the mold might be making both of us insane))",
           "pid": "3"
+        },
+        {
+          "name": "((i knew it. she's a monster))",
+          "link": "((i knew it. she's a monster))",
+          "pid": "7"
         }
       ],
       "name": "it's covered in mold and roaches...",
@@ -100,6 +105,25 @@
       "position": {
         "x": "850",
         "y": "750"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> I KNEW YOU WERE OUT TO GET ME!!\n[[((this might be hopeless.))]]",
+      "links": [
+        {
+          "name": "((this might be hopeless.))",
+          "link": "((this might be hopeless.))",
+          "pid": "4"
+        }
+      ],
+      "name": "((i knew it. she's a monster))",
+      "pid": "7",
+      "position": {
+        "x": "850",
+        "y": "500"
       },
       "tags": [
         "You"

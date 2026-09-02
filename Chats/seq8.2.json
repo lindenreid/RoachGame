@@ -44,7 +44,7 @@
       ]
     },
     {
-      "text": "<line> ... the roach guns... is that even real?\n<line> what will emily think of all of this?\n[[the guns are real, the mold is real, and the manager is evil]]\n[[no. it's not real. i'm actually going insane]]",
+      "text": "<line> ... the roach guns... is that even real?\n<line> what will emily think of all of this?\n<line> ... or ... did the manager do this?\n<line> what do i have to do to keep my family safe?\n[[the guns are real, the mold is real, and the manager is evil]]\n[[no. it's not real. i'm actually going insane]]",
       "links": [
         {
           "name": "the guns are real, the mold is real, and the manager is evil",
@@ -61,7 +61,7 @@
       "pid": "4",
       "position": {
         "x": "600",
-        "y": "400"
+        "y": "375"
       },
       "tags": [
         "You"

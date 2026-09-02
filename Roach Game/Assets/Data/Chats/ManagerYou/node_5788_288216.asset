@@ -24,4 +24,6 @@ MonoBehaviour:
   _options:
   - _optionText: ((okay so the mold might be making both of us insane))
     _nextNode: {fileID: 11400000, guid: 732867575ea3c4a4ca0026adee54c282, type: 2}
+  - _optionText: ((i knew it. she's a monster))
+    _nextNode: {fileID: 11400000, guid: 2e79bd179dce74facb36b9777a304c55, type: 2}
   _Chat: {fileID: 11400000, guid: 95c90212984b04cb8baad66588ac4b84, type: 2}
