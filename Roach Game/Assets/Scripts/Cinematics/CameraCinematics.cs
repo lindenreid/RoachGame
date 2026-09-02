@@ -50,14 +50,14 @@ public class CameraCinematics : MonoBehaviour
     // timeline signal callback
     public void AnimateRoachZoomIn ()
     {
-        AnimateZoomIn(_roachZoomOffset);
+        AnimateZoomInToRoach(_roachZoomOffset);
     }
 
     // ------------------------------------------------------------------------
     // timeline signal callback
     public void AnimateRoachZoomIn2 ()
     {
-        AnimateZoomIn(_roachZoomOffset2);
+        AnimateZoomInToRoach(_roachZoomOffset2);
     }
 
     // ------------------------------------------------------------------------
@@ -67,14 +67,20 @@ public class CameraCinematics : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
-    private void AnimateZoomIn(Vector3 offset)
+    private void AnimateZoomInToRoach(Vector3 offset)
     {
         Roach targetRoach = GameController._Instance._TargetRoach;
 
         _roachTransform = targetRoach.transform;
+        CameraZoomIn(_roachTransform, offset);
+    }
+
+    // ------------------------------------------------------------------------
+    public void CameraZoomIn (Transform target, Vector3 offset)
+    {
         _zooming = true;
 
-        Vector3 targetRoachPosLocal = _roachZoomSpline.transform.InverseTransformPoint(targetRoach.gameObject.transform.position) + offset;
+        Vector3 targetRoachPosLocal = _roachZoomSpline.transform.InverseTransformPoint(target.position) + offset;
 
         var targetKnot = _roachZoomSpline.Spline.Knots.ToArray()[1];
         targetKnot.Position = targetRoachPosLocal;

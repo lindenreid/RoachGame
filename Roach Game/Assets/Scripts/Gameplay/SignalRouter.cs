@@ -6,6 +6,8 @@ public class SignalRouter : MonoBehaviour
     // Variables
     // ------------------------------------------------------------------------
     [SerializeField] private Renderer[] _apartmentRenderers;
+    [SerializeField] private Vector3 _bubbleZoomOffset = Vector3.zero;
+    [SerializeField] private Transform _bubble;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -42,5 +44,19 @@ public class SignalRouter : MonoBehaviour
     public void StartMainLightFadeIn ()
     {
         LightingController._Instance.FadeInMainLight();
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void AnimateBubbleZoomIn ()
+    {
+        CameraCinematics._Instance.CameraZoomIn(_bubble, _bubbleZoomOffset);
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void CameraZoomOut ()
+    {
+        CameraCinematics._Instance.AnimateRoachZoomOut();
     }
 }
