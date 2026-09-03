@@ -36,6 +36,7 @@ public class GameController : MonoBehaviour
     private bool _hitFirstRoach;
     private Roach _targetRoach;
     private List<Roach> _activeRoaches;
+    private List<ClueData> _unlockedClues;
 
     // ------------------------------------------------------------------------
     // Properties
@@ -66,6 +67,7 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         _activeRoaches = new List<Roach>();
+        _unlockedClues = new List<ClueData>();
     }
 
     // ------------------------------------------------------------------------
@@ -128,8 +130,32 @@ public class GameController : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    public bool IsUnlocked(DiscoverableData discoverable)
+    {
+        if(discoverable._RequiredClues == null ||
+            discoverable._RequiredClues.Length == 0)
+        {
+            return true;
+        }
+
+        foreach(ClueData clue in discoverable._RequiredClues)
+        {
+            if(!_unlockedClues.Contains(clue))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // ------------------------------------------------------------------------
     private void HandleClueUnlocked (ClueData clue)
     {
+        if(!_unlockedClues.Contains(clue))
+        {
+            _unlockedClues.Add(clue);
+        }
+
         if(clue == _postHitFirstRoach || clue == _postSecondRoachGun)
         {
             _targetRoach = null;

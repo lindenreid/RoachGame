@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
-  m_Name: node_3090_270225
+  m_Name: node_5983_117022
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  _id: 270225
+  _id: 117022
   _requiredClues: []
-  _cluesGiven:
-  - {fileID: 11400000, guid: 43e02e3c3242c475dbda32cc925fe094, type: 2}
+  _cluesGiven: []
   _speaker: {fileID: 11400000, guid: 5b0efb9ebf8804f39a64eb09f5e67af0, type: 2}
   _lines:
-  - I am your Roachlord.
-  - As the roaches are to you, you are a pest to me.
-  - Living on my property.
-  - Getting it dirty. Messing it up.
-  - Oh, my beautiful investments!!!
-  _options: []
-  _Chat: {fileID: 11400000, guid: 1338b58c24a5c4180aa2c0c37690c24e, type: 2}
+  - You bring her here, and still blame her.
+  - So disappointing... she will be put on a Performance Improvement Plan.
+  - I'm sure you understand, since you are convinced of her incompetence. I am inclined
+    to agree.
+  - But you.
+  _options:
+  - _optionText: ((...))
+    _nextNode: {fileID: 11400000, guid: e59be335d500b4e2d9077a2e779aca05, type: 2}
+  _Chat: {fileID: 11400000, guid: 2e19ac9f3a19f4fc28d2029be8eceda6, type: 2}

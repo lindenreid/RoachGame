@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
+  m_Name: node_5983_270225
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  _id: 270225
+  _requiredClues: []
+  _cluesGiven: []
+  _speaker: {fileID: 11400000, guid: 5b0efb9ebf8804f39a64eb09f5e67af0, type: 2}
+  _lines:
+  - As the roaches are to you, you are a pest to me.
+  - You all are. The Manager. Your Emily. You.
+  - Living on my property.
+  - Getting it dirty. Messing it up.
+  - Oohhhh, my beautiful investments!!!
+  _options:
+  - _optionText: ((so does he or does he not want roaches everywhere...??))
+    _nextNode: {fileID: 11400000, guid: 9d733cddc50d84a40bafad05c8201a0e, type: 2}
+  _Chat: {fileID: 11400000, guid: 2e19ac9f3a19f4fc28d2029be8eceda6, type: 2}

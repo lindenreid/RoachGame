@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b134f48b71acf45d19d4356eb767df36, type: 3}
+  m_Name: chat_YouRoachlord
+  m_EditorClassIdentifier: Assembly-CSharp::ChatData
+  _id: 5983
+  _nodes:
+  - {fileID: 11400000, guid: 10a52b284ef9c40e0adb11a8a1fc9434, type: 2}
+  - {fileID: 11400000, guid: e59be335d500b4e2d9077a2e779aca05, type: 2}
+  - {fileID: 11400000, guid: 8fee802df5a924f58aeedf54451f2085, type: 2}
+  - {fileID: 11400000, guid: 026323ac58db0475fb83caf165a2fd3f, type: 2}
+  - {fileID: 11400000, guid: 01dcabd3895294491824302c79d0a5cc, type: 2}
+  - {fileID: 11400000, guid: c07ea5a2e8ea34931846de1201a33828, type: 2}
+  - {fileID: 11400000, guid: cd10ddb51e24c4a02a919052617cd92a, type: 2}
+  - {fileID: 11400000, guid: 021a56f343f9d4e1d8a1ead055041256, type: 2}
+  - {fileID: 11400000, guid: 8f403e2f648154afc9c8dfa0af6a63fe, type: 2}
+  - {fileID: 11400000, guid: c5bd012680ba6451bb41304bc4f84ff7, type: 2}
+  - {fileID: 11400000, guid: 52b88c87f34d0473d88ac4bb35466a97, type: 2}
+  - {fileID: 11400000, guid: 9d733cddc50d84a40bafad05c8201a0e, type: 2}
+  - {fileID: 11400000, guid: e0c97f3b1a7bf4d26a42a493d86740bc, type: 2}
+  _friends:
+  - {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
+  - {fileID: 11400000, guid: 5b0efb9ebf8804f39a64eb09f5e67af0, type: 2}

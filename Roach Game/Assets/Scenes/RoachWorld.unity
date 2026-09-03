@@ -1926,11 +1926,10 @@ MonoBehaviour:
   _triggerClue: {fileID: 11400000, guid: 0de1a7b6069b5e44e9687b906740bc78, type: 2}
   _finishClue: {fileID: 0}
   _gameStateType: 3
-  _objects:
-  - {fileID: 1001910824}
+  _objects: []
   _disableObjectsAtEnd: 0
   _removeRoachesInHandAtEnd: 0
-  _dialogueStartNode: {fileID: 11400000, guid: eebcf217a4ef04f59a1bf0714f5fd104, type: 2}
+  _dialogueStartNode: {fileID: 11400000, guid: 10a52b284ef9c40e0adb11a8a1fc9434, type: 2}
   _playerStartPos: {fileID: 0}
   _cameraStartRot: {fileID: 0}
   _onlySetPlayerLocOnRestart: 0

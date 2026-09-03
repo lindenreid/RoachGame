@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
+  m_Name: node_5983_770225
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  _id: 770225
+  _requiredClues:
+  - {fileID: 11400000, guid: d234d2da708c149f6aed6cab5c470234, type: 2}
+  _cluesGiven: []
+  _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
+  _lines:
+  - You always knew we were going to fail!
+  - You planted the mold and the roaches!
+  - That must have been what the manager was rambling about... you're setting the
+    tenants up to fail so you can screw us all over!
+  - She's dead now- and you will be soon!!
+  _options:
+  - _optionText: ((FUCK... THIS GUY IS CREEPY!!!))
+    _nextNode: {fileID: 11400000, guid: c5bd012680ba6451bb41304bc4f84ff7, type: 2}
+  _Chat: {fileID: 11400000, guid: 2e19ac9f3a19f4fc28d2029be8eceda6, type: 2}

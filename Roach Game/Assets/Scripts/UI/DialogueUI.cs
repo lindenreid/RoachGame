@@ -83,8 +83,11 @@ public class DialogueUI : MonoBehaviour
         {
             foreach(DialogueOption option in _currentNode._Options)
             {
-                OptionButton optionButton = Instantiate(_optionButtonPrefab, _optionsParent);
-                optionButton.SetupButton(option);
+                if(GameController._Instance.IsUnlocked(option._NextNode))
+                {
+                    OptionButton optionButton = Instantiate(_optionButtonPrefab, _optionsParent);
+                    optionButton.SetupButton(option);
+                }
             }
         }
     }

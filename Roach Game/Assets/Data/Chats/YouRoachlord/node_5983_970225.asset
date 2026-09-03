@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
-  m_Name: node_3090_170225
+  m_Name: node_5983_970225
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
-  _id: 170225
+  _id: 970225
   _requiredClues: []
   _cluesGiven: []
   _speaker: {fileID: 11400000, guid: 5b0efb9ebf8804f39a64eb09f5e67af0, type: 2}
   _lines:
-  - I think you know by now...
-  - You've failed the inspection.
+  - The Manager and I had a deal.
+  - I find her presence here now rather disappointing. This will show up on her Review.
+    It is not in the Company spirit.
+  - And you.
   _options:
-  - _optionText: Who are you
-    _nextNode: {fileID: 11400000, guid: 0e4f193e40a334ae6937e90c1a7bf7b1, type: 2}
-  - _optionText: What do you want
-    _nextNode: {fileID: 11400000, guid: 0e4f193e40a334ae6937e90c1a7bf7b1, type: 2}
-  _Chat: {fileID: 11400000, guid: 1338b58c24a5c4180aa2c0c37690c24e, type: 2}
+  - _optionText: (...)
+    _nextNode: {fileID: 11400000, guid: e59be335d500b4e2d9077a2e779aca05, type: 2}
+  _Chat: {fileID: 11400000, guid: 2e19ac9f3a19f4fc28d2029be8eceda6, type: 2}
