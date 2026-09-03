@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
+  m_Name: node_5983_213868
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  _id: 213868
+  _requiredClues: []
+  _cluesGiven: []
+  _speaker: {fileID: 11400000, guid: 5b0efb9ebf8804f39a64eb09f5e67af0, type: 2}
+  _lines:
+  - She wandered in here while on her work trip.
+  - She appears to be having an allergic reaction of some sort.
+  - Tired and lifeless... I was going to feed her to my children.
+  - But you're quite spirited... I'm sure you're about to tell me you're going to
+    save her with the power of paperwork, or perhaps a slipper.
+  _options:
+  - _optionText: ((I got one better...))
+    _nextNode: {fileID: 11400000, guid: 23adbff8e456a4e51ba7202c521a9305, type: 2}
+  _Chat: {fileID: 11400000, guid: 2e19ac9f3a19f4fc28d2029be8eceda6, type: 2}

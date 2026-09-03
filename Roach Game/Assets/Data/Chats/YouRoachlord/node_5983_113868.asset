@@ -10,15 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
-  m_Name: node_2817_113868
+  m_Name: node_5983_113868
   m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
   _id: 113868
   _requiredClues: []
-  _cluesGiven:
-  - {fileID: 11400000, guid: 734c607091c4f4ba1bfd43408dce3d57, type: 2}
+  _cluesGiven: []
   _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
   _lines:
   - EMILY!!!
   - I'M GOING TO FIX ALL THIS!!!
-  _options: []
-  _Chat: {fileID: 11400000, guid: c2ef28d8ca94a40608909a2c963aa5d5, type: 2}
+  _options:
+  - _optionText: ((AND KILL THE ROACHLORD!))
+    _nextNode: {fileID: 11400000, guid: a78cfb4591e1f4372ac133c3b5b7f227, type: 2}
+  - _optionText: ((AND THEN GFTO!))
+    _nextNode: {fileID: 11400000, guid: a78cfb4591e1f4372ac133c3b5b7f227, type: 2}
+  _Chat: {fileID: 11400000, guid: 2e19ac9f3a19f4fc28d2029be8eceda6, type: 2}

@@ -2686,7 +2686,7 @@ MonoBehaviour:
   _objects: []
   _disableObjectsAtEnd: 0
   _removeRoachesInHandAtEnd: 0
-  _dialogueStartNode: {fileID: 11400000, guid: 55c9ea091c6dc4c968ad52cc988c97a7, type: 2}
+  _dialogueStartNode: {fileID: 11400000, guid: f206c3ad435564c1dbdb85310a2b1716, type: 2}
   _playerStartPos: {fileID: 0}
   _cameraStartRot: {fileID: 0}
   _onlySetPlayerLocOnRestart: 0
