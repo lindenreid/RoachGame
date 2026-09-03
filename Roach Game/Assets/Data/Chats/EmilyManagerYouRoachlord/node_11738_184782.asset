@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
+  m_Name: node_11738_184782
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  _id: 184782
+  _requiredClues: []
+  _cluesGiven: []
+  _speaker: {fileID: 11400000, guid: d417661ba89fa412ba721efd5d50ffae, type: 2}
+  _lines:
+  - We can do this, baby.
+  - I wish you had asked me for help.
+  - But, don't be ashamed!!!
+  - I can take antihistamines!!
+  _options:
+  - _optionText: ((...i'm so sorry emily...))
+    _nextNode: {fileID: 11400000, guid: 9585830f2df18480a97594ca14f0b839, type: 2}
+  _Chat: {fileID: 11400000, guid: 2025bd727a99c4bcb9813a6193ee7f9a, type: 2}

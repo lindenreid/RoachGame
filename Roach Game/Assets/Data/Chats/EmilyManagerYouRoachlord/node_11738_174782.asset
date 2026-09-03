@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
+  m_Name: node_11738_174782
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  _id: 174782
+  _requiredClues: []
+  _cluesGiven: []
+  _speaker: {fileID: 11400000, guid: 5b0efb9ebf8804f39a64eb09f5e67af0, type: 2}
+  _lines:
+  - Oh no... there will always be a new Manager.
+  - I will always be able to find a more desperate Worker.
+  - You always have something...
+  - If not a girlfriend, or a child. A sick old parent, a debt, a felony.
+  - A sin, a shame.
+  - Something to fuel a Spirit.
+  _options:
+  - _optionText: ((... i don't think he understands human spirit...))
+    _nextNode: {fileID: 11400000, guid: 3558d448df28641f0aea5a5c6ff087c8, type: 2}
+  _Chat: {fileID: 11400000, guid: 2025bd727a99c4bcb9813a6193ee7f9a, type: 2}

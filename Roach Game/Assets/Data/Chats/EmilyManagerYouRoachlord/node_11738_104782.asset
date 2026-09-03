@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
+  m_Name: node_11738_104782
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  _id: 104782
+  _requiredClues:
+  - {fileID: 11400000, guid: a0b4841b38e834eda9979f0c2f6d01ef, type: 2}
+  _cluesGiven: []
+  _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
+  _lines:
+  - I can't subject Emily to this.
+  - ALL I've wanted this <i>WHOLE</i> time was to save her from the roaches. I'm
+    not backing down from that.
+  - I'll be a better manager for her than our current Manager ever was.
+  - I'll sign up for the Company.
+  _options:
+  - _optionText: ((... and take it down from within!!))
+    _nextNode: {fileID: 11400000, guid: 7a60075bdded7446cb6b6ef578afa400, type: 2}
+  - _optionText: ((... and replace the Roachlord as the supreme leader!!))
+    _nextNode: {fileID: 11400000, guid: 7b6c20830484d43ea8f9a81259c8f530, type: 2}
+  _Chat: {fileID: 11400000, guid: 2025bd727a99c4bcb9813a6193ee7f9a, type: 2}

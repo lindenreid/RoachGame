@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
+  m_Name: node_11738_234782
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  _id: 234782
+  _requiredClues: []
+  _cluesGiven: []
+  _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
+  _lines:
+  - My Spirit is much more powerful than you can imagine!
+  - I will climb the Ladder...
+  - ... and run this company in no time!!
+  _options:
+  - _optionText: ((...beeeeeatttchhh!!!!))
+    _nextNode: {fileID: 11400000, guid: 4a20a51666b41448ea3488aef17ad306, type: 2}
+  _Chat: {fileID: 11400000, guid: 2025bd727a99c4bcb9813a6193ee7f9a, type: 2}

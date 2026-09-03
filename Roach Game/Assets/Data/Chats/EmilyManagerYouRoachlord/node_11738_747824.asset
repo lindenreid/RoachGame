@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b3f5749dc3040a69c9da2e7321e9c1, type: 3}
+  m_Name: node_11738_747824
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueNode
+  _id: 747824
+  _requiredClues: []
+  _cluesGiven: []
+  _speaker: {fileID: 11400000, guid: 5b0efb9ebf8804f39a64eb09f5e67af0, type: 2}
+  _lines:
+  - 'One: Become the new Manager.'
+  - You alone will be free of Roaches, for you will join the Company. They will not
+    bother you.
+  - 'Be whatever kind of Manager you wish to be. You need only follow one doctrine:
+    increase our Profits. I believe you will do us well.'
+  - 'Two: Go home with Emily.'
+  - Endure the Roaches for the rest of your putrid life.
+  _options:
+  - _optionText: ((my spirit is mine alone... i'm going home))
+    _nextNode: {fileID: 11400000, guid: a5361f8a608a046b4a2cf500b1bb28bb, type: 2}
+  - _optionText: ((my spirit is mine alone... i'm going home))
+    _nextNode: {fileID: 11400000, guid: bd2e40702f8954d28a2a9f0f81b3e8ff, type: 2}
+  - _optionText: ((i'm saving emily from the roaches... i'm joining the company))
+    _nextNode: {fileID: 11400000, guid: 7fd85f0b0a7294d53a98547a633107fe, type: 2}
+  - _optionText: ((i'm saving emily from the roaches... i'm joining the company))
+    _nextNode: {fileID: 11400000, guid: f331dcfb376d14496af35a580a38bc11, type: 2}
+  _Chat: {fileID: 11400000, guid: 2025bd727a99c4bcb9813a6193ee7f9a, type: 2}
