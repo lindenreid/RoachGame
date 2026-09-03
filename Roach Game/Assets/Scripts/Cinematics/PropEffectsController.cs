@@ -63,12 +63,18 @@ public class PropEffectsController : MonoBehaviour
     {
         foreach(Renderer renderer in aptRenderers)
         {
-            Material[] aptMats = renderer.materials;
-            foreach(Material mat in aptMats)
-            {
-                mat.SetFloat("_DissolveStartTime", Time.time);
-                mat.SetInt("_DoDissolve", 1);
-            }
+            StartDissolve(renderer);
+        }
+    }
+
+    // ------------------------------------------------------------------------
+    public void StartDissolve (Renderer renderer)
+    {
+        Material[] mats = renderer.materials;
+        foreach(Material mat in mats)
+        {
+            mat.SetFloat("_DissolveStartTime", Time.time);
+            mat.SetInt("_DoDissolve", 1);
         }
     }
 }

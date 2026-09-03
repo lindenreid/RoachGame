@@ -75,8 +75,11 @@ public class Player : MonoBehaviour
     private Color _reticleInvalid;
 
     // cinematics
-    private bool _shouldRotateToManager;
+    private bool _rotateToTarget;
+    private bool _endSequenceWhenDoneRotation = false;
     private float _rotateStartTime;
+    private float _lookSpeed;
+    private Transform _lookTarget;
 
     private PlayerMovementType _movementType = PlayerMovementType.Still;
 
@@ -149,24 +152,27 @@ public class Player : MonoBehaviour
             }
         }
 
-        if(_shouldRotateToManager)
+        if(_rotateToTarget)
         {
-            float t =(Time.time - _rotateStartTime)/_lookAtManagerSpeed;
+            float t =(Time.time - _rotateStartTime)/_lookSpeed;
 
             if(t >= 1.0f)
             {
-                _shouldRotateToManager = false;
-                SequenceController._Instance.EndCurrentSequence();
+                _rotateToTarget = false;
+                if(_endSequenceWhenDoneRotation)
+                {
+                    SequenceController._Instance.EndCurrentSequence();
+                }
             }
 
             // turn player towards manager on Y axis
-            Vector3 managerPosXZ = new Vector3(_manager.position.x, 0, _manager.position.z);
+            Vector3 managerPosXZ = new Vector3(_lookTarget.position.x, 0, _lookTarget.position.z);
             Vector3 posXZ = new Vector3(transform.position.x, 0, transform.position.z);
             Quaternion targetRotation = Quaternion.LookRotation(managerPosXZ - posXZ);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, t);
 
             // turn camera towards manager on X axis
-            Vector3 cameraTargetXRot = _manager.position - _cameraTrans.position;
+            Vector3 cameraTargetXRot = _lookTarget.position - _cameraTrans.position;
             Quaternion cameraTargetQuat = Quaternion.LookRotation(cameraTargetXRot);
             Vector3 currentCameraXRot = _cameraTrans.rotation.eulerAngles;
             currentCameraXRot.y = 0;
@@ -186,7 +192,20 @@ public class Player : MonoBehaviour
     // timeline callback
     public void TurnAndLookAtManager ()
     {
-        _shouldRotateToManager = true;
+        _rotateToTarget = true;
+        _endSequenceWhenDoneRotation = true;
+        _lookTarget = _manager;
+        _lookSpeed = _lookAtManagerSpeed;
+        _rotateStartTime = Time.time;
+    }
+
+    // ------------------------------------------------------------------------
+    public void TurnAndLookAt (Transform t, float speed)
+    {
+        _rotateToTarget = true;
+        _endSequenceWhenDoneRotation = false;
+        _lookTarget = t;
+        _lookSpeed = speed;
         _rotateStartTime = Time.time;
     }
 

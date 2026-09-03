@@ -8,6 +8,8 @@ public class SignalRouter : MonoBehaviour
     [SerializeField] private Renderer[] _apartmentRenderers;
     [SerializeField] private Vector3 _bubbleZoomOffset = Vector3.zero;
     [SerializeField] private Transform _bubble;
+    [SerializeField] private Renderer _bubbleRenderer;
+    [SerializeField] private float _lookAtBubbleSpeed = 1.0f;
 
     // ------------------------------------------------------------------------
     // Methods
@@ -58,5 +60,19 @@ public class SignalRouter : MonoBehaviour
     public void CameraZoomOut ()
     {
         CameraCinematics._Instance.AnimateRoachZoomOut();
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void StartBubbleDissolve ()
+    {
+        PropEffectsController._Instance.StartDissolve(_bubbleRenderer);
+    }
+
+    // ------------------------------------------------------------------------
+    // timeline signal callback
+    public void PlayerLookAtBubble ()
+    {
+        Player._Instance.TurnAndLookAt(_bubble, _lookAtBubbleSpeed);
     }
 }
