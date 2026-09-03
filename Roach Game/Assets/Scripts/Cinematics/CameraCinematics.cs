@@ -67,6 +67,12 @@ public class CameraCinematics : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    public void OpenAptWorld ()
+    {
+        Camera.main.clearFlags = CameraClearFlags.Color;
+    }
+
+    // ------------------------------------------------------------------------
     private void AnimateZoomInToRoach(Vector3 offset)
     {
         Roach targetRoach = GameController._Instance._TargetRoach;

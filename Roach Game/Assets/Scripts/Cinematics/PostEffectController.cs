@@ -220,6 +220,8 @@ public class PostEffectController : MonoBehaviour
         _doFadeIn = true;
         _doFadeOut = false;
         _fadeTimeSeconds = 0;
+
+        SetFadeInNormalizedValue(0);
     }
 
     // ------------------------------------------------------------------------
