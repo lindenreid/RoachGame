@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: 254782
   _requiredClues: []
   _cluesGiven:
-  - {fileID: 11400000, guid: 340a0f8ddbcb7436fba6e869064a882a, type: 2}
+  - {fileID: 11400000, guid: 44d3ddd1527094116ab631d3106d111f, type: 2}
   _speaker: {fileID: 11400000, guid: 5b0efb9ebf8804f39a64eb09f5e67af0, type: 2}
   _lines:
   - HAHA.

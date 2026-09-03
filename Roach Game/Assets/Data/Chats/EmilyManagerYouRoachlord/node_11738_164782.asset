@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: 164782
   _requiredClues: []
   _cluesGiven:
-  - {fileID: 11400000, guid: 340a0f8ddbcb7436fba6e869064a882a, type: 2}
+  - {fileID: 11400000, guid: 5e0a15a7ec2934eb49858e9c129cf8f5, type: 2}
   _speaker: {fileID: 11400000, guid: 54cdd345cf33948e4a2f1d28028fe78d, type: 2}
   _lines:
   - You're funny, man.

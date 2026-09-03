@@ -15,7 +15,7 @@ MonoBehaviour:
   _id: 214782
   _requiredClues: []
   _cluesGiven:
-  - {fileID: 11400000, guid: 340a0f8ddbcb7436fba6e869064a882a, type: 2}
+  - {fileID: 11400000, guid: 5e0a15a7ec2934eb49858e9c129cf8f5, type: 2}
   _speaker: {fileID: 11400000, guid: 5b0efb9ebf8804f39a64eb09f5e67af0, type: 2}
   _lines:
   - I'll be waiting.

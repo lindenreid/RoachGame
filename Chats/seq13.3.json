@@ -321,7 +321,7 @@
       ]
     },
     {
-      "text": "<cluegiven> EndSeq13.3\n<line> You're funny, man.\n<line> Let's go home, Emily.",
+      "text": "<cluegiven> GoHome\n<line> You're funny, man.\n<line> Let's go home, Emily.",
       "name": "hsm6",
       "pid": "16",
       "position": {
@@ -409,7 +409,7 @@
       ]
     },
     {
-      "text": "<cluegiven> EndSeq13.3\n<line> I'll be waiting.",
+      "text": "<cluegiven> GoHome\n<line> I'll be waiting.",
       "name": "hsm10",
       "pid": "21",
       "position": {
@@ -478,7 +478,7 @@
       ]
     },
     {
-      "text": "<cluegiven> EndSeq13.3\n<line> HAHA.\n<line> HAHAHAHAHAHAHAHAA.\n<line> How beautiful...\n<line> Your Spirit yet invigorates me...\n<line> A promise is a promise. You will never see Roaches again.\n<line> I will see you at your next performance review, Worker.",
+      "text": "<cluegiven> JoinCompany\n<line> HAHA.\n<line> HAHAHAHAHAHAHAHAA.\n<line> How beautiful...\n<line> Your Spirit yet invigorates me...\n<line> A promise is a promise. You will never see Roaches again.\n<line> I will see you at your next performance review, Worker.",
       "name": "((i'm doing the best i can... always))",
       "pid": "25",
       "position": {
