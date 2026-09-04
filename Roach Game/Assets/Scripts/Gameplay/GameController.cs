@@ -185,6 +185,7 @@ public class GameController : MonoBehaviour
         else if(_loadWorldClue == _goBackToAptClue)
         {
             CameraCinematics._Instance.OpenAptWorld();
+            LightingController._Instance.LoadEndSequence();
         }
 
         SceneManager.sceneLoaded -= FinishSceneLoad;

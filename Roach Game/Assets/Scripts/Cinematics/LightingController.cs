@@ -7,7 +7,6 @@
  * Copyright (c) 2026 Studio Tilia
  */
 
-using Unity.VectorGraphics;
 using UnityEngine;
 
 public class LightingController : MonoBehaviour
@@ -23,6 +22,7 @@ public class LightingController : MonoBehaviour
     [SerializeField] private float _mainLightFadeInTime = 3.0f;
     [SerializeField] private float _mainLightMinIntensity = 0.0f;
     [SerializeField] private float _mainLightMaxIntensity = 1.0f;
+    [SerializeField] private Vector3 _14bLightDir = Vector3.zero;
 
     private Light _mainDirLight;
     private bool _doLightFadeIn;
@@ -108,5 +108,13 @@ public class LightingController : MonoBehaviour
         _doLightFadeIn = true;
         _mainDirLight.enabled = true;
         _mainDirLight.intensity = _mainLightMinIntensity;
+    }
+
+    // ------------------------------------------------------------------------
+    public void LoadEndSequence ()
+    {
+        _mainDirLight = FindAnyObjectByType<Light>();
+
+        _mainDirLight.transform.eulerAngles = _14bLightDir;
     }
 }
