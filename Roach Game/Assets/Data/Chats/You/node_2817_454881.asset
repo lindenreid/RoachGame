@@ -19,6 +19,8 @@ MonoBehaviour:
   _lines:
   - ... the roach guns... is that even real?
   - what will emily think of all of this?
+  - ... or ... did the manager do this?
+  - what do i have to do to keep my family safe?
   _options:
   - _optionText: the guns are real, the mold is real, and the manager is evil
     _nextNode: {fileID: 11400000, guid: d0bee359e2b5342a98662342b49afa26, type: 2}

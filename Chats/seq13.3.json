@@ -1,0 +1,555 @@
+{
+  "passages": [
+    {
+      "text": "<line> I was not expecting the guns.\n<line> Truly, you have learned to fight fire with fire.\n<line> I love this Spirit... this go-getter attitude... this willingness to take whatever you want, however you want.\n[[((...))->killedManager]]\n[[((...))->sparedManager]]",
+      "links": [
+        {
+          "name": "((...))",
+          "link": "killedManager",
+          "pid": "2"
+        },
+        {
+          "name": "((...))",
+          "link": "sparedManager",
+          "pid": "3"
+        }
+      ],
+      "name": "start",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "Roachlord"
+      ]
+    },
+    {
+      "text": "<clue> ShootManager\n<line> You finally realized that paperwork and logic were never going to work in this world.\n<line> And you were fearless in your conquest of your building. You took down your Manager with no hesitation!\n<line> And you come here and continue your slaughter.\n[[((...))->use]]",
+      "links": [
+        {
+          "name": "((...))",
+          "link": "use",
+          "pid": "4"
+        }
+      ],
+      "name": "killedManager",
+      "pid": "2",
+      "position": {
+        "x": "500",
+        "y": "375"
+      },
+      "tags": [
+        "Roachlord"
+      ]
+    },
+    {
+      "text": "<clue> SpareManager\n<line> You refused to harm your Manager no matter how wrong she did you.\n<line> I can only assume it was because you realized her usefulness to you here, correct?\n<line> Every Company has its uses for incompetence. Middle Management requires it!\n<line> But her use is ending. I see a new opportunity for growth.\n[[((...))->use]]",
+      "links": [
+        {
+          "name": "((...))",
+          "link": "use",
+          "pid": "4"
+        }
+      ],
+      "name": "sparedManager",
+      "pid": "3",
+      "position": {
+        "x": "700",
+        "y": "375"
+      },
+      "tags": [
+        "Roachlord"
+      ]
+    },
+    {
+      "text": "<line> Your Spirit could be of much use to the Company.\n<line> You could replace her.\n[[((no.... i'm here to kill him. and end this.))->consider]]\n[[((unless he sweetens the deal...))->consider]]",
+      "links": [
+        {
+          "name": "((no.... i'm here to kill him. and end this.))",
+          "link": "consider",
+          "pid": "5"
+        },
+        {
+          "name": "((unless he sweetens the deal...))",
+          "link": "consider",
+          "pid": "5"
+        }
+      ],
+      "name": "use",
+      "pid": "4",
+      "position": {
+        "x": "600",
+        "y": "500"
+      },
+      "tags": [
+        "Roachlord"
+      ]
+    },
+    {
+      "text": "<line> That's not what I'm here for.\n<line> I'm here to end this.\n[[((... do any of these managers or lords listen...?))]]",
+      "links": [
+        {
+          "name": "((... do any of these managers or lords listen...?))",
+          "link": "((... do any of these managers or lords listen...?))",
+          "pid": "6"
+        }
+      ],
+      "name": "consider",
+      "pid": "5",
+      "position": {
+        "x": "600",
+        "y": "625"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> Of course not.\n<line> Unfortunately... There is no end to this.\n<line> There is no lawsuit, weapon, or power- from you alone- that could end me. I am a roach: kill one, a replacement will spawn. That is the nature of the Company.\n<line> Do not bargain- you will only waste your breath.\n<line> I give you two options.\n[[((he's right- my gun doesn't work on him. i'll have to consider his deal))->options]]",
+      "links": [
+        {
+          "name": "((he's right- my gun doesn't work on him. i'll have to consider his deal))",
+          "link": "options",
+          "pid": "7"
+        }
+      ],
+      "name": "((... do any of these managers or lords listen...?))",
+      "pid": "6",
+      "position": {
+        "x": "600",
+        "y": "750"
+      },
+      "tags": [
+        "Roachlord"
+      ]
+    },
+    {
+      "text": "<line> One: Become the new Manager.\n<line> You alone will be free of Roaches, for you will join the Company. They will not bother you.\n<line> Be whatever kind of Manager you wish to be. You need only follow one doctrine: increase our Profits. I believe you will do us well.\n<line> Two: Go home with Emily.\n<line> Endure the Roaches for the rest of your putrid life.\n[[((my spirit is mine alone... i'm going home))->homeSparedManager]]\n[[((my spirit is mine alone... i'm going home))->homeShotManager]]\n[[((i'm saving emily from the roaches... i'm joining the company))->companySparedManager]]\n[[((i'm saving emily from the roaches... i'm joining the company))->companyShotManager]]",
+      "links": [
+        {
+          "name": "((my spirit is mine alone... i'm going home))",
+          "link": "homeSparedManager",
+          "pid": "8"
+        },
+        {
+          "name": "((my spirit is mine alone... i'm going home))",
+          "link": "homeShotManager",
+          "pid": "9"
+        },
+        {
+          "name": "((i'm saving emily from the roaches... i'm joining the company))",
+          "link": "companySparedManager",
+          "pid": "10"
+        },
+        {
+          "name": "((i'm saving emily from the roaches... i'm joining the company))",
+          "link": "companyShotManager",
+          "pid": "11"
+        }
+      ],
+      "name": "options",
+      "pid": "7",
+      "position": {
+        "x": "600",
+        "y": "875"
+      },
+      "tags": [
+        "Roachlord"
+      ]
+    },
+    {
+      "text": "<clue> SpareManager\n<line> My spirit is mine alone.\n<line> I would <i>never</i> lend it to your company. \n<line> I don't care what it takes. Emily and I will survive together.\n<line> And... I guess the manager will keep her job, and be there too. She helped me survive here. I'm sure we can work something out.\n[[((...))->hsm2]]",
+      "links": [
+        {
+          "name": "((...))",
+          "link": "hsm2",
+          "pid": "12"
+        }
+      ],
+      "name": "homeSparedManager",
+      "pid": "8",
+      "position": {
+        "x": "350",
+        "y": "1000"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<clue> ShootManager\n<line> My spirit is mine alone.\n<line> I would <i>never</i> lend it to your company. \n<line> I don't care what it takes. Emily and I will survive together.\n<line> We don't need the Manager, or you.\n[[((...))->hsm3]]",
+      "links": [
+        {
+          "name": "((...))",
+          "link": "hsm3",
+          "pid": "17"
+        }
+      ],
+      "name": "homeShotManager",
+      "pid": "9",
+      "position": {
+        "x": "475",
+        "y": "1000"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<clue> SpareManager\n<line> I can't subject Emily to this.\n<line> ALL I've wanted this <i>WHOLE</i> time was to save her from the roaches. I'm not backing down from that.\n<line> I'll be a better manager for her than our current Manager ever was.\n<line> I'll sign up for the Company.\n[[((... and take it down from within!!))]]\n[[((... and replace the Roachlord as the supreme leader!!))]]",
+      "links": [
+        {
+          "name": "((... and take it down from within!!))",
+          "link": "((... and take it down from within!!))",
+          "pid": "22"
+        },
+        {
+          "name": "((... and replace the Roachlord as the supreme leader!!))",
+          "link": "((... and replace the Roachlord as the supreme leader!!))",
+          "pid": "23"
+        }
+      ],
+      "name": "companySparedManager",
+      "pid": "10",
+      "position": {
+        "x": "675",
+        "y": "1000"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<clue> ShootManager\n<line> The role is open because I DESERVE IT.\n<line> I will become the new Manager, and I will NEVER let you or the roaches near my family EVER AGAIN.\n[[((... I will take it down from within!!))]]\n[[((... I will replace the Roachlord as the supreme leader!!))]]",
+      "links": [
+        {
+          "name": "((... I will take it down from within!!))",
+          "link": "((... I will take it down from within!!))",
+          "pid": "27"
+        },
+        {
+          "name": "((... I will replace the Roachlord as the supreme leader!!))",
+          "link": "((... I will replace the Roachlord as the supreme leader!!))",
+          "pid": "28"
+        }
+      ],
+      "name": "companyShotManager",
+      "pid": "11",
+      "position": {
+        "x": "925",
+        "y": "1000"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> I will give you pest control's number.\n[[((... oh my god woman...))]]",
+      "links": [
+        {
+          "name": "((... oh my god woman...))",
+          "link": "((... oh my god woman...))",
+          "pid": "13"
+        }
+      ],
+      "name": "hsm2",
+      "pid": "12",
+      "position": {
+        "x": "325",
+        "y": "1125"
+      },
+      "tags": [
+        "Manager"
+      ]
+    },
+    {
+      "text": "<line> Yes baby! We can do this!\n<line> YOU COULD HAVE ASKED ME FOR HELP EARLIER!!!\n<line> Ma'am, I think you need a union.\n[[((haha.. oops))]]",
+      "links": [
+        {
+          "name": "((haha.. oops))",
+          "link": "((haha.. oops))",
+          "pid": "14"
+        }
+      ],
+      "name": "((... oh my god woman...))",
+      "pid": "13",
+      "position": {
+        "x": "325",
+        "y": "1250"
+      },
+      "tags": [
+        "Emily"
+      ]
+    },
+    {
+      "text": "<line> Ahh... sorry baby!!\n<line> Let's go home!!!\n[[((...))->hsm8]]",
+      "links": [
+        {
+          "name": "((...))",
+          "link": "hsm8",
+          "pid": "19"
+        }
+      ],
+      "name": "((haha.. oops))",
+      "pid": "14",
+      "position": {
+        "x": "325",
+        "y": "1375"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> Sad. You would have been a great asset.\n<line> Or perhaps not, since you are determined to live a life of laziness and filth.\n<line> We will meet again.\n<line> At every interview... performance review... between every line of every email...\n<line> And <i>especially</i> in Zoom webinars.\n<line> One day your Spirit will break. You will see.\n[[((he is right about zoom calls...))->hsm6]]",
+      "links": [
+        {
+          "name": "((he is right about zoom calls...))",
+          "link": "hsm6",
+          "pid": "16"
+        }
+      ],
+      "name": "hsm4",
+      "pid": "15",
+      "position": {
+        "x": "325",
+        "y": "1625"
+      },
+      "tags": [
+        "Roachlord"
+      ]
+    },
+    {
+      "text": "<cluegiven> GoHome\n<line> You're funny, man.\n<line> Let's go home, Emily.",
+      "name": "hsm6",
+      "pid": "16",
+      "position": {
+        "x": "325",
+        "y": "1750"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> Oh no... there will always be a new Manager.\n<line> I will always be able to find a more desperate Worker.\n<line> You always have something...\n<line> If not a girlfriend, or a child. A sick old parent, a debt, a felony.\n<line> A sin, a shame.\n<line> Something to fuel a Spirit.\n[[((... i don't think he understands human spirit...))->hsm7]]",
+      "links": [
+        {
+          "name": "((... i don't think he understands human spirit...))",
+          "link": "hsm7",
+          "pid": "18"
+        }
+      ],
+      "name": "hsm3",
+      "pid": "17",
+      "position": {
+        "x": "525",
+        "y": "1150"
+      },
+      "tags": [
+        "Roachlord"
+      ]
+    },
+    {
+      "text": "<line> We can do this, baby.\n<line> I wish you had asked me for help.\n<line> But, don't be ashamed!!!\n<line> I can take antihistamines!!\n[[((...i'm so sorry emily...))->hsm9]]",
+      "links": [
+        {
+          "name": "((...i'm so sorry emily...))",
+          "link": "hsm9",
+          "pid": "20"
+        }
+      ],
+      "name": "hsm7",
+      "pid": "18",
+      "position": {
+        "x": "550",
+        "y": "1275"
+      },
+      "tags": [
+        "Emily"
+      ]
+    },
+    {
+      "text": "<line> Oh no, I'm not a communist.\n[[((...))->hsm4]]",
+      "links": [
+        {
+          "name": "((...))",
+          "link": "hsm4",
+          "pid": "15"
+        }
+      ],
+      "name": "hsm8",
+      "pid": "19",
+      "position": {
+        "x": "350",
+        "y": "1500"
+      },
+      "tags": [
+        "Manager"
+      ]
+    },
+    {
+      "text": "<line> Sorry Emily!!!\n<line> Let's get out of here!\n[[((...))->hsm10]]",
+      "links": [
+        {
+          "name": "((...))",
+          "link": "hsm10",
+          "pid": "21"
+        }
+      ],
+      "name": "hsm9",
+      "pid": "20",
+      "position": {
+        "x": "550",
+        "y": "1400"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<cluegiven> GoHome\n<line> I'll be waiting.",
+      "name": "hsm10",
+      "pid": "21",
+      "position": {
+        "x": "550",
+        "y": "1525"
+      },
+      "tags": [
+        "Roachlord"
+      ]
+    },
+    {
+      "text": "<line> And I'm not backing down from my goal to kill you, either.\n<line> I'm going to take you down from within the Company.\n<line> My Spirit is stronger than yours.\n[[((...beeeeeatttchhh!!!!))->csm1]]",
+      "links": [
+        {
+          "name": "((...beeeeeatttchhh!!!!))",
+          "link": "csm1",
+          "pid": "26"
+        }
+      ],
+      "name": "((... and take it down from within!!))",
+      "pid": "22",
+      "position": {
+        "x": "675",
+        "y": "1125"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> My Spirit is much more powerful than you can imagine!\n<line> I will climb the Ladder...\n<line> ... and run this company in no time!!\n[[((...beeeeeatttchhh!!!!))->csm1]]",
+      "links": [
+        {
+          "name": "((...beeeeeatttchhh!!!!))",
+          "link": "csm1",
+          "pid": "26"
+        }
+      ],
+      "name": "((... and replace the Roachlord as the supreme leader!!))",
+      "pid": "23",
+      "position": {
+        "x": "800",
+        "y": "1125"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> No, baby!!!\n<line> I just wish you had called me earlier! Had told me about this before I ended up here!\n<line> You don't have to do this for me!! All by yourself!!\n[[((i'm doing the best i can... always))]]",
+      "links": [
+        {
+          "name": "((i'm doing the best i can... always))",
+          "link": "((i'm doing the best i can... always))",
+          "pid": "25"
+        }
+      ],
+      "name": "csm2",
+      "pid": "24",
+      "position": {
+        "x": "750",
+        "y": "1425"
+      },
+      "tags": [
+        "Emily"
+      ]
+    },
+    {
+      "text": "<cluegiven> JoinCompany\n<line> HAHA.\n<line> HAHAHAHAHAHAHAHAA.\n<line> How beautiful...\n<line> Your Spirit yet invigorates me...\n<line> A promise is a promise. You will never see Roaches again.\n<line> I will see you at your next performance review, Worker.",
+      "name": "((i'm doing the best i can... always))",
+      "pid": "25",
+      "position": {
+        "x": "750",
+        "y": "1550"
+      },
+      "tags": [
+        "Roachlord"
+      ]
+    },
+    {
+      "text": "<line> How will I feed my daughter now?\n<line> I will have to find a new position at the Company I suppose...\n<line> Well, good luck here.\n[[((...))->csm2]]",
+      "links": [
+        {
+          "name": "((...))",
+          "link": "csm2",
+          "pid": "24"
+        }
+      ],
+      "name": "csm1",
+      "pid": "26",
+      "position": {
+        "x": "725",
+        "y": "1275"
+      },
+      "tags": [
+        "Manager"
+      ]
+    },
+    {
+      "text": "<line> And I'm not backing down from my goal to kill you, either.\n<line> I'm going to take you down from within the Company.\n<line> My Spirit is stronger than yours.\n[[((...beeeeeatttchhh!!!!))->csm2]]",
+      "links": [
+        {
+          "name": "((...beeeeeatttchhh!!!!))",
+          "link": "csm2",
+          "pid": "24"
+        }
+      ],
+      "name": "((... I will take it down from within!!))",
+      "pid": "27",
+      "position": {
+        "x": "925",
+        "y": "1125"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> My Spirit is much more powerful than you can imagine!\n<line> I will climb the Ladder...\n<line> ... and run this company in no time!!\n[[((...beeeeeatttchhh!!!!))->csm2]]",
+      "links": [
+        {
+          "name": "((...beeeeeatttchhh!!!!))",
+          "link": "csm2",
+          "pid": "24"
+        }
+      ],
+      "name": "((... I will replace the Roachlord as the supreme leader!!))",
+      "pid": "28",
+      "position": {
+        "x": "1050",
+        "y": "1125"
+      },
+      "tags": [
+        "You"
+      ]
+    }
+  ],
+  "name": "Seq13.3",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "a4af7eab-e8e2-441b-8816-f5e9a40dc4c3"
+}

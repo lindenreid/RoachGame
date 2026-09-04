@@ -32,10 +32,13 @@ public class GameController : MonoBehaviour
     [SerializeField] private ClueData _playerGunClue;
     [Header("Roach world sequence")]
     [SerializeField] private ClueData _roachWorldClue;
+    [SerializeField] private ClueData _goBackToAptClue;
 
     private bool _hitFirstRoach;
     private Roach _targetRoach;
     private List<Roach> _activeRoaches;
+    private List<ClueData> _unlockedClues;
+    private ClueData _loadWorldClue;
 
     // ------------------------------------------------------------------------
     // Properties
@@ -66,6 +69,7 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         _activeRoaches = new List<Roach>();
+        _unlockedClues = new List<ClueData>();
     }
 
     // ------------------------------------------------------------------------
@@ -128,8 +132,32 @@ public class GameController : MonoBehaviour
     }
 
     // ------------------------------------------------------------------------
+    public bool IsUnlocked(DiscoverableData discoverable)
+    {
+        if(discoverable._RequiredClues == null ||
+            discoverable._RequiredClues.Length == 0)
+        {
+            return true;
+        }
+
+        foreach(ClueData clue in discoverable._RequiredClues)
+        {
+            if(!_unlockedClues.Contains(clue))
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    // ------------------------------------------------------------------------
     private void HandleClueUnlocked (ClueData clue)
     {
+        if(!_unlockedClues.Contains(clue))
+        {
+            _unlockedClues.Add(clue);
+        }
+
         if(clue == _postHitFirstRoach || clue == _postSecondRoachGun)
         {
             _targetRoach = null;
@@ -137,7 +165,10 @@ public class GameController : MonoBehaviour
         else if(clue == _roachWorldClue)
         {
             LoadRoachWorld();
-            SceneManager.sceneLoaded += FinishSceneLoad;
+        }
+        else if(clue == _goBackToAptClue)
+        {
+            LoadAptWorld();
         }
     }
 
@@ -145,13 +176,34 @@ public class GameController : MonoBehaviour
     private void FinishSceneLoad (Scene scene, LoadSceneMode mode)
     {
         SequenceController._Instance.RefreshSequenceMap();
-        SequenceController._Instance.HandleClueUnlocked(_roachWorldClue);
+        SequenceController._Instance.HandleClueUnlocked(_loadWorldClue);
+
+        if(_loadWorldClue == _roachWorldClue)
+        {
+            CameraCinematics._Instance.OpenRoachWorld();
+        }
+        else if(_loadWorldClue == _goBackToAptClue)
+        {
+            CameraCinematics._Instance.OpenAptWorld();
+        }
+
+        SceneManager.sceneLoaded -= FinishSceneLoad;
     }
 
     // ------------------------------------------------------------------------
     public void LoadRoachWorld ()
     {
         SceneManager.LoadScene(1);
+        _loadWorldClue = _roachWorldClue;
+        SceneManager.sceneLoaded += FinishSceneLoad;
+    }
+
+    // ------------------------------------------------------------------------
+    private void LoadAptWorld ()
+    {
+        SceneManager.LoadScene(0);
+        _loadWorldClue = _goBackToAptClue;
+        SceneManager.sceneLoaded += FinishSceneLoad;
     }
 
 #if UNITY_EDITOR

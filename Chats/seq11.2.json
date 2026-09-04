@@ -1,7 +1,7 @@
 {
   "passages": [
     {
-      "text": "<line> Please.\n<line> Please don't hurt me.\n<line> I have to do what He says. \n<line> It's the only way I keep my daughter safe.\n<line> I can bring you to him. The Inspection. He's coming.\n[[(the who? the Roachlord? which is...?))]]\n[[((and what are we going to do about the inspection?))->inspection]]",
+      "text": "<line> Please.\n<line> Please don't hurt me. I have to do what He says. It's the only way I keep my daughter safe.\n<line> I can bring you to him. The Inspection. He's coming.\n[[(the who? the Roachlord? which is...?))]]\n[[((and what are we going to do about the inspection?))->inspection]]\n[[((so she's confessed. she planted the roaches and the mold.))->plant]]",
       "links": [
         {
           "name": "(the who? the Roachlord? which is...?))",
@@ -12,6 +12,11 @@
           "name": "((and what are we going to do about the inspection?))",
           "link": "inspection",
           "pid": "6"
+        },
+        {
+          "name": "((so she's confessed. she planted the roaches and the mold.))",
+          "link": "plant",
+          "pid": "14"
         }
       ],
       "name": "start",
@@ -68,18 +73,23 @@
       ]
     },
     {
-      "text": "<line> The Roachlord.\n<line> He's real. The landlord. He's the Roachlord.\n<line> Please. Put the gun down. Enough has happened already.\n[[((and what are we going to do about the inspection?))->inspection]]",
+      "text": "<line> The Roachlord.\n<line> He's real. The landlord. He's the Roachlord.\n<line> Please. Put the gun down. Enough has happened already.\n[[((and what are we going to do about the inspection?))->inspection]]\n[[((so she's confessed. she planted the roaches and the mold.))->plant]]",
       "links": [
         {
           "name": "((and what are we going to do about the inspection?))",
           "link": "inspection",
           "pid": "6"
+        },
+        {
+          "name": "((so she's confessed. she planted the roaches and the mold.))",
+          "link": "plant",
+          "pid": "14"
         }
       ],
       "name": "((i ask, as if she makes sense on a normal day...))",
       "pid": "5",
       "position": {
-        "x": "475",
+        "x": "425",
         "y": "475"
       },
       "tags": [
@@ -98,7 +108,7 @@
       "name": "inspection",
       "pid": "6",
       "position": {
-        "x": "675",
+        "x": "700",
         "y": "400"
       },
       "tags": [
@@ -246,6 +256,25 @@
       },
       "tags": [
         "Manager"
+      ]
+    },
+    {
+      "text": "<line> So it's you and the landlord! This is your responsibility\n<line> You've been conspiring against the tenants\n<line> You planted the mold and the roaches. And you gave them GUNS?!?\n<line> And now I'm never going to pass the inspection!!\n[[((not to mention he could be here any minute.))]]",
+      "links": [
+        {
+          "name": "((not to mention he could be here any minute.))",
+          "link": "((not to mention he could be here any minute.))",
+          "pid": "7"
+        }
+      ],
+      "name": "plant",
+      "pid": "14",
+      "position": {
+        "x": "625",
+        "y": "550"
+      },
+      "tags": [
+        "You"
       ]
     }
   ],

@@ -1,0 +1,64 @@
+{
+  "passages": [
+    {
+      "text": "<line> EMILY!!!\n<line> I'M GOING TO FIX ALL THIS!!!\n[[((AND KILL THE ROACHLORD!))->next]]\n[[((AND THEN GFTO!))->next]]",
+      "links": [
+        {
+          "name": "((AND KILL THE ROACHLORD!))",
+          "link": "next",
+          "pid": "2"
+        },
+        {
+          "name": "((AND THEN GFTO!))",
+          "link": "next",
+          "pid": "2"
+        }
+      ],
+      "name": "start",
+      "pid": "1",
+      "position": {
+        "x": "600",
+        "y": "250"
+      },
+      "tags": [
+        "You"
+      ]
+    },
+    {
+      "text": "<line> She wandered in here while on her work trip.\n<line> She appears to be having an allergic reaction of some sort.\n<line> Tired and lifeless... I was going to feed her to my children.\n<line> But you're quite spirited... I'm sure you're about to tell me you're going to save her with the power of paperwork, or perhaps a slipper.\n[[((I got one better...))]]",
+      "links": [
+        {
+          "name": "((I got one better...))",
+          "link": "((I got one better...))",
+          "pid": "3"
+        }
+      ],
+      "name": "next",
+      "pid": "2",
+      "position": {
+        "x": "600",
+        "y": "375"
+      },
+      "tags": [
+        "Roachlord"
+      ]
+    },
+    {
+      "text": "<cluegiven> EndSeq12.4\n<line> Actually, I was just going to shoot you.",
+      "name": "((I got one better...))",
+      "pid": "3",
+      "position": {
+        "x": "600",
+        "y": "500"
+      },
+      "tags": [
+        "You"
+      ]
+    }
+  ],
+  "name": "Seq12.4",
+  "startnode": "1",
+  "creator": "Twine",
+  "creator-version": "2.11.1",
+  "ifid": "fe138b6a-815f-4fc2-b829-cb4bbe7fd6df"
+}
